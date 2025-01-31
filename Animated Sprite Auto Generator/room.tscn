@@ -1,0 +1,257 @@
+[gd_scene load_steps=8 format=3 uid="uid://c7rsck53m6flo"]
+
+[ext_resource type="Script" path="res://sprites_2.gd" id="1_v4kit"]
+[ext_resource type="Script" path="res://code.gd" id="1_vqc4v"]
+[ext_resource type="Script" path="res://app_code.gd" id="2_evvby"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8wslr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4iksv"]
+
+[sub_resource type="Animation" id="Animation_cicog"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b03l6"]
+_data = {
+"RESET": SubResource("Animation_cicog")
+}
+
+[node name="Room" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 21.0
+offset_top = 72.0
+offset_right = 1136.0
+offset_bottom = 639.0
+
+[node name="Pictures" type="TabContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 14.0
+offset_right = 1098.0
+offset_bottom = 564.0
+current_tab = 2
+
+[node name="FolderPreview" type="TabBar" parent="Panel/Pictures"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="AddFolder" type="Button" parent="Panel/Pictures/FolderPreview"]
+layout_mode = 0
+offset_left = 882.0
+offset_top = 439.0
+offset_right = 1051.0
+offset_bottom = 493.0
+text = "ADD FOLDER 
+TO ANIMATEDSPRITE"
+
+[node name="AniList" type="ItemList" parent="Panel/Pictures/FolderPreview"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 25.0
+offset_top = 12.0
+offset_right = 201.0
+offset_bottom = 496.0
+
+[node name="tmpsprite" type="Sprite2D" parent="Panel/Pictures/FolderPreview"]
+unique_name_in_owner = true
+position = Vector2(632, 237)
+
+[node name="tmpspritelog" type="Label" parent="Panel/Pictures/FolderPreview"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 224.0
+offset_top = 25.0
+offset_right = 355.0
+offset_bottom = 48.0
+text = "FILE NOT FOUND"
+
+[node name="AddAllFolders" type="Button" parent="Panel/Pictures/FolderPreview"]
+layout_mode = 0
+offset_left = 692.0
+offset_top = 456.0
+offset_right = 840.0
+offset_bottom = 491.0
+text = "ADD ALL FOLDERS"
+
+[node name="ClearList" type="Button" parent="Panel/Pictures/FolderPreview"]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 456.0
+offset_right = 663.0
+offset_bottom = 491.0
+text = "CLEAR LIST"
+
+[node name="AnimatedSpritePreview" type="TabBar" parent="Panel/Pictures"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="SpriteSheet" type="AnimatedSprite2D" parent="Panel/Pictures/AnimatedSpritePreview"]
+unique_name_in_owner = true
+position = Vector2(536, 278)
+sprite_frames = SubResource("SpriteFrames_8wslr")
+
+[node name="AnimationsList" type="ItemList" parent="Panel/Pictures/AnimatedSpritePreview"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 25.0
+offset_top = 18.0
+offset_right = 220.0
+offset_bottom = 437.0
+
+[node name="AnimationsListPreview" type="ItemList" parent="Panel/Pictures/AnimatedSpritePreview"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 871.0
+offset_top = 13.0
+offset_right = 1066.0
+offset_bottom = 432.0
+
+[node name="GenerateAni" type="Button" parent="Panel/Pictures/AnimatedSpritePreview"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 454.0
+offset_right = 171.0
+offset_bottom = 491.0
+text = "GENERATE"
+
+[node name="AnimatedSpriteLog" type="Label" parent="Panel/Pictures/AnimatedSpritePreview"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 247.0
+offset_top = 22.0
+offset_right = 439.0
+offset_bottom = 45.0
+text = "NO ANIMATIONS FOUND"
+
+[node name="AnimationPlayerPreview" type="TabBar" parent="Panel/Pictures"]
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Sprites" type="Node2D" parent="Panel/Pictures/AnimationPlayerPreview"]
+
+[node name="SpriteSheet" type="AnimatedSprite2D" parent="Panel/Pictures/AnimationPlayerPreview/Sprites"]
+position = Vector2(576, 264)
+sprite_frames = SubResource("SpriteFrames_4iksv")
+
+[node name="Animations" type="AnimationPlayer" parent="Panel/Pictures/AnimationPlayerPreview/Sprites"]
+unique_name_in_owner = true
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_b03l6")
+}
+
+[node name="Code" type="Node2D" parent="Panel/Pictures/AnimationPlayerPreview/Sprites"]
+script = ExtResource("1_v4kit")
+
+[node name="AnimationPlayerList" type="ItemList" parent="Panel/Pictures/AnimationPlayerPreview"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 36.0
+offset_top = 25.0
+offset_right = 231.0
+offset_bottom = 469.0
+
+[node name="OpenDialog" type="FileDialog" parent="."]
+unique_name_in_owner = true
+title = "Open a Directory"
+initial_position = 1
+size = Vector2i(800, 500)
+ok_button_text = "Select Current Folder"
+dialog_hide_on_ok = true
+file_mode = 2
+access = 2
+
+[node name="Open" type="Button" parent="."]
+offset_left = 35.0
+offset_top = 38.0
+offset_right = 152.0
+offset_bottom = 69.0
+text = "OPEN FOLDER"
+
+[node name="Code" type="Node" parent="."]
+script = ExtResource("1_vqc4v")
+
+[node name="AppCode" type="Node" parent="Code" node_paths=PackedStringArray("spritesheet", "spritesheet2")]
+script = ExtResource("2_evvby")
+spritesheet = NodePath("../../Panel/Pictures/AnimatedSpritePreview/SpriteSheet")
+spritesheet2 = NodePath("../../Panel/Pictures/AnimationPlayerPreview/Sprites/SpriteSheet")
+
+[node name="SAVEANIMATEDSPRITE" type="Button" parent="."]
+offset_left = 402.0
+offset_top = 34.0
+offset_right = 592.0
+offset_bottom = 65.0
+text = "SAVE ANIMATED SPRITE"
+
+[node name="SetSavefolder" type="Button" parent="."]
+offset_left = 211.0
+offset_top = 35.0
+offset_right = 354.0
+offset_bottom = 66.0
+text = "SET SAVE FOLDER"
+
+[node name="SaveFolder" type="FileDialog" parent="."]
+unique_name_in_owner = true
+title = "Open a Directory"
+initial_position = 1
+size = Vector2i(800, 500)
+ok_button_text = "Select Current Folder"
+dialog_hide_on_ok = true
+file_mode = 2
+access = 2
+
+[node name="Log" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 25.0
+offset_top = 10.0
+offset_right = 1118.0
+offset_bottom = 33.0
+text = "This tool only accepts  .png"
+
+[node name="SAVEANIMATIONPLAYER" type="Button" parent="."]
+offset_left = 627.0
+offset_top = 32.0
+offset_right = 694.0
+offset_bottom = 64.0
+text = "SAVE ANIMATION PLAYER"
+
+[connection signal="pressed" from="Panel/Pictures/FolderPreview/AddFolder" to="Code/AppCode" method="_on_add_folder_pressed"]
+[connection signal="item_selected" from="Panel/Pictures/FolderPreview/AniList" to="Code/AppCode" method="_on_ani_list_item_selected"]
+[connection signal="pressed" from="Panel/Pictures/FolderPreview/AddAllFolders" to="Code/AppCode" method="_on_add_all_folders_pressed"]
+[connection signal="pressed" from="Panel/Pictures/FolderPreview/ClearList" to="Code/AppCode" method="_on_clear_list_pressed"]
+[connection signal="item_selected" from="Panel/Pictures/AnimatedSpritePreview/AnimationsListPreview" to="Code/AppCode" method="_on_animations_list_preview_item_selected"]
+[connection signal="pressed" from="Panel/Pictures/AnimatedSpritePreview/GenerateAni" to="Code/AppCode" method="_on_generate_ani_pressed"]
+[connection signal="item_selected" from="Panel/Pictures/AnimationPlayerPreview/AnimationPlayerList" to="Code/AppCode" method="_on_animation_player_list_item_selected"]
+[connection signal="dir_selected" from="OpenDialog" to="Code" method="_on_file_dialog_dir_selected"]
+[connection signal="pressed" from="Open" to="Code" method="_on_open_pressed"]
+[connection signal="pressed" from="SAVEANIMATEDSPRITE" to="Code/AppCode" method="_on_saveanimatedsprite_pressed"]
+[connection signal="pressed" from="SetSavefolder" to="Code" method="_on_set_savefolder_pressed"]
+[connection signal="dir_selected" from="SaveFolder" to="Code" method="_on_save_folder_dir_selected"]
+[connection signal="pressed" from="SAVEANIMATIONPLAYER" to="Code" method="_on_saveanimationplayer_pressed"]
