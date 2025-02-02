@@ -54,10 +54,9 @@ offset_left = 16.0
 offset_top = 14.0
 offset_right = 1098.0
 offset_bottom = 564.0
-current_tab = 2
+current_tab = 0
 
 [node name="FolderPreview" type="TabBar" parent="Panel/Pictures"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -151,6 +150,7 @@ offset_bottom = 45.0
 text = "NO ANIMATIONS FOUND"
 
 [node name="AnimationPlayerPreview" type="TabBar" parent="Panel/Pictures"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -177,6 +177,40 @@ offset_left = 36.0
 offset_top = 25.0
 offset_right = 231.0
 offset_bottom = 469.0
+
+[node name="FrameDuration" type="LineEdit" parent="Panel/Pictures/AnimationPlayerPreview"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 252.0
+offset_top = 474.0
+offset_right = 319.062
+offset_bottom = 505.0
+text = "0.1"
+max_length = 5
+
+[node name="SetFrameDuration" type="Button" parent="Panel/Pictures/AnimationPlayerPreview"]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 473.0
+offset_right = 389.0
+offset_bottom = 506.0
+text = "SET"
+
+[node name="Label" type="Label" parent="Panel/Pictures/AnimationPlayerPreview"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 476.0
+offset_right = 230.0
+offset_bottom = 499.0
+text = "Set each frame duration"
+
+[node name="FrameDurationLog" type="Label" parent="Panel/Pictures/AnimationPlayerPreview"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 405.0
+offset_top = 476.0
+offset_right = 445.0
+offset_bottom = 499.0
 
 [node name="OpenDialog" type="FileDialog" parent="."]
 unique_name_in_owner = true
@@ -249,6 +283,7 @@ text = "SAVE ANIMATION PLAYER"
 [connection signal="item_selected" from="Panel/Pictures/AnimatedSpritePreview/AnimationsListPreview" to="Code/AppCode" method="_on_animations_list_preview_item_selected"]
 [connection signal="pressed" from="Panel/Pictures/AnimatedSpritePreview/GenerateAni" to="Code/AppCode" method="_on_generate_ani_pressed"]
 [connection signal="item_selected" from="Panel/Pictures/AnimationPlayerPreview/AnimationPlayerList" to="Code/AppCode" method="_on_animation_player_list_item_selected"]
+[connection signal="pressed" from="Panel/Pictures/AnimationPlayerPreview/SetFrameDuration" to="Panel/Pictures/AnimationPlayerPreview/Sprites/Code" method="_on_set_frame_duration_pressed"]
 [connection signal="dir_selected" from="OpenDialog" to="Code" method="_on_file_dialog_dir_selected"]
 [connection signal="pressed" from="Open" to="Code" method="_on_open_pressed"]
 [connection signal="pressed" from="SAVEANIMATEDSPRITE" to="Code/AppCode" method="_on_saveanimatedsprite_pressed"]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://s5ckeaygqaia"]
+
+[ext_resource type="Script" path="res://frame.gd" id="1_n7aps"]
+[ext_resource type="Texture2D" uid="uid://d30m3pu2c570k" path="res://frame.png" id="2_u6x7x"]
+
+[node name="Frame_Button" type="TextureButton"]
+custom_minimum_size = Vector2(16, 16)
+offset_right = 16.0
+offset_bottom = 16.0
+script = ExtResource("1_n7aps")
+
+[node name="Frame" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = ExtResource("2_u6x7x")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -6.0
+offset_right = 41.0
+offset_bottom = 17.0
+theme_override_colors/font_color = Color(0.111197, 0.111197, 0.111197, 1)
+text = "a"
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

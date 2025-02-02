@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://e56xvyuw62ne"]
+
+[ext_resource type="Texture2D" uid="uid://cwhqjpyal8826" path="res://keyframe.png" id="1_6b4hg"]
+
+[node name="Keyframe" type="Node2D"]
+
+[node name="Keyframe" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = ExtResource("1_6b4hg")

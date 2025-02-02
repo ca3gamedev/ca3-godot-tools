@@ -1,0 +1,145 @@
+[gd_scene load_steps=9 format=3 uid="uid://cerfbkyx4wkwy"]
+
+[ext_resource type="Script" path="res://code.gd" id="1_5bbsh"]
+[ext_resource type="PackedScene" uid="uid://dhx2bbe8p5lsg" path="res://play_list.tscn" id="1_qso5a"]
+[ext_resource type="Script" path="res://animation_player.gd" id="2_gjnsj"]
+[ext_resource type="PackedScene" uid="uid://pr1hd81hydj5" path="res://FrameData.tscn" id="2_lj2d3"]
+[ext_resource type="Script" path="res://gui.gd" id="3_gibra"]
+[ext_resource type="PackedScene" uid="uid://s5ckeaygqaia" path="res://frame.tscn" id="3_t244x"]
+[ext_resource type="Script" path="res://quantize.gd" id="7_tsce0"]
+[ext_resource type="Script" path="res://save.gd" id="8_ravdr"]
+
+[node name="Quantize" type="Node2D"]
+
+[node name="Root" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+offset_left = 231.0
+offset_top = 18.0
+offset_right = 944.0
+offset_bottom = 487.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(713, 469)
+render_target_update_mode = 4
+
+[node name="PlayList" parent="CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("1_qso5a")]
+unique_name_in_owner = true
+
+[node name="Open" type="Button" parent="CanvasLayer"]
+offset_left = 1018.0
+offset_top = 599.0
+offset_right = 1124.0
+offset_bottom = 630.0
+text = "OPEN SCENE"
+
+[node name="OpenAnimationPlayer" type="Button" parent="CanvasLayer"]
+offset_left = 927.0
+offset_top = 555.0
+offset_right = 1138.0
+offset_bottom = 586.0
+text = "OPEN ANIMATION PLAYER"
+
+[node name="Log" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 16.0
+offset_top = 612.0
+offset_right = 720.0
+offset_bottom = 635.0
+text = "This tool is meant to be use to snap random frames to a certain FPS in an animation player."
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 1017.0
+offset_top = 510.0
+offset_right = 1109.0
+offset_bottom = 533.0
+text = "File Nodes"
+
+[node name="Nodes" type="ItemList" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 964.0
+offset_top = 8.0
+offset_right = 1144.0
+offset_bottom = 502.0
+
+[node name="OpenScene" type="FileDialog" parent="CanvasLayer"]
+unique_name_in_owner = true
+title = "Open a File"
+initial_position = 1
+size = Vector2i(800, 550)
+ok_button_text = "Open"
+dialog_hide_on_ok = true
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.tscn")
+
+[node name="AnimList" type="ItemList" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 12.0
+offset_top = 14.0
+offset_right = 209.0
+offset_bottom = 494.0
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 53.0
+offset_top = 504.0
+offset_right = 93.0
+offset_bottom = 527.0
+text = "Animations"
+
+[node name="QuantizeAll" type="Button" parent="CanvasLayer"]
+offset_left = 238.0
+offset_top = 548.0
+offset_right = 358.0
+offset_bottom = 579.0
+text = "QUANTIZE ALL"
+
+[node name="Save" type="Button" parent="CanvasLayer"]
+offset_left = 432.0
+offset_top = 544.0
+offset_right = 546.0
+offset_bottom = 578.0
+text = "SAVE FILE"
+
+[node name="SaveScene" type="FileDialog" parent="CanvasLayer"]
+unique_name_in_owner = true
+initial_position = 1
+size = Vector2i(800, 500)
+ok_button_text = "Save"
+dialog_hide_on_ok = true
+access = 2
+filters = PackedStringArray("*.tscn")
+
+[node name="Code" type="Node" parent="."]
+script = ExtResource("1_5bbsh")
+
+[node name="AnimationPlayer" type="Node" parent="Code" node_paths=PackedStringArray("Playlist")]
+unique_name_in_owner = true
+script = ExtResource("2_gjnsj")
+frame_label_scene = ExtResource("3_t244x")
+keyframe_scene = ExtResource("2_lj2d3")
+Playlist = NodePath("../../CanvasLayer/SubViewportContainer/SubViewport/PlayList")
+
+[node name="GUI" type="Node" parent="Code"]
+unique_name_in_owner = true
+script = ExtResource("3_gibra")
+
+[node name="Quantize" type="Node" parent="Code"]
+script = ExtResource("7_tsce0")
+
+[node name="Save" type="Node" parent="Code"]
+script = ExtResource("8_ravdr")
+
+[connection signal="pressed" from="CanvasLayer/Open" to="Code" method="_on_open_pressed"]
+[connection signal="pressed" from="CanvasLayer/OpenAnimationPlayer" to="Code" method="_on_open_animation_player_pressed"]
+[connection signal="item_selected" from="CanvasLayer/Nodes" to="Code" method="_on_nodes_item_selected"]
+[connection signal="file_selected" from="CanvasLayer/OpenScene" to="Code" method="_on_open_scene_file_selected"]
+[connection signal="item_selected" from="CanvasLayer/AnimList" to="Code/AnimationPlayer" method="_on_anim_list_item_selected"]
+[connection signal="pressed" from="CanvasLayer/QuantizeAll" to="Code/Quantize" method="_on_quantize_all_pressed"]
+[connection signal="pressed" from="CanvasLayer/Save" to="Code/Save" method="_on_save_pressed"]
+[connection signal="file_selected" from="CanvasLayer/SaveScene" to="Code/Save" method="_on_save_scene_file_selected"]
