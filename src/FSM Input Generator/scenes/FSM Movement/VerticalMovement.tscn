@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr33mrbrn3rm0"]
+
+[ext_resource type="Script" path="res://scenes/FSM Movement/vertical_movement.gd" id="1_mpm24"]
+
+[node name="Movement" type="Node"]
+script = ExtResource("1_mpm24")
