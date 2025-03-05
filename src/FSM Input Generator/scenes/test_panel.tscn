@@ -1,0 +1,152 @@
+[gd_scene load_steps=2 format=3 uid="uid://dufhp3ryxherv"]
+
+[ext_resource type="Script" path="res://scenes/log_input.gd" id="1_e3qcn"]
+
+[node name="TESTPanel" type="Panel"]
+offset_left = 68.0
+offset_top = 65.0
+offset_right = 1084.0
+offset_bottom = 618.0
+
+[node name="Input Info" type="Label" parent="."]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 12.0
+offset_right = 569.0
+offset_bottom = 113.0
+text = "INPUT TEST
+Press the Arrow Keys or the WASD to have directional motion.
+Press Numpad 1 - 8 to have buttons.
+Press U I O P J K L H to have buttons"
+
+[node name="SpecialsLog" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 215.0
+offset_top = 460.0
+offset_right = 772.0
+offset_bottom = 500.0
+theme_override_font_sizes/font_size = 20
+text = "NONE"
+horizontal_alignment = 1
+
+[node name="LogInput" type="Node" parent="."]
+script = ExtResource("1_e3qcn")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 177.0
+offset_right = 785.0
+offset_bottom = 376.0
+current_tab = 5
+
+[node name="Ortho" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="KEYSLOG" type="Label" parent="TabContainer/Ortho"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 25.0
+offset_top = 32.0
+offset_right = 695.0
+offset_bottom = 81.0
+theme_override_font_sizes/font_size = 20
+text = "NONE"
+autowrap_mode = 2
+
+[node name="Diagonal" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="DIALOG" type="Label" parent="TabContainer/Diagonal"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 26.0
+offset_top = 27.0
+offset_right = 696.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 20
+text = "NONE"
+autowrap_mode = 2
+
+[node name="Charge" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="CHARGELOG" type="Label" parent="TabContainer/Charge"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 29.0
+offset_top = 29.0
+offset_right = 699.0
+offset_bottom = 111.0
+theme_override_font_sizes/font_size = 20
+text = "NONE"
+autowrap_mode = 2
+
+[node name="Buttons" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="BUTTONLOG" type="Label" parent="TabContainer/Buttons"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 20.0
+offset_top = 17.0
+offset_right = 710.0
+offset_bottom = 91.0
+theme_override_font_sizes/font_size = 20
+text = "NONE"
+autowrap_mode = 2
+
+[node name="Movement" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="MovementLog" type="Label" parent="TabContainer/Movement"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 25.0
+offset_top = 27.0
+offset_right = 249.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 20
+text = "NONE"
+
+[node name="Dash" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 5
+
+[node name="DashLog" type="Label" parent="TabContainer/Dash"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 25.0
+offset_top = 27.0
+offset_right = 679.0
+offset_bottom = 139.0
+theme_override_font_sizes/font_size = 20
+text = "NONE"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 394.0
+offset_right = 112.0
+offset_bottom = 417.0
+text = "Charge time:"
+
+[node name="Charge0" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 184.0
+offset_top = 395.0
+offset_right = 283.0
+offset_bottom = 418.0
+text = "0"

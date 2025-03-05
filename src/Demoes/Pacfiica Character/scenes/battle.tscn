@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://e5s2hyyrnysp"]
+
+[ext_resource type="PackedScene" uid="uid://lr05kxg61lbw" path="res://framework/Player/player.tscn" id="1_d6f2i"]
+[ext_resource type="Script" path="res://scenes/log.gd" id="2_0iynf"]
+
+[node name="Battle" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_d6f2i")]
+position = Vector2(557, 354)
+
+[node name="LOG" type="Label" parent="."]
+offset_left = 31.0
+offset_top = 19.0
+offset_right = 235.0
+offset_bottom = 56.0
+script = ExtResource("2_0iynf")
+
+[node name="STATE" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 28.0
+offset_top = 62.0
+offset_right = 232.0
+offset_bottom = 99.0
+
+[node name="RAWSTATE" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 30.0
+offset_top = 117.0
+offset_right = 234.0
+offset_bottom = 154.0
+
+[editable path="Player"]
+[editable path="Player/Sprites"]
+[editable path="Player/INPUT"]
+[editable path="Player/Motion"]
+[editable path="Player/Motion AnimTree"]

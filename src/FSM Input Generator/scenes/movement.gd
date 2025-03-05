@@ -7,6 +7,8 @@ extends Node
 @export var Directions4 : PackedScene
 @export var Directions8 : PackedScene
 
+@onready var move = get_tree().get_root().get_node("INPUT/FSM/Move")
+
 func _ready():
 	%CurrentIdle.text = "Static"
 	%CurrentMovement.text = %CurrentIdle.text
@@ -49,8 +51,8 @@ func _on_change_pressed():
 		"4 Directions" : tmp = Directions4.instantiate()
 		"8 Directions" : tmp = Directions8.instantiate()
 	
-	var children = $"../../INPUT/FSM/Move".get_children()
-	
+	var children = move.get_children()
 	children[0].queue_free()
 	
-	$"../../INPUT/FSM/Move".add_child(tmp)
+	move.add_child(tmp)
+	tmp.owner = move

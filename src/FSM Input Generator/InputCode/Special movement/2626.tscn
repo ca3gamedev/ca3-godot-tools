@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://co1b6alp6klhg"]
+
+[ext_resource type="Script" path="res://InputCode/Special movement/2626.gd" id="1_rfw2p"]
+
+[node name="2626" type="Node"]
+script = ExtResource("1_rfw2p")

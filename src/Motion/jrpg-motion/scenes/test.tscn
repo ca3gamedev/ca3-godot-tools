@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://cafmuwcuv3uyd"]
+
+[ext_resource type="Texture2D" uid="uid://s36vs7nsooc5" path="res://scenes/2D/player.png" id="1_86k6i"]
+[ext_resource type="PackedScene" uid="uid://b1rv5l00jkku4" path="res://framework/InputCode/P1INPUT.tscn" id="2_gjy40"]
+[ext_resource type="Script" path="res://framework/FSM Motion/motion_transition.gd" id="2_sncpk"]
+[ext_resource type="PackedScene" uid="uid://dubvswys84nkd" path="res://framework/MotionCode/motion.tscn" id="3_4myqk"]
+[ext_resource type="Script" path="res://scenes/log.gd" id="5_egbb8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wlljq"]
+radius = 5.65685
+
+[node name="Test" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(562, 333)
+
+[node name="Player" type="Sprite2D" parent="Player"]
+texture = ExtResource("1_86k6i")
+
+[node name="MotionTransition" type="Node" parent="Player"]
+script = ExtResource("2_sncpk")
+
+[node name="INPUT" parent="Player" instance=ExtResource("2_gjy40")]
+
+[node name="Motion" parent="Player" node_paths=PackedStringArray("Root", "Transition") instance=ExtResource("3_4myqk")]
+multiplier = 1000.0
+walk_speed = 20.0
+dash = 30.0
+Root = NodePath("..")
+Transition = NodePath("../MotionTransition")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CircleShape2D_wlljq")
+
+[node name="LOG" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 25.0
+offset_top = 19.0
+offset_right = 65.0
+offset_bottom = 42.0
+script = ExtResource("5_egbb8")
+
+[node name="LOGlabel" type="Label" parent="."]
+offset_left = 25.0
+offset_top = 49.0
+offset_right = 126.0
+offset_bottom = 72.0
+text = "current state"
