@@ -1,64 +1,64 @@
 [gd_scene load_steps=27 format=3 uid="uid://lr05kxg61lbw"]
 
-[ext_resource type="PackedScene" uid="uid://cj1ye35g7d2sd" path="res://framework/Player/Pacifica Sprites.tscn" id="1_t58p6"]
 [ext_resource type="PackedScene" uid="uid://b1rv5l00jkku4" path="res://framework/InputCode/P1INPUT.tscn" id="2_xvjjb"]
 [ext_resource type="PackedScene" uid="uid://dmuatunloj5a1" path="res://framework/MotionCode/MYMOTION.tscn" id="3_liivy"]
 [ext_resource type="PackedScene" uid="uid://hx68qxv0hl7t" path="res://framework/Anim Tree/motion_anim_tree.tscn" id="4_yvw6w"]
 [ext_resource type="PackedScene" uid="uid://qv3ae6b6cbjx" path="res://framework/Transitions/transitions.tscn" id="5_jj1xa"]
+[ext_resource type="PackedScene" uid="uid://cik3lg57wm0pd" path="res://scenes/Pacifica.tscn" id="5_ygfsa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bwfm1"]
 radius = 5.09902
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e2717"]
-animation = &"sprites/idle back"
+animation = &"sprites/PHOTO POSE -loop_BACK_"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hew3n"]
-animation = &"sprites/idle back right"
+animation = &"sprites/PHOTO POSE -loop_BACK_RIGHT_"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_87bnc"]
-animation = &"sprites/walk side right"
+animation = &"sprites/WALK -loop_RIGHT_"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8f3su"]
-animation = &"sprites/walk side left"
+animation = &"sprites/WALK -loop_LEFT_"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xtax6"]
-animation = &"sprites/walk back left"
+animation = &"sprites/WALK -loop_BACK_LEFT_"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1uh7c"]
-animation = &"sprites/walk front"
+animation = &"sprites/WALK -loop_FRONT_"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bj6b0"]
-animation = &"sprites/walk front right"
+animation = &"sprites/WALK -loop_FRONT_RIGHT_"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_swhk4"]
-animation = &"sprites/walk front left"
+animation = &"sprites/WALK -loop_FRONT_LEFT_"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uvrqy"]
-animation = &"sprites/idle front"
+animation = &"sprites/PHOTO POSE -loop_FRONT_"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i3lgs"]
-animation = &"sprites/idle side right"
+animation = &"sprites/PHOTO POSE -loop_RIGHT_"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3g0v6"]
-animation = &"sprites/idle front right"
+animation = &"sprites/PHOTO POSE -loop_FRONT_RIGHT_"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6wooh"]
-animation = &"sprites/idle front"
+animation = &"sprites/PHOTO POSE -loop_FRONT_"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8owok"]
-animation = &"sprites/idle front left"
+animation = &"sprites/PHOTO POSE -loop_FRONT_LEFT_"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oyt6g"]
-animation = &"sprites/idle side left"
+animation = &"sprites/PHOTO POSE -loop_LEFT_"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6bmit"]
-animation = &"sprites/idle back left"
+animation = &"sprites/PHOTO POSE -loop_BACK_LEFT_"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v51o6"]
-animation = &"sprites/walk back"
+animation = &"sprites/WALK -loop_BACK_"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w44pw"]
-animation = &"sprites/walk back right"
+animation = &"sprites/WALK -loop_BACK_RIGHT_"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_pchwr"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_e2717")
@@ -112,8 +112,6 @@ transitions = ["Start", "MOVE", SubResource("AnimationNodeStateMachineTransition
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_bwfm1")
 
-[node name="Sprites" parent="." instance=ExtResource("1_t58p6")]
-
 [node name="INPUT" parent="." node_paths=PackedStringArray("buffer") instance=ExtResource("2_xvjjb")]
 buffer = NodePath("Buffer")
 
@@ -141,9 +139,11 @@ motionanimtree = NodePath("../Motion AnimTree")
 root_node = NodePath("../..")
 tree_root = SubResource("AnimationNodeStateMachine_30p38")
 anim_player = NodePath("../../Sprites/Animations")
-parameters/MOVE/blend_position = Vector2(0.919355, 0.887574)
+parameters/MOVE/blend_position = Vector2(0.00460827, 0.0473373)
 
-[editable path="Sprites"]
+[node name="Sprites" parent="." instance=ExtResource("5_ygfsa")]
+
 [editable path="INPUT"]
 [editable path="Motion"]
 [editable path="Motion AnimTree"]
+[editable path="Sprites"]
