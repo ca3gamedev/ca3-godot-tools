@@ -48,12 +48,14 @@ func SortByNumber(new_name, dir_path, folder_name):
 			DirAccess.make_dir_absolute(parent.get_current_dir() + "/" + root_name)
 			var anim_folder = DirAccess.open(parent.get_current_dir() + "/" + root_name)
 			var target_folder = DirAccess.open(parent.get_current_dir() + "/" + root_name)
+			var file_id = 0
 			for file in folder.get_files():
 				var filename = file
 				var dir_pos = filename.find("_dir")
 				if dir_pos != -1:
 					var start_pos = dir_pos + 4
 					var extracted_number = int(filename.substr(start_pos, 1))
+					var file_i =  int(filename.substr(start_pos+2, 3))
 					if extracted_number > angle:
 						match(new_name):
 							"none" : 
@@ -72,7 +74,7 @@ func SortByNumber(new_name, dir_path, folder_name):
 					var absolute_path = folder.get_current_dir() + "/" + filename
 					var target_path = target_folder.get_current_dir() + "/" + filename
 					if %Skip.value > 0:
-						if extracted_number % %Skip.value == 0:
+						if file_i % int(%Skip.value) == 0:
 							DirAccess.copy_absolute(absolute_path, target_path)
 					else:
 						DirAccess.copy_absolute(absolute_path, target_path)
