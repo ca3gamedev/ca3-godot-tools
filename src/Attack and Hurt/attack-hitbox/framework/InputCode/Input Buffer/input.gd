@@ -2,13 +2,14 @@ extends Node
 
 @export var buffer : Node
 
-func InputExist(new_input):
+func InputExist(new_input, dir = Vector2i.ZERO):
 	
-	if $FSM/Move.GetMove() == new_input:
+	if typeof(new_input) == TYPE_VECTOR2I and $FSM/Move.GetMove() == new_input:
 		return true
-	if $FSM/Button.GetButton() == new_input:
+		
+	if $FSM/Button.GetButton()[0] == new_input and $FSM/Button.GetButton()[1] == dir:
 		return true
-	if $FSM/Special.GetSpecial() == new_input:
+	if $FSM/Special.GetSpecial()[0] == new_input:
 		return true
 	
 	return false

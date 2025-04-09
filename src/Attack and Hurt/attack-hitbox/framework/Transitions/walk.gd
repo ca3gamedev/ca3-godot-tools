@@ -1,6 +1,11 @@
 extends Node
 
 func Update():
+	
+	if $"../".inputnode.InputExist("A"):
+		$"../".ChangeMotion("PUNCH")
+		return
+		
 	var state = $"../".GetState()
 
 	if state == "JRPG DASH":
@@ -8,4 +13,3 @@ func Update():
 		$"../".ChangeMotion("JRPG DASH")
 	if $"../".IsIdle():
 		$"../".ChangeMotion("IDLE")
-	

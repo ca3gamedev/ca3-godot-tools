@@ -23,7 +23,7 @@ func GetButton():
 
 func CheckJRPGDash():
 	if $"../".Buffer.rel_dir.size() > 1 and $"../".Buffer.dia_dir.size() > 0:
-		if $"../".Buffer.last_release_time < 0.2 :
+		if $"../".Buffer.last_release_time > 0.2 and $"../".Buffer.last_release_time < 0.5:
 			return $"../".Buffer.rel_dir[1] == $"../".Buffer.dia_dir[0]
 	return false
 

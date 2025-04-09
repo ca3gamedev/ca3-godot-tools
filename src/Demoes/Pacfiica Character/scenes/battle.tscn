@@ -8,6 +8,18 @@
 [node name="Player" parent="." instance=ExtResource("1_d6f2i")]
 position = Vector2(557, 354)
 
+[node name="Sprites" parent="Player" index="7"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = null
+
 [node name="LOG" type="Label" parent="."]
 offset_left = 31.0
 offset_top = 19.0
@@ -30,7 +42,6 @@ offset_right = 234.0
 offset_bottom = 154.0
 
 [editable path="Player"]
-[editable path="Player/Sprites"]
 [editable path="Player/INPUT"]
 [editable path="Player/Motion"]
 [editable path="Player/Motion AnimTree"]

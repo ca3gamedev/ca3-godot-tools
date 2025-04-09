@@ -46,10 +46,16 @@ func ChangeMotion(state):
 			currentanim = motionanimtree.get_node("DASH")
 			transitionnode = get_node("DASH")
 		"JRPG DASH" :
+			ClearInput()
 			flicker_check = 0
 			currentmotion = motionparent.get_node("DASH")
 			currentanim = motionanimtree.get_node("DASH")
 			transitionnode = get_node("DASH")
+		"PUNCH" :
+			flicker_check = 0
+			currentmotion = motionparent.get_node("IDLE")
+			currentanim = %ATTACKS.get_node("PUNCH")
+			currentanim.Start()
 
 func IsIdle():
 	if flicker_check > 0.4:
@@ -58,8 +64,10 @@ func IsIdle():
 	return false
 
 func IsIdleDash():
-	if flicker_check > 0.5 and rawspecialinput == "none":
-		return true
+	#This control the lenght of the dash if released, not if hold
+	if flicker_check > 0.2:
+		if rawspecialinput == "none" or rawspecialinput == "IDLE":
+			return true
 	return false
 
 func GetState():
@@ -74,3 +82,13 @@ func GetState():
 
 func ClearInput():
 	specialinput = "none"
+
+func ReturntoIdle():
+	ClearInput()
+	ChangeMotion("IDLE")
+
+
+func _on_anim_animation_finished(anim_name):
+	%AttackBoxAnimTree.set("parameters/ATTACKS/blend_position", Vector2.ZERO)
+	%Anim.set("parameters/conditions/attack", false)
+	ReturntoIdle()

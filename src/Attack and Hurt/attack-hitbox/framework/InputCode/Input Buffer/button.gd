@@ -14,7 +14,7 @@ func GetButton():
 	
 	for i in child:
 		var id = i.GetButton()
-		if id != "none" and i.GetDir():
+		if id != "none":
 			button = id
 			dir = i.dir
 	
