@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dmuatunloj5a1" path="res://framework/MotionCode/MYMOTION.tscn" id="3_liivy"]
 [ext_resource type="PackedScene" uid="uid://hx68qxv0hl7t" path="res://framework/Anim Tree/motion_anim_tree.tscn" id="4_yvw6w"]
 [ext_resource type="PackedScene" uid="uid://qv3ae6b6cbjx" path="res://framework/Transitions/transitions.tscn" id="5_jj1xa"]
-[ext_resource type="PackedScene" uid="uid://cik3lg57wm0pd" path="res://scenes/Pacifica.tscn" id="5_ygfsa"]
+[ext_resource type="PackedScene" uid="uid://buftrs7al3sfh" path="res://framework/Player/Heroe SC2.tscn" id="5_ygfsa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bwfm1"]
 radius = 5.09902

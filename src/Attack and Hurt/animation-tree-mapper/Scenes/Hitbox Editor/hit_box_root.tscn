@@ -1,0 +1,450 @@
+[gd_scene load_steps=13 format=3 uid="uid://d4esuygqxjtrf"]
+
+[ext_resource type="PackedScene" path="res://Scenes/tmp/Player Hitboxes.tscn" id="1_ndp7c"]
+[ext_resource type="PackedScene" uid="uid://buftrs7al3sfh" path="res://framework/Player/Heroe SC2.tscn" id="2_7p6vk"]
+[ext_resource type="PackedScene" uid="uid://bge1flp2a0tcx" path="res://framework/Hitbox/hitbox.tscn" id="3_pn1jy"]
+[ext_resource type="Script" path="res://Scenes/Hitbox Editor/next_previous_frame.gd" id="4_p8i25"]
+[ext_resource type="Script" path="res://Scenes/Hitbox Editor/next_previous_hitbox.gd" id="5_cpryb"]
+[ext_resource type="Script" path="res://Scenes/Hitbox Editor/load.gd" id="5_ngxtf"]
+[ext_resource type="Script" path="res://Scenes/Hitbox Editor/hitbox_manager.gd" id="6_xfa71"]
+[ext_resource type="Script" path="res://Scenes/Hitbox Editor/add_delete_hitboxes.gd" id="7_5s4vi"]
+[ext_resource type="Script" path="res://Scenes/Hitbox Editor/add_hitbox_frame.gd" id="9_euugh"]
+[ext_resource type="Script" path="res://Scenes/Hitbox Editor/hibox_animations_code.gd" id="10_hb6kt"]
+[ext_resource type="Script" path="res://Scenes/Hitbox Editor/hitbox_frames_gui.gd" id="11_tsat2"]
+[ext_resource type="Script" path="res://Scenes/Hitbox Editor/hitbox_pos_gui.gd" id="12_e8r1c"]
+
+[node name="HitBoxRoot" type="Node2D"]
+
+[node name="Character" type="Node2D" parent="."]
+position = Vector2(159, 169)
+
+[node name="Player" parent="Character" instance=ExtResource("1_ndp7c")]
+position = Vector2(301, 39)
+
+[node name="SpriteSheet" parent="Character/Player/Sprites" index="0"]
+animation = &"default"
+frame = 0
+
+[node name="DebugAttackBox" parent="Character/Player/Hitbox/Hitbox/CollisionShape2D" index="0"]
+color = Color(0.0352941, 0.454902, 0.717647, 0.392157)
+
+[node name="Sprites" parent="Character" instance=ExtResource("2_7p6vk")]
+position = Vector2(0, -28)
+metadata/_edit_lock_ = true
+
+[node name="SpriteSheet" parent="Character/Sprites" index="0"]
+animation = &"default"
+
+[node name="Hitbox" parent="Character" instance=ExtResource("3_pn1jy")]
+unique_name_in_owner = true
+metadata/_edit_lock_ = true
+
+[node name="AnimTree" parent="Character/Hitbox" index="1"]
+parameters/HURT/blend_position = Vector2(0.00683999, -0.76087)
+parameters/MOVE/blend_position = Vector2(-0.00410396, -0.0710059)
+
+[node name="TypeofMove" type="OptionButton" parent="."]
+unique_name_in_owner = true
+offset_left = 937.0
+offset_top = 11.0
+offset_right = 1134.0
+offset_bottom = 50.0
+selected = 0
+item_count = 4
+popup/item_0/text = "MOVE"
+popup/item_1/text = "ATTACK"
+popup/item_1/id = 1
+popup/item_2/text = "HURT"
+popup/item_2/id = 2
+popup/item_3/text = "COMBOBREAK"
+popup/item_3/id = 3
+
+[node name="CurrentNode" type="ItemList" parent="."]
+unique_name_in_owner = true
+offset_left = 841.0
+offset_top = 90.0
+offset_right = 1137.0
+offset_bottom = 305.0
+
+[node name="HitboxAnimations" type="ItemList" parent="."]
+unique_name_in_owner = true
+offset_left = 839.0
+offset_top = 368.0
+offset_right = 1135.0
+offset_bottom = 546.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 14.0
+offset_top = 287.0
+offset_right = 126.0
+offset_bottom = 320.0
+text = "FRAME DEBUG"
+
+[node name="Code" type="Node" parent="."]
+
+[node name="NextPreviousFrame" type="Node" parent="Code" node_paths=PackedStringArray("AnimationPLayerSprites")]
+unique_name_in_owner = true
+script = ExtResource("4_p8i25")
+AnimationPLayerSprites = NodePath("../../Character/Sprites/Animations")
+
+[node name="NextPreviousHitbox" type="Node" parent="Code" node_paths=PackedStringArray("AttackHitboxPlayer", "AttackHitboxTree")]
+unique_name_in_owner = true
+script = ExtResource("5_cpryb")
+AttackHitboxPlayer = NodePath("../../Character/Hitbox/AnimTree/AnimationPlayer")
+AttackHitboxTree = NodePath("../../Character/Hitbox/AnimTree")
+
+[node name="Load" type="Node" parent="Code" node_paths=PackedStringArray("PlayerAnimTree", "AttackHitboxTree")]
+unique_name_in_owner = true
+script = ExtResource("5_ngxtf")
+PlayerAnimTree = NodePath("../../Character/Player/AnimTree/Anim")
+AttackHitboxTree = NodePath("../../Character/Hitbox/AnimTree")
+
+[node name="HitboxManager" type="Node" parent="Code"]
+unique_name_in_owner = true
+script = ExtResource("6_xfa71")
+
+[node name="LoadParams" type="Node" parent="Code/HitboxManager"]
+unique_name_in_owner = true
+script = ExtResource("7_5s4vi")
+
+[node name="AddHitboxFrame" type="Node" parent="Code/HitboxManager"]
+unique_name_in_owner = true
+script = ExtResource("9_euugh")
+
+[node name="HiboxAnimationsCode" type="Node" parent="Code"]
+script = ExtResource("10_hb6kt")
+
+[node name="HitboxFramesGUI" type="Node" parent="Code"]
+unique_name_in_owner = true
+script = ExtResource("11_tsat2")
+
+[node name="HitboxPosGUI" type="Node" parent="Code"]
+unique_name_in_owner = true
+script = ExtResource("12_e8r1c")
+
+[node name="LOG" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 846.0
+offset_bottom = 76.0
+text = "press A and D to move between Frames"
+metadata/_edit_lock_ = true
+
+[node name="Select" type="Button" parent="."]
+offset_left = 847.0
+offset_top = 12.0
+offset_right = 914.0
+offset_bottom = 47.0
+text = "select"
+
+[node name="SelectedAnimLOG" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 850.0
+offset_top = 58.0
+offset_right = 1133.0
+offset_bottom = 81.0
+text = "None selected"
+
+[node name="Frames" type="ItemList" parent="."]
+unique_name_in_owner = true
+offset_left = 80.0
+offset_top = 350.0
+offset_right = 211.0
+offset_bottom = 640.0
+
+[node name="HitboxFrames" type="ItemList" parent="."]
+unique_name_in_owner = true
+offset_left = 224.0
+offset_top = 352.0
+offset_right = 321.0
+offset_bottom = 642.0
+
+[node name="HitboxFramesBool" type="ItemList" parent="."]
+unique_name_in_owner = true
+offset_left = 329.0
+offset_top = 352.0
+offset_right = 426.0
+offset_bottom = 642.0
+
+[node name="HitboxPosition" type="ItemList" parent="."]
+unique_name_in_owner = true
+offset_left = 435.0
+offset_top = 355.0
+offset_right = 541.0
+offset_bottom = 645.0
+
+[node name="HitboxPositionPos" type="ItemList" parent="."]
+unique_name_in_owner = true
+offset_left = 562.0
+offset_top = 353.0
+offset_right = 683.0
+offset_bottom = 643.0
+
+[node name="Framesid" type="ItemList" parent="."]
+unique_name_in_owner = true
+offset_left = 13.0
+offset_top = 350.0
+offset_right = 76.0
+offset_bottom = 640.0
+
+[node name="Set" type="Button" parent="."]
+offset_left = 17.0
+offset_top = 313.0
+offset_right = 69.0
+offset_bottom = 344.0
+text = "SET"
+
+[node name="Play" type="Button" parent="."]
+offset_left = 81.0
+offset_top = 313.0
+offset_right = 134.0
+offset_bottom = 345.0
+text = "PLAY"
+
+[node name="Stop" type="Button" parent="."]
+offset_left = 144.0
+offset_top = 313.0
+offset_right = 202.0
+offset_bottom = 345.0
+text = "STOP"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 855.0
+offset_top = 324.0
+offset_right = 1053.0
+offset_bottom = 347.0
+text = "Attack Hitbox Animations"
+
+[node name="CurrentSelectedName" type="LineEdit" parent="."]
+unique_name_in_owner = true
+offset_left = 848.0
+offset_top = 600.0
+offset_right = 1121.0
+offset_bottom = 631.0
+
+[node name="Preselect" type="Button" parent="."]
+offset_left = 721.0
+offset_top = 597.0
+offset_right = 833.0
+offset_bottom = 629.0
+text = "PRESELECT"
+
+[node name="PreselectLOG" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 850.0
+offset_top = 556.0
+offset_right = 890.0
+offset_bottom = 579.0
+text = "NONE PRESELECTED"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 227.0
+offset_top = 288.0
+offset_right = 350.0
+offset_bottom = 311.0
+text = "Hitbox Disabled"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 445.0
+offset_top = 323.0
+offset_right = 564.0
+offset_bottom = 346.0
+text = "Hitbox Position"
+
+[node name="EnableHitboxCheck" type="CheckButton" parent="."]
+unique_name_in_owner = true
+offset_left = 699.0
+offset_top = 551.0
+offset_right = 812.0
+offset_bottom = 582.0
+text = "ENABLE "
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 732.0
+offset_top = 193.0
+offset_right = 792.0
+offset_bottom = 216.0
+text = "HITBOX"
+
+[node name="AddNewHitbox" type="Button" parent="."]
+offset_left = 713.0
+offset_top = 269.0
+offset_right = 803.0
+offset_bottom = 300.0
+text = "ADD NEW"
+
+[node name="RemoveChangeHitbox" type="Button" parent="."]
+offset_left = 713.0
+offset_top = 232.0
+offset_right = 803.0
+offset_bottom = 263.0
+text = "REMOVE"
+
+[node name="HitboxTimeFrame" type="LineEdit" parent="."]
+unique_name_in_owner = true
+offset_left = 716.0
+offset_top = 386.0
+offset_right = 783.062
+offset_bottom = 417.0
+
+[node name="HitboxTimeFrameLOG" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 718.0
+offset_top = 351.0
+offset_right = 758.0
+offset_bottom = 374.0
+text = "0.1"
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 716.0
+offset_top = 320.0
+offset_right = 785.0
+offset_bottom = 343.0
+text = "Duration"
+
+[node name="Label7" type="Label" parent="."]
+offset_left = 716.0
+offset_top = 426.0
+offset_right = 756.0
+offset_bottom = 449.0
+text = "Key"
+
+[node name="KeyHitbox" type="SpinBox" parent="."]
+unique_name_in_owner = true
+offset_left = 718.0
+offset_top = 462.0
+offset_right = 801.062
+offset_bottom = 493.0
+
+[node name="EightDir" type="OptionButton" parent="."]
+unique_name_in_owner = true
+offset_left = 719.0
+offset_top = 508.0
+offset_right = 785.0
+offset_bottom = 537.0
+selected = 1
+item_count = 3
+popup/item_0/text = "4 Dir"
+popup/item_1/text = "8 Dir"
+popup/item_1/id = 1
+popup/item_2/text = "No Dir"
+popup/item_2/id = 2
+
+[node name="PlayHitbox" type="Button" parent="."]
+offset_left = 270.0
+offset_top = 314.0
+offset_right = 321.0
+offset_bottom = 345.0
+text = "PLAY"
+
+[node name="StopHitbox" type="Button" parent="."]
+offset_left = 334.0
+offset_top = 314.0
+offset_right = 387.0
+offset_bottom = 345.0
+text = "STOP"
+
+[node name="PLAYALL" type="Button" parent="."]
+offset_left = 14.0
+offset_top = 255.0
+offset_right = 93.0
+offset_bottom = 286.0
+text = "PLAY ALL"
+
+[node name="STOPALL" type="Button" parent="."]
+offset_left = 101.0
+offset_top = 255.0
+offset_right = 182.0
+offset_bottom = 286.0
+text = "STOP ALL"
+
+[node name="XPOS" type="LineEdit" parent="."]
+unique_name_in_owner = true
+offset_left = 729.0
+offset_top = 70.0
+offset_right = 796.062
+offset_bottom = 101.0
+
+[node name="YPOS" type="LineEdit" parent="."]
+unique_name_in_owner = true
+offset_left = 730.0
+offset_top = 109.0
+offset_right = 797.062
+offset_bottom = 140.0
+
+[node name="Label8" type="Label" parent="."]
+offset_left = 709.0
+offset_top = 72.0
+offset_right = 727.0
+offset_bottom = 95.0
+text = "X"
+
+[node name="Label9" type="Label" parent="."]
+offset_left = 709.0
+offset_top = 111.0
+offset_right = 727.0
+offset_bottom = 134.0
+text = "Y"
+
+[node name="TESTPOS" type="Button" parent="."]
+offset_left = 722.0
+offset_top = 32.0
+offset_right = 802.0
+offset_bottom = 63.0
+text = "TEST POS"
+
+[node name="CHANGECURRENT" type="Button" parent="."]
+offset_left = 677.0
+offset_top = 146.0
+offset_right = 828.0
+offset_bottom = 177.0
+text = "CHANGE CURRENT"
+
+[node name="Label10" type="Label" parent="."]
+offset_left = 15.0
+offset_top = 42.0
+offset_right = 103.0
+offset_bottom = 65.0
+text = "Hitbox Pos:"
+
+[node name="POSLOG" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 109.0
+offset_top = 42.0
+offset_right = 156.0
+offset_bottom = 65.0
+text = "(0, 0)"
+
+[connection signal="item_selected" from="TypeofMove" to="Code/Load" method="_on_typeof_move_item_selected"]
+[connection signal="item_selected" from="CurrentNode" to="Code/Load" method="_on_current_node_item_selected"]
+[connection signal="item_selected" from="HitboxAnimations" to="Code/Load" method="_on_current_node_item_selected"]
+[connection signal="pressed" from="Select" to="Code/NextPreviousFrame" method="_on_select_pressed"]
+[connection signal="item_selected" from="Framesid" to="Code/NextPreviousFrame" method="_on_framesid_item_selected"]
+[connection signal="pressed" from="Set" to="Code/NextPreviousFrame" method="_on_set_pressed"]
+[connection signal="pressed" from="Play" to="Code/NextPreviousFrame" method="_on_play_pressed"]
+[connection signal="pressed" from="Stop" to="Code/NextPreviousFrame" method="_on_stop_pressed"]
+[connection signal="text_changed" from="CurrentSelectedName" to="Code/HitboxManager" method="_on_current_selected_name_text_changed"]
+[connection signal="text_submitted" from="CurrentSelectedName" to="Code/HitboxManager" method="_on_current_selected_name_text_submitted"]
+[connection signal="pressed" from="Preselect" to="Code/HitboxManager" method="_on_preselect_pressed"]
+[connection signal="pressed" from="AddNewHitbox" to="Code/HitboxFramesGUI" method="_on_add_new_hitbox_pressed"]
+[connection signal="pressed" from="RemoveChangeHitbox" to="Code/HitboxPosGUI" method="_on_remove_change_hitbox_pressed"]
+[connection signal="text_changed" from="HitboxTimeFrame" to="Code/HitboxFramesGUI" method="_on_hitbox_time_frame_text_changed"]
+[connection signal="text_submitted" from="HitboxTimeFrame" to="Code/HitboxFramesGUI" method="_on_hitbox_time_frame_text_submitted"]
+[connection signal="pressed" from="PlayHitbox" to="Code/HitboxFramesGUI" method="_on_play_hitbox_pressed"]
+[connection signal="pressed" from="PLAYALL" to="Code/HitboxFramesGUI" method="_on_playall_pressed"]
+[connection signal="pressed" from="STOPALL" to="Code/HitboxFramesGUI" method="_on_stopall_pressed"]
+[connection signal="text_submitted" from="XPOS" to="Code/HitboxPosGUI" method="_on_xpos_text_submitted"]
+[connection signal="text_changed" from="YPOS" to="Code/HitboxPosGUI" method="_on_ypos_text_changed"]
+[connection signal="text_submitted" from="YPOS" to="Code/HitboxPosGUI" method="_on_ypos_text_submitted"]
+[connection signal="pressed" from="TESTPOS" to="Code/HitboxPosGUI" method="_on_testpos_pressed"]
+[connection signal="pressed" from="CHANGECURRENT" to="Code/HitboxPosGUI" method="_on_changecurrent_pressed"]
+
+[editable path="Character/Player"]
+[editable path="Character/Player/INPUT"]
+[editable path="Character/Player/Motion"]
+[editable path="Character/Player/Motion AnimTree"]
+[editable path="Character/Player/Transitions"]
+[editable path="Character/Player/Sprites"]
+[editable path="Character/Sprites"]
+[editable path="Character/Hitbox"]
