@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://byoramu41nr2m"]
+
+[ext_resource type="Script" path="res://framework/Hurtbox/hurtbox.gd" id="1_gop7a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elisi"]
+size = Vector2(20, 41)
+
+[node name="Hurtbox" type="Area2D"]
+script = ExtResource("1_gop7a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10.5)
+shape = SubResource("RectangleShape2D_elisi")
+
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
+offset_left = -11.0
+offset_top = -21.0
+offset_right = 11.0
+offset_bottom = 20.0
+color = Color(0, 0.537255, 0.74902, 0.623529)

@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://qv3ae6b6cbjx"]
+
+[ext_resource type="Script" path="res://framework/Transitions/transitions.gd" id="1_b7o43"]
+[ext_resource type="Script" path="res://framework/FSM Motion/motion_transition.gd" id="1_v6llj"]
+[ext_resource type="Script" path="res://framework/Transitions/idle.gd" id="3_p7ys0"]
+[ext_resource type="Script" path="res://framework/Transitions/walk.gd" id="4_vh0dk"]
+[ext_resource type="Script" path="res://framework/Transitions/dash.gd" id="5_8omti"]
+
+[node name="Transitions" type="Node" node_paths=PackedStringArray("transitionnode")]
+script = ExtResource("1_b7o43")
+transitionnode = NodePath("IDLE")
+
+[node name="Motion Transition" type="Node" parent="."]
+script = ExtResource("1_v6llj")
+
+[node name="IDLE" type="Node" parent="."]
+script = ExtResource("3_p7ys0")
+
+[node name="WALK" type="Node" parent="."]
+script = ExtResource("4_vh0dk")
+
+[node name="DASH" type="Node" parent="."]
+script = ExtResource("5_8omti")

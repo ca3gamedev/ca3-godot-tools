@@ -5,6 +5,13 @@ extends Node
 func _ready():
 	UpdatePos()
 
+func _process(delta):
+	
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+		Pos = %Hitbox.to_local(%Hitbox.get_global_mouse_position())
+		%NextPreviousHitbox.AttackHitboxPlayer.get_node("../../Hitbox/CollisionShape2D").position = Pos
+		UpdatePos()
+
 func UpdatePos():
 	%POSLOG.text = str(Pos)
 
