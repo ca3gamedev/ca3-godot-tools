@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://chysveseycbbv"]
+
+[ext_resource type="Script" path="res://Scene/PianoRoll/piano_roll.gd" id="1_osg5o"]
+[ext_resource type="PackedScene" uid="uid://ckyx0i7khr58a" path="res://Scene/PianoRoll/note.tscn" id="2_atxvc"]
+
+[node name="PianoRoll" type="Node2D"]
+script = ExtResource("1_osg5o")
+note = ExtResource("2_atxvc")
+chord_color = Color(0.764706, 0.00392157, 0.564706, 0.415686)
+fifth_note = Color(0.780392, 0.121569, 0, 0.45098)
+root_note = Color(0.898039, 0.772549, 0.00392157, 0.380392)
+chord_off_x = 20
+colors = Array[Color]([Color(0.567551, 0.568981, 0.12303, 1), Color(0.586358, 0.370491, 0.0836196, 1), Color(0.931044, 0.247264, 0.197531, 1), Color(0.904317, 0.133163, 0.409256, 1), Color(0.887668, 0.191735, 0.837918, 1), Color(0.528715, 0.341047, 0.971876, 1), Color(0.236239, 0.403918, 0.912444, 1), Color(0.044266, 0.458637, 0.576946, 1), Color(0.0923982, 0.575276, 0.509939, 1), Color(0.0424038, 0.348918, 0.179378, 1), Color(0.380884, 0.395532, 0.0393559, 1), Color(0.427252, 0.297751, 0.00865237, 1), Color(0.522961, 0.25563, 0.0188067, 1), Color(0.465985, 0.0861114, 0.0355822, 1), Color(0.537231, 0.0304902, 0.24359, 1), Color(0.367765, 0.0217188, 0.539649, 1), Color(0.0105686, 0.188691, 0.387555, 1), Color(0.0038171, 0.156071, 0.187954, 1), Color(0.0160237, 0.16728, 0.0799122, 1), Color(0.129073, 0.127748, 0.00544496, 1)])
+
+[node name="Current_Time" type="ColorRect" parent="."]
+offset_right = 1227.0
+offset_bottom = 16.0
+color = Color(0, 0, 0, 1)
+
+[node name="Notes" type="Node2D" parent="."]
+
+[node name="ChordNotes" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InteractiveGhosts" type="Node2D" parent="CanvasLayer"]
+unique_name_in_owner = true
+
+[node name="Chords" type="Node2D" parent="CanvasLayer"]
+unique_name_in_owner = true

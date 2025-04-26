@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmuatunloj5a1"]
+
+[ext_resource type="PackedScene" uid="uid://dubvswys84nkd" path="res://ca3 framework/framework/MotionCode/motion.tscn" id="1_lybwt"]
+
+[node name="Motion" instance=ExtResource("1_lybwt")]

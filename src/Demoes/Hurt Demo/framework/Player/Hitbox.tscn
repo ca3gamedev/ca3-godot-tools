@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://framework/AttackBox/hitbox.gd" id="1_bror8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kon1c"]
+resource_local_to_scene = true
 radius = 15.2971
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pyeym"]
@@ -114,6 +115,7 @@ advance_mode = 2
 advance_condition = &"Hurt"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_1i3kj"]
+resource_local_to_scene = true
 states/ATTACK/node = SubResource("AnimationNodeBlendSpace2D_f087m")
 states/ATTACK/position = Vector2(348.444, 160.667)
 states/COMBOBREAK/node = SubResource("AnimationNodeBlendSpace2D_ot8wf")

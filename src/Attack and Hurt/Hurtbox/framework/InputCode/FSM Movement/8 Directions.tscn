@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://csufhyxwx627d"]
+
+[ext_resource type="Script" path="res://framework/InputCode/FSM Movement/8 directions.gd" id="1_jxngu"]
+
+[node name="8 Directions" type="Node"]
+script = ExtResource("1_jxngu")

@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://c7i0khcn701mf"]
+
+[node name="KEYBOARD" type="Node2D"]
+
+[node name="C" type="ColorRect" parent="."]
+offset_right = 15.0
+offset_bottom = 50.0
+
+[node name="D" type="ColorRect" parent="."]
+offset_left = 40.0
+offset_right = 55.0
+offset_bottom = 50.0
+
+[node name="E" type="ColorRect" parent="."]
+offset_left = 80.0
+offset_right = 95.0
+offset_bottom = 50.0
+
+[node name="F" type="ColorRect" parent="."]
+offset_left = 100.0
+offset_right = 115.0
+offset_bottom = 50.0
+
+[node name="G" type="ColorRect" parent="."]
+offset_left = 140.0
+offset_right = 155.0
+offset_bottom = 50.0
+
+[node name="A" type="ColorRect" parent="."]
+offset_left = 180.0
+offset_right = 195.0
+offset_bottom = 50.0
+
+[node name="B" type="ColorRect" parent="."]
+offset_left = 220.0
+offset_right = 235.0
+offset_bottom = 50.0
+
+[node name="Cs" type="ColorRect" parent="."]
+offset_left = 20.0
+offset_right = 35.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="Ds" type="ColorRect" parent="."]
+offset_left = 60.0
+offset_right = 75.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="Es" type="ColorRect" parent="."]
+offset_left = 120.0
+offset_right = 135.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="Fs" type="ColorRect" parent="."]
+offset_left = 160.0
+offset_right = 175.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="As" type="ColorRect" parent="."]
+offset_left = 200.0
+offset_right = 215.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 43.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "C       D       E   F       G       A       B"
+
+[node name="Track" type="Label" parent="."]
+offset_left = 1.0
+offset_top = -27.0
+offset_right = 135.0
+offset_bottom = -4.0
+text = "TRACK"
+horizontal_alignment = 1

@@ -11,13 +11,16 @@ var rawspecialinput = "none"
 @export var motionparent : Node
 @export var motionanimtree : Node
 @export var transitionnode : Node
+@export var DashLenght : float
+@export var CurrentStrenght : int
 
 var flicker_check = 0
 var currentstate = "IDLE"
 
 func _process(delta):
 	
-	$"Motion Transition".GetMotion()
+	if currentmotion.name == "IDLE" or currentmotion.name == "WALK" or currentmotion.name == "DASH":
+		$"Motion Transition".GetMotion()
 	
 	if flicker_check < 5:
 		flicker_check += delta
@@ -28,7 +31,18 @@ func _process(delta):
 func _physics_process(delta):
 	currentmotion.Physics(delta)
 
-func ChangeMotion(state):
+func ChangeMotion(state, strenght):
+	
+	if flicker_check < 0.15 and strenght != -888:
+		if state == "IDLE" or state == "WALK" or state == "DASH":
+			return
+	
+	if strenght != -999:
+		if CurrentStrenght > strenght:
+			return
+	else:
+		CurrentStrenght = strenght
+	
 	match(state):
 		"IDLE" : 
 			flicker_check = 0
@@ -56,6 +70,15 @@ func ChangeMotion(state):
 			currentmotion = motionparent.get_node("IDLE")
 			currentanim = %ATTACKS.get_node("PUNCH")
 			currentanim.Start()
+			CurrentStrenght = strenght
+		"GALACTICA" :
+			flicker_check = 0
+			currentmotion = motionparent.get_node("IDLE")
+			currentanim = %ATTACKS.get_node("GALACTICA")
+			currentanim.Start()
+			specialinput = "none"
+			rawspecialinput = "none"
+			CurrentStrenght = strenght
 		"WEAK HURT" :
 			flicker_check = 0
 			currentmotion = motionparent.get_node("IDLE")
@@ -70,7 +93,7 @@ func IsIdle():
 
 func IsIdleDash():
 	#This control the lenght of the dash if released, not if hold
-	if flicker_check > 0.2:
+	if flicker_check > DashLenght:
 		if rawspecialinput == "none" or rawspecialinput == "IDLE":
 			return true
 	return false
@@ -89,14 +112,20 @@ func ClearInput():
 	specialinput = "none"
 
 func ReturntoIdle():
+	CurrentStrenght = -999
 	ClearInput()
-	ChangeMotion("IDLE")
+	ChangeMotion("IDLE", -999)
 
 
 func EndAnimations():
-	%Hitbox.get_node("AnimTree").set("parameters/ATTACK/blend_position", Vector2.ZERO)
 	%Anim.set("parameters/conditions/attack", false)
 	%Anim.set("parameters/conditions/Hurt", false)
+	
+	%Hitbox.get_node("AnimTree").set("parameters/conditions/attack", false)
+	%Hurtbox.get_node("AnimTree").set("parameters/conditions/attack", false)
+	%Hitbox.get_node("AnimTree").set("parameters/conditions/Hurt", false)
+	%Hurtbox.get_node("AnimTree").set("parameters/conditions/Hurt", false)
+	
 	ReturntoIdle()
 
 

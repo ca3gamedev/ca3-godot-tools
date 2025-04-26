@@ -2,6 +2,12 @@ extends Node
 
 @export var hurt_id : float = 0.1
 
+
+@export var cancel : bool
+@export var attackstrenght : int = -999
+@export var dashcancel : bool = false
+@export var walkcancel : bool = false
+
 func UpdateAnim():
 	pass
 

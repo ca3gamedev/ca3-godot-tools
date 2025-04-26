@@ -1,0 +1,227 @@
+[gd_scene load_steps=7 format=3 uid="uid://p6xryonk834q"]
+
+[ext_resource type="PackedScene" uid="uid://c0uk1y2eesm4x" path="res://Scenes/tmp/Hurtbox2.tscn" id="1_bvvjs"]
+[ext_resource type="PackedScene" uid="uid://dnuiprw05pmqq" path="res://framework/Camera2D/camera_2d.tscn" id="2_7npsa"]
+[ext_resource type="Script" path="res://Scenes/load.gd" id="2_8fgdl"]
+[ext_resource type="Script" path="res://Scenes/load_params.gd" id="3_esl8s"]
+[ext_resource type="Script" path="res://Scenes/preselect.gd" id="4_1a8ro"]
+[ext_resource type="Script" path="res://Scenes/save.gd" id="5_y3dvc"]
+
+[node name="Root" type="Node2D"]
+
+[node name="Character" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="Player" parent="Character" instance=ExtResource("1_bvvjs")]
+
+[node name="DebugAttackBox" parent="Character/Player/Hitbox/Hitbox/CollisionShape2D" index="0"]
+color = Color(0.72549, 0.0588235, 0.25098, 0.392157)
+
+[node name="Code" type="Node" parent="."]
+
+[node name="Load" type="Node" parent="Code" node_paths=PackedStringArray("PlayerAnimTree", "PlayerAnimPlayer")]
+unique_name_in_owner = true
+script = ExtResource("2_8fgdl")
+PlayerAnimTree = NodePath("../../Character/Player/Hitbox/AnimTree")
+PlayerAnimPlayer = NodePath("../../Character/Player/Hitbox/AnimTree/AnimationPlayer")
+
+[node name="LoadParams" type="Node" parent="Code"]
+unique_name_in_owner = true
+script = ExtResource("3_esl8s")
+
+[node name="Preselect" type="Node" parent="Code"]
+script = ExtResource("4_1a8ro")
+
+[node name="Save" type="Node" parent="Code"]
+script = ExtResource("5_y3dvc")
+
+[node name="Camera2D" parent="." instance=ExtResource("2_7npsa")]
+
+[node name="LOG" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+offset_left = 18.0
+offset_top = 12.0
+offset_right = 1133.0
+offset_bottom = 79.0
+metadata/_edit_lock_ = true
+
+[node name="AnimationNames" type="ItemList" parent="."]
+unique_name_in_owner = true
+offset_left = 19.0
+offset_top = 361.0
+offset_right = 483.0
+offset_bottom = 634.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 66.0
+offset_top = 333.0
+offset_right = 156.0
+offset_bottom = 356.0
+text = "Animations"
+
+[node name="parameters" type="ItemList" parent="."]
+unique_name_in_owner = true
+offset_left = 830.0
+offset_top = 485.0
+offset_right = 1139.0
+offset_bottom = 638.0
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 841.0
+offset_top = 60.0
+offset_right = 1126.0
+offset_bottom = 84.0
+text = "Current Node parameters"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 836.0
+offset_top = 460.0
+offset_right = 980.0
+offset_bottom = 483.0
+text = "ALL parameters"
+
+[node name="CurrentNodeLabel" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 842.0
+offset_top = 86.0
+offset_right = 986.0
+offset_bottom = 109.0
+text = "Current Blend Node"
+
+[node name="CurrentNode" type="ItemList" parent="."]
+unique_name_in_owner = true
+offset_left = 838.0
+offset_top = 116.0
+offset_right = 1134.0
+offset_bottom = 436.0
+
+[node name="LOGNAMES" type="ItemList" parent="."]
+unique_name_in_owner = true
+offset_left = 492.0
+offset_top = 534.0
+offset_right = 762.0
+offset_bottom = 640.0
+
+[node name="CurrentSelectedName" type="LineEdit" parent="."]
+unique_name_in_owner = true
+offset_left = 492.0
+offset_top = 498.0
+offset_right = 765.0
+offset_bottom = 529.0
+
+[node name="Preselect" type="Button" parent="."]
+offset_left = 492.0
+offset_top = 458.0
+offset_right = 604.0
+offset_bottom = 490.0
+text = "PRESELECT"
+
+[node name="Change" type="Button" parent="."]
+offset_left = 498.0
+offset_top = 383.0
+offset_right = 590.0
+offset_bottom = 415.0
+text = "CHANGE"
+
+[node name="DirNumber" type="OptionButton" parent="."]
+unique_name_in_owner = true
+offset_left = 650.0
+offset_top = 456.0
+offset_right = 766.0
+offset_bottom = 490.0
+selected = 1
+item_count = 2
+popup/item_0/text = "4 Dirs"
+popup/item_1/text = "8 Dirs"
+popup/item_1/id = 1
+
+[node name="Distance" type="LineEdit" parent="."]
+unique_name_in_owner = true
+offset_left = 499.0
+offset_top = 420.0
+offset_right = 571.0
+offset_bottom = 451.0
+max_length = 5
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 590.0
+offset_top = 424.0
+offset_right = 657.0
+offset_bottom = 447.0
+text = "Distance"
+
+[node name="DistanceLOG" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 670.0
+offset_top = 424.0
+offset_right = 737.0
+offset_bottom = 447.0
+text = "0.0"
+
+[node name="AddNew" type="Button" parent="."]
+offset_left = 595.0
+offset_top = 380.0
+offset_right = 685.0
+offset_bottom = 417.0
+text = "ADD NEW"
+
+[node name="Delete" type="Button" parent="."]
+offset_left = 691.0
+offset_top = 380.0
+offset_right = 781.0
+offset_bottom = 417.0
+text = "DELETE"
+
+[node name="Save" type="Button" parent="."]
+offset_left = 24.0
+offset_top = 42.0
+offset_right = 100.0
+offset_bottom = 77.0
+text = "SAVE"
+
+[node name="SaveDialog" type="FileDialog" parent="."]
+unique_name_in_owner = true
+initial_position = 1
+size = Vector2i(800, 550)
+dialog_hide_on_ok = true
+filters = PackedStringArray("*.tscn")
+
+[node name="TypeofMove" type="OptionButton" parent="."]
+unique_name_in_owner = true
+offset_left = 925.0
+offset_top = 10.0
+offset_right = 1122.0
+offset_bottom = 49.0
+selected = 0
+item_count = 4
+popup/item_0/text = "MOVE"
+popup/item_1/text = "ATTACK"
+popup/item_1/id = 1
+popup/item_2/text = "HURT"
+popup/item_2/id = 2
+popup/item_3/text = "COMBOBREAK"
+popup/item_3/id = 3
+
+[connection signal="ready" from="Code/Load" to="Code/Load" method="_on_ready"]
+[connection signal="ready" from="Code/LoadParams" to="Code/LoadParams" method="_on_ready"]
+[connection signal="item_selected" from="CurrentNode" to="Code/LoadParams" method="_on_current_node_item_selected"]
+[connection signal="text_changed" from="CurrentSelectedName" to="Code/Preselect" method="_on_current_selected_name_text_changed"]
+[connection signal="text_submitted" from="CurrentSelectedName" to="Code/Preselect" method="_on_current_selected_name_text_submitted"]
+[connection signal="pressed" from="Preselect" to="Code/Preselect" method="_on_preselect_pressed"]
+[connection signal="pressed" from="Change" to="Code/Preselect" method="_on_change_pressed"]
+[connection signal="text_changed" from="Distance" to="Code/Preselect" method="_on_distance_text_changed"]
+[connection signal="text_submitted" from="Distance" to="Code/Preselect" method="_on_distance_text_submitted"]
+[connection signal="pressed" from="AddNew" to="Code/Preselect" method="_on_add_new_pressed"]
+[connection signal="pressed" from="Delete" to="Code/Preselect" method="_on_delete_pressed"]
+[connection signal="pressed" from="Save" to="Code/Save" method="_on_save_pressed"]
+[connection signal="file_selected" from="SaveDialog" to="Code/Save" method="_on_save_dialog_file_selected"]
+[connection signal="item_selected" from="TypeofMove" to="Code/Load" method="_on_typeof_move_item_selected"]
+
+[editable path="Character/Player"]
+[editable path="Character/Player/INPUT"]
+[editable path="Character/Player/Motion"]
+[editable path="Character/Player/Motion AnimTree"]
+[editable path="Character/Player/Transitions"]
+[editable path="Character/Player/Sprites"]
+[editable path="Character/Player/Hitbox"]
+[editable path="Character/Player/Hurtbox"]

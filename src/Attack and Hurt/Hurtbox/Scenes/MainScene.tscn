@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5sw7ylt5yxlm"]
+
+[ext_resource type="Script" path="res://Scenes/main_scene.gd" id="1_hbnp7"]
+
+[node name="Root" type="Node2D"]
+script = ExtResource("1_hbnp7")
+
+[node name="AnimationTreeMapper" type="Button" parent="."]
+offset_left = 188.0
+offset_top = 232.0
+offset_right = 410.0
+offset_bottom = 386.0
+text = "ANIMATION  TREE
+MAPPER"
+
+[node name="HitboxGenerator" type="Button" parent="."]
+offset_left = 458.0
+offset_top = 228.0
+offset_right = 680.0
+offset_bottom = 382.0
+text = "HITBOX GENERATOR"
+
+[node name="CodeGenerator" type="Button" parent="."]
+offset_left = 710.0
+offset_top = 228.0
+offset_right = 932.0
+offset_bottom = 382.0
+text = "CODE GENERATOR"
+
+[connection signal="pressed" from="AnimationTreeMapper" to="." method="_on_animation_tree_mapper_pressed"]
+[connection signal="pressed" from="HitboxGenerator" to="." method="_on_hitbox_generator_pressed"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1rv5l00jkku4"]
+
+[ext_resource type="PackedScene" uid="uid://cqtb8e4uacrwe" path="res://ca3 framework/framework/InputCode/input.tscn" id="1_d0d8w"]
+[ext_resource type="PackedScene" uid="uid://csufhyxwx627d" path="res://ca3 framework/framework/InputCode/FSM Movement/8 Directions.tscn" id="2_eop1q"]
+[ext_resource type="PackedScene" uid="uid://mt38w4144rdb" path="res://ca3 framework/framework/InputCode/Button/button.tscn" id="3_8tcnr"]
+[ext_resource type="PackedScene" uid="uid://d270mrxfrqe2w" path="res://ca3 framework/framework/InputCode/Special movement/dash.tscn" id="3_otk67"]
+
+[node name="INPUT" instance=ExtResource("1_d0d8w")]
+
+[node name="Buffer" parent="." index="1"]
+ReleaseKeyTimerMax = 0.8
+
+[node name="8 Directions" parent="FSM/Move" index="0" instance=ExtResource("2_eop1q")]
+
+[node name="Button" parent="FSM/Button" index="0" instance=ExtResource("3_8tcnr")]
+button = "A"
+
+[node name="Dash" parent="FSM/Special" index="0" instance=ExtResource("3_otk67")]

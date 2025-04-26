@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce6qx8nrdlrw"]
+
+[ext_resource type="Script" path="res://framework/Player Cancel Code/code.gd" id="1_6i51b"]
+
+[node name="Code" type="Node"]
+script = ExtResource("1_6i51b")

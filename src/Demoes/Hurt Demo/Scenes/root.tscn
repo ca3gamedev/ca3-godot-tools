@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scenes/root.gd" id="1_d1a7v"]
 [ext_resource type="PackedScene" uid="uid://bquf765e0ayvd" path="res://Framework Items/Coins/coin_spawner.tscn" id="2_qutdo"]
+[ext_resource type="PackedScene" uid="uid://tbremdna4dde" path="res://framework/Player/Hurtbox2.tscn" id="4_hjak6"]
 [ext_resource type="PackedScene" uid="uid://dnuiprw05pmqq" path="res://framework/Camera2D/camera_2d.tscn" id="4_qd1gi"]
-[ext_resource type="PackedScene" uid="uid://brdqk8j0ijgor" path="res://framework/Player/Player Hitboxes.tscn" id="4_qsjn4"]
 
 [node name="Root" type="Node2D"]
 script = ExtResource("1_d1a7v")
@@ -14,13 +14,13 @@ script = ExtResource("1_d1a7v")
 
 [node name="Players" type="Node2D" parent="."]
 
-[node name="Player" parent="Players" instance=ExtResource("4_qsjn4")]
-position = Vector2(582, 338)
+[node name="Player" parent="Players" instance=ExtResource("4_hjak6")]
+position = Vector2(581, 312)
 
-[node name="Player2" parent="Players" instance=ExtResource("4_qsjn4")]
-position = Vector2(771, 226)
+[node name="Player2" parent="Players" instance=ExtResource("4_hjak6")]
+position = Vector2(761, 193)
 PlayerID = 1
 
-[node name="Player3" parent="Players" instance=ExtResource("4_qsjn4")]
-position = Vector2(384, 238)
-PlayerID = 2
+[node name="Player3" parent="Players" instance=ExtResource("4_hjak6")]
+position = Vector2(420, 198)
+PlayerID = 1
