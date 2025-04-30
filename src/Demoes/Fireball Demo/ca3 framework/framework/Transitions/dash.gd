@@ -1,5 +1,7 @@
 extends Node
 
+@export var ismovement : bool = true
+
 func Update():
 	
 	if $"../".inputnode.InputExist("A"):

@@ -32,6 +32,6 @@ PlayerID = 1
 position = Vector2(420, 198)
 collision_layer = 8
 collision_mask = 6
-PlayerID = 1
+PlayerID = 2
 
 [node name="PlayerBulletManager" parent="." instance=ExtResource("5_uyt6j")]

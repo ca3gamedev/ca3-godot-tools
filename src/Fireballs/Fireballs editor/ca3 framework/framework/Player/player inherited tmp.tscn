@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://by4rsaa8ys4th"]
+
+[ext_resource type="PackedScene" uid="uid://cpkrhqm5fkwgw" path="res://ca3 framework/framework/Player/player single attack.tscn" id="1_dq1vx"]
+
+[node name="Player" instance=ExtResource("1_dq1vx")]
+
+[node name="DebugAttackBox" parent="Hitbox/Hitbox/CollisionShape2D" index="0"]
+color = Color(0.0352941, 0.454902, 0.717647, 0.392157)
+
+[editable path="INPUT"]
+[editable path="Motion"]
+[editable path="Motion AnimTree"]
+[editable path="Transitions"]
+[editable path="Sprites"]

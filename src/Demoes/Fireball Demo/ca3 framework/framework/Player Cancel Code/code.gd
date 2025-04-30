@@ -4,6 +4,7 @@ extends Node
 @export var cancel_time : float
 var cancel_input = "none"
 @export var anim : AnimatedSprite2D
+@export var fireball_id : int
 
 func _ready():
 	await get_tree().process_frame
@@ -34,12 +35,15 @@ func CodeUpdate(delta):
 					%Transitions.ChangeMotion("WALK", -888)
 		
 		#LINEAL FIREBALL SPAWN
-		if not %Transitions.currentanim.ismovement and %Transitions.currentanim.fireball:
-			if %Transitions.currentanim.fireballframe == anim.frame:
-				if not %Transitions.currentanim.idfireballs:
-					%Transitions.currentanim.idfireballs = true
-					%Transitions.currentanim.fireballlinearangle = %Transitions.motion
-					VariableNodes.PlayerBulletManager.SpawnLinear(Vector2i($"..".global_position), %Transitions.currentanim.fireballscene, %Transitions.currentanim.fireballspeed, %Transitions.currentanim.fireballlinearangle, %Transitions.currentanim.fireballoffset)
+		if fireball_id == 0 and %Hitbox.fireball_spawn and not %Transitions.currentanim.ismovement:
+			fireball_id += 1
+			%Transitions.currentanim.fireballlinearangle = %Transitions.motion
+			var fireball_offset = %Hitbox.get_node("Hitbox/fireball_spawn").position
+			VariableNodes.PlayerBulletManager.SpawnLinear(Vector2i($"..".global_position), %Transitions.currentanim.fireballscene, %Transitions.currentanim.fireballspeed, %Transitions.currentanim.fireballlinearangle, fireball_offset)
+			FireballSingle.call_deferred()
+
+func FireballSingle():
+	%Hitbox.fireball_spawn = false
 
 	
 func HIT():

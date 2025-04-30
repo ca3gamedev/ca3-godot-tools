@@ -1,5 +1,8 @@
 extends Node
 
+@export var ismovement : bool = true
+@onready var fireballlinearangle = Vector2i.ZERO
+
 func Update():
 	
 	if $"../".inputnode.InputExist("A"):

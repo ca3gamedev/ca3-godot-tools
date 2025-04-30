@@ -29,7 +29,6 @@ extends Node
 @export var attacktype : attack_type
 @export var attackstrenght : attack_strenght
 @export var guardtype : guard_type
-@export var idfireballs : bool
 
 enum attack_type {STANDING, CROUCHING, AIR}
 enum attack_strenght {WEAK, MID, STRONG, SPECIAL, EX, SUPER, DOUBLESUPER}
@@ -39,7 +38,6 @@ func Update(delta):
 	%Code.CodeUpdate(delta)
 
 func Start():
-	idfireballs = false
 	%Hitbox.hitstun = attack_hitstun
 	%Hitbox.shakestrenght = shake_strenght
 	%Hitbox.shake_speed = shake_speed

@@ -1,0 +1,942 @@
+[gd_scene load_steps=106 format=3 uid="uid://d4esuygqxjtrf"]
+
+[ext_resource type="PackedScene" uid="uid://bn5s67l7b2lwl" path="res://Scenes/tmp/Player3.tscn" id="1_je2rv"]
+[ext_resource type="PackedScene" uid="uid://buftrs7al3sfh" path="res://ca3 framework/framework/Player/Heroe SC2.tscn" id="2_7p6vk"]
+[ext_resource type="PackedScene" uid="uid://byoramu41nr2m" path="res://ca3 framework/framework/Hurtbox/hurtbox.tscn" id="4_l5fbf"]
+[ext_resource type="Script" path="res://Scenes/Hitbox Editor/next_previous_frame.gd" id="4_p8i25"]
+[ext_resource type="PackedScene" uid="uid://dlqvodr261g6k" path="res://ca3 framework/framework/Hitbox/Hitbox.tscn" id="5_24hhn"]
+[ext_resource type="Script" path="res://Scenes/Hitbox Editor/next_previous_hitbox.gd" id="5_cpryb"]
+[ext_resource type="Script" path="res://Scenes/Hitbox Editor/load.gd" id="5_ngxtf"]
+[ext_resource type="Script" path="res://Scenes/Hitbox Editor/fireball_spawn.gd" id="5_t8071"]
+[ext_resource type="Script" path="res://Scenes/Hitbox Editor/hitbox_manager.gd" id="6_xfa71"]
+[ext_resource type="Script" path="res://Scenes/Hitbox Editor/add_delete_hitboxes.gd" id="7_5s4vi"]
+[ext_resource type="Script" path="res://Scenes/Hitbox Editor/add_hitbox_frame.gd" id="9_euugh"]
+[ext_resource type="Script" path="res://Scenes/Hitbox Editor/hibox_animations_code.gd" id="10_hb6kt"]
+[ext_resource type="Script" path="res://Scenes/Hitbox Editor/hitbox_frames_gui.gd" id="11_tsat2"]
+[ext_resource type="Script" path="res://Scenes/Hitbox Editor/hitbox_pos_gui.gd" id="12_e8r1c"]
+[ext_resource type="Script" path="res://Scenes/Hitbox Editor/save_dialog.gd" id="13_2duqq"]
+[ext_resource type="Script" path="res://Scenes/Hitbox Editor/camera_2d.gd" id="13_cq8jc"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_phv0g"]
+animation = &"sprites/KICK_BACK_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a18h1"]
+animation = &"sprites/KICK_BACK_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_khc0v"]
+animation = &"sprites/galactica_FRONT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nrh0i"]
+animation = &"sprites/galactica_BACK_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_exu6q"]
+animation = &"sprites/galactica_BACK_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qpb8h"]
+animation = &"sprites/galactica_BACK_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qnhda"]
+animation = &"sprites/galactica_FRONT_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a24nf"]
+animation = &"sprites/galactica_FRONT_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uijm2"]
+animation = &"sprites/KICK_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5v22i"]
+animation = &"sprites/KICK_FRONT_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_da0th"]
+animation = &"sprites/KICK_FRONT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4yx5k"]
+animation = &"sprites/KICK_FRONT_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jsag0"]
+animation = &"sprites/KICK_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pabg1"]
+animation = &"sprites/KICK_BACK_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3p1yc"]
+animation = &"sprites/galactica_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_phcdv"]
+animation = &"sprites/galactica_LEFT_"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_cutpx"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_phv0g")
+blend_point_0/pos = Vector2(0, -0.1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_a18h1")
+blend_point_1/pos = Vector2(0.1, -0.1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_uijm2")
+blend_point_2/pos = Vector2(0.1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_5v22i")
+blend_point_3/pos = Vector2(0.1, 0.1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_da0th")
+blend_point_4/pos = Vector2(0, 0.1)
+blend_point_5/node = SubResource("AnimationNodeAnimation_4yx5k")
+blend_point_5/pos = Vector2(-0.1, 0.1)
+blend_point_6/node = SubResource("AnimationNodeAnimation_jsag0")
+blend_point_6/pos = Vector2(-0.1, 0)
+blend_point_7/node = SubResource("AnimationNodeAnimation_pabg1")
+blend_point_7/pos = Vector2(-0.1, -0.1)
+blend_point_8/node = SubResource("AnimationNodeAnimation_3p1yc")
+blend_point_8/pos = Vector2(0.2, 0)
+blend_point_9/node = SubResource("AnimationNodeAnimation_phcdv")
+blend_point_9/pos = Vector2(-0.2, 0)
+blend_point_10/node = SubResource("AnimationNodeAnimation_khc0v")
+blend_point_10/pos = Vector2(0, 0.2)
+blend_point_11/node = SubResource("AnimationNodeAnimation_nrh0i")
+blend_point_11/pos = Vector2(0, -0.2)
+blend_point_12/node = SubResource("AnimationNodeAnimation_exu6q")
+blend_point_12/pos = Vector2(-0.2, -0.2)
+blend_point_13/node = SubResource("AnimationNodeAnimation_qpb8h")
+blend_point_13/pos = Vector2(0.2, -0.2)
+blend_point_14/node = SubResource("AnimationNodeAnimation_qnhda")
+blend_point_14/pos = Vector2(-0.2, 0.2)
+blend_point_15/node = SubResource("AnimationNodeAnimation_a24nf")
+blend_point_15/pos = Vector2(0.2, 0.2)
+min_space = Vector2(-3, -3)
+max_space = Vector2(3, 3)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ko0hd"]
+animation = &"sprites/galactica_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fa2pi"]
+animation = &"sprites/galactica_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pa375"]
+animation = &"sprites/galactica_FRONT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v4puy"]
+animation = &"sprites/galactica_BACK_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hakf6"]
+animation = &"sprites/galactica_BACK_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_thu66"]
+animation = &"sprites/galactica_BACK_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o101n"]
+animation = &"sprites/galactica_FRONT_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_eueol"]
+animation = &"sprites/galactica_FRONT_RIGHT_"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_sbemg"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_ko0hd")
+blend_point_0/pos = Vector2(0.1, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_fa2pi")
+blend_point_1/pos = Vector2(-0.1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_pa375")
+blend_point_2/pos = Vector2(0, 0.1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_v4puy")
+blend_point_3/pos = Vector2(0, -0.1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_hakf6")
+blend_point_4/pos = Vector2(-0.1, -0.1)
+blend_point_5/node = SubResource("AnimationNodeAnimation_thu66")
+blend_point_5/pos = Vector2(0.1, -0.1)
+blend_point_6/node = SubResource("AnimationNodeAnimation_o101n")
+blend_point_6/pos = Vector2(-0.1, 0.1)
+blend_point_7/node = SubResource("AnimationNodeAnimation_eueol")
+blend_point_7/pos = Vector2(0.1, 0.1)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mmgeu"]
+animation = &"sprites/Hurt_BACK_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4w517"]
+animation = &"sprites/Hurt_BACK_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j7foq"]
+animation = &"sprites/Hurt_BACK_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sxe08"]
+animation = &"sprites/Hurt_BACK_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fy46u"]
+animation = &"sprites/Hurt_BACK_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7jw51"]
+animation = &"sprites/Hurt_BACK_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jeuqs"]
+animation = &"sprites/Hurt_BACK_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8064f"]
+animation = &"sprites/Hurt_BACK_"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_mebbl"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_mmgeu")
+blend_point_0/pos = Vector2(0.1, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_4w517")
+blend_point_1/pos = Vector2(-0.1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_j7foq")
+blend_point_2/pos = Vector2(0, 0.1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_sxe08")
+blend_point_3/pos = Vector2(0, -0.1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_fy46u")
+blend_point_4/pos = Vector2(-0.1, -0.1)
+blend_point_5/node = SubResource("AnimationNodeAnimation_7jw51")
+blend_point_5/pos = Vector2(0.1, -0.1)
+blend_point_6/node = SubResource("AnimationNodeAnimation_jeuqs")
+blend_point_6/pos = Vector2(-0.1, 0.1)
+blend_point_7/node = SubResource("AnimationNodeAnimation_8064f")
+blend_point_7/pos = Vector2(0.1, 0.1)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e2717"]
+animation = &"sprites/IDLE_BACK_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hew3n"]
+animation = &"sprites/IDLE_BACK_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_87bnc"]
+animation = &"sprites/WALK fixed_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8f3su"]
+animation = &"sprites/WALK fixed_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xtax6"]
+animation = &"sprites/WALK fixed_BACK_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1uh7c"]
+animation = &"sprites/IDLE_FRONT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bj6b0"]
+animation = &"sprites/WALK fixed_FRONT_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_swhk4"]
+animation = &"sprites/WALK fixed_FRONT_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uvrqy"]
+animation = &"sprites/IDLE_FRONT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i3lgs"]
+animation = &"sprites/IDLE_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3g0v6"]
+animation = &"sprites/IDLE_FRONT_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6wooh"]
+animation = &"sprites/IDLE_FRONT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8owok"]
+animation = &"sprites/IDLE_FRONT_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oyt6g"]
+animation = &"sprites/IDLE_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6bmit"]
+animation = &"sprites/IDLE_BACK_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v51o6"]
+animation = &"sprites/WALK fixed_BACK_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w44pw"]
+animation = &"sprites/WALK fixed_BACK_RIGHT_"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_pchwr"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_e2717")
+blend_point_0/pos = Vector2(0, -0.5)
+blend_point_1/node = SubResource("AnimationNodeAnimation_hew3n")
+blend_point_1/pos = Vector2(0.5, -0.5)
+blend_point_2/node = SubResource("AnimationNodeAnimation_i3lgs")
+blend_point_2/pos = Vector2(0.5, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_3g0v6")
+blend_point_3/pos = Vector2(0.5, 0.5)
+blend_point_4/node = SubResource("AnimationNodeAnimation_6wooh")
+blend_point_4/pos = Vector2(0, 0.5)
+blend_point_5/node = SubResource("AnimationNodeAnimation_8owok")
+blend_point_5/pos = Vector2(-0.5, 0.5)
+blend_point_6/node = SubResource("AnimationNodeAnimation_oyt6g")
+blend_point_6/pos = Vector2(-0.5, 0)
+blend_point_7/node = SubResource("AnimationNodeAnimation_6bmit")
+blend_point_7/pos = Vector2(-0.5, -0.5)
+blend_point_8/node = SubResource("AnimationNodeAnimation_v51o6")
+blend_point_8/pos = Vector2(0, -1)
+blend_point_9/node = SubResource("AnimationNodeAnimation_w44pw")
+blend_point_9/pos = Vector2(1, -1)
+blend_point_10/node = SubResource("AnimationNodeAnimation_87bnc")
+blend_point_10/pos = Vector2(1, 0)
+blend_point_11/node = SubResource("AnimationNodeAnimation_8f3su")
+blend_point_11/pos = Vector2(-1, 0)
+blend_point_12/node = SubResource("AnimationNodeAnimation_xtax6")
+blend_point_12/pos = Vector2(-1, -1)
+blend_point_13/node = SubResource("AnimationNodeAnimation_1uh7c")
+blend_point_13/pos = Vector2(0, 1)
+blend_point_14/node = SubResource("AnimationNodeAnimation_bj6b0")
+blend_point_14/pos = Vector2(1, 1)
+blend_point_15/node = SubResource("AnimationNodeAnimation_swhk4")
+blend_point_15/pos = Vector2(-1, 1)
+blend_point_16/node = SubResource("AnimationNodeAnimation_uvrqy")
+blend_point_16/pos = Vector2(0, 0)
+min_space = Vector2(-2, -2)
+max_space = Vector2(2, 2)
+snap = Vector2(0.5, 0.5)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wh3oy"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2k16h"]
+advance_mode = 2
+advance_condition = &"attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_chth2"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hupj6"]
+advance_mode = 2
+advance_condition = &"Hurt"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ognna"]
+advance_mode = 2
+advance_condition = &"Hurt"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ddx8b"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2nsvr"]
+advance_mode = 2
+advance_condition = &"Combobreak"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5jl4l"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_vg54a"]
+resource_local_to_scene = true
+states/ATTACK/node = SubResource("AnimationNodeBlendSpace2D_cutpx")
+states/ATTACK/position = Vector2(228.666, 149.333)
+states/COMBOBREAK/node = SubResource("AnimationNodeBlendSpace2D_sbemg")
+states/COMBOBREAK/position = Vector2(433.333, 42)
+states/HURT/node = SubResource("AnimationNodeBlendSpace2D_mebbl")
+states/HURT/position = Vector2(428, 126)
+states/MOVE/node = SubResource("AnimationNodeBlendSpace2D_pchwr")
+states/MOVE/position = Vector2(230, 55.6667)
+states/Start/position = Vector2(98.6667, 126.667)
+transitions = ["Start", "MOVE", SubResource("AnimationNodeStateMachineTransition_wh3oy"), "MOVE", "ATTACK", SubResource("AnimationNodeStateMachineTransition_2k16h"), "ATTACK", "MOVE", SubResource("AnimationNodeStateMachineTransition_chth2"), "MOVE", "HURT", SubResource("AnimationNodeStateMachineTransition_hupj6"), "ATTACK", "HURT", SubResource("AnimationNodeStateMachineTransition_ognna"), "HURT", "MOVE", SubResource("AnimationNodeStateMachineTransition_ddx8b"), "HURT", "COMBOBREAK", SubResource("AnimationNodeStateMachineTransition_2nsvr"), "COMBOBREAK", "MOVE", SubResource("AnimationNodeStateMachineTransition_5jl4l")]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hdyvp"]
+resource_local_to_scene = true
+radius = 15.2971
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pyeym"]
+animation = &"sprites/KICK_BACK_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0chr1"]
+animation = &"sprites/KICK_BACK_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lvqbw"]
+animation = &"sprites/KICK_BACK_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dpd50"]
+animation = &"sprites/KICK_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_51ehr"]
+animation = &"sprites/KICK_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_immcy"]
+animation = &"sprites/KICK_FRONT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mx4x6"]
+animation = &"sprites/KICK_FRONT_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_25uag"]
+animation = &"sprites/KICK_FRONT_LEFT_"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_f087m"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_pyeym")
+blend_point_0/pos = Vector2(0, -0.1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_0chr1")
+blend_point_1/pos = Vector2(0.1, -0.1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_lvqbw")
+blend_point_2/pos = Vector2(-0.1, -0.1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_dpd50")
+blend_point_3/pos = Vector2(0.1, 0)
+blend_point_4/node = SubResource("AnimationNodeAnimation_51ehr")
+blend_point_4/pos = Vector2(-0.1, 0)
+blend_point_5/node = SubResource("AnimationNodeAnimation_immcy")
+blend_point_5/pos = Vector2(0, 0.1)
+blend_point_6/node = SubResource("AnimationNodeAnimation_mx4x6")
+blend_point_6/pos = Vector2(0.1, 0.1)
+blend_point_7/node = SubResource("AnimationNodeAnimation_25uag")
+blend_point_7/pos = Vector2(-0.1, 0.1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_ot8wf"]
+blend_mode = 1
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_js35j"]
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_td50k"]
+animation = &"sprites/IDLE_FRONT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5oem4"]
+animation = &"sprites/IDLE_FRONT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_neins"]
+animation = &"sprites/IDLE_FRONT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ltic0"]
+animation = &"sprites/IDLE_FRONT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vsmrh"]
+animation = &"sprites/IDLE_FRONT_"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_ujhko"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_td50k")
+blend_point_0/pos = Vector2(0, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_5oem4")
+blend_point_1/pos = Vector2(0.1, -0.1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_neins")
+blend_point_2/pos = Vector2(0.1, 0.1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_ltic0")
+blend_point_3/pos = Vector2(-0.1, 0.1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_vsmrh")
+blend_point_4/pos = Vector2(-0.1, -0.1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_m67ho"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_j3bll"]
+advance_mode = 2
+advance_condition = &"attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_27lxn"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p0r5c"]
+advance_mode = 2
+advance_condition = &"Hurt"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8324v"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0uoj6"]
+advance_mode = 2
+advance_condition = &"Hurt"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_j3bwd"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_f5c8q"]
+advance_mode = 2
+advance_condition = &"Hurt"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_w0rf7"]
+resource_local_to_scene = true
+states/ATTACK/node = SubResource("AnimationNodeBlendSpace2D_f087m")
+states/ATTACK/position = Vector2(348.444, 160.667)
+states/COMBOBREAK/node = SubResource("AnimationNodeBlendSpace2D_ot8wf")
+states/COMBOBREAK/position = Vector2(543.556, 47.1852)
+states/HURT/node = SubResource("AnimationNodeBlendSpace2D_js35j")
+states/HURT/position = Vector2(542.667, 160.222)
+states/MOVE/node = SubResource("AnimationNodeBlendSpace2D_ujhko")
+states/MOVE/position = Vector2(336, 46)
+transitions = ["Start", "MOVE", SubResource("AnimationNodeStateMachineTransition_m67ho"), "MOVE", "ATTACK", SubResource("AnimationNodeStateMachineTransition_j3bll"), "ATTACK", "MOVE", SubResource("AnimationNodeStateMachineTransition_27lxn"), "MOVE", "HURT", SubResource("AnimationNodeStateMachineTransition_p0r5c"), "HURT", "MOVE", SubResource("AnimationNodeStateMachineTransition_8324v"), "HURT", "COMBOBREAK", SubResource("AnimationNodeStateMachineTransition_0uoj6"), "COMBOBREAK", "MOVE", SubResource("AnimationNodeStateMachineTransition_j3bwd"), "ATTACK", "HURT", SubResource("AnimationNodeStateMachineTransition_f5c8q")]
+
+[node name="HitBoxRoot" type="Node2D"]
+
+[node name="Character" type="Node2D" parent="."]
+position = Vector2(159, 169)
+
+[node name="Player" parent="Character" instance=ExtResource("1_je2rv")]
+
+[node name="Anim" parent="Character/Player/AnimTree" index="0"]
+tree_root = SubResource("AnimationNodeStateMachine_vg54a")
+
+[node name="Sprites" parent="Character" instance=ExtResource("2_7p6vk")]
+position = Vector2(0, -28)
+metadata/_edit_lock_ = true
+
+[node name="SpriteSheet" parent="Character/Sprites" index="0"]
+animation = &"default"
+
+[node name="Hurtbox" parent="Character" node_paths=PackedStringArray("Transition") instance=ExtResource("4_l5fbf")]
+unique_name_in_owner = true
+Transition = NodePath("../Player/Transitions")
+
+[node name="FireballSpawnGUI" type="ColorRect" parent="Character" node_paths=PackedStringArray("fireball_spawn_point")]
+unique_name_in_owner = true
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(6.06447e-06, 0.768349, 0.559878, 1)
+script = ExtResource("5_t8071")
+fireball_spawn_point = NodePath("../Hitbox/Hitbox/fireball_spawn")
+
+[node name="Hitbox" parent="Character" instance=ExtResource("5_24hhn")]
+
+[node name="CollisionShape2D" parent="Character/Hitbox/Hitbox" index="0"]
+shape = SubResource("CircleShape2D_hdyvp")
+
+[node name="AnimTree" parent="Character/Hitbox" index="1"]
+tree_root = SubResource("AnimationNodeStateMachine_w0rf7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TypeofMove" type="OptionButton" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 937.0
+offset_top = 11.0
+offset_right = 1134.0
+offset_bottom = 50.0
+selected = 0
+item_count = 4
+popup/item_0/text = "MOVE"
+popup/item_1/text = "ATTACK"
+popup/item_1/id = 1
+popup/item_2/text = "HURT"
+popup/item_2/id = 2
+popup/item_3/text = "COMBOBREAK"
+popup/item_3/id = 3
+
+[node name="CurrentNode" type="ItemList" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 841.0
+offset_top = 90.0
+offset_right = 1137.0
+offset_bottom = 305.0
+
+[node name="HitboxAnimations" type="ItemList" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 839.0
+offset_top = 368.0
+offset_right = 1135.0
+offset_bottom = 546.0
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 14.0
+offset_top = 287.0
+offset_right = 126.0
+offset_bottom = 320.0
+text = "FRAME DEBUG"
+
+[node name="Code" type="Node" parent="CanvasLayer"]
+
+[node name="NextPreviousFrame" type="Node" parent="CanvasLayer/Code" node_paths=PackedStringArray("AnimationPLayerSprites")]
+unique_name_in_owner = true
+script = ExtResource("4_p8i25")
+AnimationPLayerSprites = NodePath("../../../Character/Sprites/Animations")
+
+[node name="NextPreviousHitbox" type="Node" parent="CanvasLayer/Code" node_paths=PackedStringArray("AttackHitboxPlayer", "AttackHitboxTree")]
+unique_name_in_owner = true
+script = ExtResource("5_cpryb")
+AttackHitboxPlayer = NodePath("../../../Character/Hitbox/AnimTree/AnimationPlayer")
+AttackHitboxTree = NodePath("../../../Character/Hitbox/AnimTree")
+
+[node name="Load" type="Node" parent="CanvasLayer/Code" node_paths=PackedStringArray("PlayerAnimTree", "AttackHitboxTree")]
+unique_name_in_owner = true
+script = ExtResource("5_ngxtf")
+PlayerAnimTree = NodePath("../../../Character/Player/AnimTree/Anim")
+AttackHitboxTree = NodePath("../../../Character/Hitbox/AnimTree")
+
+[node name="HitboxManager" type="Node" parent="CanvasLayer/Code"]
+unique_name_in_owner = true
+script = ExtResource("6_xfa71")
+
+[node name="LoadParams" type="Node" parent="CanvasLayer/Code/HitboxManager"]
+unique_name_in_owner = true
+script = ExtResource("7_5s4vi")
+
+[node name="AddHitboxFrame" type="Node" parent="CanvasLayer/Code/HitboxManager"]
+unique_name_in_owner = true
+script = ExtResource("9_euugh")
+
+[node name="HiboxAnimationsCode" type="Node" parent="CanvasLayer/Code"]
+script = ExtResource("10_hb6kt")
+
+[node name="HitboxFramesGUI" type="Node" parent="CanvasLayer/Code"]
+unique_name_in_owner = true
+script = ExtResource("11_tsat2")
+
+[node name="HitboxPosGUI" type="Node" parent="CanvasLayer/Code"]
+unique_name_in_owner = true
+script = ExtResource("12_e8r1c")
+
+[node name="RightClickSetPos" type="Node" parent="CanvasLayer/Code"]
+
+[node name="LOG" type="RichTextLabel" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 846.0
+offset_bottom = 76.0
+text = "press A and D to move between Frames"
+metadata/_edit_lock_ = true
+
+[node name="Select" type="Button" parent="CanvasLayer"]
+offset_left = 847.0
+offset_top = 12.0
+offset_right = 914.0
+offset_bottom = 47.0
+text = "select"
+
+[node name="SelectedAnimLOG" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 850.0
+offset_top = 58.0
+offset_right = 1133.0
+offset_bottom = 81.0
+text = "None selected"
+
+[node name="Frames" type="ItemList" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 80.0
+offset_top = 350.0
+offset_right = 211.0
+offset_bottom = 640.0
+
+[node name="HitboxFrames" type="ItemList" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 224.0
+offset_top = 352.0
+offset_right = 321.0
+offset_bottom = 642.0
+
+[node name="HitboxFramesBool" type="ItemList" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 329.0
+offset_top = 352.0
+offset_right = 426.0
+offset_bottom = 642.0
+
+[node name="HitboxPosition" type="ItemList" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 435.0
+offset_top = 355.0
+offset_right = 541.0
+offset_bottom = 645.0
+
+[node name="HitboxPositionPos" type="ItemList" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 562.0
+offset_top = 353.0
+offset_right = 683.0
+offset_bottom = 643.0
+
+[node name="Framesid" type="ItemList" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 13.0
+offset_top = 350.0
+offset_right = 76.0
+offset_bottom = 640.0
+
+[node name="Set" type="Button" parent="CanvasLayer"]
+offset_left = 17.0
+offset_top = 313.0
+offset_right = 69.0
+offset_bottom = 344.0
+text = "SET"
+
+[node name="Play" type="Button" parent="CanvasLayer"]
+offset_left = 81.0
+offset_top = 313.0
+offset_right = 134.0
+offset_bottom = 345.0
+text = "PLAY"
+
+[node name="Stop" type="Button" parent="CanvasLayer"]
+offset_left = 144.0
+offset_top = 313.0
+offset_right = 202.0
+offset_bottom = 345.0
+text = "STOP"
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 855.0
+offset_top = 324.0
+offset_right = 1053.0
+offset_bottom = 347.0
+text = "Attack Hitbox Animations"
+
+[node name="CurrentSelectedName" type="LineEdit" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 848.0
+offset_top = 600.0
+offset_right = 1121.0
+offset_bottom = 631.0
+
+[node name="Preselect" type="Button" parent="CanvasLayer"]
+offset_left = 721.0
+offset_top = 597.0
+offset_right = 833.0
+offset_bottom = 629.0
+text = "PRESELECT"
+
+[node name="PreselectLOG" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 850.0
+offset_top = 556.0
+offset_right = 1005.0
+offset_bottom = 579.0
+text = "NONE PRESELECTED"
+
+[node name="Label3" type="Label" parent="CanvasLayer"]
+offset_left = 227.0
+offset_top = 288.0
+offset_right = 350.0
+offset_bottom = 311.0
+text = "Hurtbox Position"
+
+[node name="Label4" type="Label" parent="CanvasLayer"]
+offset_left = 568.0
+offset_top = 327.0
+offset_right = 687.0
+offset_bottom = 350.0
+text = "Shape"
+
+[node name="Label7" type="Label" parent="CanvasLayer"]
+offset_left = 442.0
+offset_top = 324.0
+offset_right = 561.0
+offset_bottom = 347.0
+text = "Enabled"
+
+[node name="EnableHitboxCheck" type="CheckButton" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 699.0
+offset_top = 551.0
+offset_right = 812.0
+offset_bottom = 582.0
+text = "ENABLE "
+
+[node name="Label5" type="Label" parent="CanvasLayer"]
+offset_left = 732.0
+offset_top = 193.0
+offset_right = 792.0
+offset_bottom = 216.0
+text = "HITBOX"
+
+[node name="AddNewHitbox" type="Button" parent="CanvasLayer"]
+offset_left = 713.0
+offset_top = 269.0
+offset_right = 803.0
+offset_bottom = 300.0
+text = "ADD NEW"
+
+[node name="RemoveChangeHitbox" type="Button" parent="CanvasLayer"]
+offset_left = 713.0
+offset_top = 232.0
+offset_right = 803.0
+offset_bottom = 263.0
+text = "REMOVE"
+
+[node name="HitboxTimeFrame" type="LineEdit" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 716.0
+offset_top = 386.0
+offset_right = 783.062
+offset_bottom = 417.0
+
+[node name="HitboxTimeFrameLOG" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 718.0
+offset_top = 351.0
+offset_right = 758.0
+offset_bottom = 374.0
+text = "0.1"
+
+[node name="Label6" type="Label" parent="CanvasLayer"]
+offset_left = 716.0
+offset_top = 320.0
+offset_right = 785.0
+offset_bottom = 343.0
+text = "Duration"
+
+[node name="EightDir" type="OptionButton" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 719.0
+offset_top = 508.0
+offset_right = 801.0
+offset_bottom = 539.0
+selected = 1
+item_count = 3
+popup/item_0/text = "4 Dir"
+popup/item_1/text = "8 Dir"
+popup/item_1/id = 1
+popup/item_2/text = "No Dir"
+popup/item_2/id = 2
+
+[node name="PlayHitbox" type="Button" parent="CanvasLayer"]
+offset_left = 270.0
+offset_top = 314.0
+offset_right = 321.0
+offset_bottom = 345.0
+text = "PLAY"
+
+[node name="StopHitbox" type="Button" parent="CanvasLayer"]
+offset_left = 334.0
+offset_top = 314.0
+offset_right = 387.0
+offset_bottom = 345.0
+text = "STOP"
+
+[node name="PLAYALL" type="Button" parent="CanvasLayer"]
+offset_left = 14.0
+offset_top = 255.0
+offset_right = 93.0
+offset_bottom = 286.0
+text = "PLAY ALL"
+
+[node name="STOPALL" type="Button" parent="CanvasLayer"]
+offset_left = 101.0
+offset_top = 255.0
+offset_right = 182.0
+offset_bottom = 286.0
+text = "STOP ALL"
+
+[node name="XPOS" type="LineEdit" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 729.0
+offset_top = 70.0
+offset_right = 796.062
+offset_bottom = 101.0
+
+[node name="YPOS" type="LineEdit" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 730.0
+offset_top = 109.0
+offset_right = 797.062
+offset_bottom = 140.0
+
+[node name="Label8" type="Label" parent="CanvasLayer"]
+offset_left = 667.0
+offset_top = 71.0
+offset_right = 720.0
+offset_bottom = 94.0
+text = "WIDTH"
+
+[node name="Label9" type="Label" parent="CanvasLayer"]
+offset_left = 662.0
+offset_top = 111.0
+offset_right = 721.0
+offset_bottom = 134.0
+text = "HEIGTH"
+
+[node name="TESTPOS" type="Button" parent="CanvasLayer"]
+offset_left = 722.0
+offset_top = 32.0
+offset_right = 802.0
+offset_bottom = 63.0
+text = "TEST SIZE"
+
+[node name="CHANGECURRENT" type="Button" parent="CanvasLayer"]
+offset_left = 677.0
+offset_top = 146.0
+offset_right = 828.0
+offset_bottom = 177.0
+text = "CHANGE CURRENT"
+
+[node name="Label10" type="Label" parent="CanvasLayer"]
+offset_left = 15.0
+offset_top = 42.0
+offset_right = 103.0
+offset_bottom = 65.0
+text = "Hitbox Pos:"
+
+[node name="Label11" type="Label" parent="CanvasLayer"]
+offset_left = 210.0
+offset_top = 42.0
+offset_right = 254.0
+offset_bottom = 65.0
+text = "Size:"
+
+[node name="LOGSIZE" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 250.0
+offset_top = 43.0
+offset_right = 294.0
+offset_bottom = 66.0
+text = "Size:"
+
+[node name="POSLOG" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 109.0
+offset_top = 42.0
+offset_right = 156.0
+offset_bottom = 65.0
+text = "(0, 0)"
+
+[node name="SAVE" type="Button" parent="CanvasLayer"]
+offset_left = 589.0
+offset_top = 289.0
+offset_right = 661.0
+offset_bottom = 320.0
+text = "SAVE"
+
+[node name="HZOOM" type="HScrollBar" parent="CanvasLayer"]
+offset_left = 254.0
+offset_top = 265.0
+offset_right = 632.0
+offset_bottom = 281.0
+min_value = -800.0
+max_value = 800.0
+
+[node name="VZOOM" type="VScrollBar" parent="CanvasLayer"]
+offset_left = 638.0
+offset_top = 8.0
+offset_right = 656.0
+offset_bottom = 283.0
+min_value = -800.0
+max_value = 800.0
+
+[node name="SaveDialog" type="FileDialog" parent="CanvasLayer"]
+initial_position = 1
+size = Vector2i(800, 550)
+dialog_hide_on_ok = true
+filters = PackedStringArray("*.tscn")
+script = ExtResource("13_2duqq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(578, 323)
+script = ExtResource("13_cq8jc")
+
+[connection signal="item_selected" from="CanvasLayer/TypeofMove" to="CanvasLayer/Code/Load" method="_on_typeof_move_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/CurrentNode" to="CanvasLayer/Code/Load" method="_on_current_node_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/HitboxAnimations" to="CanvasLayer/Code/Load" method="_on_current_node_item_selected"]
+[connection signal="pressed" from="CanvasLayer/Select" to="CanvasLayer/Code/NextPreviousFrame" method="_on_select_pressed"]
+[connection signal="item_selected" from="CanvasLayer/Framesid" to="CanvasLayer/Code/NextPreviousFrame" method="_on_framesid_item_selected"]
+[connection signal="pressed" from="CanvasLayer/Set" to="CanvasLayer/Code/NextPreviousFrame" method="_on_set_pressed"]
+[connection signal="pressed" from="CanvasLayer/Play" to="CanvasLayer/Code/NextPreviousFrame" method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Stop" to="CanvasLayer/Code/NextPreviousFrame" method="_on_stop_pressed"]
+[connection signal="text_changed" from="CanvasLayer/CurrentSelectedName" to="CanvasLayer/Code/HitboxManager" method="_on_current_selected_name_text_changed"]
+[connection signal="text_submitted" from="CanvasLayer/CurrentSelectedName" to="CanvasLayer/Code/HitboxManager" method="_on_current_selected_name_text_submitted"]
+[connection signal="pressed" from="CanvasLayer/Preselect" to="CanvasLayer/Code/HitboxManager" method="_on_preselect_pressed"]
+[connection signal="pressed" from="CanvasLayer/AddNewHitbox" to="CanvasLayer/Code/HitboxFramesGUI" method="_on_add_new_hitbox_pressed"]
+[connection signal="pressed" from="CanvasLayer/RemoveChangeHitbox" to="CanvasLayer/Code/HitboxPosGUI" method="_on_remove_change_hitbox_pressed"]
+[connection signal="text_changed" from="CanvasLayer/HitboxTimeFrame" to="CanvasLayer/Code/HitboxFramesGUI" method="_on_hitbox_time_frame_text_changed"]
+[connection signal="text_submitted" from="CanvasLayer/HitboxTimeFrame" to="CanvasLayer/Code/HitboxFramesGUI" method="_on_hitbox_time_frame_text_submitted"]
+[connection signal="pressed" from="CanvasLayer/PlayHitbox" to="CanvasLayer/Code/HitboxFramesGUI" method="_on_play_hitbox_pressed"]
+[connection signal="pressed" from="CanvasLayer/PLAYALL" to="CanvasLayer/Code/HitboxFramesGUI" method="_on_playall_pressed"]
+[connection signal="pressed" from="CanvasLayer/STOPALL" to="CanvasLayer/Code/HitboxFramesGUI" method="_on_stopall_pressed"]
+[connection signal="text_submitted" from="CanvasLayer/XPOS" to="CanvasLayer/Code/HitboxPosGUI" method="_on_xpos_text_submitted"]
+[connection signal="text_changed" from="CanvasLayer/YPOS" to="CanvasLayer/Code/HitboxPosGUI" method="_on_ypos_text_changed"]
+[connection signal="text_submitted" from="CanvasLayer/YPOS" to="CanvasLayer/Code/HitboxPosGUI" method="_on_ypos_text_submitted"]
+[connection signal="pressed" from="CanvasLayer/TESTPOS" to="CanvasLayer/Code/HitboxPosGUI" method="_on_testpos_pressed"]
+[connection signal="pressed" from="CanvasLayer/CHANGECURRENT" to="CanvasLayer/Code/HitboxPosGUI" method="_on_changecurrent_pressed"]
+[connection signal="pressed" from="CanvasLayer/SAVE" to="CanvasLayer/SaveDialog" method="_on_save_pressed"]
+[connection signal="value_changed" from="CanvasLayer/HZOOM" to="Camera2D" method="_on_hzoom_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/VZOOM" to="Camera2D" method="_on_vzoom_value_changed"]
+[connection signal="file_selected" from="CanvasLayer/SaveDialog" to="CanvasLayer/SaveDialog" method="_on_file_selected"]
+
+[editable path="Character/Player"]
+[editable path="Character/Player/INPUT"]
+[editable path="Character/Player/Motion"]
+[editable path="Character/Player/Motion AnimTree"]
+[editable path="Character/Player/Transitions"]
+[editable path="Character/Player/Sprites"]
+[editable path="Character/Player/Hitbox"]
+[editable path="Character/Player/Hurtbox"]
+[editable path="Character/Sprites"]
+[editable path="Character/Hurtbox"]
+[editable path="Character/Hitbox"]

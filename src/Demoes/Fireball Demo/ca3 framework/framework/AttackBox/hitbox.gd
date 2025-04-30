@@ -3,6 +3,7 @@ extends Node2D
 @export var hitstun : float 
 @export var shakestrenght : float 
 @export var shake_speed : float 
+@export var fireball_spawn : bool
 
 func _ready():
 	$AnimTree.active = true

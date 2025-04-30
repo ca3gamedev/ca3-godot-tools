@@ -37,8 +37,7 @@ func ChangeMotion(state, strenght):
 	# apply in some cancels
 	if flicker_check < 0.15 and strenght != -888:
 		# This double checks if the state is movement and avoid flickering
-		if state == "IDLE" or state == "WALK" or state == "DASH":
-			return
+		return
 	
 	# -999 is the value to override CurrentStenght and used for things
 	# like return to idle function
@@ -131,6 +130,8 @@ func EndAnimations():
 	%Hurtbox.get_node("AnimTree").set("parameters/conditions/attack", false)
 	%Hitbox.get_node("AnimTree").set("parameters/conditions/Hurt", false)
 	%Hurtbox.get_node("AnimTree").set("parameters/conditions/Hurt", false)
+	
+	%Code.fireball_id = 0
 	
 	ReturntoIdle()
 

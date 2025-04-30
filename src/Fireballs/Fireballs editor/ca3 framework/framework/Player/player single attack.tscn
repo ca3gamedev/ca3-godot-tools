@@ -1,0 +1,300 @@
+[gd_scene load_steps=29 format=3 uid="uid://cpkrhqm5fkwgw"]
+
+[ext_resource type="PackedScene" uid="uid://b1rv5l00jkku4" path="res://ca3 framework/framework/InputCode/P1INPUT.tscn" id="1_nw652"]
+[ext_resource type="PackedScene" uid="uid://dmuatunloj5a1" path="res://ca3 framework/framework/MotionCode/MYMOTION.tscn" id="2_o2ace"]
+[ext_resource type="PackedScene" uid="uid://hx68qxv0hl7t" path="res://ca3 framework/framework/Anim Tree/motion_anim_tree.tscn" id="3_hy1na"]
+[ext_resource type="PackedScene" uid="uid://qv3ae6b6cbjx" path="res://ca3 framework/framework/Transitions/transitions.tscn" id="4_2oswj"]
+[ext_resource type="Script" path="res://ca3 framework/framework/AttackBox/FSM/punch.gd" id="4_lcycp"]
+[ext_resource type="PackedScene" uid="uid://buftrs7al3sfh" path="res://ca3 framework/framework/Player/Heroe SC2.tscn" id="5_0rq1a"]
+[ext_resource type="Script" path="res://ca3 framework/framework/AttackInput/punch.gd" id="5_alkp5"]
+[ext_resource type="Script" path="res://ca3 framework/framework/AttackBox/hitbox.gd" id="6_47bye"]
+[ext_resource type="Script" path="res://ca3 framework/framework/Player/AnimationTree/anim_tree_parent.gd" id="7_q0wl2"]
+[ext_resource type="PackedScene" uid="uid://007x3d4x5vy7" path="res://ca3 framework/framework/Player/Animation Tree Sprites.tscn" id="7_t0372"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bwfm1"]
+radius = 5.09902
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_igdsg"]
+animation = &"Front"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c44hc"]
+animation = &"Front"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_68drk"]
+animation = &"Front"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i7k6j"]
+animation = &"Front"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_as3e7"]
+animation = &"Front"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e3r4w"]
+animation = &"Front"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kalak"]
+animation = &"Front"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oeo23"]
+animation = &"Front"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wfnmb"]
+animation = &"IDLE"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_3wfc3"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_igdsg")
+blend_point_0/pos = Vector2(0, -0.1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_c44hc")
+blend_point_1/pos = Vector2(0.1, -0.1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_68drk")
+blend_point_2/pos = Vector2(0.1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_i7k6j")
+blend_point_3/pos = Vector2(0.1, 0.1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_as3e7")
+blend_point_4/pos = Vector2(0, 0.1)
+blend_point_5/node = SubResource("AnimationNodeAnimation_e3r4w")
+blend_point_5/pos = Vector2(-0.1, 0.1)
+blend_point_6/node = SubResource("AnimationNodeAnimation_kalak")
+blend_point_6/pos = Vector2(-0.1, 0)
+blend_point_7/node = SubResource("AnimationNodeAnimation_oeo23")
+blend_point_7/pos = Vector2(-0.1, -0.1)
+blend_point_8/node = SubResource("AnimationNodeAnimation_wfnmb")
+blend_point_8/pos = Vector2(0, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ofmwe"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_7037f"]
+states/ATTACKS/node = SubResource("AnimationNodeBlendSpace2D_3wfc3")
+states/ATTACKS/position = Vector2(398, 95)
+transitions = ["Start", "ATTACKS", SubResource("AnimationNodeStateMachineTransition_ofmwe")]
+
+[sub_resource type="Animation" id="Animation_u2y8c"]
+resource_name = "Front"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Hitbox/Hitbox/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Hitbox/Hitbox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(40, -32), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%DebugAttackBox:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(0.034079, 0.45615, 0.719425, 1), Color(0.788212, 0.0635511, 0.364638, 1), Color(0.158276, 0.410477, 0.837686, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jg887"]
+resource_name = "IDLE"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Hitbox/Hitbox:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Hitbox/Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%DebugAttackBox:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0352941, 0.454902, 0.717647, 0.392157)]
+}
+
+[sub_resource type="Animation" id="Animation_voj1d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Hitbox/Hitbox/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Hitbox/Hitbox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(40, -32)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%DebugAttackBox:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.034079, 0.45615, 0.719425, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yrtma"]
+_data = {
+"Front": SubResource("Animation_u2y8c"),
+"IDLE": SubResource("Animation_jg887"),
+"RESET": SubResource("Animation_voj1d")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a6k0l"]
+radius = 15.2971
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bwfm1")
+
+[node name="INPUT" parent="." node_paths=PackedStringArray("buffer") instance=ExtResource("1_nw652")]
+buffer = NodePath("Buffer")
+
+[node name="Buffer" parent="INPUT" index="1"]
+KeyBufferResetTimerMax = 0.6
+
+[node name="Motion" parent="." node_paths=PackedStringArray("Root", "Transition") instance=ExtResource("2_o2ace")]
+multiplier = 100.0
+Root = NodePath("..")
+Transition = NodePath("../Transitions")
+
+[node name="Motion AnimTree" parent="." node_paths=PackedStringArray("Anim", "Transition") instance=ExtResource("3_hy1na")]
+Anim = NodePath("../AnimTree/Anim")
+Transition = NodePath("../Transitions")
+
+[node name="ANIMATIONS" type="Node" parent="."]
+
+[node name="ATTACKS" type="Node" parent="ANIMATIONS"]
+unique_name_in_owner = true
+
+[node name="PUNCH" type="Node" parent="ANIMATIONS/ATTACKS"]
+script = ExtResource("4_lcycp")
+attack_hitstun = 0.15
+shake_strenght = 2.0
+shake_speed = 3.0
+
+[node name="Transitions" parent="." node_paths=PackedStringArray("currentmotion", "inputnode", "currentanim", "motionparent", "motionanimtree") instance=ExtResource("4_2oswj")]
+unique_name_in_owner = true
+currentmotion = NodePath("../Motion/IDLE")
+inputnode = NodePath("../INPUT")
+currentanim = NodePath("../Motion AnimTree/IDLE")
+motionparent = NodePath("../Motion")
+motionanimtree = NodePath("../Motion AnimTree")
+
+[node name="PUNCH" type="Node" parent="Transitions"]
+script = ExtResource("5_alkp5")
+
+[node name="AnimTree" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("7_q0wl2")
+
+[node name="Anim" parent="AnimTree" instance=ExtResource("7_t0372")]
+unique_name_in_owner = true
+root_node = NodePath("%AnimTree/..")
+
+[node name="AttackBoxAnimTree" type="AnimationTree" parent="AnimTree"]
+unique_name_in_owner = true
+root_node = NodePath("%AttackBoxAnimTree/..")
+tree_root = SubResource("AnimationNodeStateMachine_7037f")
+anim_player = NodePath("AttackBoxAnim")
+parameters/ATTACKS/blend_position = Vector2(0.00216293, -0.005988)
+
+[node name="AttackBoxAnim" type="AnimationPlayer" parent="AnimTree/AttackBoxAnimTree"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_yrtma")
+}
+
+[node name="Sprites" parent="." instance=ExtResource("5_0rq1a")]
+
+[node name="SpriteSheet" parent="Sprites" index="0"]
+position = Vector2(1, -28)
+animation = &"default"
+
+[node name="Hitbox" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("6_47bye")
+
+[node name="Hitbox" type="Area2D" parent="Hitbox"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox/Hitbox"]
+shape = SubResource("CircleShape2D_a6k0l")
+disabled = true
+metadata/_edit_lock_ = true
+
+[node name="DebugAttackBox" type="ColorRect" parent="Hitbox/Hitbox/CollisionShape2D"]
+unique_name_in_owner = true
+offset_left = -14.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 14.0
+color = Color(0.0352941, 0.454902, 0.717647, 0.392157)
+metadata/_edit_lock_ = true
+
+[node name="HitstopFreeze" type="Timer" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+
+[connection signal="area_entered" from="Hitbox/Hitbox" to="Hitbox" method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="HitstopFreeze" to="Hitbox" method="_on_hitstop_freeze_timeout"]
+
+[editable path="INPUT"]
+[editable path="Motion"]
+[editable path="Motion AnimTree"]
+[editable path="Transitions"]
+[editable path="Sprites"]

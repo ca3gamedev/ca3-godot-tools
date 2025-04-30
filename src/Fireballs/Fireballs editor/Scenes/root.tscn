@@ -1,0 +1,534 @@
+[gd_scene load_steps=69 format=3 uid="uid://p6xryonk834q"]
+
+[ext_resource type="PackedScene" uid="uid://bn5s67l7b2lwl" path="res://ca3 framework/framework/Player/Player3.tscn" id="1_ubolr"]
+[ext_resource type="PackedScene" uid="uid://dnuiprw05pmqq" path="res://ca3 framework/framework/Camera2D/camera_2d.tscn" id="2_7npsa"]
+[ext_resource type="Script" path="res://Scenes/load.gd" id="2_8fgdl"]
+[ext_resource type="Script" path="res://Scenes/load_params.gd" id="3_esl8s"]
+[ext_resource type="Script" path="res://Scenes/preselect.gd" id="4_1a8ro"]
+[ext_resource type="Script" path="res://Scenes/save.gd" id="5_y3dvc"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_phv0g"]
+animation = &"sprites/KICK_BACK_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a18h1"]
+animation = &"sprites/KICK_BACK_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_khc0v"]
+animation = &"sprites/galactica_FRONT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nrh0i"]
+animation = &"sprites/galactica_BACK_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_exu6q"]
+animation = &"sprites/galactica_BACK_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qpb8h"]
+animation = &"sprites/galactica_BACK_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qnhda"]
+animation = &"sprites/galactica_FRONT_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a24nf"]
+animation = &"sprites/galactica_FRONT_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uijm2"]
+animation = &"sprites/KICK_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5v22i"]
+animation = &"sprites/KICK_FRONT_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_da0th"]
+animation = &"sprites/KICK_FRONT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4yx5k"]
+animation = &"sprites/KICK_FRONT_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jsag0"]
+animation = &"sprites/KICK_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pabg1"]
+animation = &"sprites/KICK_BACK_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3p1yc"]
+animation = &"sprites/galactica_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_phcdv"]
+animation = &"sprites/galactica_LEFT_"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_cutpx"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_phv0g")
+blend_point_0/pos = Vector2(0, -0.1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_a18h1")
+blend_point_1/pos = Vector2(0.1, -0.1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_uijm2")
+blend_point_2/pos = Vector2(0.1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_5v22i")
+blend_point_3/pos = Vector2(0.1, 0.1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_da0th")
+blend_point_4/pos = Vector2(0, 0.1)
+blend_point_5/node = SubResource("AnimationNodeAnimation_4yx5k")
+blend_point_5/pos = Vector2(-0.1, 0.1)
+blend_point_6/node = SubResource("AnimationNodeAnimation_jsag0")
+blend_point_6/pos = Vector2(-0.1, 0)
+blend_point_7/node = SubResource("AnimationNodeAnimation_pabg1")
+blend_point_7/pos = Vector2(-0.1, -0.1)
+blend_point_8/node = SubResource("AnimationNodeAnimation_3p1yc")
+blend_point_8/pos = Vector2(0.2, 0)
+blend_point_9/node = SubResource("AnimationNodeAnimation_phcdv")
+blend_point_9/pos = Vector2(-0.2, 0)
+blend_point_10/node = SubResource("AnimationNodeAnimation_khc0v")
+blend_point_10/pos = Vector2(0, 0.2)
+blend_point_11/node = SubResource("AnimationNodeAnimation_nrh0i")
+blend_point_11/pos = Vector2(0, -0.2)
+blend_point_12/node = SubResource("AnimationNodeAnimation_exu6q")
+blend_point_12/pos = Vector2(-0.2, -0.2)
+blend_point_13/node = SubResource("AnimationNodeAnimation_qpb8h")
+blend_point_13/pos = Vector2(0.2, -0.2)
+blend_point_14/node = SubResource("AnimationNodeAnimation_qnhda")
+blend_point_14/pos = Vector2(-0.2, 0.2)
+blend_point_15/node = SubResource("AnimationNodeAnimation_a24nf")
+blend_point_15/pos = Vector2(0.2, 0.2)
+min_space = Vector2(-3, -3)
+max_space = Vector2(3, 3)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ko0hd"]
+animation = &"sprites/galactica_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fa2pi"]
+animation = &"sprites/galactica_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pa375"]
+animation = &"sprites/galactica_FRONT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v4puy"]
+animation = &"sprites/galactica_BACK_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hakf6"]
+animation = &"sprites/galactica_BACK_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_thu66"]
+animation = &"sprites/galactica_BACK_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o101n"]
+animation = &"sprites/galactica_FRONT_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_eueol"]
+animation = &"sprites/galactica_FRONT_RIGHT_"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_sbemg"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_ko0hd")
+blend_point_0/pos = Vector2(0.1, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_fa2pi")
+blend_point_1/pos = Vector2(-0.1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_pa375")
+blend_point_2/pos = Vector2(0, 0.1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_v4puy")
+blend_point_3/pos = Vector2(0, -0.1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_hakf6")
+blend_point_4/pos = Vector2(-0.1, -0.1)
+blend_point_5/node = SubResource("AnimationNodeAnimation_thu66")
+blend_point_5/pos = Vector2(0.1, -0.1)
+blend_point_6/node = SubResource("AnimationNodeAnimation_o101n")
+blend_point_6/pos = Vector2(-0.1, 0.1)
+blend_point_7/node = SubResource("AnimationNodeAnimation_eueol")
+blend_point_7/pos = Vector2(0.1, 0.1)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mmgeu"]
+animation = &"sprites/Hurt_BACK_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4w517"]
+animation = &"sprites/Hurt_BACK_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j7foq"]
+animation = &"sprites/Hurt_BACK_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sxe08"]
+animation = &"sprites/Hurt_BACK_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fy46u"]
+animation = &"sprites/Hurt_BACK_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7jw51"]
+animation = &"sprites/Hurt_BACK_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jeuqs"]
+animation = &"sprites/Hurt_BACK_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8064f"]
+animation = &"sprites/Hurt_BACK_"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_mebbl"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_mmgeu")
+blend_point_0/pos = Vector2(0.1, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_4w517")
+blend_point_1/pos = Vector2(-0.1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_j7foq")
+blend_point_2/pos = Vector2(0, 0.1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_sxe08")
+blend_point_3/pos = Vector2(0, -0.1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_fy46u")
+blend_point_4/pos = Vector2(-0.1, -0.1)
+blend_point_5/node = SubResource("AnimationNodeAnimation_7jw51")
+blend_point_5/pos = Vector2(0.1, -0.1)
+blend_point_6/node = SubResource("AnimationNodeAnimation_jeuqs")
+blend_point_6/pos = Vector2(-0.1, 0.1)
+blend_point_7/node = SubResource("AnimationNodeAnimation_8064f")
+blend_point_7/pos = Vector2(0.1, 0.1)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e2717"]
+animation = &"sprites/IDLE_BACK_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hew3n"]
+animation = &"sprites/IDLE_BACK_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_87bnc"]
+animation = &"sprites/WALK fixed_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8f3su"]
+animation = &"sprites/WALK fixed_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xtax6"]
+animation = &"sprites/WALK fixed_BACK_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1uh7c"]
+animation = &"sprites/IDLE_FRONT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bj6b0"]
+animation = &"sprites/WALK fixed_FRONT_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_swhk4"]
+animation = &"sprites/WALK fixed_FRONT_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uvrqy"]
+animation = &"sprites/IDLE_FRONT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i3lgs"]
+animation = &"sprites/IDLE_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3g0v6"]
+animation = &"sprites/IDLE_FRONT_RIGHT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6wooh"]
+animation = &"sprites/IDLE_FRONT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8owok"]
+animation = &"sprites/IDLE_FRONT_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oyt6g"]
+animation = &"sprites/IDLE_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6bmit"]
+animation = &"sprites/IDLE_BACK_LEFT_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v51o6"]
+animation = &"sprites/WALK fixed_BACK_"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w44pw"]
+animation = &"sprites/WALK fixed_BACK_RIGHT_"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_pchwr"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_e2717")
+blend_point_0/pos = Vector2(0, -0.5)
+blend_point_1/node = SubResource("AnimationNodeAnimation_hew3n")
+blend_point_1/pos = Vector2(0.5, -0.5)
+blend_point_2/node = SubResource("AnimationNodeAnimation_i3lgs")
+blend_point_2/pos = Vector2(0.5, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_3g0v6")
+blend_point_3/pos = Vector2(0.5, 0.5)
+blend_point_4/node = SubResource("AnimationNodeAnimation_6wooh")
+blend_point_4/pos = Vector2(0, 0.5)
+blend_point_5/node = SubResource("AnimationNodeAnimation_8owok")
+blend_point_5/pos = Vector2(-0.5, 0.5)
+blend_point_6/node = SubResource("AnimationNodeAnimation_oyt6g")
+blend_point_6/pos = Vector2(-0.5, 0)
+blend_point_7/node = SubResource("AnimationNodeAnimation_6bmit")
+blend_point_7/pos = Vector2(-0.5, -0.5)
+blend_point_8/node = SubResource("AnimationNodeAnimation_v51o6")
+blend_point_8/pos = Vector2(0, -1)
+blend_point_9/node = SubResource("AnimationNodeAnimation_w44pw")
+blend_point_9/pos = Vector2(1, -1)
+blend_point_10/node = SubResource("AnimationNodeAnimation_87bnc")
+blend_point_10/pos = Vector2(1, 0)
+blend_point_11/node = SubResource("AnimationNodeAnimation_8f3su")
+blend_point_11/pos = Vector2(-1, 0)
+blend_point_12/node = SubResource("AnimationNodeAnimation_xtax6")
+blend_point_12/pos = Vector2(-1, -1)
+blend_point_13/node = SubResource("AnimationNodeAnimation_1uh7c")
+blend_point_13/pos = Vector2(0, 1)
+blend_point_14/node = SubResource("AnimationNodeAnimation_bj6b0")
+blend_point_14/pos = Vector2(1, 1)
+blend_point_15/node = SubResource("AnimationNodeAnimation_swhk4")
+blend_point_15/pos = Vector2(-1, 1)
+blend_point_16/node = SubResource("AnimationNodeAnimation_uvrqy")
+blend_point_16/pos = Vector2(0, 0)
+min_space = Vector2(-2, -2)
+max_space = Vector2(2, 2)
+snap = Vector2(0.5, 0.5)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wh3oy"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2k16h"]
+advance_mode = 2
+advance_condition = &"attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_chth2"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hupj6"]
+advance_mode = 2
+advance_condition = &"Hurt"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ognna"]
+advance_mode = 2
+advance_condition = &"Hurt"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ddx8b"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2nsvr"]
+advance_mode = 2
+advance_condition = &"Combobreak"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5jl4l"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_fjmou"]
+resource_local_to_scene = true
+states/ATTACK/node = SubResource("AnimationNodeBlendSpace2D_cutpx")
+states/ATTACK/position = Vector2(228.666, 149.333)
+states/COMBOBREAK/node = SubResource("AnimationNodeBlendSpace2D_sbemg")
+states/COMBOBREAK/position = Vector2(433.333, 42)
+states/HURT/node = SubResource("AnimationNodeBlendSpace2D_mebbl")
+states/HURT/position = Vector2(428, 126)
+states/MOVE/node = SubResource("AnimationNodeBlendSpace2D_pchwr")
+states/MOVE/position = Vector2(230, 55.6667)
+states/Start/position = Vector2(98.6667, 126.667)
+transitions = ["Start", "MOVE", SubResource("AnimationNodeStateMachineTransition_wh3oy"), "MOVE", "ATTACK", SubResource("AnimationNodeStateMachineTransition_2k16h"), "ATTACK", "MOVE", SubResource("AnimationNodeStateMachineTransition_chth2"), "MOVE", "HURT", SubResource("AnimationNodeStateMachineTransition_hupj6"), "ATTACK", "HURT", SubResource("AnimationNodeStateMachineTransition_ognna"), "HURT", "MOVE", SubResource("AnimationNodeStateMachineTransition_ddx8b"), "HURT", "COMBOBREAK", SubResource("AnimationNodeStateMachineTransition_2nsvr"), "COMBOBREAK", "MOVE", SubResource("AnimationNodeStateMachineTransition_5jl4l")]
+
+[node name="Root" type="Node2D"]
+
+[node name="Character" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="Player" parent="Character" instance=ExtResource("1_ubolr")]
+
+[node name="Anim" parent="Character/Player/AnimTree" index="0"]
+tree_root = SubResource("AnimationNodeStateMachine_fjmou")
+
+[node name="DebugAttackBox" parent="Character/Player/Hitbox/Hitbox/CollisionShape2D" index="0"]
+color = Color(0.72549, 0.0588235, 0.25098, 0.392157)
+
+[node name="Code" type="Node" parent="."]
+
+[node name="Load" type="Node" parent="Code" node_paths=PackedStringArray("PlayerAnimTree", "PlayerAnimPlayer")]
+unique_name_in_owner = true
+script = ExtResource("2_8fgdl")
+PlayerAnimTree = NodePath("../../Character/Player/Hitbox/AnimTree")
+PlayerAnimPlayer = NodePath("../../Character/Player/Hitbox/AnimTree/AnimationPlayer")
+
+[node name="LoadParams" type="Node" parent="Code"]
+unique_name_in_owner = true
+script = ExtResource("3_esl8s")
+
+[node name="Preselect" type="Node" parent="Code"]
+script = ExtResource("4_1a8ro")
+
+[node name="Save" type="Node" parent="Code"]
+script = ExtResource("5_y3dvc")
+
+[node name="Camera2D" parent="." instance=ExtResource("2_7npsa")]
+
+[node name="LOG" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+offset_left = 18.0
+offset_top = 12.0
+offset_right = 1133.0
+offset_bottom = 79.0
+metadata/_edit_lock_ = true
+
+[node name="AnimationNames" type="ItemList" parent="."]
+unique_name_in_owner = true
+offset_left = 19.0
+offset_top = 361.0
+offset_right = 483.0
+offset_bottom = 634.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 66.0
+offset_top = 333.0
+offset_right = 156.0
+offset_bottom = 356.0
+text = "Animations"
+
+[node name="parameters" type="ItemList" parent="."]
+unique_name_in_owner = true
+offset_left = 830.0
+offset_top = 485.0
+offset_right = 1139.0
+offset_bottom = 638.0
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 841.0
+offset_top = 60.0
+offset_right = 1126.0
+offset_bottom = 84.0
+text = "Current Node parameters"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 836.0
+offset_top = 460.0
+offset_right = 980.0
+offset_bottom = 483.0
+text = "ALL parameters"
+
+[node name="CurrentNodeLabel" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 842.0
+offset_top = 86.0
+offset_right = 986.0
+offset_bottom = 109.0
+text = "Current Blend Node"
+
+[node name="CurrentNode" type="ItemList" parent="."]
+unique_name_in_owner = true
+offset_left = 838.0
+offset_top = 116.0
+offset_right = 1134.0
+offset_bottom = 436.0
+
+[node name="LOGNAMES" type="ItemList" parent="."]
+unique_name_in_owner = true
+offset_left = 492.0
+offset_top = 534.0
+offset_right = 762.0
+offset_bottom = 640.0
+
+[node name="CurrentSelectedName" type="LineEdit" parent="."]
+unique_name_in_owner = true
+offset_left = 492.0
+offset_top = 498.0
+offset_right = 765.0
+offset_bottom = 529.0
+
+[node name="Preselect" type="Button" parent="."]
+offset_left = 492.0
+offset_top = 458.0
+offset_right = 604.0
+offset_bottom = 490.0
+text = "PRESELECT"
+
+[node name="Change" type="Button" parent="."]
+offset_left = 498.0
+offset_top = 383.0
+offset_right = 590.0
+offset_bottom = 415.0
+text = "CHANGE"
+
+[node name="DirNumber" type="OptionButton" parent="."]
+unique_name_in_owner = true
+offset_left = 650.0
+offset_top = 456.0
+offset_right = 766.0
+offset_bottom = 490.0
+selected = 1
+item_count = 2
+popup/item_0/text = "4 Dirs"
+popup/item_1/text = "8 Dirs"
+popup/item_1/id = 1
+
+[node name="Distance" type="LineEdit" parent="."]
+unique_name_in_owner = true
+offset_left = 499.0
+offset_top = 420.0
+offset_right = 571.0
+offset_bottom = 451.0
+max_length = 5
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 590.0
+offset_top = 424.0
+offset_right = 657.0
+offset_bottom = 447.0
+text = "Distance"
+
+[node name="DistanceLOG" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 670.0
+offset_top = 424.0
+offset_right = 737.0
+offset_bottom = 447.0
+text = "0.0"
+
+[node name="AddNew" type="Button" parent="."]
+offset_left = 595.0
+offset_top = 380.0
+offset_right = 685.0
+offset_bottom = 417.0
+text = "ADD NEW"
+
+[node name="Delete" type="Button" parent="."]
+offset_left = 691.0
+offset_top = 380.0
+offset_right = 781.0
+offset_bottom = 417.0
+text = "DELETE"
+
+[node name="Save" type="Button" parent="."]
+offset_left = 24.0
+offset_top = 42.0
+offset_right = 100.0
+offset_bottom = 77.0
+text = "SAVE"
+
+[node name="SaveDialog" type="FileDialog" parent="."]
+unique_name_in_owner = true
+initial_position = 1
+size = Vector2i(800, 550)
+dialog_hide_on_ok = true
+filters = PackedStringArray("*.tscn")
+
+[node name="TypeofMove" type="OptionButton" parent="."]
+unique_name_in_owner = true
+offset_left = 925.0
+offset_top = 10.0
+offset_right = 1122.0
+offset_bottom = 49.0
+selected = 0
+item_count = 4
+popup/item_0/text = "MOVE"
+popup/item_1/text = "ATTACK"
+popup/item_1/id = 1
+popup/item_2/text = "HURT"
+popup/item_2/id = 2
+popup/item_3/text = "COMBOBREAK"
+popup/item_3/id = 3
+
+[connection signal="ready" from="Code/Load" to="Code/Load" method="_on_ready"]
+[connection signal="ready" from="Code/LoadParams" to="Code/LoadParams" method="_on_ready"]
+[connection signal="item_selected" from="CurrentNode" to="Code/LoadParams" method="_on_current_node_item_selected"]
+[connection signal="text_changed" from="CurrentSelectedName" to="Code/Preselect" method="_on_current_selected_name_text_changed"]
+[connection signal="text_submitted" from="CurrentSelectedName" to="Code/Preselect" method="_on_current_selected_name_text_submitted"]
+[connection signal="pressed" from="Preselect" to="Code/Preselect" method="_on_preselect_pressed"]
+[connection signal="pressed" from="Change" to="Code/Preselect" method="_on_change_pressed"]
+[connection signal="text_changed" from="Distance" to="Code/Preselect" method="_on_distance_text_changed"]
+[connection signal="text_submitted" from="Distance" to="Code/Preselect" method="_on_distance_text_submitted"]
+[connection signal="pressed" from="AddNew" to="Code/Preselect" method="_on_add_new_pressed"]
+[connection signal="pressed" from="Delete" to="Code/Preselect" method="_on_delete_pressed"]
+[connection signal="pressed" from="Save" to="Code/Save" method="_on_save_pressed"]
+[connection signal="file_selected" from="SaveDialog" to="Code/Save" method="_on_save_dialog_file_selected"]
+[connection signal="item_selected" from="TypeofMove" to="Code/Load" method="_on_typeof_move_item_selected"]
+
+[editable path="Character/Player"]
+[editable path="Character/Player/INPUT"]
+[editable path="Character/Player/Motion"]
+[editable path="Character/Player/Motion AnimTree"]
+[editable path="Character/Player/Transitions"]
+[editable path="Character/Player/Sprites"]
+[editable path="Character/Player/Hitbox"]
+[editable path="Character/Player/Hurtbox"]
