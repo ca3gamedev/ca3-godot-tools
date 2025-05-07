@@ -1,7 +1,11 @@
 extends Node
 
+# THE HITBOX I USE TO SAVE LATER
+# THESE ARE THE HITBOX PLAYER I USE TO SET UP THE ANIMATIONS TO SAVE LATER
 @export var AttackHitboxPlayer : AnimationPlayer
 @export var AttackHitboxTree : AnimationTree
+@export var HurtboxPlayer : AnimationPlayer
+@export var HurtboxTree : AnimationTree
 
 @export var current_hitbox : int = 0
 @export var max_frames : int = 0

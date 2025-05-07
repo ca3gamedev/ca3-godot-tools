@@ -44,9 +44,4 @@ func Start():
 	%Anim.set("parameters/conditions/attack", true)
 	%Anim.set("parameters/ATTACK/blend_position", attack_id * %Transitions.motion)
 	
-	%Hitbox.get_node("AnimTree").set("parameters/conditions/attack", true)
-	%Hitbox.get_node("AnimTree").set("parameters/ATTACK/blend_position", attack_id * %Transitions.motion)
-	
-	%Hurtbox.get_node("AnimTree").set("parameters/conditions/attack", true)
-	%Hurtbox.get_node("AnimTree").set("parameters/ATTACK/blend_position", attack_id * %Transitions.motion)
 	

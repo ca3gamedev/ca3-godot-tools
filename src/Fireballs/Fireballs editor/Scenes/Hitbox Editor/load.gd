@@ -1,7 +1,10 @@
 extends Node
 
+#THESE ARE THE ONES USED TO LOAD THE ANIMATIONS FROM THE PLAYER SCENE
+#THIS PLAYER ANIM TREE ARE THE SPRITES
 @export var PlayerAnimTree : AnimationTree
 @export var AttackHitboxTree : AnimationTree
+
 @export var current : String = ""
 @export var current_index : int = 0
 

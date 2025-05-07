@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwokgs8jnu5a0"]
+
+[ext_resource type="Script" path="res://ca3 framework/framework/VariableNodes/variable_nodes.gd" id="1_a6akn"]
+
+[node name="VariableNodes" type="Node"]
+script = ExtResource("1_a6akn")
+score = 100

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://be3r5xbrqxkf0"]
+
+[ext_resource type="Script" path="res://ca3 framework/framework/InputCode/Special movement/hadouken.gd" id="1_nlnly"]
+
+[node name="Hadouken" type="Node"]
+script = ExtResource("1_nlnly")

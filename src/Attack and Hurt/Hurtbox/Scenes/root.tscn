@@ -14,9 +14,6 @@ unique_name_in_owner = true
 
 [node name="Player" parent="Character" instance=ExtResource("1_bvvjs")]
 
-[node name="DebugAttackBox" parent="Character/Player/Hitbox/Hitbox/CollisionShape2D" index="0"]
-color = Color(0.72549, 0.0588235, 0.25098, 0.392157)
-
 [node name="Code" type="Node" parent="."]
 
 [node name="Load" type="Node" parent="Code" node_paths=PackedStringArray("PlayerAnimTree", "PlayerAnimPlayer")]

@@ -92,20 +92,70 @@ func UpdateHitboxFrame():
 	%HitboxPosition.clear()
 	%HitboxFramesBool.clear()
 	%HitboxPositionPos.clear()
+	
+	%HurtboxFrames.clear()
+	%HurtboxPosition.clear()
+	%HurtboxFramesBool.clear()
+	%HurtboxPositionPos.clear()
+	
+	%HitboxFrameSize.clear()
+	%HitboxSize.clear()
+	%HurtboxFrameSize.clear()
+	%HurtboxSize.clear()
+	
+	%HadoukenFrames.clear()
+	%HadoukenFramesEnable.clear()
+	%HadoukenPosition.clear()
+	%HadoukenPositionPos.clear()
+	
 	var anims = %NextPreviousHitbox.AttackHitboxPlayer.get_animation(current_anim)
 	for track in anims.get_track_count():
 		for key in anims.track_get_key_count(track):
-			if anims.track_get_path(track) == NodePath("..:fireball_spawn"):
+			if anims.track_get_path(track) == NodePath("../Hitbox/CollisionShape2D:shape:size"):
+				var time = anims.track_get_key_time(track, key)
+				%HitboxFrameSize.add_item(str(time))
+				var value = anims.track_get_key_value(track, key)
+				%HitboxSize.add_item(str(value))
+			if anims.track_get_path(track) == NodePath("../Hitbox/CollisionShape2D:disabled"):
 				var time = anims.track_get_key_time(track, key)
 				%HitboxFrames.add_item(str(time))
 				var value = anims.track_get_key_value(track, key)
 				%HitboxFramesBool.add_item(str(value))
-			if anims.track_get_path(track) == NodePath("../Hitbox/fireball_spawn:position"):
+			if anims.track_get_path(track) == NodePath("../Hitbox/CollisionShape2D:position"):
 				var time = anims.track_get_key_time(track, key)
 				%HitboxPosition.add_item(str(time))
 				var value = anims.track_get_key_value(track, key)
 				%HitboxPositionPos.add_item(str(value))
+			if anims.track_get_path(track) == NodePath("..:fireball_spawn"):
+				var time = anims.track_get_key_time(track, key)
+				%HadoukenFrames.add_item(str(time))
+				var value = anims.track_get_key_value(track, key)
+				%HadoukenFramesEnable.add_item(str(value))
+			if anims.track_get_path(track) == NodePath("../Hitbox/fireball_spawn:position"):
+				var time = anims.track_get_key_time(track, key)
+				%HadoukenPosition.add_item(str(time))
+				var value = anims.track_get_key_value(track, key)
+				%HadoukenPositionPos.add_item(str(value))
 	
+	var anims2 = %NextPreviousHitbox.HurtboxPlayer.get_animation(current_anim)
+	for track in anims2.get_track_count():
+		for key in anims2.track_get_key_count(track):
+			if anims2.track_get_path(track) == NodePath("../CollisionShape2D:position"):
+				var time = anims2.track_get_key_time(track, key)
+				%HurtboxPosition.add_item(str(time))
+				var value = anims2.track_get_key_value(track, key)
+				%HurtboxPositionPos.add_item(str(value))
+			if anims2.track_get_path(track) == NodePath("../CollisionShape2D:shape:size"):
+				var time = anims2.track_get_key_time(track, key)
+				%HurtboxFrameSize.add_item(str(time))
+				var value = anims2.track_get_key_value(track, key)
+				%HurtboxSize.add_item(str(value))
+			if anims2.track_get_path(track) == NodePath("../CollisionShape2D:disabled"):
+				var time = anims2.track_get_key_time(track, key)
+				%HurtboxFrames.add_item(str(time))
+				var value = anims2.track_get_key_value(track, key)
+				%HurtboxFramesBool.add_item(str(value))
+				
 	%NextPreviousHitbox.AttackHitboxPlayer.play(%NextPreviousFrame.current_anim)
 	%NextPreviousHitbox.AttackHitboxPlayer.stop()
 	%NextPreviousHitbox.AttackHitboxPlayer.seek(0.0, true)

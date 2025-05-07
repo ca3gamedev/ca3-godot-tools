@@ -6,7 +6,8 @@ extends Node2D
 @export var fireball_spawn : bool
 
 func _ready():
-	$AnimTree.active = true
+	#$AnimTree.active = true
+	pass
 
 
 func _on_hitbox_area_entered(area):

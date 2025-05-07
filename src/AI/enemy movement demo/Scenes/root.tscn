@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://p6xryonk834q"]
+
+[ext_resource type="Script" path="res://Scenes/root.gd" id="1_d1a7v"]
+[ext_resource type="PackedScene" uid="uid://bquf765e0ayvd" path="res://ca3 framework/Framework Items/Coins/coin_spawner.tscn" id="2_qutdo"]
+[ext_resource type="PackedScene" uid="uid://tbremdna4dde" path="res://ca3 framework/framework/Player/Hurtbox2.tscn" id="4_hjak6"]
+[ext_resource type="PackedScene" uid="uid://dnuiprw05pmqq" path="res://ca3 framework/framework/Camera2D/camera_2d.tscn" id="4_qd1gi"]
+[ext_resource type="PackedScene" uid="uid://y8jp24a1mwac" path="res://ca3 framework/AI enemies/Director/ai_director.tscn" id="4_qvgwt"]
+[ext_resource type="PackedScene" uid="uid://750k42y2kg35" path="res://ca3 framework/AI enemies/EnemyManager/enemy_bullets.tscn" id="5_4vnua"]
+[ext_resource type="PackedScene" uid="uid://po7sh3353sqr" path="res://ca3 framework/fireballs/Manager/player_bullet_manager.tscn" id="5_uyt6j"]
+
+[node name="Root" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_d1a7v")
+
+[node name="CoinSpawner" parent="." instance=ExtResource("2_qutdo")]
+
+[node name="Camera2D" parent="." instance=ExtResource("4_qd1gi")]
+
+[node name="AIDirector" parent="." instance=ExtResource("4_qvgwt")]
+spawn_number_enemy = 10
+
+[node name="ClosestUpdate" parent="AIDirector" index="2"]
+wait_time = 1.0
+
+[node name="AIDirectorCode" parent="AIDirector" index="3"]
+radius_close = 50
+radius_medium = 100
+radius_far = 150
+
+[node name="EnemyBullets" parent="." instance=ExtResource("5_4vnua")]
+
+[node name="Players" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" parent="Players" instance=ExtResource("4_hjak6")]
+position = Vector2(581, 312)
+collision_mask = 59
+
+[node name="PlayerBulletManager" parent="." instance=ExtResource("5_uyt6j")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LOG" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 45.0
+offset_top = 43.0
+offset_right = 329.0
+offset_bottom = 80.0
+value = 100.0
+
+[editable path="AIDirector"]
