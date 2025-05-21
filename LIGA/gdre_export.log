@@ -1,0 +1,40 @@
+GDRE Tools v1.0.0-beta.2
+Ubuntu 22.04.5 LTS 22.04, Mesa Intel(R) UHD Graphics (CML GT2), opengl3
+Opening file: ~/Apps/Level Idea Generator Linux/Level Idea Generator linux/Level Idea Generator.x86_64
+WARNING: Could not find embedded pck in EXE, found pck file, loading from: ~/Apps/Level Idea Generator Linux/Level Idea Generator linux/Level Idea Generator.x86_64
+   at: load_project (modules/gdsdecomp/utility/gdre_settings.cpp:590)
+Verified 134 files, no errors detected!
+Extracted 134 files, no errors detected!
+Exporting resources in parallel...
+Saved project config project.godot.
+
+
+********************************EXPORT REPORT********************************
+
+Totals:                                 
+Decompiled scripts:                     26
+Failed scripts:                         0
+Imported resources for export session:  65
+Successfully converted:                 65
+Lossy:                                  1
+Rewrote metadata:                       32
+Non-importable conversions:             0
+Not converted:                          0
+Failed conversions:                     0
+-------------
+
+
+The following files were converted from an import that was stored lossy.
+You may lose fidelity when re-importing these files upon loading the project.
+res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex to res://icon.svg
+
+
+------------------------------------------------------------------------------------
+
+Use Godot editor version 4.3.0 to edit the project.
+Note: the project may be using a custom version of Godot. Detection for this has not been implemented yet.
+If you find that you have many non-import errors upon opening the project 
+(i.e. scripts or shaders have many errors), use the original game's binary as the export template.
+
+*******************************************************************************
+

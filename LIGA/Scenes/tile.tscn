@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=4 uid="uid://b102o14uxhs4n"]
+
+[ext_resource type="Script" path="res://Scenes/tile.gd" id="1"]
+
+[node name="Tile" type="Node2D"]
+script = ExtResource("1")
+hardrock = Color(0.147977, 0.0292655, 0.00669768, 1)
+rock = Color(0.220298, 0.128274, 0.0103031, 1)
+clay = Color(0.347227, 0.256434, 0.10513, 1)
+sand = Color(0.569103, 0.514951, 0.147644, 1)
+few_grass = Color(0.520922, 0.643178, 0.235454, 1)
+sabana = Color(0.326305, 0.743151, 0.225623, 1)
+bush = Color(0.012, 0.24, 0.1184, 1)
+grass = Color(0.194086, 0.436722, 0.0904914, 1)
+fewpath = Color(0.697111, 0.585056, 0.279566, 1)
+mainpath = Color(0.86342, 0.555245, 0.193565, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 32.0
+offset_bottom = 32.0

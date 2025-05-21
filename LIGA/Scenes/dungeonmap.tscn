@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=4 uid="uid://c7d8qht8mryc4"]
+
+[ext_resource type="TileSet" uid="uid://dun6jc2inj4qo" path="res://tiles/rock_layer.tres" id="1"]
+
+[node name="DungeonLayer" type="TileMapLayer"]
+tile_set = ExtResource("1")

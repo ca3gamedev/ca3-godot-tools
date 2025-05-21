@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=4 uid="uid://bj0cimrbaw4ef"]
+
+[ext_resource type="Script" path="res://New Project/variables.gd" id="1"]
+
+[node name="Variables" type="Node"]
+script = ExtResource("1")

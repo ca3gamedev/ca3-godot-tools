@@ -1,0 +1,13 @@
+extends Node
+        0: name = "Rock"
+        1: name = "Sand"
+        3: name = "Grass"
+        4: name = "Bush"
+        5: name = "Foliage"
+        6: name = "Enemy"
+        7: name = "Chest"
+        8: name = "Traps"
+        9: name = "Player"
+        10: name = "Doors"
+        11: name = "Paths"
+        12: name = "Outline"

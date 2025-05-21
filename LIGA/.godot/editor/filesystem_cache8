@@ -1,0 +1,73 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1747840421
+gdre_export.log::TextFile::-1::1747840329::0::1::::<><>::
+icon.svg::CompressedTexture2D::5152692418705901131::1747840329::1747840329::1::::<><>::
+little_map.png::CompressedTexture2D::5705699947923067613::1747840329::1747840329::1::::<><>::
+rock_layer.tscn::PackedScene::2707421279653003127::1747840329::0::1::::<><>::uid://c3oqe4n2o220v::::res://tiles/tile1.png<>uid://cgfcyihgoljfg::::res://tiles/tile2.png<>uid://16h6obtjqhc0::::res://tiles/tile11.png<>uid://c2khg1hx28ul5::::res://tiles/tile12.png<>uid://hfe6kiwppy3::::res://tiles/tile13.png<>uid://bxttm7k6u5st7::::res://tiles/tile14.png<>uid://ch5neeednga4s::::res://tiles/tile15.png<>uid://bm5gxfoftgc6d::::res://tiles/tile16.png<>uid://i04r5sl4pp4h::::res://tiles/tile17.png<>uid://0fduyq24d4ll::::res://tiles/tile18.png<>uid://dgslipkom1nd7::::res://tiles/tile19.png<>uid://ds8fy6ftj81i5::::res://tiles/tile20.png<>uid://cui763dohweea::::res://tiles/tile3.png<>uid://ccsy1qosw4oqh::::res://tiles/tile4.png<>uid://bn7d0pudrwnu5::::res://tiles/tile5.png<>uid://bconh4x0n2m5c::::res://tiles/tile6.png<>uid://428iw6hk6rhg::::res://tiles/tile7.png<>uid://ch2y4ps17at64::::res://tiles/tile8.png<>uid://djbgklsgmjmkc::::res://tiles/tile9.png<>uid://esnxrfiqtfvv::::res://tiles/tile10.png
+::res://2D/::1747840329
+bush.png::CompressedTexture2D::7746639124863035433::1747840329::1747840329::1::::<><>::
+grass 2.png::CompressedTexture2D::5832116239820075445::1747840329::1747840329::1::::<><>::
+grass.png::CompressedTexture2D::9186868490182325832::1747840329::1747840329::1::::<><>::
+rock.png::CompressedTexture2D::8102380585454210329::1747840329::1747840329::1::::<><>::
+sand 2.png::CompressedTexture2D::2937533936312586156::1747840329::1747840329::1::::<><>::
+sand.png::CompressedTexture2D::2383159771648392734::1747840329::1747840329::1::::<><>::
+::res://GUI/::1747840329
+canvas border.png::CompressedTexture2D::5560032175172075498::1747840329::1747840329::1::::<><>::
+origin cursor.png::CompressedTexture2D::2931043638923850216::1747840329::1747840329::1::::<><>::
+origin end.png::CompressedTexture2D::7514333378987576614::1747840329::1747840329::1::::<><>::
+origin world.png::CompressedTexture2D::8711302795103798257::1747840329::1747840329::1::::<><>::
+::res://New Project/::1747840329
+TextureIDs.tscn::PackedScene::5881791906090300317::1747840329::0::1::::<><>::res://New Project/texture_i_ds.gd
+texture_i_ds.gd::GDScript::-1::1747840329::0::1::::<>Node2D<>::
+variables.gd::GDScript::-1::1747840329::0::1::::<>Node<>::
+variables.tscn::PackedScene::3069866097211869585::1747840329::0::1::::<><>::res://New Project/variables.gd
+::res://Scenes/::1747840329
+brushtools.gd::GDScript::-1::1747840329::0::1::::<>Node<>::
+cache.gd::GDScript::-1::1747840329::0::1::::<>Node<>::
+canvas_border.gd::GDScript::-1::1747840329::0::1::::<>Node<>::
+check.gd::GDScript::-1::1747840329::0::1::::<>Node<>::
+dungeon.gd::GDScript::-1::1747840329::0::1::::<>Node2D<>::
+dungeon.tscn::PackedScene::5903832330249975384::1747840329::0::1::::<><>::res://Scenes/dungeon.gd<>res://Scenes/generator.gd<>uid://b102o14uxhs4n::::res://Scenes/tile.tscn<>uid://c7d8qht8mryc4::::res://Scenes/dungeonmap.tscn<>uid://clhk6g0egkp3g::::res://GUI/canvas border.png<>res://Scenes/tile_id_s.gd<>res://Scenes/save.gd<>res://Scenes/rock_layer.gd<>res://Scenes/move_camera.gd<>res://Scenes/grass_layer.gd<>res://Scenes/mouse_info_pos.gd<>res://Scenes/brushtools.gd<>res://Scenes/mouse_offset.gd<>res://Scenes/offset_cursor.gd<>res://Scenes/canvas_border.gd<>res://Scenes/check.gd<>res://Scenes/keygens.gd<>res://Scenes/gen_tab.gd<>res://Scenes/cache.gd<>res://Scenes/log.gd<>res://Scenes/end_cursor_s.gd<>res://Scenes/hide.gd<>uid://bh024i0gefwe7::::res://GUI/origin cursor.png<>uid://dfb88cwvm8tow::::res://GUI/origin end.png<>uid://dwd25cipm17ab::::res://GUI/origin world.png
+dungeonmap.tscn::PackedScene::7027110129060025321::1747840329::0::1::::<><>::uid://dun6jc2inj4qo::::res://tiles/rock_layer.tres
+end_cursor_s.gd::GDScript::-1::1747840329::0::1::::<>Node<>::
+export_screenshot.gd::GDScript::-1::1747840329::0::1::::<>Node<>::
+generator.gd::GDScript::-1::1747840329::0::1::::<>Node<>::
+gen_tab.gd::GDScript::-1::1747840329::0::1::::<>Node<>::
+get_id.gd::GDScript::-1::1747840329::0::1::::<>Node<>::
+grass_layer.gd::GDScript::-1::1747840329::0::1::::<>Node<>::
+hide.gd::GDScript::-1::1747840329::0::1::::<>Node<>::
+keygens.gd::GDScript::-1::1747840329::0::1::::<>Node<>::
+log.gd::GDScript::-1::1747840329::0::1::::<>Node<>::
+mouseblock.gd::GDScript::-1::1747840329::0::1::::<>Node<>::
+mouse_info_pos.gd::GDScript::-1::1747840329::0::1::::<>Node<>::
+mouse_offset.gd::GDScript::-1::1747840329::0::1::::<>Node<>::
+move_camera.gd::GDScript::-1::1747840329::0::1::::<>Node<>::
+offset_cursor.gd::GDScript::-1::1747840329::0::1::::<>Node<>::
+rock_layer.gd::GDScript::-1::1747840329::0::1::::<>Node<>::
+sand_layer.gd::GDScript::-1::1747840329::0::1::::<>Node<>::
+save.gd::GDScript::-1::1747840329::0::1::::<>Node<>::
+tile.gd::GDScript::-1::1747840329::0::1::::<>Node2D<>::
+tile.tscn::PackedScene::4264605833398973463::1747840329::0::1::::<><>::res://Scenes/tile.gd
+tile_id_s.gd::GDScript::-1::1747840329::0::1::::<>OptionButton<>::
+::res://tiles/::1747840329
+rock_layer.tres::TileSet::8591774280701295482::1747840329::0::1::::<><>::uid://c3oqe4n2o220v::::res://tiles/tile1.png<>uid://cgfcyihgoljfg::::res://tiles/tile2.png<>uid://16h6obtjqhc0::::res://tiles/tile11.png<>uid://c2khg1hx28ul5::::res://tiles/tile12.png<>uid://hfe6kiwppy3::::res://tiles/tile13.png<>uid://bxttm7k6u5st7::::res://tiles/tile14.png<>uid://ch5neeednga4s::::res://tiles/tile15.png<>uid://bm5gxfoftgc6d::::res://tiles/tile16.png<>uid://i04r5sl4pp4h::::res://tiles/tile17.png<>uid://0fduyq24d4ll::::res://tiles/tile18.png<>uid://dgslipkom1nd7::::res://tiles/tile19.png<>uid://ds8fy6ftj81i5::::res://tiles/tile20.png<>uid://cui763dohweea::::res://tiles/tile3.png<>uid://ccsy1qosw4oqh::::res://tiles/tile4.png<>uid://bn7d0pudrwnu5::::res://tiles/tile5.png<>uid://bconh4x0n2m5c::::res://tiles/tile6.png<>uid://428iw6hk6rhg::::res://tiles/tile7.png<>uid://ch2y4ps17at64::::res://tiles/tile8.png<>uid://djbgklsgmjmkc::::res://tiles/tile9.png<>uid://esnxrfiqtfvv::::res://tiles/tile10.png
+tile1.png::CompressedTexture2D::6768010437373998763::1747840329::1747840329::1::::<><>::
+tile2.png::CompressedTexture2D::5204461042316141964::1747840329::1747840329::1::::<><>::
+tile3.png::CompressedTexture2D::6195133041493443640::1747840329::1747840329::1::::<><>::
+tile4.png::CompressedTexture2D::4951882355552522983::1747840329::1747840329::1::::<><>::
+tile5.png::CompressedTexture2D::3365163353849601562::1747840329::1747840329::1::::<><>::
+tile6.png::CompressedTexture2D::2556503040851290806::1747840329::1747840329::1::::<><>::
+tile7.png::CompressedTexture2D::2093233815710375280::1747840329::1747840329::1::::<><>::
+tile8.png::CompressedTexture2D::5321411284942518343::1747840329::1747840329::1::::<><>::
+tile9.png::CompressedTexture2D::7793408787323649742::1747840329::1747840329::1::::<><>::
+tile10.png::CompressedTexture2D::318745469297574731::1747840329::1747840329::1::::<><>::
+tile11.png::CompressedTexture2D::1889386761272755625::1747840329::1747840329::1::::<><>::
+tile12.png::CompressedTexture2D::6689021034369619900::1747840329::1747840329::1::::<><>::
+tile13.png::CompressedTexture2D::14763016483259488::1747840329::1747840329::1::::<><>::
+tile14.png::CompressedTexture2D::4041164014716077438::1747840329::1747840329::1::::<><>::
+tile15.png::CompressedTexture2D::5326891285982339404::1747840329::1747840329::1::::<><>::
+tile16.png::CompressedTexture2D::3291023799684513577::1747840329::1747840329::1::::<><>::
+tile17.png::CompressedTexture2D::614912948288499269::1747840329::1747840329::1::::<><>::
+tile18.png::CompressedTexture2D::1765262133120441917::1747840329::1747840329::1::::<><>::
+tile19.png::CompressedTexture2D::7618236889703709066::1747840329::1747840329::1::::<><>::
+tile20.png::CompressedTexture2D::8491133783289912526::1747840329::1747840329::1::::<><>::

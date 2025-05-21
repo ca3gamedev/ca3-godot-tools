@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbusixl3lqe83"]
+
+[ext_resource type="Script" path="res://ca3 framework/LOAD/file_paths.gd" id="1_5lq4e"]
+
+[node name="FilePaths" type="Node"]
+script = ExtResource("1_5lq4e")

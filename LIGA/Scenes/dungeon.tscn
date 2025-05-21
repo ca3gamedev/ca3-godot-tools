@@ -1,0 +1,901 @@
+[gd_scene load_steps=28 format=3 uid="uid://cqd4ix3ven2xw"]
+
+[ext_resource type="Script" path="res://Scenes/dungeon.gd" id="1"]
+[ext_resource type="Script" path="res://Scenes/generator.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://b102o14uxhs4n" path="res://Scenes/tile.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://c7d8qht8mryc4" path="res://Scenes/dungeonmap.tscn" id="4"]
+[ext_resource type="Texture2D" uid="uid://clhk6g0egkp3g" path="res://GUI/canvas border.png" id="5"]
+[ext_resource type="Script" path="res://Scenes/tile_id_s.gd" id="6"]
+[ext_resource type="Script" path="res://Scenes/save.gd" id="7"]
+[ext_resource type="Script" path="res://Scenes/rock_layer.gd" id="8"]
+[ext_resource type="Script" path="res://Scenes/move_camera.gd" id="9"]
+[ext_resource type="Script" path="res://Scenes/grass_layer.gd" id="10"]
+[ext_resource type="Script" path="res://Scenes/mouse_info_pos.gd" id="11"]
+[ext_resource type="Script" path="res://Scenes/brushtools.gd" id="12"]
+[ext_resource type="Script" path="res://Scenes/mouse_offset.gd" id="13"]
+[ext_resource type="Script" path="res://Scenes/offset_cursor.gd" id="14"]
+[ext_resource type="Script" path="res://Scenes/canvas_border.gd" id="15"]
+[ext_resource type="Script" path="res://Scenes/check.gd" id="16"]
+[ext_resource type="Script" path="res://Scenes/keygens.gd" id="17"]
+[ext_resource type="Script" path="res://Scenes/gen_tab.gd" id="18"]
+[ext_resource type="Script" path="res://Scenes/cache.gd" id="19"]
+[ext_resource type="Script" path="res://Scenes/log.gd" id="20"]
+[ext_resource type="Script" path="res://Scenes/end_cursor_s.gd" id="21"]
+[ext_resource type="Script" path="res://Scenes/hide.gd" id="22"]
+[ext_resource type="Texture2D" uid="uid://bh024i0gefwe7" path="res://GUI/origin cursor.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://dfb88cwvm8tow" path="res://GUI/origin end.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://dwd25cipm17ab" path="res://GUI/origin world.png" id="25"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2l1qu"]
+texture = ExtResource("5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_umaee"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_2l1qu")
+
+[node name="Dungeon" type="Node2D"]
+script = ExtResource("1")
+
+[node name="Generator" type="Node" parent="."]
+script = ExtResource("2")
+tile_scene = ExtResource("3")
+dungeon_size = Vector2i(20, 15)
+tile_offset = 40
+number_rooms = 7
+room_size = Vector2i(10, 10)
+
+[node name="Tile" parent="." instance=ExtResource("3")]
+visible = false
+
+[node name="Cache" parent="." instance=ExtResource("4")]
+unique_name_in_owner = true
+visible = false
+
+[node name="UnderLayer" parent="." instance=ExtResource("4")]
+unique_name_in_owner = true
+
+[node name="UnderMidLayer" parent="." instance=ExtResource("4")]
+unique_name_in_owner = true
+
+[node name="MiddleLayer" parent="." instance=ExtResource("4")]
+unique_name_in_owner = true
+
+[node name="UpperMidLayer" parent="." instance=ExtResource("4")]
+unique_name_in_owner = true
+
+[node name="UpperLayer" parent="." instance=ExtResource("4")]
+unique_name_in_owner = true
+
+[node name="CanvasBorder" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_set = SubResource("TileSet_umaee")
+
+[node name="GUI" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="ColorRect" type="ColorRect" parent="GUI"]
+offset_left = -8.0
+offset_top = 492.0
+offset_right = 1181.0
+offset_bottom = 533.0
+color = Color(1, 1, 1, 0.678431)
+
+[node name="Panel" type="Panel" parent="GUI"]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = -0.0173611
+anchor_right = 0.00868056
+anchor_bottom = 0.00617284
+offset_left = 948.0
+offset_top = 3.0
+offset_right = 1138.0
+offset_bottom = 190.0
+metadata/_edit_use_anchors_ = true
+
+[node name="GENERATORS" type="Panel" parent="GUI"]
+offset_left = -4.0
+offset_top = 535.0
+offset_right = 1177.0
+offset_bottom = 657.0
+
+[node name="GENERATORS" type="TabContainer" parent="GUI/GENERATORS"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 3.0
+offset_top = 9.0
+offset_right = 1167.0
+offset_bottom = 112.0
+current_tab = 0
+
+[node name="ALGO 1" type="TabBar" parent="GUI/GENERATORS/GENERATORS"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="SANDITERATIONS" type="SpinBox" parent="GUI/GENERATORS/GENERATORS/ALGO 1"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 35.0
+offset_top = 22.0
+offset_right = 118.062
+offset_bottom = 53.0
+min_value = 1.0
+max_value = 10.0
+value = 2.0
+
+[node name="Label" type="Label" parent="GUI/GENERATORS/GENERATORS/ALGO 1"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 24.0
+offset_right = 203.0
+offset_bottom = 47.0
+text = "iterations"
+
+[node name="Label2" type="Label" parent="GUI/GENERATORS/GENERATORS/ALGO 1"]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 26.0
+offset_right = 411.0
+offset_bottom = 49.0
+text = "Chance"
+
+[node name="SANDCHANCE" type="SpinBox" parent="GUI/GENERATORS/GENERATORS/ALGO 1"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 235.0
+offset_top = 22.0
+offset_right = 318.062
+offset_bottom = 53.0
+min_value = 3.0
+max_value = 20.0
+value = 3.0
+rounded = true
+
+[node name="Label3" type="Label" parent="GUI/GENERATORS/GENERATORS/ALGO 1"]
+layout_mode = 0
+offset_left = 1001.0
+offset_top = 24.0
+offset_right = 1100.0
+offset_bottom = 47.0
+text = "Generate (Q)"
+
+[node name="ALGO 2" type="TabBar" parent="GUI/GENERATORS/GENERATORS"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="IterationsBush" type="SpinBox" parent="GUI/GENERATORS/GENERATORS/ALGO 2"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 40.0
+offset_top = 19.0
+offset_right = 123.062
+offset_bottom = 50.0
+min_value = 1.0
+max_value = 10.0
+value = 2.0
+
+[node name="Label" type="Label" parent="GUI/GENERATORS/GENERATORS/ALGO 2"]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 21.0
+offset_right = 208.0
+offset_bottom = 44.0
+text = "iterations"
+
+[node name="Label2" type="Label" parent="GUI/GENERATORS/GENERATORS/ALGO 2"]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 23.0
+offset_right = 416.0
+offset_bottom = 46.0
+text = "Chance"
+
+[node name="Label3" type="Label" parent="GUI/GENERATORS/GENERATORS/ALGO 2"]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 24.0
+offset_right = 615.0
+offset_bottom = 47.0
+text = "Thresshold"
+
+[node name="ChanceBush" type="SpinBox" parent="GUI/GENERATORS/GENERATORS/ALGO 2"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 240.0
+offset_top = 19.0
+offset_right = 323.062
+offset_bottom = 50.0
+min_value = 3.0
+max_value = 15.0
+value = 3.0
+rounded = true
+
+[node name="ThressholdBush" type="SpinBox" parent="GUI/GENERATORS/GENERATORS/ALGO 2"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 428.0
+offset_top = 20.0
+offset_right = 511.062
+offset_bottom = 51.0
+min_value = 0.1
+max_value = 2.0
+step = 0.1
+value = 0.2
+
+[node name="Label4" type="Label" parent="GUI/GENERATORS/GENERATORS/ALGO 2"]
+layout_mode = 0
+offset_left = 952.0
+offset_top = 26.0
+offset_right = 1117.0
+offset_bottom = 49.0
+text = "Press (W) to generate"
+
+[node name="RANDOM WALK" type="TabBar" parent="GUI/GENERATORS/GENERATORS"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="RWIterations" type="SpinBox" parent="GUI/GENERATORS/GENERATORS/RANDOM WALK"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 109.062
+offset_bottom = 49.0
+min_value = 2.0
+value = 2.0
+
+[node name="Label" type="Label" parent="GUI/GENERATORS/GENERATORS/RANDOM WALK"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 24.0
+offset_right = 208.0
+offset_bottom = 47.0
+text = "Iterations"
+
+[node name="RWSkip" type="CheckButton" parent="GUI/GENERATORS/GENERATORS/RANDOM WALK"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 257.0
+offset_top = 20.0
+offset_right = 338.0
+offset_bottom = 51.0
+text = "Skip"
+
+[node name="RWRandom" type="CheckButton" parent="GUI/GENERATORS/GENERATORS/RANDOM WALK"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 565.0
+offset_top = 19.0
+offset_right = 759.0
+offset_bottom = 50.0
+text = "Random Skip"
+
+[node name="SkipStep" type="SpinBox" parent="GUI/GENERATORS/GENERATORS/RANDOM WALK"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 344.0
+offset_top = 19.0
+offset_right = 427.062
+offset_bottom = 50.0
+max_value = 10.0
+
+[node name="Label2" type="Label" parent="GUI/GENERATORS/GENERATORS/RANDOM WALK"]
+layout_mode = 0
+offset_left = 444.0
+offset_top = 22.0
+offset_right = 486.0
+offset_bottom = 45.0
+text = "steps"
+
+[node name="Label3" type="Label" parent="GUI/GENERATORS/GENERATORS/RANDOM WALK"]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 22.0
+offset_right = 1119.0
+offset_bottom = 45.0
+text = "Press (E) to generate"
+
+[node name="PATH" type="TabBar" parent="GUI/GENERATORS/GENERATORS"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="ENDX" type="SpinBox" parent="GUI/GENERATORS/GENERATORS/PATH"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0802131
+anchor_top = -0.858458
+anchor_right = -0.0802131
+anchor_bottom = -0.858458
+offset_left = 119.368
+offset_top = 82.809
+offset_right = 202.431
+offset_bottom = 113.809
+min_value = -500.0
+max_value = 500.0
+rounded = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="GUI/GENERATORS/GENERATORS/PATH/ENDX"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.109649
+anchor_top = -0.844569
+anchor_right = 0.109649
+anchor_bottom = -0.844569
+offset_left = 82.8922
+offset_top = 31.1817
+offset_right = 140.892
+offset_bottom = 54.1817
+text = "end x"
+metadata/_edit_use_anchors_ = true
+
+[node name="ENDY" type="SpinBox" parent="GUI/GENERATORS/GENERATORS/PATH"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0538071
+anchor_top = -0.844569
+anchor_right = 0.0538071
+anchor_bottom = -0.844569
+offset_left = 119.368
+offset_top = 82.809
+offset_right = 202.431
+offset_bottom = 113.809
+min_value = -500.0
+max_value = 500.0
+value = -2.0
+rounded = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="GUI/GENERATORS/GENERATORS/PATH/ENDY"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.109649
+anchor_top = -0.844569
+anchor_right = 0.109649
+anchor_bottom = -0.844569
+offset_left = 82.8922
+offset_top = 31.1817
+offset_right = 140.892
+offset_bottom = 54.1817
+text = "end y"
+metadata/_edit_use_anchors_ = true
+
+[node name="EndOffset" type="CheckButton" parent="GUI/GENERATORS/GENERATORS/PATH"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 366.0
+offset_top = 22.0
+offset_right = 498.0
+offset_bottom = 53.0
+text = "Target path (I)"
+
+[node name="Label" type="Label" parent="GUI/GENERATORS/GENERATORS/PATH"]
+layout_mode = 0
+offset_left = 936.0
+offset_top = 25.0
+offset_right = 1096.0
+offset_bottom = 48.0
+text = "Press (P) to generate"
+
+[node name="Random POS" type="TabBar" parent="GUI/GENERATORS/GENERATORS"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="Label" type="Label" parent="GUI/GENERATORS/GENERATORS/Random POS"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 23.0
+offset_right = 77.0
+offset_bottom = 46.0
+text = "Press (T) to genreate a random position."
+
+[node name="HIDE" type="TabBar" parent="GUI/GENERATORS/GENERATORS"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 5
+
+[node name="Label" type="Label" parent="GUI/GENERATORS/GENERATORS/HIDE"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 18.0
+offset_right = 84.0
+offset_bottom = 41.0
+text = "Press H to Hide GUI, use your screenshot tool to save the map"
+
+[node name="EXPORT" type="TabBar" parent="GUI/GENERATORS/GENERATORS"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 6
+
+[node name="Export" type="Button" parent="GUI/GENERATORS/GENERATORS/EXPORT"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 20.0
+offset_right = 173.0
+offset_bottom = 51.0
+text = "EXPORT AS JSON"
+
+[node name="RESET" type="Button" parent="GUI"]
+offset_left = 9.0
+offset_top = 497.0
+offset_right = 98.0
+offset_bottom = 528.0
+text = "RESET"
+
+[node name="LOG" type="Label" parent="GUI"]
+unique_name_in_owner = true
+offset_left = 111.0
+offset_top = 498.0
+offset_right = 831.0
+offset_bottom = 529.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "NOT INFO"
+
+[node name="PROPERTIES" type="TabContainer" parent="GUI"]
+offset_left = 929.0
+offset_top = 7.0
+offset_right = 1145.0
+offset_bottom = 188.0
+current_tab = 0
+
+[node name="SIZE" type="TabBar" parent="GUI/PROPERTIES"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="SIZEX" type="SpinBox" parent="GUI/PROPERTIES/SIZE"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0510204
+anchor_top = 0.309735
+anchor_right = 0.0510204
+anchor_bottom = 0.309735
+offset_left = 13.0
+offset_top = -14.0
+offset_right = 96.0625
+offset_bottom = 17.0
+min_value = 2.0
+max_value = 500.0
+value = 2.0
+rounded = true
+metadata/_edit_use_anchors_ = true
+
+[node name="SIZEY" type="SpinBox" parent="GUI/PROPERTIES/SIZE"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0510204
+anchor_top = 0.309735
+anchor_right = 0.0510204
+anchor_bottom = 0.309735
+offset_left = 15.0
+offset_top = 28.0
+offset_right = 98.0625
+offset_bottom = 59.0
+min_value = 2.0
+max_value = 500.0
+value = 2.0
+rounded = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="GUI/PROPERTIES/SIZE"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0510204
+anchor_top = 0.309735
+anchor_right = 0.0510204
+anchor_bottom = 0.309735
+offset_left = 110.0
+offset_top = -14.0
+offset_right = 153.0
+offset_bottom = 9.0
+text = "size x"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="GUI/PROPERTIES/SIZE"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0510204
+anchor_top = 0.309735
+anchor_right = 0.0510204
+anchor_bottom = 0.309735
+offset_left = 114.0
+offset_top = 28.0
+offset_right = 157.0
+offset_bottom = 51.0
+text = "size y"
+metadata/_edit_use_anchors_ = true
+
+[node name="OFFSET" type="TabBar" parent="GUI/PROPERTIES"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="OFFSETX" type="SpinBox" parent="GUI/PROPERTIES/OFFSET"]
+unique_name_in_owner = true
+layout_mode = 2
+anchor_left = 0.0306122
+anchor_top = -0.566667
+anchor_right = 0.0306122
+anchor_bottom = -0.566667
+offset_left = 14.0
+offset_top = 107.0
+offset_right = 97.0625
+offset_bottom = 138.0
+min_value = -500.0
+max_value = 500.0
+rounded = true
+metadata/_edit_use_anchors_ = true
+
+[node name="OFFSETY" type="SpinBox" parent="GUI/PROPERTIES/OFFSET"]
+unique_name_in_owner = true
+layout_mode = 2
+anchor_left = 0.0306122
+anchor_top = -0.566667
+anchor_right = 0.0306122
+anchor_bottom = -0.566667
+offset_left = 14.0
+offset_top = 150.0
+offset_right = 97.0625
+offset_bottom = 181.0
+min_value = -500.0
+max_value = 500.0
+rounded = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="GUI/PROPERTIES/OFFSET"]
+layout_mode = 2
+anchor_left = 0.0306122
+anchor_top = -0.566667
+anchor_right = 0.0306122
+anchor_bottom = -0.566667
+offset_left = 111.0
+offset_top = 112.0
+offset_right = 169.0
+offset_bottom = 135.0
+text = "offset x"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="GUI/PROPERTIES/OFFSET"]
+layout_mode = 2
+anchor_left = 0.0306122
+anchor_top = -0.566667
+anchor_right = 0.0306122
+anchor_bottom = -0.566667
+offset_left = 109.0
+offset_top = 149.0
+offset_right = 167.0
+offset_bottom = 172.0
+text = "offset y"
+metadata/_edit_use_anchors_ = true
+
+[node name="MouseOffset" type="CheckButton" parent="GUI/PROPERTIES/OFFSET"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 51.0
+offset_top = 108.0
+offset_right = 183.0
+offset_bottom = 139.0
+text = "MOUSE (O)"
+
+[node name="canvas" type="TabBar" parent="GUI/PROPERTIES"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="CanvasWidth" type="SpinBox" parent="GUI/PROPERTIES/canvas"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 26.0
+offset_top = 20.0
+offset_right = 109.062
+offset_bottom = 51.0
+min_value = 10.0
+max_value = 1000.0
+value = 20.0
+
+[node name="CanvasHeigth" type="SpinBox" parent="GUI/PROPERTIES/canvas"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 27.0
+offset_top = 60.0
+offset_right = 110.062
+offset_bottom = 91.0
+min_value = 10.0
+max_value = 1000.0
+value = 20.0
+
+[node name="ChangeCanvas" type="Button" parent="GUI/PROPERTIES/canvas"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 105.0
+offset_right = 187.0
+offset_bottom = 136.0
+text = "CHANGE CANVAS"
+
+[node name="Label" type="Label" parent="GUI/PROPERTIES/canvas"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 25.0
+offset_right = 179.0
+offset_bottom = 48.0
+text = "width
+"
+
+[node name="Label2" type="Label" parent="GUI/PROPERTIES/canvas"]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 62.0
+offset_right = 181.0
+offset_bottom = 85.0
+text = "height
+"
+
+[node name="Label" type="Label" parent="GUI"]
+offset_left = 949.0
+offset_top = 500.0
+offset_right = 989.0
+offset_bottom = 523.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "X :"
+
+[node name="MousePosX" type="Label" parent="GUI"]
+unique_name_in_owner = true
+offset_left = 979.0
+offset_top = 501.0
+offset_right = 1029.0
+offset_bottom = 524.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0"
+
+[node name="Label2" type="Label" parent="GUI"]
+offset_left = 1060.0
+offset_top = 499.0
+offset_right = 1100.0
+offset_bottom = 522.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Y :"
+
+[node name="MousePosY" type="Label" parent="GUI"]
+unique_name_in_owner = true
+offset_left = 1085.0
+offset_top = 500.0
+offset_right = 1150.0
+offset_bottom = 523.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0"
+
+[node name="TOOLS" type="Panel" parent="GUI"]
+offset_right = 153.0
+offset_bottom = 208.0
+
+[node name="TOOLS" type="TabContainer" parent="GUI/TOOLS"]
+layout_mode = 0
+offset_right = 155.0
+offset_bottom = 206.0
+current_tab = 0
+
+[node name="BRUSH" type="TabBar" parent="GUI/TOOLS/TOOLS"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="BRUSH" type="CheckButton" parent="GUI/TOOLS/TOOLS/BRUSH"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 13.0
+offset_top = 16.0
+offset_right = 140.0
+offset_bottom = 47.0
+text = "BRUSH (B)"
+
+[node name="LAYER" type="OptionButton" parent="GUI/TOOLS/TOOLS/BRUSH"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 58.0
+offset_right = 147.0
+offset_bottom = 90.0
+selected = 0
+item_count = 5
+popup/item_0/text = "Under"
+popup/item_1/text = "Under Mid"
+popup/item_1/id = 1
+popup/item_2/text = "Middle"
+popup/item_2/id = 2
+popup/item_3/text = "Middle Upper"
+popup/item_3/id = 3
+popup/item_4/text = "Upper"
+popup/item_4/id = 4
+
+[node name="TileID1" type="OptionButton" parent="GUI/TOOLS/TOOLS/BRUSH"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 16.0
+offset_top = 101.0
+offset_right = 98.0
+offset_bottom = 134.0
+script = ExtResource("6")
+
+[node name="Icon" parent="GUI/TOOLS/TOOLS/BRUSH/TileID1" instance=ExtResource("4")]
+position = Vector2(95, 2)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="TileID2" type="OptionButton" parent="GUI/TOOLS/TOOLS/BRUSH"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 17.0
+offset_top = 139.0
+offset_right = 99.0
+offset_bottom = 172.0
+script = ExtResource("6")
+
+[node name="Icon" parent="GUI/TOOLS/TOOLS/BRUSH/TileID2" instance=ExtResource("4")]
+position = Vector2(95, 2)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="Label4" type="Label" parent="GUI/TOOLS/TOOLS/BRUSH"]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 109.0
+offset_right = 199.0
+offset_bottom = 132.0
+text = "ID 1"
+
+[node name="Label5" type="Label" parent="GUI/TOOLS/TOOLS/BRUSH"]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 143.0
+offset_right = 199.0
+offset_bottom = 166.0
+text = "ID 2"
+
+[node name="GEN" type="TabBar" parent="GUI/TOOLS/TOOLS"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="CleanGen" type="Button" parent="GUI/TOOLS/TOOLS/GEN"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 17.0
+offset_right = 137.0
+offset_bottom = 49.0
+text = "CLEAN GEN (G)"
+
+[node name="AddGen" type="Button" parent="GUI/TOOLS/TOOLS/GEN"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 95.0
+offset_right = 122.0
+offset_bottom = 127.0
+text = "ADD (A)"
+
+[node name="Clear" type="Button" parent="GUI/TOOLS/TOOLS/GEN"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 131.0
+offset_right = 124.0
+offset_bottom = 163.0
+text = "CLEAR (C)"
+
+[node name="UNDO" type="Button" parent="GUI/TOOLS/TOOLS/GEN"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 26.0
+offset_top = 55.0
+offset_right = 123.0
+offset_bottom = 87.0
+disabled = true
+text = "UNDO"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(370, 150)
+
+[node name="Code" type="Node" parent="."]
+
+[node name="SaveToFile" type="Node" parent="Code"]
+script = ExtResource("7")
+
+[node name="GeneratorCode" type="Node" parent="Code"]
+unique_name_in_owner = true
+script = ExtResource("8")
+
+[node name="MoveCamera" type="Node" parent="Code"]
+script = ExtResource("9")
+speed = 20.0
+multi = 5.0
+
+[node name="Bush Layer" type="Node" parent="Code" node_paths=PackedStringArray("bushlayer")]
+script = ExtResource("10")
+bushlayer = NodePath("../../UpperMidLayer")
+
+[node name="MousePos" type="Node" parent="Code"]
+unique_name_in_owner = true
+script = ExtResource("11")
+
+[node name="BRUSHTOOLS" type="Node" parent="Code"]
+script = ExtResource("12")
+
+[node name="MouseOffset" type="Node" parent="Code"]
+script = ExtResource("13")
+
+[node name="OffsetCursor" type="Node" parent="Code"]
+unique_name_in_owner = true
+script = ExtResource("14")
+
+[node name="Canvas" type="Node" parent="Code"]
+unique_name_in_owner = true
+script = ExtResource("15")
+width = 20
+height = 20
+
+[node name="Math" type="Node" parent="Code"]
+unique_name_in_owner = true
+script = ExtResource("16")
+
+[node name="LAYERS" type="Node" parent="Code" node_paths=PackedStringArray("UnderLayer", "UnderMidLayer", "MiddleLayer", "UpperMidLayer", "UpperLayer")]
+unique_name_in_owner = true
+script = ExtResource("17")
+UnderLayer = NodePath("../../UnderLayer")
+UnderMidLayer = NodePath("../../UnderMidLayer")
+MiddleLayer = NodePath("../../MiddleLayer")
+UpperMidLayer = NodePath("../../UpperMidLayer")
+UpperLayer = NodePath("../../UpperLayer")
+
+[node name="GenTab" type="Node" parent="Code"]
+script = ExtResource("18")
+
+[node name="cachescript" type="Node" parent="Code"]
+unique_name_in_owner = true
+script = ExtResource("19")
+
+[node name="LOG" type="Node" parent="Code"]
+script = ExtResource("20")
+
+[node name="EndCursor_s" type="Node" parent="Code"]
+script = ExtResource("21")
+
+[node name="Hide" type="Node" parent="Code"]
+script = ExtResource("22")
+
+[node name="OriginCursor" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(401, 207)
+texture = ExtResource("23")
+
+[node name="EndCursor" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 0.873521, 0.567256, 1)
+position = Vector2(585, 151)
+texture = ExtResource("24")
+
+[node name="OriginWorld" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(542, 255)
+texture = ExtResource("25")
+
+[connection signal="value_changed" from="GUI/GENERATORS/GENERATORS/PATH/ENDX" to="Code/OffsetCursor" method="_on_offsetx_value_changed"]
+[connection signal="value_changed" from="GUI/GENERATORS/GENERATORS/PATH/ENDY" to="Code/OffsetCursor" method="_on_offsetx_value_changed"]
+[connection signal="pressed" from="GUI/GENERATORS/GENERATORS/PATH/EndOffset" to="Code/EndCursor_s" method="_on_end_offset_pressed"]
+[connection signal="pressed" from="GUI/GENERATORS/GENERATORS/EXPORT/Export" to="Code/SaveToFile" method="_on_export_pressed"]
+[connection signal="pressed" from="GUI/RESET" to="." method="_on_button_pressed"]
+[connection signal="value_changed" from="GUI/PROPERTIES/OFFSET/OFFSETX" to="Code/OffsetCursor" method="_on_offsetx_value_changed"]
+[connection signal="value_changed" from="GUI/PROPERTIES/OFFSET/OFFSETY" to="Code/OffsetCursor" method="_on_offsety_value_changed"]
+[connection signal="pressed" from="GUI/PROPERTIES/OFFSET/MouseOffset" to="Code/MouseOffset" method="_on_mouse_offset_pressed"]
+[connection signal="pressed" from="GUI/PROPERTIES/canvas/ChangeCanvas" to="Code/Canvas" method="_on_change_canvas_pressed"]
+[connection signal="pressed" from="GUI/TOOLS/TOOLS/BRUSH/BRUSH" to="Code/BRUSHTOOLS" method="_on_brush_pressed"]
+[connection signal="item_selected" from="GUI/TOOLS/TOOLS/BRUSH/LAYER" to="Code/LAYERS" method="_on_layer_item_selected"]
+[connection signal="item_selected" from="GUI/TOOLS/TOOLS/BRUSH/TileID1" to="GUI/TOOLS/TOOLS/BRUSH/TileID1" method="_on_item_selected"]
+[connection signal="item_selected" from="GUI/TOOLS/TOOLS/BRUSH/TileID2" to="GUI/TOOLS/TOOLS/BRUSH/TileID2" method="_on_item_selected"]
+[connection signal="pressed" from="GUI/TOOLS/TOOLS/GEN/CleanGen" to="Code/GenTab" method="_on_clean_gen_pressed"]
+[connection signal="pressed" from="GUI/TOOLS/TOOLS/GEN/AddGen" to="Code/GenTab" method="_on_add_gen_pressed"]
+[connection signal="pressed" from="GUI/TOOLS/TOOLS/GEN/Clear" to="Code/GenTab" method="_on_clear_pressed"]
+[connection signal="pressed" from="GUI/TOOLS/TOOLS/GEN/UNDO" to="Code/cachescript" method="_on_undo_pressed"]
