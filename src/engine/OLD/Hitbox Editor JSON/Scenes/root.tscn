@@ -1,0 +1,312 @@
+[gd_scene load_steps=10 format=3 uid="uid://covy60vhr4y4f"]
+
+[ext_resource type="Script" path="res://Scenes/code/load.gd" id="1_pc07k"]
+[ext_resource type="Script" path="res://Scenes/code/frames_selection.gd" id="2_dr4kj"]
+[ext_resource type="Script" path="res://Scenes/code/data.gd" id="3_fo0hw"]
+[ext_resource type="Script" path="res://Scenes/code/save.gd" id="4_3b765"]
+[ext_resource type="Script" path="res://Scenes/code/mouse.gd" id="5_61vdh"]
+[ext_resource type="Script" path="res://Scenes/code/set_anim.gd" id="6_ca5ac"]
+[ext_resource type="Script" path="res://Scenes/code/create_frame.gd" id="7_qw1l1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8c04j"]
+size = Vector2(32, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ype6"]
+
+[node name="Root" type="Node2D"]
+
+[node name="Center" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(557, 197)
+
+[node name="ColorRect" type="ColorRect" parent="Center"]
+offset_left = -1.0
+offset_top = -43.0
+offset_right = 1.0
+offset_bottom = 37.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="Center"]
+offset_left = -40.0
+offset_right = 40.0
+offset_bottom = 2.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Sprites" type="Node2D" parent="Center"]
+
+[node name="Hitbox" type="Node2D" parent="Center"]
+
+[node name="Area2D" type="Area2D" parent="Center/Hitbox"]
+
+[node name="Hurtbox" type="CollisionShape2D" parent="Center/Hitbox/Area2D"]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_8c04j")
+
+[node name="Area2D2" type="Area2D" parent="Center/Hitbox"]
+
+[node name="Hitbox" type="CollisionShape2D" parent="Center/Hitbox/Area2D2"]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_5ype6")
+debug_color = Color(0.964096, 0.0101128, 0.197961, 0.42)
+
+[node name="Fireball" type="ColorRect" parent="Center/Hitbox"]
+unique_name_in_owner = true
+offset_right = 6.0
+offset_bottom = 6.0
+color = Color(0.294336, 0.00121667, 0.342432, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Scene" type="Node2D" parent="CanvasLayer"]
+
+[node name="OpenDIALOG" type="FileDialog" parent="CanvasLayer/Scene"]
+unique_name_in_owner = true
+title = "Open a File"
+initial_position = 1
+size = Vector2i(800, 550)
+ok_button_text = "Open"
+dialog_hide_on_ok = true
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.tscn")
+
+[node name="Open" type="Button" parent="CanvasLayer/Scene"]
+offset_left = 29.0
+offset_top = 11.0
+offset_right = 111.0
+offset_bottom = 46.0
+text = "OPEN"
+
+[node name="Animations" type="ItemList" parent="CanvasLayer/Scene"]
+unique_name_in_owner = true
+offset_left = 12.0
+offset_top = 374.0
+offset_right = 202.0
+offset_bottom = 640.0
+
+[node name="Childrens" type="ItemList" parent="CanvasLayer/Scene"]
+unique_name_in_owner = true
+offset_left = 951.0
+offset_top = 190.0
+offset_right = 1141.0
+offset_bottom = 636.0
+
+[node name="LOAD" type="Button" parent="CanvasLayer/Scene"]
+offset_left = 1054.0
+offset_top = 146.0
+offset_right = 1133.0
+offset_bottom = 181.0
+text = "LOAD"
+
+[node name="Tabs" type="TabContainer" parent="CanvasLayer/Scene"]
+unique_name_in_owner = true
+offset_left = 214.0
+offset_top = 378.0
+offset_right = 667.0
+offset_bottom = 616.0
+current_tab = 2
+
+[node name="Hitbox" type="TabBar" parent="CanvasLayer/Scene/Tabs"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="HitboxPosData" type="ItemList" parent="CanvasLayer/Scene/Tabs/Hitbox"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 23.0
+offset_top = 36.0
+offset_right = 209.0
+offset_bottom = 201.0
+
+[node name="HitboxSizeData" type="ItemList" parent="CanvasLayer/Scene/Tabs/Hitbox"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 246.0
+offset_top = 40.0
+offset_right = 439.0
+offset_bottom = 205.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Scene/Tabs/Hitbox"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 5.0
+offset_right = 70.0
+offset_bottom = 28.0
+text = "POS"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Scene/Tabs/Hitbox"]
+layout_mode = 0
+offset_left = 258.0
+offset_top = 9.0
+offset_right = 298.0
+offset_bottom = 32.0
+text = "SIZE"
+
+[node name="Hurtbox" type="TabBar" parent="CanvasLayer/Scene/Tabs"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="HurtboxPosData" type="ItemList" parent="CanvasLayer/Scene/Tabs/Hurtbox"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 23.0
+offset_top = 36.0
+offset_right = 209.0
+offset_bottom = 201.0
+
+[node name="HurtboxSizeData" type="ItemList" parent="CanvasLayer/Scene/Tabs/Hurtbox"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 246.0
+offset_top = 40.0
+offset_right = 439.0
+offset_bottom = 205.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Scene/Tabs/Hurtbox"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 5.0
+offset_right = 70.0
+offset_bottom = 28.0
+text = "POS"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Scene/Tabs/Hurtbox"]
+layout_mode = 0
+offset_left = 258.0
+offset_top = 9.0
+offset_right = 298.0
+offset_bottom = 32.0
+text = "SIZE"
+
+[node name="Fireball" type="TabBar" parent="CanvasLayer/Scene/Tabs"]
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="FireballPosData" type="ItemList" parent="CanvasLayer/Scene/Tabs/Fireball"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 23.0
+offset_top = 36.0
+offset_right = 209.0
+offset_bottom = 201.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Scene/Tabs/Fireball"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 5.0
+offset_right = 70.0
+offset_bottom = 28.0
+text = "POS"
+
+[node name="Frames" type="ItemList" parent="CanvasLayer/Scene"]
+unique_name_in_owner = true
+offset_left = 830.0
+offset_top = 396.0
+offset_right = 939.0
+offset_bottom = 632.0
+
+[node name="SaveJSON" type="FileDialog" parent="CanvasLayer/Scene"]
+unique_name_in_owner = true
+initial_position = 1
+size = Vector2i(800, 550)
+dialog_hide_on_ok = true
+access = 2
+filters = PackedStringArray("*.json")
+
+[node name="Save" type="Button" parent="CanvasLayer/Scene"]
+offset_left = 120.0
+offset_top = 10.0
+offset_right = 196.0
+offset_bottom = 46.0
+text = "SAVE"
+
+[node name="LOG" type="Label" parent="CanvasLayer/Scene"]
+unique_name_in_owner = true
+offset_left = 223.0
+offset_top = 14.0
+offset_right = 1127.0
+offset_bottom = 49.0
+
+[node name="AnimName" type="LineEdit" parent="CanvasLayer/Scene"]
+unique_name_in_owner = true
+offset_left = 18.0
+offset_top = 331.0
+offset_right = 196.0
+offset_bottom = 362.0
+
+[node name="Anim LOG" type="Label" parent="CanvasLayer/Scene"]
+unique_name_in_owner = true
+offset_left = 21.0
+offset_top = 298.0
+offset_right = 202.0
+offset_bottom = 321.0
+text = "Not animation"
+
+[node name="SetAnim" type="Button" parent="CanvasLayer/Scene"]
+offset_left = 206.0
+offset_top = 327.0
+offset_right = 283.0
+offset_bottom = 358.0
+text = "Set Anim"
+
+[node name="Set8Frames" type="Button" parent="CanvasLayer/Scene"]
+offset_left = 684.0
+offset_top = 595.0
+offset_right = 810.0
+offset_bottom = 626.0
+text = "Set 8 frames"
+
+[node name="Remove8Frames" type="Button" parent="CanvasLayer/Scene"]
+offset_left = 684.0
+offset_top = 558.0
+offset_right = 810.0
+offset_bottom = 589.0
+text = "Remove 8"
+
+[node name="Code" type="Node" parent="."]
+
+[node name="Load" type="Node" parent="Code" node_paths=PackedStringArray("Root")]
+unique_name_in_owner = true
+script = ExtResource("1_pc07k")
+Root = NodePath("../../Center/Sprites")
+
+[node name="FramesSelection" type="Node" parent="Code"]
+unique_name_in_owner = true
+script = ExtResource("2_dr4kj")
+
+[node name="Data" type="Node" parent="Code"]
+unique_name_in_owner = true
+script = ExtResource("3_fo0hw")
+
+[node name="Save" type="Node" parent="Code"]
+script = ExtResource("4_3b765")
+
+[node name="Mouse" type="Node" parent="Code"]
+unique_name_in_owner = true
+script = ExtResource("5_61vdh")
+
+[node name="SetAnim" type="Node" parent="Code"]
+unique_name_in_owner = true
+script = ExtResource("6_ca5ac")
+
+[node name="CreateFrame" type="Node" parent="Code"]
+unique_name_in_owner = true
+script = ExtResource("7_qw1l1")
+
+[connection signal="file_selected" from="CanvasLayer/Scene/OpenDIALOG" to="Code/Load" method="_on_file_dialog_file_selected"]
+[connection signal="pressed" from="CanvasLayer/Scene/Open" to="Code/Load" method="_on_open_pressed"]
+[connection signal="item_selected" from="CanvasLayer/Scene/Animations" to="Code/Load" method="_on_animations_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/Scene/Childrens" to="Code/Load" method="_on_childrens_item_selected"]
+[connection signal="pressed" from="CanvasLayer/Scene/LOAD" to="Code/Load" method="_on_load_pressed"]
+[connection signal="tab_selected" from="CanvasLayer/Scene/Tabs" to="Code/Mouse" method="_on_tab_container_tab_selected"]
+[connection signal="item_selected" from="CanvasLayer/Scene/Frames" to="Code/FramesSelection" method="_on_frames_item_selected"]
+[connection signal="file_selected" from="CanvasLayer/Scene/SaveJSON" to="Code/Save" method="_on_save_json_file_selected"]
+[connection signal="pressed" from="CanvasLayer/Scene/Save" to="Code/Save" method="_on_save_pressed"]
+[connection signal="focus_entered" from="CanvasLayer/Scene/AnimName" to="Code/SetAnim" method="_on_anim_name_focus_entered"]
+[connection signal="focus_exited" from="CanvasLayer/Scene/AnimName" to="Code/SetAnim" method="_on_anim_name_focus_exited"]
+[connection signal="pressed" from="CanvasLayer/Scene/SetAnim" to="Code/SetAnim" method="_on_set_anim_pressed"]
+[connection signal="pressed" from="CanvasLayer/Scene/Set8Frames" to="Code/SetAnim" method="_on_set_8_frames_pressed"]

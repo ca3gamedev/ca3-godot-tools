@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl4dqnsdbfw54"]
+
+[ext_resource type="Script" path="res://ca3 framework/GUI/Battle/gui.gd" id="1_hrvj7"]
+
+[node name="GUI" type="Node2D"]
+script = ExtResource("1_hrvj7")

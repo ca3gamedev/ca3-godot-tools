@@ -1,0 +1,198 @@
+[gd_scene load_steps=22 format=3 uid="uid://bcuqmrvkp2074"]
+
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/ai_player.gd" id="1_06ghw"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/ai_motion.gd" id="3_gfipc"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/FSM/idle.gd" id="4_48gfy"]
+[ext_resource type="PackedScene" uid="uid://cfl6073iriocx" path="res://ca3 framework/AI enemies/Input/input.tscn" id="4_gh7b8"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/FSM/walk.gd" id="5_44kpm"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/ai_animations.gd" id="6_6aa6k"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/Animations FSM/idle.gd" id="7_1ylm8"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/Animations FSM/walk.gd" id="8_wfwf0"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/Animations FSM/AIpunch.gd" id="9_5ai6d"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/ai_transitions.gd" id="9_5nody"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/FSM/hurt.gd" id="10_il7t1"]
+[ext_resource type="Script" path="res://ca3 framework/framework/Player/AnimationTree/anim_tree_parent.gd" id="13_ivb1f"]
+[ext_resource type="PackedScene" uid="uid://dpciefvs15qag" path="res://ca3 framework/framework/Hitbox Alone/hitbox_alone.tscn" id="14_dqslr"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/hitstop_freeze.gd" id="15_gru7y"]
+[ext_resource type="Script" path="res://ca3 framework/framework/AttackBox/hitbox.gd" id="15_sa86a"]
+[ext_resource type="PackedScene" uid="uid://bukuh0s7touqf" path="res://ca3 framework/framework/Hitbox Alone/hurtbox_alone.tscn" id="16_am87r"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/Htiboxes/AIhurtbox.gd" id="17_l1gt8"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/code.gd" id="18_ce1cn"]
+[ext_resource type="PackedScene" uid="uid://bt51enwwhdgei" path="res://data/default/objects/characters/heroe/Character.tscn" id="19_2lvdh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bwfm1"]
+radius = 5.09902
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g6hkn"]
+radius = 217.347
+
+[node name="AIPlayer" type="CharacterBody2D"]
+y_sort_enabled = true
+position = Vector2(501.667, 170.5)
+collision_layer = 8
+collision_mask = 11
+velocity = Vector2(83.3333, 0)
+script = ExtResource("1_06ghw")
+IsAI = true
+HP = 100
+enemy_damage = 5
+
+[node name="AILOG" type="ColorRect" parent="."]
+unique_name_in_owner = true
+offset_left = -17.667
+offset_top = -15.5
+offset_right = 22.333
+offset_bottom = 24.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bwfm1")
+debug_color = Color(0, 0.6, 0.701961, 0.74902)
+
+[node name="AIINPUT" parent="." instance=ExtResource("4_gh7b8")]
+unique_name_in_owner = true
+
+[node name="FuzzyEvaluator" parent="AIINPUT" index="2"]
+max_check = 150.0
+
+[node name="MinMax" parent="AIINPUT" index="3"]
+favorite_distance = 2
+
+[node name="DecisionOutput" parent="AIINPUT" index="4" node_paths=PackedStringArray("AIMotion")]
+linear = true
+linearchase = true
+AIMotion = NodePath("../../AIMotion")
+
+[node name="LOGAI" parent="AIINPUT" index="5" node_paths=PackedStringArray("rect_log")]
+Melee_dist = Color(0.636017, 0.0606569, 0.105575, 1)
+LongMelee_dist = Color(0.692784, 0.302735, 0.0602325, 1)
+Mid_dist = Color(0.710769, 0.604224, 0.0870257, 1)
+Long_dist = Color(0.0810428, 0.439438, 0.25482, 1)
+Far_dist = Color(0.0244191, 0.337888, 0.630786, 1)
+rect_log = NodePath("../../AILOG")
+
+[node name="Attacks" parent="AIINPUT" index="6" node_paths=PackedStringArray("Transition")]
+Transition = NodePath("../../AITransitions")
+
+[node name="AIMotion" type="Node" parent="." node_paths=PackedStringArray("Root")]
+unique_name_in_owner = true
+script = ExtResource("3_gfipc")
+speed_walk = 400.0
+speed_dash = 50.0
+multiplier = 10.0
+Root = NodePath("..")
+
+[node name="IDLE" type="Node" parent="AIMotion"]
+script = ExtResource("4_48gfy")
+
+[node name="WALK" type="Node" parent="AIMotion"]
+script = ExtResource("5_44kpm")
+
+[node name="AIAnimations" type="Node" parent="."]
+script = ExtResource("6_6aa6k")
+
+[node name="IDLE" type="Node" parent="AIAnimations"]
+script = ExtResource("7_1ylm8")
+
+[node name="WALK" type="Node" parent="AIAnimations"]
+script = ExtResource("8_wfwf0")
+
+[node name="PUNCH" type="Node" parent="AIAnimations"]
+script = ExtResource("9_5ai6d")
+attack_hitstun = 0.1
+shake_strenght = 3.0
+shake_speed = 10.0
+attack_id = 0.1
+distance_attack = 60.0
+frame_attack = 2
+
+[node name="HURT" type="Node" parent="AIAnimations"]
+script = ExtResource("10_il7t1")
+attack_id = 0.1
+
+[node name="AITransitions" type="Node" parent="." node_paths=PackedStringArray("currentmotion", "currentanim", "motionparent", "motionanimtree")]
+unique_name_in_owner = true
+script = ExtResource("9_5nody")
+currentmotion = NodePath("../AIMotion/IDLE")
+currentanim = NodePath("../AIAnimations/IDLE")
+motionparent = NodePath("../AIMotion")
+motionanimtree = NodePath("../AIAnimations")
+
+[node name="AnimTree" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("13_ivb1f")
+
+[node name="HitstopFreeze" type="Timer" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+one_shot = true
+script = ExtResource("15_gru7y")
+
+[node name="HurtboxReturn" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[node name="CancelWindow" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="Detector" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 61
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+visible = false
+shape = SubResource("CircleShape2D_g6hkn")
+
+[node name="Hurtbox" parent="." node_paths=PackedStringArray("Transition") groups=["ENEMY"] instance=ExtResource("16_am87r")]
+unique_name_in_owner = true
+collision_layer = 8
+collision_mask = 5
+script = ExtResource("17_l1gt8")
+Transition = NodePath("../AITransitions")
+
+[node name="ColorRect" type="ColorRect" parent="Hurtbox/CollisionShape2D" index="0"]
+offset_left = -11.0
+offset_top = -18.0
+offset_right = 12.0
+offset_bottom = 18.0
+color = Color(0.164706, 0.317647, 0.878431, 0.423529)
+
+[node name="Center" type="Node2D" parent="."]
+position = Vector2(0.333008, -26.5)
+
+[node name="Hitbox" parent="Center" groups=["ENEMY"] instance=ExtResource("14_dqslr")]
+unique_name_in_owner = true
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("15_sa86a")
+is_AI = true
+
+[node name="Code" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("18_ce1cn")
+
+[node name="Sprites" parent="." instance=ExtResource("19_2lvdh")]
+
+[node name="GUI" type="Node2D" parent="."]
+
+[node name="HPBar" type="ProgressBar" parent="GUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = 28.0
+offset_right = 23.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 5
+
+[connection signal="timeout" from="HitstopFreeze" to="HitstopFreeze" method="_on_AIhitstop_freeze"]
+[connection signal="area_entered" from="Detector" to="AIINPUT/DetectorList" method="_on_detector_area_entered"]
+[connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_area_entered"]
+[connection signal="area_entered" from="Center/Hitbox" to="Center/Hitbox" method="_on_area_entered"]
+
+[editable path="AIINPUT"]
+[editable path="Hurtbox"]
+[editable path="Center/Hitbox"]

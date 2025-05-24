@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cf62qnrxmpuga"]
+
+[node name="GameOver" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -7.0
+offset_top = -4.0
+offset_right = 1160.0
+offset_bottom = 657.0
+color = Color(0.0363284, 0.0497639, 0.188515, 1)
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 466.0
+offset_top = 218.0
+offset_right = 695.0
+offset_bottom = 441.0
+theme_override_font_sizes/font_size = 80
+text = "GAME
+OVER"
+horizontal_alignment = 1

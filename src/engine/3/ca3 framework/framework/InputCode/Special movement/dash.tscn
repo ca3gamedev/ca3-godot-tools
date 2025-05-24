@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d270mrxfrqe2w"]
+
+[ext_resource type="Script" path="res://ca3 framework/framework/InputCode/Special movement/dash.gd" id="1_re5x3"]
+
+[node name="Dash" type="Node"]
+script = ExtResource("1_re5x3")

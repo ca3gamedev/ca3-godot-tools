@@ -1,0 +1,46 @@
+[gd_scene load_steps=10 format=3 uid="uid://p6xryonk834q"]
+
+[ext_resource type="Script" path="res://ca3 framework/Battle/Scenes/root.gd" id="1_d1a7v"]
+[ext_resource type="PackedScene" uid="uid://bquf765e0ayvd" path="res://ca3 framework/Framework Items/Coins/coin_spawner.tscn" id="2_qutdo"]
+[ext_resource type="PackedScene" uid="uid://dnuiprw05pmqq" path="res://ca3 framework/framework/Camera2D/camera_2d.tscn" id="4_qd1gi"]
+[ext_resource type="PackedScene" uid="uid://y8jp24a1mwac" path="res://ca3 framework/AI enemies/Director/ai_director.tscn" id="4_qvgwt"]
+[ext_resource type="PackedScene" uid="uid://750k42y2kg35" path="res://ca3 framework/AI enemies/EnemyManager/enemy_bullets.tscn" id="5_4vnua"]
+[ext_resource type="PackedScene" uid="uid://po7sh3353sqr" path="res://ca3 framework/fireballs/Manager/player_bullet_manager.tscn" id="5_uyt6j"]
+[ext_resource type="PackedScene" uid="uid://ba18hjp3yd51k" path="res://ca3 framework/framework/Player/PLAYER.tscn" id="6_en378"]
+[ext_resource type="PackedScene" uid="uid://bl4dqnsdbfw54" path="res://ca3 framework/GUI/Battle/gui.tscn" id="8_usnco"]
+[ext_resource type="PackedScene" uid="uid://b23t60mfoxnac" path="res://ca3 framework/GameOver Conditions/game_over_conditions.tscn" id="9_fwiwn"]
+
+[node name="Root" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_d1a7v")
+
+[node name="CoinSpawner" parent="." instance=ExtResource("2_qutdo")]
+
+[node name="Camera2D" parent="." instance=ExtResource("4_qd1gi")]
+
+[node name="AIDirector" parent="." instance=ExtResource("4_qvgwt")]
+spawn_number_enemy = 50
+
+[node name="ClosestUpdate" parent="AIDirector" index="2"]
+wait_time = 1.0
+
+[node name="AIDirectorCode" parent="AIDirector" index="3"]
+radius_close = 50
+radius_medium = 100
+radius_far = 150
+
+[node name="EnemyBullets" parent="." instance=ExtResource("5_4vnua")]
+
+[node name="Players" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" parent="Players" instance=ExtResource("6_en378")]
+position = Vector2(580, 319)
+
+[node name="PlayerBulletManager" parent="." instance=ExtResource("5_uyt6j")]
+
+[node name="GUI" parent="." instance=ExtResource("8_usnco")]
+
+[node name="GameOverConditions" parent="." instance=ExtResource("9_fwiwn")]
+
+[editable path="AIDirector"]

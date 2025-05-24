@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bquf765e0ayvd"]
+
+[ext_resource type="Script" path="res://ca3 framework/Framework Items/Coins/coin_spawner.gd" id="1_71oeh"]
+[ext_resource type="PackedScene" uid="uid://lwxsten7kyw4" path="res://ca3 framework/Framework Items/Coins/coin.tscn" id="2_r7spa"]
+
+[node name="CoinSpawner" type="Node2D"]
+script = ExtResource("1_71oeh")
+coin = ExtResource("2_r7spa")
+
+[node name="TOPLEFT" type="Marker2D" parent="."]
+position = Vector2(134, 107)
+
+[node name="BOTTOMRIGHT" type="Marker2D" parent="."]
+position = Vector2(988, 540)

@@ -1,0 +1,238 @@
+[gd_scene load_steps=31 format=3 uid="uid://ba18hjp3yd51k"]
+
+[ext_resource type="Script" path="res://ca3 framework/framework/Player/player_hitboxes.gd" id="1_vxg4w"]
+[ext_resource type="PackedScene" uid="uid://b1rv5l00jkku4" path="res://ca3 framework/framework/InputCode/P1INPUT.tscn" id="2_nihv2"]
+[ext_resource type="PackedScene" uid="uid://mt38w4144rdb" path="res://ca3 framework/framework/InputCode/Button/button.tscn" id="3_qw08c"]
+[ext_resource type="PackedScene" uid="uid://be3r5xbrqxkf0" path="res://ca3 framework/framework/InputCode/Special movement/hadouken.tscn" id="4_7aui6"]
+[ext_resource type="Script" path="res://ca3 framework/framework/MotionCode/motion.gd" id="5_n412h"]
+[ext_resource type="Script" path="res://ca3 framework/framework/MotionCode/code/idle.gd" id="6_ebi5r"]
+[ext_resource type="Script" path="res://ca3 framework/framework/MotionCode/code/walk.gd" id="7_bl5sw"]
+[ext_resource type="Script" path="res://ca3 framework/framework/MotionCode/dash.gd" id="8_gpb42"]
+[ext_resource type="Script" path="res://ca3 framework/framework/Anim Tree/motion_anim_tree.gd" id="9_dytlh"]
+[ext_resource type="Script" path="res://ca3 framework/framework/Anim Tree/idle.gd" id="10_1ax0r"]
+[ext_resource type="Script" path="res://ca3 framework/framework/Anim Tree/walk.gd" id="11_ui4ul"]
+[ext_resource type="Script" path="res://ca3 framework/framework/Anim Tree/dash.gd" id="12_7yxtr"]
+[ext_resource type="Script" path="res://ca3 framework/framework/Player/attacks.gd" id="13_23bqb"]
+[ext_resource type="Script" path="res://ca3 framework/framework/AttackBox/FSM/punch.gd" id="14_76vxf"]
+[ext_resource type="PackedScene" uid="uid://cawfrxjavd7t7" path="res://ca3 framework/fireballs/Linear/fireball.tscn" id="15_grfvq"]
+[ext_resource type="Script" path="res://ca3 framework/framework/Hurtbox/FSM/weakhurt.gd" id="16_but7k"]
+[ext_resource type="Script" path="res://ca3 framework/framework/Transitions/transitions.gd" id="17_l8f5h"]
+[ext_resource type="Script" path="res://ca3 framework/framework/FSM Motion/motion_transition.gd" id="18_2mftl"]
+[ext_resource type="Script" path="res://ca3 framework/framework/Transitions/idle.gd" id="19_68wbx"]
+[ext_resource type="Script" path="res://ca3 framework/framework/Transitions/walk.gd" id="20_au6jw"]
+[ext_resource type="Script" path="res://ca3 framework/framework/Transitions/dash.gd" id="21_ttp84"]
+[ext_resource type="PackedScene" uid="uid://ce6qx8nrdlrw" path="res://ca3 framework/framework/Player Cancel Code/code.tscn" id="22_xra4d"]
+[ext_resource type="Script" path="res://ca3 framework/framework/Player/AnimationTree/anim_tree_parent.gd" id="23_pis6g"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/hitstop_freeze.gd" id="24_np6si"]
+[ext_resource type="Script" path="res://ca3 framework/framework/Hurtbox/hurtbox.gd" id="25_mum7t"]
+[ext_resource type="Script" path="res://ca3 framework/framework/AttackBox/hitbox.gd" id="26_jjri3"]
+[ext_resource type="PackedScene" uid="uid://bt51enwwhdgei" path="res://data/default/objects/characters/heroe/Character.tscn" id="27_rwgkd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bwfm1"]
+radius = 5.09902
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3jwf"]
+size = Vector2(22, 35)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qnkpu"]
+radius = 18.0278
+
+[node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
+position = Vector2(501.667, 170.5)
+collision_layer = 2
+collision_mask = 9
+velocity = Vector2(83.3333, 0)
+script = ExtResource("1_vxg4w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bwfm1")
+
+[node name="INPUT" parent="." node_paths=PackedStringArray("buffer") instance=ExtResource("2_nihv2")]
+unique_name_in_owner = true
+buffer = NodePath("Buffer")
+
+[node name="Buffer" parent="INPUT" index="1"]
+KeyBufferResetTimerMax = 0.6
+
+[node name="ButtonB" parent="INPUT/FSM/Button" index="1" instance=ExtResource("3_qw08c")]
+button = "B"
+
+[node name="HadoukenR" parent="INPUT/FSM/Special" index="1" instance=ExtResource("4_7aui6")]
+dir = 1
+button = "A"
+
+[node name="HadoukenL" parent="INPUT/FSM/Special" index="2" instance=ExtResource("4_7aui6")]
+dir = -1
+button = "A"
+
+[node name="Motion" type="Node" parent="." node_paths=PackedStringArray("Root", "Transition")]
+script = ExtResource("5_n412h")
+multiplier = 100.0
+walk_speed = 80.0
+dash = 200.0
+Root = NodePath("..")
+Transition = NodePath("../Transitions")
+
+[node name="IDLE" type="Node" parent="Motion"]
+script = ExtResource("6_ebi5r")
+
+[node name="WALK" type="Node" parent="Motion"]
+script = ExtResource("7_bl5sw")
+
+[node name="DASH" type="Node" parent="Motion"]
+script = ExtResource("8_gpb42")
+
+[node name="Motion AnimTree" type="Node" parent="." node_paths=PackedStringArray("Transition")]
+script = ExtResource("9_dytlh")
+Transition = NodePath("../Transitions")
+
+[node name="IDLE" type="Node" parent="Motion AnimTree"]
+script = ExtResource("10_1ax0r")
+
+[node name="WALK" type="Node" parent="Motion AnimTree"]
+script = ExtResource("11_ui4ul")
+
+[node name="DASH" type="Node" parent="Motion AnimTree"]
+script = ExtResource("12_7yxtr")
+
+[node name="ANIMATIONS" type="Node" parent="."]
+
+[node name="ATTACKS" type="Node" parent="ANIMATIONS"]
+unique_name_in_owner = true
+script = ExtResource("13_23bqb")
+
+[node name="PUNCH" type="Node" parent="ANIMATIONS/ATTACKS"]
+script = ExtResource("14_76vxf")
+damage = 10
+attack_id = 0.1
+attack_hitstun = 0.015
+shake_strenght = 3.0
+distance_attack = 40.0
+frame_attack = 2
+shake_speed = 10.0
+cancel = true
+cancelframe = 1
+fireballframe = 1
+fireballoffset = Vector2i(0, 50)
+fireballspeed = 50.0
+fireballscene = ExtResource("15_grfvq")
+
+[node name="HADOUKEN" type="Node" parent="ANIMATIONS/ATTACKS"]
+script = ExtResource("14_76vxf")
+attack_id = 0.1
+attack_hitstun = 0.015
+shake_strenght = 3.0
+distance_attack = 40.0
+frame_attack = 2
+shake_speed = 10.0
+cancelframe = 1
+fireballframe = 1
+fireballoffset = Vector2i(0, 50)
+fireballspeed = 100.0
+fireball = true
+fireballscene = ExtResource("15_grfvq")
+
+[node name="GALACTICA" type="Node" parent="ANIMATIONS/ATTACKS"]
+script = ExtResource("14_76vxf")
+attack_id = 0.2
+attack_hitstun = 0.015
+shake_strenght = 3.0
+shake_speed = 10.0
+specialnameR = "Hadouken Right"
+attackstrenght = 3
+
+[node name="HURTS" type="Node" parent="ANIMATIONS"]
+unique_name_in_owner = true
+
+[node name="WEAKHURT" type="Node" parent="ANIMATIONS/HURTS"]
+script = ExtResource("16_but7k")
+
+[node name="Transitions" type="Node" parent="." node_paths=PackedStringArray("currentmotion", "inputnode", "currentanim", "motionparent", "motionanimtree", "transitionnode")]
+unique_name_in_owner = true
+script = ExtResource("17_l8f5h")
+currentmotion = NodePath("../Motion/IDLE")
+inputnode = NodePath("../INPUT")
+currentanim = NodePath("../Motion AnimTree/IDLE")
+motionparent = NodePath("../Motion")
+motionanimtree = NodePath("../Motion AnimTree")
+transitionnode = NodePath("IDLE")
+DashLenght = 0.2
+
+[node name="Motion Transition" type="Node" parent="Transitions"]
+script = ExtResource("18_2mftl")
+
+[node name="IDLE" type="Node" parent="Transitions"]
+script = ExtResource("19_68wbx")
+
+[node name="WALK" type="Node" parent="Transitions"]
+script = ExtResource("20_au6jw")
+
+[node name="DASH" type="Node" parent="Transitions"]
+script = ExtResource("21_ttp84")
+
+[node name="Code" parent="." instance=ExtResource("22_xra4d")]
+unique_name_in_owner = true
+cancel_time = 0.3
+
+[node name="AnimTree" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("23_pis6g")
+
+[node name="HitstopFreeze" type="Timer" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+one_shot = true
+script = ExtResource("24_np6si")
+
+[node name="HurtboxReturn" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[node name="CancelWindow" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("Transition") groups=["PLAYER"]]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 16
+script = ExtResource("25_mum7t")
+Transition = NodePath("../Transitions")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(-0.666992, -21)
+shape = SubResource("RectangleShape2D_u3jwf")
+
+[node name="ColorRect" type="ColorRect" parent="Hurtbox/CollisionShape2D"]
+offset_left = -11.0
+offset_top = -18.0
+offset_right = 11.0
+offset_bottom = 17.0
+color = Color(0.152941, 0, 0.886275, 0.34902)
+
+[node name="Hitbox" type="Area2D" parent="." groups=["PLAYER"]]
+unique_name_in_owner = true
+position = Vector2(0.333008, -21.5)
+collision_layer = 4
+collision_mask = 41
+script = ExtResource("26_jjri3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_qnkpu")
+debug_color = Color(0.959756, 0.179455, 0.239765, 0.42)
+
+[node name="ColorRect" type="ColorRect" parent="Hitbox/CollisionShape2D"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 15.0
+color = Color(0.823529, 0, 0.180392, 0.466667)
+
+[node name="Sprites" parent="." instance=ExtResource("27_rwgkd")]
+
+[connection signal="timeout" from="HitstopFreeze" to="HitstopFreeze" method="_on_timeout"]
+[connection signal="timeout" from="CancelWindow" to="Code" method="_on_cancel_window_timeout"]
+[connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_area_entered"]
+[connection signal="area_entered" from="Hitbox" to="Hitbox" method="_on_area_entered"]
+
+[editable path="INPUT"]
