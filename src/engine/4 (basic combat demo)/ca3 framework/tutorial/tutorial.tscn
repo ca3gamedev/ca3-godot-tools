@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8awwm7ecnw5t"]
+
+[ext_resource type="Script" path="res://ca3 framework/tutorial/tutorial.gd" id="1_shgtn"]
+
+[node name="Tutorial" type="Node"]
+script = ExtResource("1_shgtn")
+Next = "res://ca3 framework/Battle/Scenes/BattleTest.tscn"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Node2D" type="Node2D" parent="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Node2D"]
+z_index = 4096
+z_as_relative = false
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 1160.0
+offset_bottom = 654.0
+color = Color(0.0266251, 0.0248405, 0.130167, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/Node2D"]
+z_index = 4096
+z_as_relative = false
+offset_left = 132.0
+offset_top = 100.0
+offset_right = 540.0
+offset_bottom = 547.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "TUTORIAL
+
+To walk press
+AWSD or Arrow Keys
+
+To Punch press
+Z, O, Numpad 4
+
+To Shoot Fireball press
+X, P, Numpad 5"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/Node2D"]
+z_index = 4096
+offset_left = 654.0
+offset_top = 146.0
+offset_right = 1050.0
+offset_bottom = 563.0
+theme_override_font_sizes/font_size = 30
+text = "To Dash
+Double Tap the arrow keys
+
+Press ESC 
+To Pause
+
+Press Space To
+Continue"
+horizontal_alignment = 1

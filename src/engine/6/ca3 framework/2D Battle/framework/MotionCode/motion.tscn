@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://dubvswys84nkd"]
+
+[ext_resource type="Script" path="res://ca3 framework/2D Battle/framework/MotionCode/motion.gd" id="1_6tust"]
+[ext_resource type="Script" path="res://ca3 framework/2D Battle/framework/MotionCode/code/idle.gd" id="1_pmjtx"]
+[ext_resource type="Script" path="res://ca3 framework/2D Battle/framework/MotionCode/code/walk.gd" id="3_jca6u"]
+[ext_resource type="Script" path="res://ca3 framework/2D Battle/framework/MotionCode/dash.gd" id="4_cdtak"]
+
+[node name="Motion" type="Node"]
+script = ExtResource("1_6tust")
+
+[node name="IDLE" type="Node" parent="."]
+script = ExtResource("1_pmjtx")
+
+[node name="WALK" type="Node" parent="."]
+script = ExtResource("3_jca6u")
+
+[node name="DASH" type="Node" parent="."]
+script = ExtResource("4_cdtak")

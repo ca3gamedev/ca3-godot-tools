@@ -1,9 +1,0 @@
-{
-    "name" : "Lee Heroe",
-    "age" : 16,
-    "type" : "2D ARPG",
-    "walk speed" : 80,
-    "dash speed" : 200,
-    "movement multiplier" : 100,
-    "sprites scene" : "Character.tscn"
-}

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b23t60mfoxnac"]
+
+[ext_resource type="Script" path="res://ca3 framework/2D Battle/GameOver Conditions/game_over_conditions.gd" id="1_rehls"]
+
+[node name="GameOverConditions" type="Node"]
+script = ExtResource("1_rehls")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+
+[node name="LevelDelay" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="LevelDelay" to="." method="_on_level_delay_timeout"]

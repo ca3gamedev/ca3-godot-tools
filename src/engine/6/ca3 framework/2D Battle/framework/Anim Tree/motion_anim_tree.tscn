@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://hx68qxv0hl7t"]
+
+[ext_resource type="Script" path="res://ca3 framework/2D Battle/framework/Anim Tree/idle.gd" id="1_d0kta"]
+[ext_resource type="Script" path="res://ca3 framework/2D Battle/framework/Anim Tree/motion_anim_tree.gd" id="1_prjxa"]
+[ext_resource type="Script" path="res://ca3 framework/2D Battle/framework/Anim Tree/walk.gd" id="2_cmhu0"]
+[ext_resource type="Script" path="res://ca3 framework/2D Battle/framework/Anim Tree/dash.gd" id="3_eay2r"]
+
+[node name="Motion AnimTree" type="Node"]
+script = ExtResource("1_prjxa")
+
+[node name="IDLE" type="Node" parent="."]
+script = ExtResource("1_d0kta")
+
+[node name="WALK" type="Node" parent="."]
+script = ExtResource("2_cmhu0")
+
+[node name="DASH" type="Node" parent="."]
+script = ExtResource("3_eay2r")

@@ -1,0 +1,268 @@
+[gd_scene load_steps=32 format=3 uid="uid://d1ub2rpxh7kr1"]
+
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/ai_player.gd" id="1_0ligl"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/hadouken aiinput.gd" id="2_ww0j4"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Input/input code/detector_list.gd" id="3_3756p"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Input/input code/conditions_check.gd" id="4_7galt"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Input/input code/fuzzy_evaluator.gd" id="5_3wriu"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/Hadoukenmin_max.gd" id="6_pyoto"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Input/input code/decision_output.gd" id="7_g3nr4"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Input/input code/logai.gd" id="8_73tep"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Input/input code/attacks.gd" id="9_w0j2c"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Input/input code/fireball.gd" id="10_fe8tf"]
+[ext_resource type="PackedScene" uid="uid://bm8banxhbwcrk" path="res://ca3 framework/fireballs/Linear/AIfireball.tscn" id="11_gpuub"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/ai_motion.gd" id="12_rc03s"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/FSM/idle.gd" id="13_cwlwl"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/FSM/walk.gd" id="14_6coef"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/ai_animations.gd" id="15_22q7o"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/Animations FSM/idle.gd" id="16_sj56r"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/Animations FSM/walk.gd" id="17_72363"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/Hadouken.gd" id="18_gknbu"]
+[ext_resource type="PackedScene" uid="uid://cm4ai7gqih6q1" path="res://ca3 framework/fireballs/Linear/AI Healing fireball.tscn" id="19_nwvby"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/FSM/hurt.gd" id="19_qmknl"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/ai_transitions.gd" id="20_5gr3j"]
+[ext_resource type="Script" path="res://ca3 framework/framework/Player/AnimationTree/anim_tree_parent.gd" id="21_j7qau"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/hitstop_freeze.gd" id="22_e0prl"]
+[ext_resource type="PackedScene" uid="uid://bukuh0s7touqf" path="res://ca3 framework/framework/Hitbox Alone/hurtbox_alone.tscn" id="23_i12hu"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/Htiboxes/AIhurtbox.gd" id="24_67ril"]
+[ext_resource type="PackedScene" uid="uid://dpciefvs15qag" path="res://ca3 framework/framework/Hitbox Alone/hitbox_alone.tscn" id="25_nxmfb"]
+[ext_resource type="Script" path="res://ca3 framework/framework/AttackBox/hitbox.gd" id="26_inai1"]
+[ext_resource type="Script" path="res://ca3 framework/AI enemies/Player/code.gd" id="27_kmvjb"]
+[ext_resource type="PackedScene" uid="uid://bt51enwwhdgei" path="res://data/default/objects/characters/heroe/Character.tscn" id="28_nllqh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bwfm1"]
+radius = 5.09902
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g6hkn"]
+radius = 217.347
+
+[node name="AIPlayer" type="CharacterBody2D" groups=["ENEMY"]]
+y_sort_enabled = true
+collision_layer = 8
+collision_mask = 11
+velocity = Vector2(83.3333, 0)
+script = ExtResource("1_0ligl")
+IsAI = true
+IsHadouken = true
+IsHealer = true
+HP = 100
+enemy_damage = 5
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -2
+offset_left = -27.0
+offset_top = -29.0
+offset_right = 30.0
+offset_bottom = 27.0
+color = Color(0.717104, 0.183802, 0.599515, 1)
+
+[node name="AILOG" type="ColorRect" parent="."]
+unique_name_in_owner = true
+offset_left = -17.667
+offset_top = -15.5
+offset_right = 22.333
+offset_bottom = 24.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bwfm1")
+debug_color = Color(0, 0.6, 0.701961, 0.74902)
+
+[node name="AIINPUT" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_ww0j4")
+
+[node name="DetectorList" type="Node" parent="AIINPUT"]
+unique_name_in_owner = true
+script = ExtResource("3_3756p")
+closest_enemy_distance = 99999.0
+
+[node name="ConditionsCheck" type="Node" parent="AIINPUT"]
+unique_name_in_owner = true
+script = ExtResource("4_7galt")
+
+[node name="FuzzyEvaluator" type="Node" parent="AIINPUT"]
+unique_name_in_owner = true
+script = ExtResource("5_3wriu")
+melee_check = 80.0
+long_melee_check = 120.0
+mid_check = 200.0
+long_check = 300.0
+max_check = 150.0
+
+[node name="MinMax" type="Node" parent="AIINPUT"]
+script = ExtResource("6_pyoto")
+favorite_distance = 2
+
+[node name="DecisionOutput" type="Node" parent="AIINPUT" node_paths=PackedStringArray("AIMotion")]
+unique_name_in_owner = true
+script = ExtResource("7_g3nr4")
+linear = true
+linearchase = true
+AIMotion = NodePath("../../AIMotion")
+
+[node name="LOGAI" type="Node" parent="AIINPUT" node_paths=PackedStringArray("rect_log")]
+script = ExtResource("8_73tep")
+Melee_dist = Color(0.636017, 0.0606569, 0.105575, 1)
+LongMelee_dist = Color(0.692784, 0.302735, 0.0602325, 1)
+Mid_dist = Color(0.710769, 0.604224, 0.0870257, 1)
+Long_dist = Color(0.0810428, 0.439438, 0.25482, 1)
+Far_dist = Color(0.0244191, 0.337888, 0.630786, 1)
+rect_log = NodePath("../../AILOG")
+
+[node name="Attacks" type="Node" parent="AIINPUT" node_paths=PackedStringArray("Transition")]
+script = ExtResource("9_w0j2c")
+Transition = NodePath("../../AITransitions")
+
+[node name="Fireball" type="Node" parent="AIINPUT"]
+script = ExtResource("10_fe8tf")
+fireball_scene = ExtResource("11_gpuub")
+
+[node name="Update" type="Timer" parent="AIINPUT"]
+autostart = true
+
+[node name="IDLE" type="Timer" parent="AIINPUT"]
+
+[node name="Attack" type="Timer" parent="AIINPUT"]
+one_shot = true
+
+[node name="AIDelay" type="Timer" parent="AIINPUT"]
+
+[node name="FireballSpawnTimer" type="Timer" parent="AIINPUT"]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="AIMotion" type="Node" parent="." node_paths=PackedStringArray("Root")]
+unique_name_in_owner = true
+script = ExtResource("12_rc03s")
+speed_walk = 400.0
+speed_dash = 50.0
+multiplier = 10.0
+Root = NodePath("..")
+
+[node name="IDLE" type="Node" parent="AIMotion"]
+script = ExtResource("13_cwlwl")
+
+[node name="WALK" type="Node" parent="AIMotion"]
+script = ExtResource("14_6coef")
+
+[node name="AIAnimations" type="Node" parent="."]
+script = ExtResource("15_22q7o")
+
+[node name="IDLE" type="Node" parent="AIAnimations"]
+script = ExtResource("16_sj56r")
+
+[node name="WALK" type="Node" parent="AIAnimations"]
+script = ExtResource("17_72363")
+
+[node name="PUNCH" type="Node" parent="AIAnimations"]
+script = ExtResource("18_gknbu")
+hadouken = ExtResource("19_nwvby")
+healing_hadouken = true
+
+[node name="HURT" type="Node" parent="AIAnimations"]
+script = ExtResource("19_qmknl")
+attack_id = 0.1
+
+[node name="AITransitions" type="Node" parent="." node_paths=PackedStringArray("currentmotion", "currentanim", "motionparent", "motionanimtree")]
+unique_name_in_owner = true
+script = ExtResource("20_5gr3j")
+currentmotion = NodePath("../AIMotion/IDLE")
+currentanim = NodePath("../AIAnimations/IDLE")
+motionparent = NodePath("../AIMotion")
+motionanimtree = NodePath("../AIAnimations")
+
+[node name="AnimTree" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("21_j7qau")
+
+[node name="HitstopFreeze" type="Timer" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+one_shot = true
+script = ExtResource("22_e0prl")
+
+[node name="HurtboxReturn" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[node name="CancelWindow" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="Detector" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 61
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+visible = false
+shape = SubResource("CircleShape2D_g6hkn")
+
+[node name="Hurtbox" parent="." node_paths=PackedStringArray("Transition") groups=["ENEMY"] instance=ExtResource("23_i12hu")]
+unique_name_in_owner = true
+collision_layer = 16
+collision_mask = 68
+script = ExtResource("24_67ril")
+Transition = NodePath("../AITransitions")
+
+[node name="ColorRect" type="ColorRect" parent="Hurtbox/CollisionShape2D" index="0"]
+offset_left = -11.0
+offset_top = -18.0
+offset_right = 12.0
+offset_bottom = 18.0
+color = Color(0.164706, 0.317647, 0.878431, 0.423529)
+
+[node name="Center" type="Node2D" parent="."]
+position = Vector2(0.333008, -26.5)
+
+[node name="Hitbox" parent="Center" groups=["ENEMY"] instance=ExtResource("25_nxmfb")]
+unique_name_in_owner = true
+collision_layer = 32
+collision_mask = 66
+script = ExtResource("26_inai1")
+is_AI = true
+
+[node name="ColorRect" type="ColorRect" parent="Center/Hitbox/CollisionShape2D" index="0"]
+offset_left = -16.0
+offset_top = -17.0
+offset_right = 15.0
+offset_bottom = 17.0
+color = Color(0.682353, 0, 0.109804, 0.34902)
+
+[node name="Code" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("27_kmvjb")
+
+[node name="Sprites" parent="." instance=ExtResource("28_nllqh")]
+
+[node name="GUI" type="Node2D" parent="."]
+
+[node name="HPBar" type="ProgressBar" parent="GUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = 28.0
+offset_right = 23.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 5
+
+[node name="HealingDelay" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="AIINPUT/Update" to="AIINPUT" method="_on_update_timeout"]
+[connection signal="timeout" from="AIINPUT/IDLE" to="AIINPUT" method="_on_idle_timeout"]
+[connection signal="timeout" from="AIINPUT/Attack" to="AIINPUT/Attacks" method="_on_attack_timeout"]
+[connection signal="timeout" from="AIINPUT/AIDelay" to="AIINPUT/Attacks" method="_on_ai_delay_timeout"]
+[connection signal="timeout" from="AIINPUT/FireballSpawnTimer" to="AIINPUT/Fireball" method="_on_fireball_spawn_timer_timeout"]
+[connection signal="timeout" from="HitstopFreeze" to="HitstopFreeze" method="_on_AIhitstop_freeze"]
+[connection signal="area_entered" from="Detector" to="AIINPUT/DetectorList" method="_on_detector_area_entered"]
+[connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_area_entered"]
+[connection signal="area_entered" from="Center/Hitbox" to="Center/Hitbox" method="_on_area_entered"]
+[connection signal="timeout" from="HealingDelay" to="." method="_on_healing_delay_timeout"]
+
+[editable path="Hurtbox"]
+[editable path="Center/Hitbox"]

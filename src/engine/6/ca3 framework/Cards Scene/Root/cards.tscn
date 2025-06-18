@@ -1,0 +1,82 @@
+[gd_scene load_steps=7 format=3 uid="uid://ch4aw4dcy2cpf"]
+
+[ext_resource type="Script" path="res://ca3 framework/Cards Scene/Root/cards.gd" id="1_a843c"]
+[ext_resource type="Texture2D" uid="uid://dau0reud78r7a" path="res://data/default/gui/cards/clubs.png" id="1_b0qsq"]
+[ext_resource type="Texture2D" uid="uid://dhg0s10d512jf" path="res://data/default/gui/cards/cups.png" id="2_uias8"]
+[ext_resource type="Texture2D" uid="uid://ddvfbwqbcwxs8" path="res://data/default/gui/cards/money.png" id="3_hbowx"]
+[ext_resource type="Texture2D" uid="uid://bsd17ourxloix" path="res://data/default/gui/cards/swords.png" id="4_v6lbb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ml0ra"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_b0qsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_uias8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hbowx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v6lbb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}]
+
+[node name="Cards" type="Node2D"]
+script = ExtResource("1_a843c")
+Next = "res://ca3 framework/3D framework/Root/root.tscn"
+
+[node name="Ani" type="AnimatedSprite2D" parent="."]
+position = Vector2(574, 321)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_ml0ra")
+animation = &"empty"
+
+[node name="LOG" type="Label" parent="."]
+offset_left = 79.0
+offset_top = 219.0
+offset_right = 331.0
+offset_bottom = 313.0
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 83.0
+offset_top = 331.0
+offset_right = 325.0
+offset_bottom = 365.0
+
+[node name="Lee1" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="Lee2" type="Timer" parent="."]
+one_shot = true
+
+[node name="Lee3" type="Timer" parent="."]
+one_shot = true
+
+[node name="End" type="Timer" parent="."]
+one_shot = true
+
+[node name="card" type="Label" parent="."]
+offset_left = 807.0
+offset_top = 264.0
+offset_right = 898.0
+offset_bottom = 374.0
+theme_override_font_sizes/font_size = 80
+
+[connection signal="timeout" from="Lee1" to="." method="_on_lee_1_timeout"]
+[connection signal="timeout" from="Lee2" to="." method="_on_lee_2_timeout"]
+[connection signal="timeout" from="Lee3" to="." method="_on_lee_3_timeout"]
+[connection signal="timeout" from="End" to="." method="_on_end_timeout"]

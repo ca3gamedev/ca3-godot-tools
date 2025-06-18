@@ -1,0 +1,1772 @@
+[gd_scene load_steps=213 format=3]
+
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_/pacifica_export_DASH_dir5_04.png" id="1_sygds"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_/pacifica_export_DASH_dir5_08.png" id="2_f4wkp"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_/pacifica_export_DASH_dir5_12.png" id="3_ko5il"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_/pacifica_export_DASH_dir5_16.png" id="4_0mn6u"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_/pacifica_export_DASH_dir5_20.png" id="5_r0g02"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_LEFT_/pacifica_export_DASH_dir4_04.png" id="6_lxk5l"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_LEFT_/pacifica_export_DASH_dir4_08.png" id="7_0p38e"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_LEFT_/pacifica_export_DASH_dir4_12.png" id="8_cds52"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_LEFT_/pacifica_export_DASH_dir4_16.png" id="9_v61ng"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_LEFT_/pacifica_export_DASH_dir4_20.png" id="10_67ggb"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_RIGHT_/pacifica_export_DASH_dir6_04.png" id="11_bv0lw"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_RIGHT_/pacifica_export_DASH_dir6_08.png" id="12_ahpkl"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_RIGHT_/pacifica_export_DASH_dir6_12.png" id="13_3p4oy"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_RIGHT_/pacifica_export_DASH_dir6_16.png" id="14_cmrup"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_RIGHT_/pacifica_export_DASH_dir6_20.png" id="15_rimx1"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_/pacifica_export_DASH_dir1_04.png" id="16_hu0c1"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_/pacifica_export_DASH_dir1_08.png" id="17_bo12p"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_/pacifica_export_DASH_dir1_12.png" id="18_j7dvr"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_/pacifica_export_DASH_dir1_16.png" id="19_lgh8o"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_/pacifica_export_DASH_dir1_20.png" id="20_jt6du"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_LEFT_/pacifica_export_DASH_dir2_04.png" id="21_xg2vj"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_LEFT_/pacifica_export_DASH_dir2_08.png" id="22_bgnqr"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_LEFT_/pacifica_export_DASH_dir2_12.png" id="23_lox28"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_LEFT_/pacifica_export_DASH_dir2_16.png" id="24_n2vql"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_LEFT_/pacifica_export_DASH_dir2_20.png" id="25_1q4uh"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_RIGHT_/pacifica_export_DASH_dir8_04.png" id="26_tnfbh"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_RIGHT_/pacifica_export_DASH_dir8_08.png" id="27_wgctg"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_RIGHT_/pacifica_export_DASH_dir8_12.png" id="28_3f3dl"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_RIGHT_/pacifica_export_DASH_dir8_16.png" id="29_1n3p2"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_RIGHT_/pacifica_export_DASH_dir8_20.png" id="30_2kwcb"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_LEFT_/pacifica_export_DASH_dir3_04.png" id="31_gyd5b"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_LEFT_/pacifica_export_DASH_dir3_08.png" id="32_velc6"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_LEFT_/pacifica_export_DASH_dir3_12.png" id="33_rcaby"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_LEFT_/pacifica_export_DASH_dir3_16.png" id="34_dx2ci"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_LEFT_/pacifica_export_DASH_dir3_20.png" id="35_js3sm"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_RIGHT_/pacifica_export_DASH_dir7_04.png" id="36_b3gpp"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_RIGHT_/pacifica_export_DASH_dir7_08.png" id="37_h4sxn"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_RIGHT_/pacifica_export_DASH_dir7_12.png" id="38_u28sv"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_RIGHT_/pacifica_export_DASH_dir7_16.png" id="39_aijee"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_RIGHT_/pacifica_export_DASH_dir7_20.png" id="40_bkscp"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_/pacifica_export_KICK_dir5_04.png" id="41_q7xd2"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_/pacifica_export_KICK_dir5_08.png" id="42_avqy3"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_/pacifica_export_KICK_dir5_12.png" id="43_54237"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_/pacifica_export_KICK_dir5_16.png" id="44_mnh33"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_/pacifica_export_KICK_dir5_20.png" id="45_37h74"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_LEFT_/pacifica_export_KICK_dir4_04.png" id="46_71g3f"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_LEFT_/pacifica_export_KICK_dir4_08.png" id="47_suate"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_LEFT_/pacifica_export_KICK_dir4_12.png" id="48_npkkq"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_LEFT_/pacifica_export_KICK_dir4_16.png" id="49_ur6fu"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_LEFT_/pacifica_export_KICK_dir4_20.png" id="50_jmh04"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_RIGHT_/pacifica_export_KICK_dir6_04.png" id="51_0dvek"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_RIGHT_/pacifica_export_KICK_dir6_08.png" id="52_6nqpt"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_RIGHT_/pacifica_export_KICK_dir6_12.png" id="53_wxj65"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_RIGHT_/pacifica_export_KICK_dir6_16.png" id="54_pv4q2"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_RIGHT_/pacifica_export_KICK_dir6_20.png" id="55_cthbj"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_/pacifica_export_KICK_dir1_04.png" id="56_uj3fk"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_/pacifica_export_KICK_dir1_08.png" id="57_6wsxy"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_/pacifica_export_KICK_dir1_12.png" id="58_o7ngd"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_/pacifica_export_KICK_dir1_16.png" id="59_vdlvl"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_/pacifica_export_KICK_dir1_20.png" id="60_7qfei"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_LEFT_/pacifica_export_KICK_dir2_04.png" id="61_begu4"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_LEFT_/pacifica_export_KICK_dir2_08.png" id="62_8lvxa"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_LEFT_/pacifica_export_KICK_dir2_12.png" id="63_7nkkb"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_LEFT_/pacifica_export_KICK_dir2_16.png" id="64_1exi3"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_LEFT_/pacifica_export_KICK_dir2_20.png" id="65_4jamv"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_RIGHT_/pacifica_export_KICK_dir8_04.png" id="66_gbq6s"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_RIGHT_/pacifica_export_KICK_dir8_08.png" id="67_go21w"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_RIGHT_/pacifica_export_KICK_dir8_12.png" id="68_yfl81"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_RIGHT_/pacifica_export_KICK_dir8_16.png" id="69_lhylw"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_RIGHT_/pacifica_export_KICK_dir8_20.png" id="70_uis00"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_LEFT_/pacifica_export_KICK_dir3_04.png" id="71_yurpb"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_LEFT_/pacifica_export_KICK_dir3_08.png" id="72_5fegt"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_LEFT_/pacifica_export_KICK_dir3_12.png" id="73_valfn"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_LEFT_/pacifica_export_KICK_dir3_16.png" id="74_hu62n"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_LEFT_/pacifica_export_KICK_dir3_20.png" id="75_txfr0"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_RIGHT_/pacifica_export_KICK_dir7_04.png" id="76_sptbi"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_RIGHT_/pacifica_export_KICK_dir7_08.png" id="77_wxu8l"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_RIGHT_/pacifica_export_KICK_dir7_12.png" id="78_1mufb"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_RIGHT_/pacifica_export_KICK_dir7_16.png" id="79_m00xb"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_RIGHT_/pacifica_export_KICK_dir7_20.png" id="80_4hdcd"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_/pacifica_export_PHOTO POSE_dir5_04.png" id="81_ei262"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_/pacifica_export_PHOTO POSE_dir5_08.png" id="82_srdw7"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_/pacifica_export_PHOTO POSE_dir5_12.png" id="83_lwk1b"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_/pacifica_export_PHOTO POSE_dir5_16.png" id="84_fxwae"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_/pacifica_export_PHOTO POSE_dir5_20.png" id="85_7e11d"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_LEFT_/pacifica_export_PHOTO POSE_dir4_04.png" id="86_qu6rs"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_LEFT_/pacifica_export_PHOTO POSE_dir4_08.png" id="87_3imim"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_LEFT_/pacifica_export_PHOTO POSE_dir4_12.png" id="88_e68lk"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_LEFT_/pacifica_export_PHOTO POSE_dir4_16.png" id="89_bkbm2"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_LEFT_/pacifica_export_PHOTO POSE_dir4_20.png" id="90_igyor"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_RIGHT_/pacifica_export_PHOTO POSE_dir6_04.png" id="91_8wnj6"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_RIGHT_/pacifica_export_PHOTO POSE_dir6_08.png" id="92_ofoev"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_RIGHT_/pacifica_export_PHOTO POSE_dir6_12.png" id="93_xqyvf"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_RIGHT_/pacifica_export_PHOTO POSE_dir6_16.png" id="94_ycada"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_RIGHT_/pacifica_export_PHOTO POSE_dir6_20.png" id="95_7ejua"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_/pacifica_export_PHOTO POSE_dir1_04.png" id="96_0r7ta"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_/pacifica_export_PHOTO POSE_dir1_08.png" id="97_mvelk"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_/pacifica_export_PHOTO POSE_dir1_12.png" id="98_wb2f3"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_/pacifica_export_PHOTO POSE_dir1_16.png" id="99_dg2n0"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_/pacifica_export_PHOTO POSE_dir1_20.png" id="100_q087q"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_LEFT_/pacifica_export_PHOTO POSE_dir2_04.png" id="101_yb4v2"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_LEFT_/pacifica_export_PHOTO POSE_dir2_08.png" id="102_h5u3t"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_LEFT_/pacifica_export_PHOTO POSE_dir2_12.png" id="103_jwkyy"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_LEFT_/pacifica_export_PHOTO POSE_dir2_16.png" id="104_pd1gn"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_LEFT_/pacifica_export_PHOTO POSE_dir2_20.png" id="105_6ui7e"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_RIGHT_/pacifica_export_PHOTO POSE_dir8_04.png" id="106_avqxs"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_RIGHT_/pacifica_export_PHOTO POSE_dir8_08.png" id="107_1lg60"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_RIGHT_/pacifica_export_PHOTO POSE_dir8_12.png" id="108_t5oqo"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_RIGHT_/pacifica_export_PHOTO POSE_dir8_16.png" id="109_4ybay"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_RIGHT_/pacifica_export_PHOTO POSE_dir8_20.png" id="110_m0chb"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_LEFT_/pacifica_export_PHOTO POSE_dir3_04.png" id="111_v15wg"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_LEFT_/pacifica_export_PHOTO POSE_dir3_08.png" id="112_vfgtr"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_LEFT_/pacifica_export_PHOTO POSE_dir3_12.png" id="113_ymtpq"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_LEFT_/pacifica_export_PHOTO POSE_dir3_16.png" id="114_bw7od"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_LEFT_/pacifica_export_PHOTO POSE_dir3_20.png" id="115_i35gy"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_RIGHT_/pacifica_export_PHOTO POSE_dir7_04.png" id="116_itk03"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_RIGHT_/pacifica_export_PHOTO POSE_dir7_08.png" id="117_x3nvf"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_RIGHT_/pacifica_export_PHOTO POSE_dir7_12.png" id="118_g3350"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_RIGHT_/pacifica_export_PHOTO POSE_dir7_16.png" id="119_xhyeo"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_RIGHT_/pacifica_export_PHOTO POSE_dir7_20.png" id="120_y2a5o"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_/pacifica_export_WALK_dir5_04.png" id="121_bmy1c"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_/pacifica_export_WALK_dir5_08.png" id="122_na0am"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_/pacifica_export_WALK_dir5_12.png" id="123_g2sld"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_/pacifica_export_WALK_dir5_16.png" id="124_rgx57"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_/pacifica_export_WALK_dir5_20.png" id="125_aypjy"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_/pacifica_export_WALK_dir5_24.png" id="126_2kul6"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_/pacifica_export_WALK_dir5_28.png" id="127_0b4c6"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_LEFT_/pacifica_export_WALK_dir4_04.png" id="128_tr0i8"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_LEFT_/pacifica_export_WALK_dir4_08.png" id="129_mjh0x"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_LEFT_/pacifica_export_WALK_dir4_12.png" id="130_ec4pa"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_LEFT_/pacifica_export_WALK_dir4_16.png" id="131_4e8ei"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_LEFT_/pacifica_export_WALK_dir4_20.png" id="132_j4h06"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_LEFT_/pacifica_export_WALK_dir4_24.png" id="133_hkfu5"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_LEFT_/pacifica_export_WALK_dir4_28.png" id="134_e7cvh"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_RIGHT_/pacifica_export_WALK_dir6_04.png" id="135_v57iu"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_RIGHT_/pacifica_export_WALK_dir6_08.png" id="136_g2eka"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_RIGHT_/pacifica_export_WALK_dir6_12.png" id="137_g163m"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_RIGHT_/pacifica_export_WALK_dir6_16.png" id="138_baqe8"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_RIGHT_/pacifica_export_WALK_dir6_20.png" id="139_0ub2b"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_RIGHT_/pacifica_export_WALK_dir6_24.png" id="140_6t5tn"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_RIGHT_/pacifica_export_WALK_dir6_28.png" id="141_pxb3d"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_/pacifica_export_WALK_dir1_04.png" id="142_qsnv7"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_/pacifica_export_WALK_dir1_08.png" id="143_4rprh"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_/pacifica_export_WALK_dir1_12.png" id="144_7jq52"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_/pacifica_export_WALK_dir1_16.png" id="145_sasso"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_/pacifica_export_WALK_dir1_20.png" id="146_qg1u5"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_/pacifica_export_WALK_dir1_24.png" id="147_ajt7x"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_/pacifica_export_WALK_dir1_28.png" id="148_jmq1k"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_LEFT_/pacifica_export_WALK_dir2_04.png" id="149_xsflx"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_LEFT_/pacifica_export_WALK_dir2_08.png" id="150_k4vse"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_LEFT_/pacifica_export_WALK_dir2_12.png" id="151_agv7e"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_LEFT_/pacifica_export_WALK_dir2_16.png" id="152_cwy03"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_LEFT_/pacifica_export_WALK_dir2_20.png" id="153_8pnl4"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_LEFT_/pacifica_export_WALK_dir2_24.png" id="154_ikouh"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_LEFT_/pacifica_export_WALK_dir2_28.png" id="155_hllpo"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_RIGHT_/pacifica_export_WALK_dir8_04.png" id="156_y07co"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_RIGHT_/pacifica_export_WALK_dir8_08.png" id="157_74m1q"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_RIGHT_/pacifica_export_WALK_dir8_12.png" id="158_vwn63"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_RIGHT_/pacifica_export_WALK_dir8_16.png" id="159_3ar1c"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_RIGHT_/pacifica_export_WALK_dir8_20.png" id="160_0g5da"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_RIGHT_/pacifica_export_WALK_dir8_24.png" id="161_0ir5e"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_RIGHT_/pacifica_export_WALK_dir8_28.png" id="162_3jt6r"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_LEFT_/pacifica_export_WALK_dir3_04.png" id="163_bf3wl"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_LEFT_/pacifica_export_WALK_dir3_08.png" id="164_11lld"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_LEFT_/pacifica_export_WALK_dir3_12.png" id="165_ekttf"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_LEFT_/pacifica_export_WALK_dir3_16.png" id="166_tmc6u"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_LEFT_/pacifica_export_WALK_dir3_20.png" id="167_56piu"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_LEFT_/pacifica_export_WALK_dir3_24.png" id="168_j1lv3"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_LEFT_/pacifica_export_WALK_dir3_28.png" id="169_tusb1"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_RIGHT_/pacifica_export_WALK_dir7_04.png" id="170_yasif"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_RIGHT_/pacifica_export_WALK_dir7_08.png" id="171_oyf30"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_RIGHT_/pacifica_export_WALK_dir7_12.png" id="172_iomqv"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_RIGHT_/pacifica_export_WALK_dir7_16.png" id="173_f62a6"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_RIGHT_/pacifica_export_WALK_dir7_20.png" id="174_p1fbb"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_RIGHT_/pacifica_export_WALK_dir7_24.png" id="175_1nibx"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_RIGHT_/pacifica_export_WALK_dir7_28.png" id="176_xwcrf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w4c8m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sygds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_f4wkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ko5il")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0mn6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_r0g02")
+}],
+"loop": true,
+"name": &"DASH_BACK_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_lxk5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0p38e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cds52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_v61ng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_67ggb")
+}],
+"loop": true,
+"name": &"DASH_BACK_LEFT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_bv0lw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ahpkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3p4oy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_cmrup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_rimx1")
+}],
+"loop": true,
+"name": &"DASH_BACK_RIGHT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_hu0c1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_bo12p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_j7dvr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_lgh8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_jt6du")
+}],
+"loop": true,
+"name": &"DASH_FRONT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_xg2vj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_bgnqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_lox28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_n2vql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_1q4uh")
+}],
+"loop": true,
+"name": &"DASH_FRONT_LEFT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_tnfbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_wgctg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_3f3dl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_1n3p2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_2kwcb")
+}],
+"loop": true,
+"name": &"DASH_FRONT_RIGHT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_gyd5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_velc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_rcaby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_dx2ci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_js3sm")
+}],
+"loop": true,
+"name": &"DASH_LEFT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_b3gpp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_h4sxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_u28sv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_aijee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_bkscp")
+}],
+"loop": true,
+"name": &"DASH_RIGHT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_q7xd2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_avqy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_54237")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_mnh33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_37h74")
+}],
+"loop": true,
+"name": &"KICK_BACK_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_71g3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_suate")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_npkkq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_ur6fu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_jmh04")
+}],
+"loop": true,
+"name": &"KICK_BACK_LEFT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("51_0dvek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_6nqpt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_wxj65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_pv4q2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_cthbj")
+}],
+"loop": true,
+"name": &"KICK_BACK_RIGHT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("56_uj3fk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_6wsxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_o7ngd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_vdlvl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_7qfei")
+}],
+"loop": true,
+"name": &"KICK_FRONT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("61_begu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_8lvxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_7nkkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_1exi3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_4jamv")
+}],
+"loop": true,
+"name": &"KICK_FRONT_LEFT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("66_gbq6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_go21w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_yfl81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_lhylw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_uis00")
+}],
+"loop": true,
+"name": &"KICK_FRONT_RIGHT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("71_yurpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_5fegt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_valfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_hu62n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_txfr0")
+}],
+"loop": true,
+"name": &"KICK_LEFT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("76_sptbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_wxu8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_1mufb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_m00xb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_4hdcd")
+}],
+"loop": true,
+"name": &"KICK_RIGHT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("81_ei262")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_srdw7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_lwk1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_fxwae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_7e11d")
+}],
+"loop": true,
+"name": &"PHOTO POSE_BACK_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("86_qu6rs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_3imim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_e68lk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_bkbm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_igyor")
+}],
+"loop": true,
+"name": &"PHOTO POSE_BACK_LEFT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("91_8wnj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_ofoev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_xqyvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_ycada")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_7ejua")
+}],
+"loop": true,
+"name": &"PHOTO POSE_BACK_RIGHT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("96_0r7ta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_mvelk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_wb2f3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_dg2n0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_q087q")
+}],
+"loop": true,
+"name": &"PHOTO POSE_FRONT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("101_yb4v2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_h5u3t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_jwkyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_pd1gn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_6ui7e")
+}],
+"loop": true,
+"name": &"PHOTO POSE_FRONT_LEFT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("106_avqxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_1lg60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_t5oqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_4ybay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_m0chb")
+}],
+"loop": true,
+"name": &"PHOTO POSE_FRONT_RIGHT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("111_v15wg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_vfgtr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_ymtpq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_bw7od")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_i35gy")
+}],
+"loop": true,
+"name": &"PHOTO POSE_LEFT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("116_itk03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_x3nvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_g3350")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_xhyeo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_y2a5o")
+}],
+"loop": true,
+"name": &"PHOTO POSE_RIGHT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("121_bmy1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_na0am")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_g2sld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_rgx57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_aypjy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_2kul6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_0b4c6")
+}],
+"loop": true,
+"name": &"WALK_BACK_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("128_tr0i8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_mjh0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_ec4pa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_4e8ei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_j4h06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_hkfu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_e7cvh")
+}],
+"loop": true,
+"name": &"WALK_BACK_LEFT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("135_v57iu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_g2eka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_g163m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_baqe8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_0ub2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_6t5tn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_pxb3d")
+}],
+"loop": true,
+"name": &"WALK_BACK_RIGHT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("142_qsnv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_4rprh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_7jq52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_sasso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_qg1u5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_ajt7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148_jmq1k")
+}],
+"loop": true,
+"name": &"WALK_FRONT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("149_xsflx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("150_k4vse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("151_agv7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("152_cwy03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("153_8pnl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154_ikouh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("155_hllpo")
+}],
+"loop": true,
+"name": &"WALK_FRONT_LEFT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("156_y07co")
+}, {
+"duration": 1.0,
+"texture": ExtResource("157_74m1q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_vwn63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_3ar1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_0g5da")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_0ir5e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_3jt6r")
+}],
+"loop": true,
+"name": &"WALK_FRONT_RIGHT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("163_bf3wl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_11lld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_ekttf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_tmc6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_56piu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_j1lv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_tusb1")
+}],
+"loop": true,
+"name": &"WALK_LEFT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("170_yasif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_oyf30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_iomqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("173_f62a6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174_p1fbb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_1nibx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_xwcrf")
+}],
+"loop": true,
+"name": &"WALK_RIGHT_",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_cicog"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b03l6"]
+_data = {
+"RESET": SubResource("Animation_cicog")
+}
+
+[sub_resource type="Animation" id="Animation_3un7g"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["DASH_BACK_"]
+}
+
+[sub_resource type="Animation" id="Animation_uegc1"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["DASH_BACK_LEFT_"]
+}
+
+[sub_resource type="Animation" id="Animation_kblfg"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["DASH_BACK_RIGHT_"]
+}
+
+[sub_resource type="Animation" id="Animation_3dyc4"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["DASH_FRONT_"]
+}
+
+[sub_resource type="Animation" id="Animation_mawvj"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["DASH_FRONT_LEFT_"]
+}
+
+[sub_resource type="Animation" id="Animation_nj1w7"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["DASH_FRONT_RIGHT_"]
+}
+
+[sub_resource type="Animation" id="Animation_ylrv7"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["DASH_LEFT_"]
+}
+
+[sub_resource type="Animation" id="Animation_n22eb"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["DASH_RIGHT_"]
+}
+
+[sub_resource type="Animation" id="Animation_ss0rn"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["KICK_BACK_"]
+}
+
+[sub_resource type="Animation" id="Animation_dfjgu"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["KICK_BACK_LEFT_"]
+}
+
+[sub_resource type="Animation" id="Animation_i6pcg"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["KICK_BACK_RIGHT_"]
+}
+
+[sub_resource type="Animation" id="Animation_cmoop"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["KICK_FRONT_"]
+}
+
+[sub_resource type="Animation" id="Animation_fvjbi"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["KICK_FRONT_LEFT_"]
+}
+
+[sub_resource type="Animation" id="Animation_nnt5p"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["KICK_FRONT_RIGHT_"]
+}
+
+[sub_resource type="Animation" id="Animation_2ki5x"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["KICK_LEFT_"]
+}
+
+[sub_resource type="Animation" id="Animation_78lwj"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["KICK_RIGHT_"]
+}
+
+[sub_resource type="Animation" id="Animation_3bbo8"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["PHOTO POSE_BACK_"]
+}
+
+[sub_resource type="Animation" id="Animation_adlrp"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["PHOTO POSE_BACK_LEFT_"]
+}
+
+[sub_resource type="Animation" id="Animation_6nvaf"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["PHOTO POSE_BACK_RIGHT_"]
+}
+
+[sub_resource type="Animation" id="Animation_dsry0"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["PHOTO POSE_FRONT_"]
+}
+
+[sub_resource type="Animation" id="Animation_f4r2r"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["PHOTO POSE_FRONT_LEFT_"]
+}
+
+[sub_resource type="Animation" id="Animation_splro"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["PHOTO POSE_FRONT_RIGHT_"]
+}
+
+[sub_resource type="Animation" id="Animation_ihgff"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["PHOTO POSE_LEFT_"]
+}
+
+[sub_resource type="Animation" id="Animation_kdgdo"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["PHOTO POSE_RIGHT_"]
+}
+
+[sub_resource type="Animation" id="Animation_rc784"]
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["WALK_BACK_"]
+}
+
+[sub_resource type="Animation" id="Animation_e084m"]
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["WALK_BACK_LEFT_"]
+}
+
+[sub_resource type="Animation" id="Animation_dwmqp"]
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["WALK_BACK_RIGHT_"]
+}
+
+[sub_resource type="Animation" id="Animation_d32sa"]
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["WALK_FRONT_"]
+}
+
+[sub_resource type="Animation" id="Animation_ikwwa"]
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["WALK_FRONT_LEFT_"]
+}
+
+[sub_resource type="Animation" id="Animation_2ualt"]
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["WALK_FRONT_RIGHT_"]
+}
+
+[sub_resource type="Animation" id="Animation_b2tij"]
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["WALK_LEFT_"]
+}
+
+[sub_resource type="Animation" id="Animation_f1m7s"]
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/SpriteSheet:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["WALK_RIGHT_"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lckoy"]
+_data = {
+"DASH_BACK_": SubResource("Animation_3un7g"),
+"DASH_BACK_LEFT_": SubResource("Animation_uegc1"),
+"DASH_BACK_RIGHT_": SubResource("Animation_kblfg"),
+"DASH_FRONT_": SubResource("Animation_3dyc4"),
+"DASH_FRONT_LEFT_": SubResource("Animation_mawvj"),
+"DASH_FRONT_RIGHT_": SubResource("Animation_nj1w7"),
+"DASH_LEFT_": SubResource("Animation_ylrv7"),
+"DASH_RIGHT_": SubResource("Animation_n22eb"),
+"KICK_BACK_": SubResource("Animation_ss0rn"),
+"KICK_BACK_LEFT_": SubResource("Animation_dfjgu"),
+"KICK_BACK_RIGHT_": SubResource("Animation_i6pcg"),
+"KICK_FRONT_": SubResource("Animation_cmoop"),
+"KICK_FRONT_LEFT_": SubResource("Animation_fvjbi"),
+"KICK_FRONT_RIGHT_": SubResource("Animation_nnt5p"),
+"KICK_LEFT_": SubResource("Animation_2ki5x"),
+"KICK_RIGHT_": SubResource("Animation_78lwj"),
+"PHOTO POSE_BACK_": SubResource("Animation_3bbo8"),
+"PHOTO POSE_BACK_LEFT_": SubResource("Animation_adlrp"),
+"PHOTO POSE_BACK_RIGHT_": SubResource("Animation_6nvaf"),
+"PHOTO POSE_FRONT_": SubResource("Animation_dsry0"),
+"PHOTO POSE_FRONT_LEFT_": SubResource("Animation_f4r2r"),
+"PHOTO POSE_FRONT_RIGHT_": SubResource("Animation_splro"),
+"PHOTO POSE_LEFT_": SubResource("Animation_ihgff"),
+"PHOTO POSE_RIGHT_": SubResource("Animation_kdgdo"),
+"WALK_BACK_": SubResource("Animation_rc784"),
+"WALK_BACK_LEFT_": SubResource("Animation_e084m"),
+"WALK_BACK_RIGHT_": SubResource("Animation_dwmqp"),
+"WALK_FRONT_": SubResource("Animation_d32sa"),
+"WALK_FRONT_LEFT_": SubResource("Animation_ikwwa"),
+"WALK_FRONT_RIGHT_": SubResource("Animation_2ualt"),
+"WALK_LEFT_": SubResource("Animation_b2tij"),
+"WALK_RIGHT_": SubResource("Animation_f1m7s")
+}
+
+[node name="Sprites" type="Node3D"]
+
+[node name="SpriteSheet" type="AnimatedSprite3D" parent="."]
+sprite_frames = SubResource("SpriteFrames_w4c8m")
+animation = &"DASH_BACK_"
+
+[node name="Animations" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_b03l6"),
+"sprites": SubResource("AnimationLibrary_lckoy")
+}

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bqwqw36813u4i"
+path="res://.godot/imported/3.1 beta_Aurelio's Game_Music_Song aurelio.ogg-e5ce1b111e1423317ffd2d820b09c953.oggvorbisstr"
+
+[deps]
+
+source_file="res://data/default/music/3.1 beta_Aurelio's Game_Music_Song aurelio.ogg"
+dest_files=["res://.godot/imported/3.1 beta_Aurelio's Game_Music_Song aurelio.ogg-e5ce1b111e1423317ffd2d820b09c953.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

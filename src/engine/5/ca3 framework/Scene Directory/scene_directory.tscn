@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnqyarr0g4v3m"]
+
+[ext_resource type="Script" path="res://ca3 framework/Scene Directory/Levels/level_1.gd" id="1_3hbwg"]
+[ext_resource type="Script" path="res://ca3 framework/Scene Directory/screens.gd" id="1_45ov3"]
+[ext_resource type="Script" path="res://ca3 framework/Scene Directory/scene_directory.gd" id="1_jhuu3"]
+
+[node name="SceneDirectory" type="Node"]
+script = ExtResource("1_jhuu3")
+
+[node name="Screens" type="Node" parent="."]
+script = ExtResource("1_45ov3")
+Title = "res://data/default/Scenes/Game Title/title.tscn"
+Tutorial = "res://ca3 framework/tutorial/tutorial.tscn"
+GameOver = "res://data/default/Scenes/GameOver/game_over.tscn"
+WorldMap = "res://ca3 framework/World Map/Root/world_map.tscn"
+
+[node name="Level1" type="Node" parent="."]
+script = ExtResource("1_3hbwg")
+Home = "res://ca3 framework/3D framework/Root/root.tscn"
+Level01 = "res://ca3 framework/3D roguelike dungeon/Root/root.tscn"
+Level02 = "res://ca3 framework/3D roguelike dungeon/Root/root2.tscn"
+Level03 = "res://ca3 framework/3D roguelike dungeon/Root/root3.tscn"
+Battle = "res://ca3 framework/2D Battle/Battle/Scenes/BattleTest.tscn"
+VictoryPoints = "res://ca3 framework/Battle Victory Prize/Root/prize.tscn"
+Relationships = "res://ca3 framework/Relationships Mode/Root/relationships_score.tscn"
+Tarot = "res://ca3 framework/Cards Scene/Root/cards.tscn"
+Intro = "res://ca3 framework/VN modes/Intro/Intro.tscn"

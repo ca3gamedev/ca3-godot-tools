@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bn7kxh0543dyi"]
-
-[ext_resource type="Script" path="res://ca3 framework/framework/InputCode/FSM Movement/platformer.gd" id="1_jw67a"]
-
-[node name="Platformer" type="Node"]
-script = ExtResource("1_jw67a")

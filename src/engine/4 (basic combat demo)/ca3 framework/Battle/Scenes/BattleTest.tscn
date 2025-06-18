@@ -1,0 +1,153 @@
+[gd_scene load_steps=15 format=3 uid="uid://p6xryonk834q"]
+
+[ext_resource type="Script" path="res://ca3 framework/Battle/Scenes/root.gd" id="1_d1a7v"]
+[ext_resource type="PackedScene" uid="uid://bquf765e0ayvd" path="res://ca3 framework/Framework Items/Coins/coin_spawner.tscn" id="2_qutdo"]
+[ext_resource type="PackedScene" uid="uid://dnuiprw05pmqq" path="res://ca3 framework/framework/Camera2D/camera_2d.tscn" id="4_qd1gi"]
+[ext_resource type="PackedScene" uid="uid://y8jp24a1mwac" path="res://ca3 framework/AI enemies/Director/ai_director.tscn" id="4_qvgwt"]
+[ext_resource type="PackedScene" uid="uid://750k42y2kg35" path="res://ca3 framework/AI enemies/EnemyManager/enemy_bullets.tscn" id="5_4vnua"]
+[ext_resource type="PackedScene" uid="uid://dy6cwkj0mer5v" path="res://ca3 framework/AI enemies/Player/AI player hadouken.tscn" id="5_k4qck"]
+[ext_resource type="PackedScene" uid="uid://c7s4yt14jssb1" path="res://data/default/objects/characters/heroe old/player.tscn" id="5_mygl6"]
+[ext_resource type="PackedScene" uid="uid://po7sh3353sqr" path="res://ca3 framework/fireballs/Manager/player_bullet_manager.tscn" id="5_uyt6j"]
+[ext_resource type="PackedScene" uid="uid://d1ub2rpxh7kr1" path="res://ca3 framework/AI enemies/Player/AI player healing hadouken.tscn" id="6_vv8lk"]
+[ext_resource type="PackedScene" uid="uid://d0eoegw8j4hgh" path="res://ca3 framework/AI enemies/Player/AI Necromancer.tscn" id="7_suk6f"]
+[ext_resource type="PackedScene" uid="uid://bl4dqnsdbfw54" path="res://ca3 framework/GUI/Battle/gui.tscn" id="8_usnco"]
+[ext_resource type="PackedScene" uid="uid://b23t60mfoxnac" path="res://ca3 framework/GameOver Conditions/game_over_conditions.tscn" id="9_fwiwn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbms4"]
+size = Vector2(119, 1032)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwbpf"]
+size = Vector2(2039, 121)
+
+[node name="Root" type="Node2D"]
+process_mode = 3
+y_sort_enabled = true
+script = ExtResource("1_d1a7v")
+
+[node name="Ground" type="ColorRect" parent="."]
+z_index = -4096
+z_as_relative = false
+offset_left = -271.0
+offset_top = -214.0
+offset_right = 1480.0
+offset_bottom = 867.0
+color = Color(0.0564199, 0.158995, 0.115059, 1)
+metadata/_edit_lock_ = true
+
+[node name="WALLS" type="Node2D" parent="."]
+
+[node name="LEFT" type="StaticBody2D" parent="WALLS" groups=["WALL"]]
+position = Vector2(-297, 316)
+collision_layer = 64
+collision_mask = 38
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WALLS/LEFT"]
+position = Vector2(-4, 4)
+shape = SubResource("RectangleShape2D_sbms4")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="WALLS/LEFT/CollisionShape2D"]
+z_index = -4096
+z_as_relative = false
+offset_left = -57.0
+offset_top = -518.0
+offset_right = 67.0
+offset_bottom = 516.0
+color = Color(0.242764, 0.0843635, 0.0511434, 1)
+metadata/_edit_lock_ = true
+
+[node name="LEFT2" type="StaticBody2D" parent="WALLS" groups=["WALL"]]
+position = Vector2(1492, 319)
+collision_layer = 64
+collision_mask = 38
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WALLS/LEFT2"]
+position = Vector2(-4, 4)
+shape = SubResource("RectangleShape2D_sbms4")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="WALLS/LEFT2/CollisionShape2D"]
+z_index = -4096
+z_as_relative = false
+offset_left = -57.0
+offset_top = -518.0
+offset_right = 67.0
+offset_bottom = 516.0
+color = Color(0.242764, 0.0843635, 0.0511434, 1)
+metadata/_edit_lock_ = true
+
+[node name="TOP" type="StaticBody2D" parent="WALLS" groups=["WALL"]]
+position = Vector2(571, -189)
+collision_layer = 64
+collision_mask = 38
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WALLS/TOP"]
+position = Vector2(42.5, -42.5)
+shape = SubResource("RectangleShape2D_dwbpf")
+
+[node name="ColorRect" type="ColorRect" parent="WALLS/TOP/CollisionShape2D"]
+z_index = -4096
+z_as_relative = false
+offset_left = -1019.0
+offset_top = -64.0
+offset_right = 1025.0
+offset_bottom = 63.0
+color = Color(0.243137, 0.0862745, 0.0509804, 1)
+
+[node name="DOWN" type="StaticBody2D" parent="WALLS" groups=["WALL"]]
+position = Vector2(585, 934)
+collision_layer = 64
+collision_mask = 38
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WALLS/DOWN"]
+position = Vector2(42.5, -42.5)
+shape = SubResource("RectangleShape2D_dwbpf")
+
+[node name="ColorRect" type="ColorRect" parent="WALLS/DOWN/CollisionShape2D"]
+z_index = -4096
+z_as_relative = false
+offset_left = -1019.0
+offset_top = -64.0
+offset_right = 1025.0
+offset_bottom = 63.0
+color = Color(0.243137, 0.0862745, 0.0509804, 1)
+
+[node name="CoinSpawner" parent="." instance=ExtResource("2_qutdo")]
+
+[node name="Camera2D" parent="." instance=ExtResource("4_qd1gi")]
+
+[node name="AIDirector" parent="." instance=ExtResource("4_qvgwt")]
+spawn_number_enemy = 1
+hadouken_spammer = ExtResource("5_k4qck")
+healer = ExtResource("6_vv8lk")
+necromancer = ExtResource("7_suk6f")
+
+[node name="ClosestUpdate" parent="AIDirector" index="2"]
+wait_time = 1.0
+
+[node name="AIDirectorCode" parent="AIDirector" index="3"]
+radius_close = 50
+radius_medium = 100
+radius_far = 150
+
+[node name="EnemyBullets" parent="." instance=ExtResource("5_4vnua")]
+
+[node name="Players" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" parent="Players" instance=ExtResource("5_mygl6")]
+position = Vector2(584, 339)
+
+[node name="PlayerBulletManager" parent="." instance=ExtResource("5_uyt6j")]
+
+[node name="GUI" parent="." instance=ExtResource("8_usnco")]
+
+[node name="GameOverConditions" parent="." instance=ExtResource("9_fwiwn")]
+
+[editable path="AIDirector"]

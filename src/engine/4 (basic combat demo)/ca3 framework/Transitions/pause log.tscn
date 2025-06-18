@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtys6btkq4ebc"]
+
+[ext_resource type="Script" path="res://ca3 framework/Transitions/pause_log.gd" id="1_f15wh"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_f15wh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PAUSELOG" type="Label" parent="CanvasLayer"]
+z_index = 4096
+z_as_relative = false
+offset_left = 377.0
+offset_top = 229.0
+offset_right = 840.0
+offset_bottom = 394.0
+theme_override_font_sizes/font_size = 120
+text = "PAUSED"

@@ -146,9 +146,10 @@ func _on_generate_ani_pressed():
 					# **********************************
 					
 					if png.get_extension() == "png":
-						var texture = Image.load_from_file(path2 + "/" + png)
-						var imagetexture = ImageTexture.create_from_image(texture)
-						spritesheet.sprite_frames.add_frame(%AnimationsList.get_item_text(i), imagetexture)
+						#var texture = Image.load_from_file(path2 + "/" + png)
+						#var imagetexture = ImageTexture.create_from_image(texture)
+						var texture = load(path2 + "/" + png)
+						spritesheet.sprite_frames.add_frame(%AnimationsList.get_item_text(i), texture)
 				
 				# This plays the last selected animation, so the user can
 				# see the animation was baked properly

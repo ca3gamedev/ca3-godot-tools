@@ -1,0 +1,58 @@
+[gd_scene load_steps=13 format=3 uid="uid://b6j5i71hglp3e"]
+
+[ext_resource type="Texture2D" uid="uid://qs0bf2b6juhm" path="res://data/default/tiles/map/tile.png" id="1_bkwyl"]
+[ext_resource type="Script" path="res://ca3 framework/World Map/Tile/tile.gd" id="1_un8cp"]
+[ext_resource type="Texture2D" uid="uid://b18fd5eb3pano" path="res://data/default/tiles/map/Cinematic.png" id="2_pt44k"]
+[ext_resource type="Texture2D" uid="uid://bvhf8x5ykett6" path="res://data/default/tiles/map/coin.png" id="3_i1dkm"]
+[ext_resource type="Texture2D" uid="uid://cawr3epi68vpn" path="res://data/default/tiles/map/event text.png" id="4_8qkxd"]
+[ext_resource type="Texture2D" uid="uid://baidqjcjpje6v" path="res://data/default/tiles/map/fighht.png" id="5_cfwup"]
+[ext_resource type="Texture2D" uid="uid://dlnao2v8b2ga0" path="res://data/default/tiles/map/levels.png" id="6_subvl"]
+[ext_resource type="Texture2D" uid="uid://cvujfr0jxjk1" path="res://data/default/tiles/map/relationships.png" id="7_hj0pj"]
+[ext_resource type="Texture2D" uid="uid://m1xos06mjy5u" path="res://data/default/tiles/map/roguelike.png" id="8_31tve"]
+[ext_resource type="Texture2D" uid="uid://bylbiargwg4u8" path="res://data/default/tiles/map/shop.png" id="9_gr642"]
+[ext_resource type="Texture2D" uid="uid://dfodcgv8kp1ie" path="res://data/default/tiles/map/text.png" id="10_wkctm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q8iyk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pt44k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_i1dkm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8qkxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cfwup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_subvl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hj0pj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_31tve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gr642")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wkctm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Tile" type="Node2D"]
+script = ExtResource("1_un8cp")
+
+[node name="Tile" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+texture = ExtResource("1_bkwyl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_q8iyk")

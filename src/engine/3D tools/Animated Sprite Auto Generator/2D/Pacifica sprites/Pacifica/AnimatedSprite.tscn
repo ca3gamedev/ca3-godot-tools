@@ -1,0 +1,880 @@
+[gd_scene load_steps=178 format=3]
+
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_/pacifica_export_DASH_dir5_04.png" id="1_pgq8y"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_/pacifica_export_DASH_dir5_08.png" id="2_5phj6"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_/pacifica_export_DASH_dir5_12.png" id="3_cwsrm"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_/pacifica_export_DASH_dir5_16.png" id="4_v5tvq"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_/pacifica_export_DASH_dir5_20.png" id="5_n3qyv"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_LEFT_/pacifica_export_DASH_dir4_04.png" id="6_1v1jl"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_LEFT_/pacifica_export_DASH_dir4_08.png" id="7_xyekv"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_LEFT_/pacifica_export_DASH_dir4_12.png" id="8_70hxu"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_LEFT_/pacifica_export_DASH_dir4_16.png" id="9_v4fws"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_LEFT_/pacifica_export_DASH_dir4_20.png" id="10_q3t5x"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_RIGHT_/pacifica_export_DASH_dir6_04.png" id="11_fs35w"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_RIGHT_/pacifica_export_DASH_dir6_08.png" id="12_538sj"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_RIGHT_/pacifica_export_DASH_dir6_12.png" id="13_54t48"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_RIGHT_/pacifica_export_DASH_dir6_16.png" id="14_35o8r"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_BACK_RIGHT_/pacifica_export_DASH_dir6_20.png" id="15_jkhy7"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_/pacifica_export_DASH_dir1_04.png" id="16_kkkj0"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_/pacifica_export_DASH_dir1_08.png" id="17_lyrvj"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_/pacifica_export_DASH_dir1_12.png" id="18_2tiff"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_/pacifica_export_DASH_dir1_16.png" id="19_7778w"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_/pacifica_export_DASH_dir1_20.png" id="20_81d6p"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_LEFT_/pacifica_export_DASH_dir2_04.png" id="21_wambo"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_LEFT_/pacifica_export_DASH_dir2_08.png" id="22_tmtlk"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_LEFT_/pacifica_export_DASH_dir2_12.png" id="23_6xgpc"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_LEFT_/pacifica_export_DASH_dir2_16.png" id="24_gpc56"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_LEFT_/pacifica_export_DASH_dir2_20.png" id="25_w7xos"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_RIGHT_/pacifica_export_DASH_dir8_04.png" id="26_11esv"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_RIGHT_/pacifica_export_DASH_dir8_08.png" id="27_vkcka"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_RIGHT_/pacifica_export_DASH_dir8_12.png" id="28_275d5"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_RIGHT_/pacifica_export_DASH_dir8_16.png" id="29_4pvd6"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_FRONT_RIGHT_/pacifica_export_DASH_dir8_20.png" id="30_l1e67"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_LEFT_/pacifica_export_DASH_dir3_04.png" id="31_0orrq"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_LEFT_/pacifica_export_DASH_dir3_08.png" id="32_qe8qd"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_LEFT_/pacifica_export_DASH_dir3_12.png" id="33_h1vki"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_LEFT_/pacifica_export_DASH_dir3_16.png" id="34_cg4uh"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_LEFT_/pacifica_export_DASH_dir3_20.png" id="35_jxvu1"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_RIGHT_/pacifica_export_DASH_dir7_04.png" id="36_2jwb4"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_RIGHT_/pacifica_export_DASH_dir7_08.png" id="37_13xtk"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_RIGHT_/pacifica_export_DASH_dir7_12.png" id="38_rwrok"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_RIGHT_/pacifica_export_DASH_dir7_16.png" id="39_3ry4v"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/DASH_RIGHT_/pacifica_export_DASH_dir7_20.png" id="40_r80fw"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_/pacifica_export_KICK_dir5_04.png" id="41_xwl6d"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_/pacifica_export_KICK_dir5_08.png" id="42_jppm8"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_/pacifica_export_KICK_dir5_12.png" id="43_nyey8"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_/pacifica_export_KICK_dir5_16.png" id="44_wdntg"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_/pacifica_export_KICK_dir5_20.png" id="45_ush1q"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_LEFT_/pacifica_export_KICK_dir4_04.png" id="46_vwkqt"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_LEFT_/pacifica_export_KICK_dir4_08.png" id="47_vp57c"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_LEFT_/pacifica_export_KICK_dir4_12.png" id="48_0i44q"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_LEFT_/pacifica_export_KICK_dir4_16.png" id="49_0ocju"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_LEFT_/pacifica_export_KICK_dir4_20.png" id="50_4dbob"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_RIGHT_/pacifica_export_KICK_dir6_04.png" id="51_hk5ro"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_RIGHT_/pacifica_export_KICK_dir6_08.png" id="52_s1mxq"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_RIGHT_/pacifica_export_KICK_dir6_12.png" id="53_brb8r"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_RIGHT_/pacifica_export_KICK_dir6_16.png" id="54_lwlg3"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_BACK_RIGHT_/pacifica_export_KICK_dir6_20.png" id="55_qgtbp"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_/pacifica_export_KICK_dir1_04.png" id="56_gqrlt"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_/pacifica_export_KICK_dir1_08.png" id="57_dfkmg"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_/pacifica_export_KICK_dir1_12.png" id="58_rqy4h"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_/pacifica_export_KICK_dir1_16.png" id="59_opw22"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_/pacifica_export_KICK_dir1_20.png" id="60_6ppic"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_LEFT_/pacifica_export_KICK_dir2_04.png" id="61_824jv"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_LEFT_/pacifica_export_KICK_dir2_08.png" id="62_o2c5i"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_LEFT_/pacifica_export_KICK_dir2_12.png" id="63_b8ifb"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_LEFT_/pacifica_export_KICK_dir2_16.png" id="64_agr51"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_LEFT_/pacifica_export_KICK_dir2_20.png" id="65_bx0qf"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_RIGHT_/pacifica_export_KICK_dir8_04.png" id="66_o8rt5"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_RIGHT_/pacifica_export_KICK_dir8_08.png" id="67_4avgk"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_RIGHT_/pacifica_export_KICK_dir8_12.png" id="68_npyhl"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_RIGHT_/pacifica_export_KICK_dir8_16.png" id="69_m0ec5"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_FRONT_RIGHT_/pacifica_export_KICK_dir8_20.png" id="70_0rfc6"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_LEFT_/pacifica_export_KICK_dir3_04.png" id="71_38e80"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_LEFT_/pacifica_export_KICK_dir3_08.png" id="72_b5w0n"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_LEFT_/pacifica_export_KICK_dir3_12.png" id="73_3u677"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_LEFT_/pacifica_export_KICK_dir3_16.png" id="74_d1poa"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_LEFT_/pacifica_export_KICK_dir3_20.png" id="75_ncip7"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_RIGHT_/pacifica_export_KICK_dir7_04.png" id="76_mygmf"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_RIGHT_/pacifica_export_KICK_dir7_08.png" id="77_dma0r"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_RIGHT_/pacifica_export_KICK_dir7_12.png" id="78_620kf"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_RIGHT_/pacifica_export_KICK_dir7_16.png" id="79_j8wj6"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/KICK_RIGHT_/pacifica_export_KICK_dir7_20.png" id="80_ogk8c"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_/pacifica_export_PHOTO POSE_dir5_04.png" id="81_3ges3"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_/pacifica_export_PHOTO POSE_dir5_08.png" id="82_us7ra"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_/pacifica_export_PHOTO POSE_dir5_12.png" id="83_48e7s"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_/pacifica_export_PHOTO POSE_dir5_16.png" id="84_g6i8r"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_/pacifica_export_PHOTO POSE_dir5_20.png" id="85_8ijsh"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_LEFT_/pacifica_export_PHOTO POSE_dir4_04.png" id="86_f1h3l"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_LEFT_/pacifica_export_PHOTO POSE_dir4_08.png" id="87_an4bq"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_LEFT_/pacifica_export_PHOTO POSE_dir4_12.png" id="88_rqqsh"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_LEFT_/pacifica_export_PHOTO POSE_dir4_16.png" id="89_mtn5i"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_LEFT_/pacifica_export_PHOTO POSE_dir4_20.png" id="90_4c1v7"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_RIGHT_/pacifica_export_PHOTO POSE_dir6_04.png" id="91_77ffc"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_RIGHT_/pacifica_export_PHOTO POSE_dir6_08.png" id="92_ij2g3"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_RIGHT_/pacifica_export_PHOTO POSE_dir6_12.png" id="93_e7kf5"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_RIGHT_/pacifica_export_PHOTO POSE_dir6_16.png" id="94_tylvr"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_BACK_RIGHT_/pacifica_export_PHOTO POSE_dir6_20.png" id="95_j6q4t"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_/pacifica_export_PHOTO POSE_dir1_04.png" id="96_bmp6c"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_/pacifica_export_PHOTO POSE_dir1_08.png" id="97_3xb3u"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_/pacifica_export_PHOTO POSE_dir1_12.png" id="98_5ogcg"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_/pacifica_export_PHOTO POSE_dir1_16.png" id="99_chu86"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_/pacifica_export_PHOTO POSE_dir1_20.png" id="100_mnvpr"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_LEFT_/pacifica_export_PHOTO POSE_dir2_04.png" id="101_1ptsh"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_LEFT_/pacifica_export_PHOTO POSE_dir2_08.png" id="102_nqb4n"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_LEFT_/pacifica_export_PHOTO POSE_dir2_12.png" id="103_v70iy"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_LEFT_/pacifica_export_PHOTO POSE_dir2_16.png" id="104_dprk6"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_LEFT_/pacifica_export_PHOTO POSE_dir2_20.png" id="105_ifkhe"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_RIGHT_/pacifica_export_PHOTO POSE_dir8_04.png" id="106_7cfrn"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_RIGHT_/pacifica_export_PHOTO POSE_dir8_08.png" id="107_jerx6"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_RIGHT_/pacifica_export_PHOTO POSE_dir8_12.png" id="108_26ha7"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_RIGHT_/pacifica_export_PHOTO POSE_dir8_16.png" id="109_dolui"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_FRONT_RIGHT_/pacifica_export_PHOTO POSE_dir8_20.png" id="110_4n1ag"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_LEFT_/pacifica_export_PHOTO POSE_dir3_04.png" id="111_1r27v"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_LEFT_/pacifica_export_PHOTO POSE_dir3_08.png" id="112_lbh4o"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_LEFT_/pacifica_export_PHOTO POSE_dir3_12.png" id="113_uinuy"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_LEFT_/pacifica_export_PHOTO POSE_dir3_16.png" id="114_8ncy7"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_LEFT_/pacifica_export_PHOTO POSE_dir3_20.png" id="115_fh1jh"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_RIGHT_/pacifica_export_PHOTO POSE_dir7_04.png" id="116_pq7im"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_RIGHT_/pacifica_export_PHOTO POSE_dir7_08.png" id="117_hj8l8"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_RIGHT_/pacifica_export_PHOTO POSE_dir7_12.png" id="118_5i2oe"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_RIGHT_/pacifica_export_PHOTO POSE_dir7_16.png" id="119_yrr6s"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/PHOTO POSE_RIGHT_/pacifica_export_PHOTO POSE_dir7_20.png" id="120_ani08"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_/pacifica_export_WALK_dir5_04.png" id="121_8nda8"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_/pacifica_export_WALK_dir5_08.png" id="122_sknq3"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_/pacifica_export_WALK_dir5_12.png" id="123_de3wo"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_/pacifica_export_WALK_dir5_16.png" id="124_lt7me"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_/pacifica_export_WALK_dir5_20.png" id="125_y4v40"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_/pacifica_export_WALK_dir5_24.png" id="126_0urv4"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_/pacifica_export_WALK_dir5_28.png" id="127_v7hqh"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_LEFT_/pacifica_export_WALK_dir4_04.png" id="128_0oso0"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_LEFT_/pacifica_export_WALK_dir4_08.png" id="129_760pa"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_LEFT_/pacifica_export_WALK_dir4_12.png" id="130_emgcy"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_LEFT_/pacifica_export_WALK_dir4_16.png" id="131_cl06b"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_LEFT_/pacifica_export_WALK_dir4_20.png" id="132_gxj5o"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_LEFT_/pacifica_export_WALK_dir4_24.png" id="133_x6fo5"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_LEFT_/pacifica_export_WALK_dir4_28.png" id="134_qm2aw"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_RIGHT_/pacifica_export_WALK_dir6_04.png" id="135_1hd0a"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_RIGHT_/pacifica_export_WALK_dir6_08.png" id="136_o6llv"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_RIGHT_/pacifica_export_WALK_dir6_12.png" id="137_feat4"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_RIGHT_/pacifica_export_WALK_dir6_16.png" id="138_8t7jx"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_RIGHT_/pacifica_export_WALK_dir6_20.png" id="139_g3b57"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_RIGHT_/pacifica_export_WALK_dir6_24.png" id="140_rk1mo"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_BACK_RIGHT_/pacifica_export_WALK_dir6_28.png" id="141_rsk0i"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_/pacifica_export_WALK_dir1_04.png" id="142_5hhng"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_/pacifica_export_WALK_dir1_08.png" id="143_y50qo"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_/pacifica_export_WALK_dir1_12.png" id="144_mnnt8"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_/pacifica_export_WALK_dir1_16.png" id="145_pbmo3"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_/pacifica_export_WALK_dir1_20.png" id="146_b45nd"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_/pacifica_export_WALK_dir1_24.png" id="147_2txuu"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_/pacifica_export_WALK_dir1_28.png" id="148_lemy7"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_LEFT_/pacifica_export_WALK_dir2_04.png" id="149_4552b"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_LEFT_/pacifica_export_WALK_dir2_08.png" id="150_y4fkp"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_LEFT_/pacifica_export_WALK_dir2_12.png" id="151_e3r2e"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_LEFT_/pacifica_export_WALK_dir2_16.png" id="152_40ih3"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_LEFT_/pacifica_export_WALK_dir2_20.png" id="153_w4t20"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_LEFT_/pacifica_export_WALK_dir2_24.png" id="154_6hneq"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_LEFT_/pacifica_export_WALK_dir2_28.png" id="155_b1jjs"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_RIGHT_/pacifica_export_WALK_dir8_04.png" id="156_3mui1"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_RIGHT_/pacifica_export_WALK_dir8_08.png" id="157_r772y"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_RIGHT_/pacifica_export_WALK_dir8_12.png" id="158_noavs"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_RIGHT_/pacifica_export_WALK_dir8_16.png" id="159_d0we2"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_RIGHT_/pacifica_export_WALK_dir8_20.png" id="160_id4lp"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_RIGHT_/pacifica_export_WALK_dir8_24.png" id="161_whnj7"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_FRONT_RIGHT_/pacifica_export_WALK_dir8_28.png" id="162_1luas"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_LEFT_/pacifica_export_WALK_dir3_04.png" id="163_2pqws"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_LEFT_/pacifica_export_WALK_dir3_08.png" id="164_i6uxq"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_LEFT_/pacifica_export_WALK_dir3_12.png" id="165_3x8h3"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_LEFT_/pacifica_export_WALK_dir3_16.png" id="166_w7pyn"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_LEFT_/pacifica_export_WALK_dir3_20.png" id="167_cb48s"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_LEFT_/pacifica_export_WALK_dir3_24.png" id="168_kp4jl"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_LEFT_/pacifica_export_WALK_dir3_28.png" id="169_to1fs"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_RIGHT_/pacifica_export_WALK_dir7_04.png" id="170_mokjw"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_RIGHT_/pacifica_export_WALK_dir7_08.png" id="171_bjxin"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_RIGHT_/pacifica_export_WALK_dir7_12.png" id="172_8d7x5"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_RIGHT_/pacifica_export_WALK_dir7_16.png" id="173_qvxr8"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_RIGHT_/pacifica_export_WALK_dir7_20.png" id="174_kds5a"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_RIGHT_/pacifica_export_WALK_dir7_24.png" id="175_jietc"]
+[ext_resource type="Texture2D" path="res://2D/Pacifica sprites/Pacifica/WALK_RIGHT_/pacifica_export_WALK_dir7_28.png" id="176_0lfu8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w4c8m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pgq8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5phj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cwsrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v5tvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_n3qyv")
+}],
+"loop": true,
+"name": &"DASH_BACK_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_1v1jl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xyekv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_70hxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_v4fws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_q3t5x")
+}],
+"loop": true,
+"name": &"DASH_BACK_LEFT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_fs35w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_538sj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_54t48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_35o8r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_jkhy7")
+}],
+"loop": true,
+"name": &"DASH_BACK_RIGHT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_kkkj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_lyrvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_2tiff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_7778w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_81d6p")
+}],
+"loop": true,
+"name": &"DASH_FRONT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_wambo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_tmtlk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_6xgpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_gpc56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_w7xos")
+}],
+"loop": true,
+"name": &"DASH_FRONT_LEFT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_11esv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_vkcka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_275d5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_4pvd6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_l1e67")
+}],
+"loop": true,
+"name": &"DASH_FRONT_RIGHT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_0orrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_qe8qd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_h1vki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_cg4uh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_jxvu1")
+}],
+"loop": true,
+"name": &"DASH_LEFT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_2jwb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_13xtk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_rwrok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_3ry4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_r80fw")
+}],
+"loop": true,
+"name": &"DASH_RIGHT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_xwl6d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_jppm8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_nyey8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_wdntg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_ush1q")
+}],
+"loop": true,
+"name": &"KICK_BACK_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_vwkqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_vp57c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_0i44q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_0ocju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_4dbob")
+}],
+"loop": true,
+"name": &"KICK_BACK_LEFT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("51_hk5ro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_s1mxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_brb8r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_lwlg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_qgtbp")
+}],
+"loop": true,
+"name": &"KICK_BACK_RIGHT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("56_gqrlt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_dfkmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_rqy4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_opw22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_6ppic")
+}],
+"loop": true,
+"name": &"KICK_FRONT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("61_824jv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_o2c5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_b8ifb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_agr51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_bx0qf")
+}],
+"loop": true,
+"name": &"KICK_FRONT_LEFT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("66_o8rt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_4avgk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_npyhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_m0ec5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_0rfc6")
+}],
+"loop": true,
+"name": &"KICK_FRONT_RIGHT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("71_38e80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_b5w0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_3u677")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_d1poa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_ncip7")
+}],
+"loop": true,
+"name": &"KICK_LEFT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("76_mygmf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_dma0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_620kf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_j8wj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_ogk8c")
+}],
+"loop": true,
+"name": &"KICK_RIGHT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("81_3ges3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_us7ra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_48e7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_g6i8r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_8ijsh")
+}],
+"loop": true,
+"name": &"PHOTO POSE_BACK_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("86_f1h3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_an4bq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_rqqsh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_mtn5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_4c1v7")
+}],
+"loop": true,
+"name": &"PHOTO POSE_BACK_LEFT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("91_77ffc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_ij2g3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_e7kf5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_tylvr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_j6q4t")
+}],
+"loop": true,
+"name": &"PHOTO POSE_BACK_RIGHT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("96_bmp6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_3xb3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_5ogcg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_chu86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_mnvpr")
+}],
+"loop": true,
+"name": &"PHOTO POSE_FRONT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("101_1ptsh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_nqb4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_v70iy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_dprk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_ifkhe")
+}],
+"loop": true,
+"name": &"PHOTO POSE_FRONT_LEFT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("106_7cfrn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_jerx6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_26ha7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_dolui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_4n1ag")
+}],
+"loop": true,
+"name": &"PHOTO POSE_FRONT_RIGHT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("111_1r27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_lbh4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_uinuy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_8ncy7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_fh1jh")
+}],
+"loop": true,
+"name": &"PHOTO POSE_LEFT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("116_pq7im")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_hj8l8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_5i2oe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_yrr6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_ani08")
+}],
+"loop": true,
+"name": &"PHOTO POSE_RIGHT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("121_8nda8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_sknq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_de3wo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_lt7me")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_y4v40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_0urv4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_v7hqh")
+}],
+"loop": true,
+"name": &"WALK_BACK_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("128_0oso0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_760pa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_emgcy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_cl06b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_gxj5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_x6fo5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_qm2aw")
+}],
+"loop": true,
+"name": &"WALK_BACK_LEFT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("135_1hd0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_o6llv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_feat4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_8t7jx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_g3b57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_rk1mo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_rsk0i")
+}],
+"loop": true,
+"name": &"WALK_BACK_RIGHT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("142_5hhng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_y50qo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_mnnt8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_pbmo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_b45nd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_2txuu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148_lemy7")
+}],
+"loop": true,
+"name": &"WALK_FRONT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("149_4552b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("150_y4fkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("151_e3r2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("152_40ih3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("153_w4t20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154_6hneq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("155_b1jjs")
+}],
+"loop": true,
+"name": &"WALK_FRONT_LEFT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("156_3mui1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("157_r772y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_noavs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_d0we2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_id4lp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_whnj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_1luas")
+}],
+"loop": true,
+"name": &"WALK_FRONT_RIGHT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("163_2pqws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_i6uxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_3x8h3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_w7pyn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_cb48s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_kp4jl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_to1fs")
+}],
+"loop": true,
+"name": &"WALK_LEFT_",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("170_mokjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_bjxin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_8d7x5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("173_qvxr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174_kds5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_jietc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_0lfu8")
+}],
+"loop": true,
+"name": &"WALK_RIGHT_",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SpriteSheet" type="AnimatedSprite3D"]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_w4c8m")
+animation = &"WALK_RIGHT_"
+frame_progress = 0.588165

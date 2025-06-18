@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhx2bbe8p5lsg"]
+
+[ext_resource type="Script" path="res://play_list.gd" id="1_0e1sk"]
+
+[node name="PlayList" type="Node2D" node_paths=PackedStringArray("Camera")]
+script = ExtResource("1_0e1sk")
+Camera = NodePath("Camera2D")
+
+[node name="FramesColumns" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(212, 242)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 22.0
+offset_top = 23.0
+offset_right = 143.0
+offset_bottom = 117.0
+text = "Press A or D
+to move
+left or right"

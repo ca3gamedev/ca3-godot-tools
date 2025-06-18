@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bukuh0s7touqf"]
+
+[ext_resource type="Script" path="res://ca3 framework/2D Battle/framework/Hurtbox/hurtbox.gd" id="1_yb21y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3jwf"]
+size = Vector2(22, 35)
+
+[node name="Hurtbox" type="Area2D"]
+script = ExtResource("1_yb21y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -25)
+shape = SubResource("RectangleShape2D_u3jwf")

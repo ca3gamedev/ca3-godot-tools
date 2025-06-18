@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://df1xmtku3dwhv"]
+
+[ext_resource type="Script" path="res://ca3 framework/3D roguelike dungeon/GUI/relationships.gd" id="1_y80ma"]
+
+[node name="Relationships" type="Node"]
+script = ExtResource("1_y80ma")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 4.0
+offset_top = 510.0
+offset_right = 255.0
+offset_bottom = 658.0
+color = Color(0.0829132, 0.0357994, 0.308974, 1)
+
+[node name="LEE1" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 19.0
+offset_top = 604.0
+offset_right = 172.0
+offset_bottom = 631.0
+
+[node name="LEE2" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 19.0
+offset_top = 570.0
+offset_right = 172.0
+offset_bottom = 597.0
+
+[node name="LEE3" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 19.0
+offset_top = 534.0
+offset_right = 172.0
+offset_bottom = 561.0
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 185.0
+offset_top = 602.0
+offset_right = 225.0
+offset_bottom = 625.0
+text = "Lee 1"
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 189.0
+offset_top = 570.0
+offset_right = 230.0
+offset_bottom = 593.0
+text = "Lee 2"
+
+[node name="Label3" type="Label" parent="CanvasLayer"]
+offset_left = 189.0
+offset_top = 530.0
+offset_right = 230.0
+offset_bottom = 553.0
+text = "Lee 3"

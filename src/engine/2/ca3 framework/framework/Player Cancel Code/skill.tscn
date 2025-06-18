@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://tdf1v3hufbn0"]
-
-[ext_resource type="Script" path="res://ca3 framework/framework/AttackInput/punch.gd" id="1_oylt5"]
-
-[node name="SKILL" type="Node"]
-script = ExtResource("1_oylt5")

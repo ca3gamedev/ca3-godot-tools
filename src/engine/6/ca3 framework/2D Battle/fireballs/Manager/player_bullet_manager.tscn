@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://po7sh3353sqr"]
+
+[ext_resource type="Script" path="res://ca3 framework/2D Battle/fireballs/Manager/player_bullet_manager.gd" id="1_06gtj"]
+
+[node name="PlayerBulletManager" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_06gtj")

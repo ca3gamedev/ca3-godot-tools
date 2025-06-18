@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvxl4q55s1o2b"]
+
+[ext_resource type="Script" path="res://ca3 framework/3D framework/Portal/3D portal.gd" id="1_i0h4g"]
+[ext_resource type="Script" path="res://ca3 framework/3D framework/Level/portal_code.gd" id="2_gs5wa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5mrg"]
+albedo_color = Color(0.707397, 0.529983, 0.0267645, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0vnbj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w0ygd"]
+size = Vector3(1.42047, 8.18677, 1.40778)
+
+[node name="Portal" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -17.9313)
+script = ExtResource("1_i0h4g")
+
+[node name="PortalCode" type="Node" parent="."]
+script = ExtResource("2_gs5wa")
+
+[node name="Portal" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.225262, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_o5mrg")
+mesh = SubResource("BoxMesh_0vnbj")
+skeleton = NodePath("../..")
+
+[node name="Portal" type="Area3D" parent="Portal"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Portal/Portal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0226135, 2.10437, 0.0198669)
+shape = SubResource("BoxShape3D_w0ygd")
+
+[connection signal="body_entered" from="Portal/Portal" to="PortalCode" method="_on_portal_body_entered"]

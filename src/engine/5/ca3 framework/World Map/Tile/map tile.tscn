@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bac63p35c2sxf"]
+
+[ext_resource type="Script" path="res://ca3 framework/World Map/Tile/map_tile.gd" id="1_hlifr"]
+[ext_resource type="PackedScene" uid="uid://b6j5i71hglp3e" path="res://ca3 framework/World Map/Tile/tile.tscn" id="2_lyg5d"]
+
+[node name="0" type="Node2D"]
+script = ExtResource("1_hlifr")
+
+[node name="Tile" parent="." instance=ExtResource("2_lyg5d")]

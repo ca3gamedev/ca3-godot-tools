@@ -16,7 +16,7 @@ func AddFrames():
 	var library = AnimationLibrary.new()
 	for i in %AnimationPlayerList.item_count:
 		var anim =  Animation.new()
-		anim.loop = false
+		anim.loop_mode = 0
 		var frame_count = $"../SpriteSheet".sprite_frames.get_frame_count(%AnimationPlayerList.get_item_text(i))
 		anim.length = frame_count * frame_duration
 		var frame_index = anim.add_track(Animation.TYPE_VALUE)

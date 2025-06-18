@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cd25lurfkr64j"]
-
-[ext_resource type="Script" path="res://ca3 framework/Filepaths/file_paths.gd" id="1_tc4ob"]
-
-[node name="FilePaths" type="Node"]
-script = ExtResource("1_tc4ob")
