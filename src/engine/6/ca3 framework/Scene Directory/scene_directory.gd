@@ -12,6 +12,7 @@ func GetScreen(id):
 		"Intro" : return $Screens.Intro
 		"Ending" : return $Screens.Ending
 		"Congratulations" : return $Screens.Congratulations
+		"Gallery" : return $Screens.gallery
 
 func GetNextLevel(id):
 	
@@ -29,3 +30,4 @@ func GetLevel1(id):
 		"Tarot" : return $Level1.Tarot
 		"Intro" : return $Level1.Intro
 		"VN" : return $Level1.VN
+		"Roguelike" : return $Level1.Roguelike2D

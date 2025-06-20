@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://dvb6hdn3crn5u" path="res://ca3 framework/3D framework/NPC/npc list/npc1.tscn" id="4_hgxdf"]
 [ext_resource type="Script" path="res://ca3 framework/3D framework/Portal/3D portal.gd" id="5_knhbn"]
 [ext_resource type="Script" path="res://ca3 framework/3D framework/Level/portal_code.gd" id="6_2fe37"]
-[ext_resource type="PackedScene" uid="uid://qowv5in6dvo4" path="res://ca3 framework/VN modes/NPC relationship balloons/npc_relationship_baloon.tscn" id="8_x3ahm"]
 [ext_resource type="PackedScene" uid="uid://bsodxab846ers" path="res://ca3 framework/VN modes/NPC dialogs/dialogs_npc.tscn" id="9_jvl2l"]
 [ext_resource type="PackedScene" uid="uid://bkeyjevi7u66u" path="res://data/default/objects/npcs/Dialogs/npc_dialog.tscn" id="10_1c8is"]
+[ext_resource type="PackedScene" uid="uid://blxa6krhieww2" path="res://ca3 framework/3D framework/Shop/shop.tscn" id="10_ud5mw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a1k36"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -133,11 +133,12 @@ offset_bottom = 47.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "COUNTRY"
 
-[node name="NPC Relationship baloon" parent="." instance=ExtResource("8_x3ahm")]
-
 [node name="DialogsNPC" parent="." node_paths=PackedStringArray("NPC1") instance=ExtResource("9_jvl2l")]
 NPC1 = NodePath("NPC Dialog")
 
 [node name="NPC Dialog" parent="DialogsNPC" instance=ExtResource("10_1c8is")]
+
+[node name="Shop" parent="." instance=ExtResource("10_ud5mw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2762, 0, -7.33955)
 
 [connection signal="body_entered" from="WorldMap/Portal/Portal" to="WorldMap/PortalCode" method="_on_portal_body_entered"]

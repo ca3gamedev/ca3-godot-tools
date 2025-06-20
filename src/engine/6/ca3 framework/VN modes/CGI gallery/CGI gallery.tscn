@@ -1,0 +1,125 @@
+[gd_scene load_steps=7 format=3 uid="uid://ogt4qvukv1xk"]
+
+[ext_resource type="Script" path="res://ca3 framework/VN modes/NPC relationship balloons/npc_relationship_baloon.gd" id="1_nwsdg"]
+[ext_resource type="Texture2D" uid="uid://wi2tqjwn5t7v" path="res://data/default/VN modes/2D/renders/01.png" id="3_hm134"]
+[ext_resource type="Texture2D" uid="uid://dcs3ctqobhe2i" path="res://data/default/VN modes/2D/renders/02.png" id="4_a8ntm"]
+[ext_resource type="Texture2D" uid="uid://cyxu4fyfsq4ge" path="res://data/default/VN modes/2D/renders/03.png" id="5_3wa23"]
+[ext_resource type="Texture2D" uid="uid://bn03ws2f4ll4e" path="res://data/default/VN modes/2D/renders/04.png" id="6_vua1j"]
+[ext_resource type="Texture2D" uid="uid://cimnn4hxdvsfb" path="res://data/default/VN modes/2D/renders/05.png" id="7_v4qkb"]
+
+[node name="NPC Relationship baloon" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_nwsdg")
+
+[node name="0" type="Node2D" parent="."]
+position = Vector2(500, 536)
+
+[node name="0" type="Sprite2D" parent="0"]
+texture = ExtResource("3_hm134")
+
+[node name="1" type="Sprite2D" parent="0"]
+position = Vector2(776, -6)
+texture = ExtResource("4_a8ntm")
+
+[node name="2" type="Sprite2D" parent="0"]
+position = Vector2(1448, 6)
+texture = ExtResource("5_3wa23")
+
+[node name="3" type="Sprite2D" parent="0"]
+position = Vector2(2263, 20)
+texture = ExtResource("6_vua1j")
+
+[node name="4" type="Sprite2D" parent="0"]
+position = Vector2(3044, 20)
+texture = ExtResource("7_v4qkb")
+
+[node name="1" type="Node2D" parent="."]
+position = Vector2(535, 1398)
+
+[node name="0" type="Sprite2D" parent="1"]
+texture = ExtResource("3_hm134")
+
+[node name="1" type="Sprite2D" parent="1"]
+position = Vector2(776, -6)
+texture = ExtResource("4_a8ntm")
+
+[node name="2" type="Sprite2D" parent="1"]
+position = Vector2(1448, 6)
+texture = ExtResource("5_3wa23")
+
+[node name="3" type="Sprite2D" parent="1"]
+position = Vector2(2263, 20)
+texture = ExtResource("6_vua1j")
+
+[node name="4" type="Sprite2D" parent="1"]
+position = Vector2(3044, 20)
+texture = ExtResource("7_v4qkb")
+
+[node name="2" type="Node2D" parent="."]
+position = Vector2(517, 2273)
+
+[node name="0" type="Sprite2D" parent="2"]
+texture = ExtResource("3_hm134")
+
+[node name="1" type="Sprite2D" parent="2"]
+position = Vector2(776, -6)
+texture = ExtResource("4_a8ntm")
+
+[node name="2" type="Sprite2D" parent="2"]
+position = Vector2(1448, 6)
+texture = ExtResource("5_3wa23")
+
+[node name="3" type="Sprite2D" parent="2"]
+position = Vector2(2263, 20)
+texture = ExtResource("6_vua1j")
+
+[node name="4" type="Sprite2D" parent="2"]
+position = Vector2(3044, 20)
+texture = ExtResource("7_v4qkb")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" type="Node2D" parent="CanvasLayer"]
+position = Vector2(980, 22)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GUI"]
+offset_left = -184.0
+offset_top = -20.0
+offset_right = 170.0
+offset_bottom = 142.0
+
+[node name="CharName" type="Label" parent="CanvasLayer/GUI"]
+unique_name_in_owner = true
+offset_left = -174.0
+offset_top = 10.0
+offset_right = 176.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "LEE NAME"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/GUI"]
+unique_name_in_owner = true
+offset_left = -168.0
+offset_top = 55.0
+offset_right = 160.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Unlocked" type="Label" parent="CanvasLayer/GUI"]
+unique_name_in_owner = true
+offset_left = -302.0
+offset_top = 106.0
+offset_right = 283.0
+offset_bottom = 147.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "You have unlocked 0 pictures"
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(519, 532)
+
+[node name="Change" type="Timer" parent="."]
+
+[connection signal="timeout" from="Change" to="." method="_on_change_timeout"]

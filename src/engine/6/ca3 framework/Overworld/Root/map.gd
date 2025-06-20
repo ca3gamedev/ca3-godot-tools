@@ -70,6 +70,10 @@ func _process(delta):
 		VariableNodes.Countries_selected = country_selected
 		Transitions.Next = SceneDirectory.GetNextLevel("Home")
 		Transitions.Start()
+	
+	if Input.is_action_just_released("B"):
+		Transitions.Next = SceneDirectory.GetScreen("Gallery")
+		Transitions.Start()
 
 
 func _on_game_over_timeout():

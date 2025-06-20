@@ -7,3 +7,4 @@ extends Node
 @export var Intro : String
 @export var Ending : String
 @export var Congratulations : String
+@export var gallery : String

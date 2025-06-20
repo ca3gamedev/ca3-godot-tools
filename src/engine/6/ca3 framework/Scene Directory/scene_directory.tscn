@@ -16,6 +16,7 @@ OverWorld = "res://ca3 framework/Overworld/Root/overworld.tscn"
 Intro = "res://ca3 framework/Cutscenes/intro_movie.tscn"
 Ending = "res://ca3 framework/Cutscenes/ending.tscn"
 Congratulations = "res://ca3 framework/Congratulations Victory Mode/Congratulations.tscn"
+gallery = "res://ca3 framework/VN modes/CGI gallery/CGI gallery.tscn"
 
 [node name="Level1" type="Node" parent="."]
 script = ExtResource("1_3hbwg")
@@ -29,4 +30,5 @@ VictoryPoints = "res://ca3 framework/Battle Victory Prize/Root/prize.tscn"
 Relationships = "res://ca3 framework/Relationships Mode/Root/relationships_score.tscn"
 Tarot = "res://ca3 framework/Cards Scene/Root/cards.tscn"
 Intro = "res://ca3 framework/VN modes/Intro/Intro.tscn"
+Roguelike2D = "res://ca3 framework/2D Roguelike/Root/roguelike_map.tscn"
 VN = "res://ca3 framework/VN modes/VN dialog/vn_dialog.tscn"

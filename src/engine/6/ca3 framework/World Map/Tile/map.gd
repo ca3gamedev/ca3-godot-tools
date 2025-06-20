@@ -74,7 +74,7 @@ func _process(delta):
 					1 : Transitions.Next = SceneDirectory.GetNextLevel("Level 02")
 					2 : Transitions.Next = SceneDirectory.GetNextLevel("Level 03")
 			5 : Transitions.Next = SceneDirectory.GetNextLevel("Relationships")
-			6 : Transitions.Next = SceneDirectory.GetNextLevel("Battle")
+			6 : Transitions.Next = SceneDirectory.GetNextLevel("Roguelike")
 			7 : Transitions.Next = SceneDirectory.GetNextLevel("Victory Points")
 			8 : Transitions.Next = SceneDirectory.GetNextLevel("Tarot")
 		

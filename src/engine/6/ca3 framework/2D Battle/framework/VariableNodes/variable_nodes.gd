@@ -38,7 +38,6 @@ var levels_finished
 
 @export var Countries_finished : Array[bool]
 @export var Countries_selected : int
-@export var dialog_relationship_npc : Node2D
 
 func _ready():
 	randomize()

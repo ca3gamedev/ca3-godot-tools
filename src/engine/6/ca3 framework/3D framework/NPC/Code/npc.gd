@@ -9,4 +9,5 @@ func _ready():
 func _process(delta):
 	
 	if near and Input.is_action_just_released("A"):
-		$"../../".DIALOGPAUSE()
+		if not $"../../".is_store:
+			$"../../".DIALOGPAUSE()

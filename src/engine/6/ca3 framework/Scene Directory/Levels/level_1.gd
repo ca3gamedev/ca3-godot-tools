@@ -13,5 +13,7 @@ extends Node
 @export var Tarot : String
 @export var Intro : String
 
+@export var Roguelike2D : String
+
 
 @export var VN : String

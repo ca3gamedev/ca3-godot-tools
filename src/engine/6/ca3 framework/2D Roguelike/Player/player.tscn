@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://ep4gx36mkcpk"]
+
+[ext_resource type="Texture2D" uid="uid://cga4etsokg0fm" path="res://data/default/objects/characters/Heroe/IDLE_FRONT_/hero_export_IDLE_dir1_02.png" id="1_neu5j"]
+[ext_resource type="Script" path="res://ca3 framework/2D Roguelike/Player/Code/fsm.gd" id="2_los31"]
+[ext_resource type="Script" path="res://ca3 framework/2D Roguelike/Player/Code/idle.gd" id="3_ttqnr"]
+[ext_resource type="Script" path="res://ca3 framework/2D Roguelike/Player/Code/walk.gd" id="4_v2h14"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3n4kl"]
+radius = 4.0
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3n4kl")
+
+[node name="HeroExportIdleDir102" type="Sprite2D" parent="."]
+position = Vector2(2, -33)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_neu5j")
+
+[node name="FSM" type="Node" parent="."]
+script = ExtResource("2_los31")
+
+[node name="IDLE" type="Node" parent="FSM"]
+script = ExtResource("3_ttqnr")
+
+[node name="WALK" type="Node" parent="FSM"]
+script = ExtResource("4_v2h14")
+walk_speed = 200.0
