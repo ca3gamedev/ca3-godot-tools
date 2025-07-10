@@ -31,4 +31,5 @@ Relationships = "res://ca3 framework/Relationships Mode/Root/relationships_score
 Tarot = "res://ca3 framework/Cards Scene/Root/cards.tscn"
 Intro = "res://ca3 framework/VN modes/Intro/Intro.tscn"
 Roguelike2D = "res://ca3 framework/2D Roguelike/Root/roguelike_map.tscn"
+TurnBasedFighter2D = "res://ca3 framework/2D JRPG combat/Root/jrpg_combat2D.tscn"
 VN = "res://ca3 framework/VN modes/VN dialog/vn_dialog.tscn"

@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1x54q4ygnorq"]
+
+[ext_resource type="Script" path="res://ca3 framework/2D JRPG combat/Enemy/enemy.gd" id="1_p67lo"]
+[ext_resource type="PackedScene" uid="uid://dk6rkhn06xqcd" path="res://data/default/objects/characters/Heroe/AnimationPlayerSprite.tscn" id="2_oo7gj"]
+
+[node name="Enemy" type="Node2D"]
+position = Vector2(229, 465)
+script = ExtResource("1_p67lo")
+
+[node name="Sprites" parent="." instance=ExtResource("2_oo7gj")]
+scale = Vector2(2, 2)
+
+[node name="SpriteSheet" parent="Sprites" index="0"]
+flip_h = true
+
+[node name="Animations" parent="Sprites" index="1"]
+autoplay = "sprites/IDLE_FRONT_"
+
+[node name="WALK" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="ATTACK" type="Timer" parent="."]
+
+[connection signal="animation_finished" from="Sprites/Animations" to="." method="_on_animations_animation_finished"]
+[connection signal="timeout" from="WALK" to="." method="_on_walk_timeout"]
+[connection signal="timeout" from="ATTACK" to="." method="_on_attack_timeout"]
+
+[editable path="Sprites"]

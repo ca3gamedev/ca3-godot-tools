@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjp23f5n4rqv1"]
+
+[ext_resource type="Script" uid="uid://banj6wl5fy4a7" path="res://InputCode/Special movement/mash.gd" id="1_t2fk8"]
+
+[node name="Mash" type="Node"]
+script = ExtResource("1_t2fk8")

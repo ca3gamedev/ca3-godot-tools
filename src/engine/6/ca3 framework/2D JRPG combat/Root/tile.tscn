@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmb072y53ois8"]
+
+[ext_resource type="Texture2D" uid="uid://lsujtv2atjqk" path="res://data/default/world maps/square.png" id="1_l0fs0"]
+
+[node name="Tile" type="Node2D"]
+
+[node name="Square" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_l0fs0")

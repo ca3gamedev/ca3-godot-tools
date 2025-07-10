@@ -75,7 +75,7 @@ func _process(delta):
 					2 : Transitions.Next = SceneDirectory.GetNextLevel("Level 03")
 			5 : Transitions.Next = SceneDirectory.GetNextLevel("Relationships")
 			6 : Transitions.Next = SceneDirectory.GetNextLevel("Roguelike")
-			7 : Transitions.Next = SceneDirectory.GetNextLevel("Victory Points")
+			7 : Transitions.Next = SceneDirectory.GetNextLevel("2D turn Fighter")
 			8 : Transitions.Next = SceneDirectory.GetNextLevel("Tarot")
 		
 		VariableNodes.battle_won = false

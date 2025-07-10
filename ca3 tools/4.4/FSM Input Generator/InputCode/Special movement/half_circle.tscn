@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://53g6fefnxbu8"]
+
+[ext_resource type="Script" uid="uid://c2uy4xabamv3u" path="res://InputCode/Special movement/half_circle.gd" id="1_mvryf"]
+
+[node name="Half Circle" type="Node"]
+script = ExtResource("1_mvryf")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b178yx5ghcg0u"]
+
+[ext_resource type="Script" uid="uid://dy8xc3857wkq1" path="res://InputCode/Special movement/just_tap.gd" id="1_gqp1l"]
+
+[node name="JustTap" type="Node"]
+script = ExtResource("1_gqp1l")

@@ -31,3 +31,4 @@ func GetLevel1(id):
 		"Intro" : return $Level1.Intro
 		"VN" : return $Level1.VN
 		"Roguelike" : return $Level1.Roguelike2D
+		"2D turn Fighter" : return $Level1.TurnBasedFighter2D

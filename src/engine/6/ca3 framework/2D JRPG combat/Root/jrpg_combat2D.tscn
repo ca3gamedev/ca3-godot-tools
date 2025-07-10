@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://brpoqh67ds6cj"]
+
+[ext_resource type="Script" path="res://ca3 framework/2D JRPG combat/Root/map.gd" id="1_kaci8"]
+[ext_resource type="PackedScene" uid="uid://cmb072y53ois8" path="res://ca3 framework/2D JRPG combat/Root/tile.tscn" id="2_spu8c"]
+[ext_resource type="PackedScene" uid="uid://biqch23kd1ft" path="res://ca3 framework/2D JRPG combat/Player/player.tscn" id="3_fqfwe"]
+[ext_resource type="PackedScene" uid="uid://d1x54q4ygnorq" path="res://ca3 framework/2D JRPG combat/Enemy/enemy.tscn" id="4_8hiwc"]
+[ext_resource type="Script" path="res://ca3 framework/2D JRPG combat/Root/game_over 2D jrpg fighting battle.gd" id="5_7fklx"]
+
+[node name="JRPG Combat" type="Node2D"]
+
+[node name="Map" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(351, 472)
+script = ExtResource("1_kaci8")
+tile = ExtResource("2_spu8c")
+off_x = 100
+
+[node name="Player" parent="." instance=ExtResource("3_fqfwe")]
+unique_name_in_owner = true
+HP = 100
+myname = "Muy Macho Man P1"
+
+[node name="Enemy" parent="." instance=ExtResource("4_8hiwc")]
+unique_name_in_owner = true
+position = Vector2(787, 460)
+HP = 100
+myname = "Not macho man P2"
+
+[node name="GUI" type="Node2D" parent="."]
+
+[node name="P1Motion" type="ProgressBar" parent="GUI"]
+unique_name_in_owner = true
+offset_left = 32.0
+offset_top = 554.0
+offset_right = 211.0
+offset_bottom = 581.0
+max_value = 10.0
+
+[node name="Label" type="Label" parent="GUI/P1Motion"]
+layout_mode = 0
+offset_left = 198.0
+offset_right = 254.0
+offset_bottom = 23.0
+text = "Motion"
+
+[node name="P1HP" type="ProgressBar" parent="GUI"]
+unique_name_in_owner = true
+offset_left = 28.0
+offset_top = 26.0
+offset_right = 262.0
+offset_bottom = 53.0
+
+[node name="P1Name" type="Label" parent="GUI/P1HP"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 6.0
+offset_top = 38.0
+offset_right = 288.0
+offset_bottom = 61.0
+text = "P1"
+
+[node name="P2HP" type="ProgressBar" parent="GUI"]
+unique_name_in_owner = true
+offset_left = 887.0
+offset_top = 24.0
+offset_right = 1121.0
+offset_bottom = 51.0
+fill_mode = 1
+
+[node name="P2Name" type="Label" parent="GUI/P2HP"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -43.0
+offset_top = 36.0
+offset_right = 229.0
+offset_bottom = 59.0
+text = "P2"
+horizontal_alignment = 2
+
+[node name="GameOver" type="Node" parent="."]
+script = ExtResource("5_7fklx")

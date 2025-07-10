@@ -14,6 +14,7 @@ extends Node
 @export var Intro : String
 
 @export var Roguelike2D : String
+@export var TurnBasedFighter2D : String
 
 
 @export var VN : String

@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmeu6sgc12q8x"]
+
+[ext_resource type="Script" uid="uid://c3ee00lpidrgl" path="res://InputCode/Input Buffer/input.gd" id="1_sy7kg"]
+[ext_resource type="Script" uid="uid://baacoxwid6cap" path="res://InputCode/Input Buffer/reader.gd" id="2_ir052"]
+[ext_resource type="Script" uid="uid://c28bdro2qc1q8" path="res://InputCode/Input Buffer/buffer.gd" id="3_nyj5d"]
+
+[node name="INPUT" type="Node"]
+script = ExtResource("1_sy7kg")
+
+[node name="Reader" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_ir052")
+checkA = true
+checkB = true
+checkC = true
+checkD = true
+checkW = true
+checkX = true
+checkY = true
+checkZ = true
+
+[node name="Buffer" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_nyj5d")
+KeyBufferResetTimerMax = 0.5
+ButtonBufferReserTimerMax = 0.5
+buffersize = 20
+
+[node name="FSM" type="Node" parent="."]
