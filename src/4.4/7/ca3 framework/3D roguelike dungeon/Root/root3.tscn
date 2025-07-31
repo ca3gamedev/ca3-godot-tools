@@ -1,0 +1,132 @@
+[gd_scene load_steps=10 format=3 uid="uid://psjaqesvm5vv"]
+
+[ext_resource type="MeshLibrary" uid="uid://3auhso6sxfev" path="res://data/default/objects/Tiles/3D/Tiles.tres" id="1_5w2rl"]
+[ext_resource type="PackedScene" uid="uid://yox26vxt586w" path="res://ca3 framework/3D framework/Player/player 3D.tscn" id="2_ha3do"]
+[ext_resource type="Script" uid="uid://bhsg82wm7gywl" path="res://ca3 framework/3D framework/Camera 3D/camera_3d.gd" id="3_kfm0l"]
+[ext_resource type="PackedScene" uid="uid://bvxl4q55s1o2b" path="res://ca3 framework/3D framework/Portal/portal.tscn" id="4_lds2j"]
+[ext_resource type="PackedScene" uid="uid://dhf3w5p6tf31c" path="res://ca3 framework/3D roguelike dungeon/Coins/bonus.tscn" id="5_fblof"]
+[ext_resource type="PackedScene" uid="uid://df1xmtku3dwhv" path="res://ca3 framework/3D roguelike dungeon/GUI/relationships.tscn" id="6_3wb7c"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_77f5d"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_tlk7d"]
+sky_material = SubResource("ProceduralSkyMaterial_77f5d")
+
+[sub_resource type="Environment" id="Environment_vcejp"]
+background_mode = 2
+sky = SubResource("Sky_tlk7d")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Root 3D Dungeon" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vcejp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="GridMapParent" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.28717, 0)
+
+[node name="GridMap" type="GridMap" parent="GridMapParent"]
+mesh_library = ExtResource("1_5w2rl")
+data = {
+"cells": PackedInt32Array(65533, 65535, 0, 65534, 65535, 0, 65534, 65534, 0, 65534, 65533, 0, 65533, 65533, 0, 65533, 65534, 0, 65534, 0, 0, 65533, 0, 0, 65533, 1, 0, 65535, 0, 0, 65535, 1, 0, 65535, 65535, 0, 65535, 65534, 0, 0, 65535, 0, 0, 65534, 0, 0, 0, 0, 0, 1, 0, 1, 65535, 0, 1, 0, 0, 1, 1, 0, 1, 65534, 0, 2, 65534, 0, 2, 65535, 0, 2, 0, 0, 2, 1, 0, 2, 65533, 0, 1, 65533, 0, 0, 65533, 0, 65535, 65533, 0, 65534, 65532, 0, 65535, 65532, 0, 0, 65532, 0, 1, 65532, 0, 2, 65532, 0, 3, 65532, 0, 3, 65533, 0, 3, 65534, 0, 3, 65535, 0, 3, 0, 0, 2, 2, 0, 3, 2, 0, 3, 1, 0, 1, 2, 0, 0, 2, 0, 65535, 2, 0, 65534, 2, 0, 65533, 2, 0, 65534, 1, 0, 65533, 65532, 0, 65533, 3, 0, 65533, 4, 0, 65534, 4, 0, 65535, 4, 0, 0, 4, 0, 1, 4, 0, 2, 4, 0, 3, 4, 0, 3, 3, 0, 2, 3, 0, 1, 3, 0, 0, 3, 0, 65535, 3, 0, 65534, 3, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 1, 0, 10, 0, 0, 10, 65535, 0, 10, 65534, 0, 10, 65533, 0, 10, 65532, 0, 10, 65531, 0, 11, 65531, 0, 12, 65531, 0, 13, 65531, 0, 14, 65531, 0, 15, 65531, 0, 15, 65532, 0, 15, 65533, 0, 15, 65534, 0, 14, 65534, 0, 13, 65534, 0, 12, 65534, 0, 12, 65533, 0, 12, 65532, 0, 13, 65532, 0, 14, 65532, 0, 14, 65533, 0, 13, 65533, 0, 11, 65533, 0, 11, 65532, 0, 11, 65534, 0, 11, 65535, 0, 11, 0, 0, 11, 1, 1, 9, 65535, 0, 9, 65534, 0, 9, 65533, 0, 9, 65532, 0, 9, 65531, 0, 12, 65535, 0, 13, 65535, 0, 14, 65535, 0, 15, 65535, 0, 3, 65531, 1, 2, 65531, 1, 1, 65531, 1, 0, 65531, 0, 65535, 65531, 0, 65534, 65531, 1, 65533, 65531, 1, 65532, 65531, 1, 65532, 65532, 1, 65532, 65533, 1, 65532, 65534, 1, 65532, 65535, 1, 65532, 0, 1, 65532, 1, 1, 65532, 2, 1, 65532, 3, 1, 65532, 4, 1, 65532, 5, 1, 65533, 5, 1, 65534, 5, 1, 65535, 5, 1, 0, 5, 1, 1, 5, 1, 2, 5, 1, 3, 5, 1, 4, 5, 1, 4, 4, 1, 4, 3, 1, 4, 2, 1, 5, 2, 1, 6, 2, 1, 7, 2, 1, 8, 2, 1, 9, 2, 1, 10, 2, 1, 12, 1, 1, 12, 0, 1, 13, 0, 1, 14, 0, 1, 15, 0, 1, 16, 0, 1, 16, 65535, 1, 16, 65534, 1, 16, 65533, 1, 16, 65532, 1, 16, 65531, 1, 16, 65530, 1, 15, 65530, 1, 14, 65530, 1, 13, 65530, 1, 12, 65530, 1, 11, 65530, 1, 10, 65530, 1, 9, 65530, 1, 8, 65530, 1, 8, 65531, 1, 8, 65532, 1, 8, 65533, 1, 8, 65534, 1, 8, 65535, 1, 7, 65535, 1, 6, 65535, 1, 5, 65535, 1, 4, 65535, 1, 4, 65534, 1, 4, 65533, 1, 4, 65532, 1, 4, 65531, 1, 11, 2, 1, 65535, 65530, 0, 65535, 65529, 0, 65535, 65528, 0, 65535, 65527, 0, 65535, 65526, 0, 65535, 65525, 0, 0, 65530, 0, 0, 65529, 0, 0, 65528, 0, 0, 65527, 0, 0, 65526, 0, 0, 65525, 0, 65534, 65524, 0, 65533, 65524, 0, 65535, 65524, 0, 0, 65524, 0, 0, 65523, 0, 65535, 65523, 0, 65534, 65523, 0, 65533, 65523, 0, 65532, 65523, 0, 65531, 65523, 0, 65530, 65523, 0, 65529, 65523, 0, 65529, 65524, 0, 65530, 65524, 0, 65531, 65524, 0, 65532, 65524, 0, 65528, 65521, 0, 65528, 65522, 0, 65528, 65523, 0, 65528, 65524, 0, 65528, 65525, 0, 65528, 65526, 0, 65527, 65525, 0, 65526, 65525, 0, 65525, 65525, 0, 65524, 65525, 0, 65523, 65525, 0, 65523, 65526, 0, 65524, 65526, 0, 65525, 65526, 0, 65526, 65526, 0, 65527, 65526, 0, 65523, 65524, 0, 65523, 65523, 0, 65523, 65522, 0, 65523, 65521, 0, 65524, 65521, 0, 65525, 65521, 0, 65526, 65521, 0, 65527, 65521, 0, 65524, 65522, 0, 65525, 65522, 0, 65526, 65522, 0, 65527, 65522, 0, 65524, 65523, 0, 65525, 65523, 0, 65526, 65523, 0, 65527, 65523, 0, 65524, 65524, 0, 65525, 65524, 0, 65526, 65524, 0, 65527, 65524, 0, 1, 65530, 1, 1, 65529, 1, 1, 65528, 1, 1, 65527, 1, 1, 65526, 1, 1, 65525, 1, 1, 65524, 1, 1, 65523, 1, 1, 65522, 1, 0, 65522, 0, 65535, 65522, 1, 65534, 65522, 1, 65533, 65522, 1, 65532, 65522, 1, 65531, 65522, 1, 65530, 65522, 1, 65529, 65522, 1, 65529, 65521, 1, 65529, 65520, 1, 65528, 65520, 1, 65527, 65520, 1, 65526, 65520, 1, 65525, 65520, 1, 65524, 65520, 1, 65523, 65520, 1, 65522, 65520, 1, 65522, 65521, 1, 65522, 65522, 1, 65522, 65523, 1, 65522, 65524, 1, 65522, 65525, 1, 65522, 65526, 1, 65522, 65527, 1, 65523, 65527, 1, 65524, 65527, 1, 65525, 65527, 1, 65526, 65527, 1, 65527, 65527, 1, 65528, 65527, 1, 65529, 65527, 1, 65529, 65526, 1, 65529, 65525, 1, 65530, 65525, 1, 65531, 65525, 1, 65532, 65525, 1, 65533, 65525, 1, 65534, 65525, 1, 65534, 65526, 1, 65534, 65527, 1, 65534, 65528, 1, 65534, 65529, 1, 65534, 65530, 1, 65535, 65521, 1, 65535, 65520, 1, 65535, 65519, 1, 65535, 65518, 1, 0, 65518, 1, 1, 65518, 1, 2, 65518, 1, 3, 65518, 1, 4, 65518, 1, 5, 65518, 1, 6, 65518, 1, 7, 65518, 1, 8, 65518, 1, 9, 65518, 1, 10, 65518, 1, 11, 65518, 1, 12, 65518, 1, 13, 65518, 1, 14, 65518, 1, 14, 65519, 1, 14, 65520, 1, 14, 65521, 1, 14, 65522, 1, 14, 65523, 1, 14, 65524, 1, 15, 65524, 1, 16, 65524, 1, 16, 65525, 1, 16, 65526, 1, 16, 65527, 1, 16, 65528, 1, 16, 65529, 1, 8, 65529, 1, 8, 65528, 1, 8, 65527, 1, 8, 65526, 1, 8, 65525, 1, 8, 65524, 1, 9, 65524, 1, 10, 65524, 1, 11, 65524, 1, 11, 65523, 1, 10, 65523, 1, 10, 65522, 1, 10, 65521, 1, 11, 65521, 1, 11, 65522, 1, 9, 65521, 1, 8, 65521, 1, 7, 65521, 1, 6, 65521, 1, 5, 65521, 1, 4, 65521, 1, 3, 65521, 1, 2, 65521, 1, 1, 65521, 1, 0, 65521, 0, 0, 65520, 0, 0, 65519, 0, 1, 65519, 0, 2, 65519, 0, 3, 65519, 0, 4, 65519, 0, 5, 65519, 0, 6, 65519, 0, 7, 65519, 0, 8, 65519, 0, 9, 65519, 0, 10, 65519, 0, 11, 65519, 0, 12, 65519, 0, 13, 65519, 0, 1, 65520, 0, 2, 65520, 0, 3, 65520, 0, 4, 65520, 0, 5, 65520, 0, 6, 65520, 0, 7, 65520, 0, 8, 65520, 0, 9, 65520, 0, 10, 65520, 0, 11, 65520, 0, 12, 65520, 0, 13, 65520, 0, 12, 65521, 0, 12, 65522, 0, 12, 65523, 0, 12, 65524, 0, 12, 65525, 0, 13, 65521, 0, 13, 65522, 0, 13, 65523, 0, 13, 65524, 0, 13, 65525, 0, 13, 65526, 0, 13, 65527, 0, 9, 65525, 0, 9, 65526, 0, 9, 65527, 0, 9, 65528, 0, 9, 65529, 0, 10, 65529, 0, 11, 65529, 0, 12, 65529, 0, 13, 65529, 0, 14, 65529, 0, 15, 65529, 0, 15, 65528, 0, 15, 65527, 0, 15, 65526, 0, 15, 65525, 0, 14, 65525, 0, 11, 65525, 0, 10, 65525, 0, 10, 65526, 0, 11, 65526, 0, 12, 65526, 0, 14, 65526, 0, 12, 65527, 0, 11, 65527, 0, 10, 65527, 0, 10, 65528, 0, 11, 65528, 0, 12, 65528, 0, 13, 65528, 0, 14, 65528, 0, 14, 65527, 0)
+}
+metadata/_edit_lock_ = true
+
+[node name="Player3D" parent="." instance=ExtResource("2_ha3do")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.118674, 0)
+
+[node name="CameraParent" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="CameraParent"]
+transform = Transform3D(0.999976, -0.0050288, 0.00478922, 0, 0.689646, 0.724147, -0.00694446, -0.724129, 0.689629, 0.0337388, 5.10143, 4.85826)
+script = ExtResource("3_kfm0l")
+
+[node name="Portal" parent="." instance=ExtResource("4_lds2j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.8359, 0, -16.3663)
+
+[node name="Bonus" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.114149, 0)
+
+[node name="Bonus" parent="Bonus" instance=ExtResource("5_fblof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.71307, 0, -5.70088)
+
+[node name="Bonus2" parent="Bonus" instance=ExtResource("5_fblof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.07593, 0, -5.77589)
+
+[node name="Bonus3" parent="Bonus" instance=ExtResource("5_fblof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.71307, 0, -3.71307)
+
+[node name="Bonus4" parent="Bonus" instance=ExtResource("5_fblof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.15095, 0, -3.75058)
+
+[node name="Bonus5" parent="Bonus" instance=ExtResource("5_fblof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.15095, 0, 6.59209)
+
+[node name="Bonus6" parent="Bonus" instance=ExtResource("5_fblof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17436, 0, 6.59209)
+
+[node name="Bonus7" parent="Bonus" instance=ExtResource("5_fblof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20219, 0, 6.59209)
+
+[node name="Bonus8" parent="Bonus" instance=ExtResource("5_fblof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.528, 0, 1.97845)
+
+[node name="Bonus9" parent="Bonus" instance=ExtResource("5_fblof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.1098, 0, -6.56832)
+
+[node name="Bonus10" parent="Bonus" instance=ExtResource("5_fblof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8087, 0, -6.57443)
+
+[node name="Bonus11" parent="Bonus" instance=ExtResource("5_fblof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.1392, 0, -3.08207)
+
+[node name="Bonus12" parent="Bonus" instance=ExtResource("5_fblof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.9183, 0, -3.29497)
+
+[node name="Bonus13" parent="Bonus" instance=ExtResource("5_fblof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.121529, 0, -15.5485)
+
+[node name="Bonus14" parent="Bonus" instance=ExtResource("5_fblof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.158705, 0, -23.7035)
+
+[node name="Bonus15" parent="Bonus" instance=ExtResource("5_fblof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6845, 0, -26.4259)
+
+[node name="Bonus16" parent="Bonus" instance=ExtResource("5_fblof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5404, 0, -21.9293)
+
+[node name="Bonus17" parent="Bonus" instance=ExtResource("5_fblof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2812, 0, -21.8539)
+
+[node name="Bonus18" parent="Bonus" instance=ExtResource("5_fblof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9938, 0, -26.5596)
+
+[node name="Bonus19" parent="Bonus" instance=ExtResource("5_fblof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.0096, 0, -23.8843)
+
+[node name="Bonus20" parent="Bonus" instance=ExtResource("5_fblof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.16875, 0, -32.0003)
+
+[node name="Bonus21" parent="Bonus" instance=ExtResource("5_fblof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.359, 0, -31.6913)
+
+[node name="Bonus22" parent="Bonus" instance=ExtResource("5_fblof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5028, 0, -18.9944)
+
+[node name="Bonus23" parent="Bonus" instance=ExtResource("5_fblof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6112, 0, -19.2246)
+
+[node name="Bonus24" parent="Bonus" instance=ExtResource("5_fblof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.6506, 0, -14.2429)
+
+[node name="Bonus25" parent="Bonus" instance=ExtResource("5_fblof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8471, 0, -14.1554)
+
+[node name="Relationships" parent="." instance=ExtResource("6_3wb7c")]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://du1eidw8tmr77"
+path="res://.godot/imported/Raul mision_Music_Mysong.ogg-12a1fcd093a73f865a37ae786a85f6f3.oggvorbisstr"
+
+[deps]
+
+source_file="res://data/default/music/Raul mision_Music_Mysong.ogg"
+dest_files=["res://.godot/imported/Raul mision_Music_Mysong.ogg-12a1fcd093a73f865a37ae786a85f6f3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

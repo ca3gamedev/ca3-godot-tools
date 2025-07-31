@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnv8n7bjgvyrj"]
+
+[ext_resource type="Script" uid="uid://bihg1cfgdr3xf" path="res://ca3 framework/Scene Menues/Title/Button.gd" id="1_ytjrx"]
+
+[node name="START" type="Button"]
+offset_left = 889.0
+offset_top = 518.0
+offset_right = 1053.0
+offset_bottom = 594.0
+text = "START"
+script = ExtResource("1_ytjrx")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnuiprw05pmqq"]
+
+[ext_resource type="Script" uid="uid://l13r3lm4teb6" path="res://ca3 framework/2D Battle/framework/Camera2D/camera_2d.gd" id="1_kymxb"]
+
+[node name="Camera2D" type="Camera2D"]
+position = Vector2(581, 325)
+script = ExtResource("1_kymxb")

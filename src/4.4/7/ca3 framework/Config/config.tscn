@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://djhjeum2mfqoa"]
+
+[ext_resource type="Script" uid="uid://dklc85rd6jvkg" path="res://ca3 framework/Scene Menues/Title/load_config.gd" id="1_hd5jh"]
+[ext_resource type="Script" uid="uid://dca7gaybtaih7" path="res://ca3 framework/Config/options.gd" id="2_u6w8w"]
+[ext_resource type="PackedScene" uid="uid://d1qhayqj1wyyf" path="res://ca3 framework/Options/options.tscn" id="3_intt0"]
+
+[node name="CONFIG" type="Node"]
+script = ExtResource("1_hd5jh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="OptionsMenue" parent="CanvasLayer" instance=ExtResource("3_intt0")]
+unique_name_in_owner = true
+visible = false
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 60
+
+[node name="Options" type="Button" parent="CanvasLayer2"]
+offset_left = 1040.0
+offset_top = 13.0
+offset_right = 1141.0
+offset_bottom = 60.0
+text = "Options"
+script = ExtResource("2_u6w8w")
+
+[connection signal="pressed" from="CanvasLayer2/Options" to="CanvasLayer2/Options" method="_on_pressed"]

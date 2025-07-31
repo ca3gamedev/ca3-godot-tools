@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0m61cn7uakio"]
+
+[ext_resource type="PackedScene" uid="uid://26j4tw8xkequ" path="res://ca3 framework/Scene Menues/Title/title.tscn" id="1_00elr"]
+
+[node name="TITLE" instance=ExtResource("1_00elr")]

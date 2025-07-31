@@ -1,0 +1,115 @@
+[gd_scene load_steps=5 format=3 uid="uid://blxa6krhieww2"]
+
+[ext_resource type="Script" uid="uid://c7n6f0rwr0vly" path="res://ca3 framework/3D framework/Shop/shop.gd" id="1_lv44v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5fbqd"]
+albedo_color = Color(0.790493, 0.370898, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_k0ty0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2qcbl"]
+size = Vector3(1.44135, 1.97589, 1.45337)
+
+[node name="Shop" type="Area3D"]
+process_mode = 3
+script = ExtResource("1_lv44v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.149486, 0, 0, 0, 1, 0, 0.183846, 0)
+material_override = SubResource("StandardMaterial3D_5fbqd")
+mesh = SubResource("BoxMesh_k0ty0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00497437, 0.548001, -0.0162354)
+shape = SubResource("BoxShape3D_2qcbl")
+
+[node name="Store" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="ColorRect" type="ColorRect" parent="Store"]
+offset_left = 150.0
+offset_top = 60.0
+offset_right = 1008.0
+offset_bottom = 584.0
+color = Color(0.46773, 0.70073, 0.858423, 0.776471)
+
+[node name="0" type="Node2D" parent="Store"]
+position = Vector2(374, 226)
+
+[node name="1" type="Node2D" parent="Store"]
+position = Vector2(378, 330)
+
+[node name="2" type="Node2D" parent="Store"]
+position = Vector2(376, 446)
+
+[node name="Cursor" type="ColorRect" parent="Store"]
+unique_name_in_owner = true
+offset_left = 352.0
+offset_top = 208.0
+offset_right = 392.0
+offset_bottom = 248.0
+color = Color(0.059126, 0.0591259, 0.0591259, 1)
+
+[node name="Label" type="Label" parent="Store"]
+offset_left = 418.0
+offset_top = 200.0
+offset_right = 619.0
+offset_bottom = 255.0
+theme_override_font_sizes/font_size = 40
+text = "BUY 20 HP"
+
+[node name="Label4" type="Label" parent="Store"]
+offset_left = 510.0
+offset_top = 102.0
+offset_right = 711.0
+offset_bottom = 157.0
+theme_override_colors/font_color = Color(0.18403, 1.14551e-05, 0.758512, 1)
+theme_override_font_sizes/font_size = 40
+text = "SHOP"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Store"]
+offset_left = 422.0
+offset_top = 314.0
+offset_right = 623.0
+offset_bottom = 369.0
+theme_override_font_sizes/font_size = 40
+text = "BUY 100 HP"
+
+[node name="Coins" type="Label" parent="Store"]
+unique_name_in_owner = true
+offset_left = 182.0
+offset_top = 524.0
+offset_right = 406.0
+offset_bottom = 579.0
+theme_override_font_sizes/font_size = 30
+text = "0 COINS"
+
+[node name="Label3" type="Label" parent="Store"]
+offset_left = 424.0
+offset_top = 424.0
+offset_right = 648.0
+offset_bottom = 479.0
+theme_override_font_sizes/font_size = 40
+text = "CANCEL"
+
+[node name="StoreLabel" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(510, 508)
+
+[node name="ColorRect3" type="ColorRect" parent="StoreLabel"]
+offset_left = -6.0
+offset_top = -2.0
+offset_right = 188.0
+offset_bottom = 34.0
+
+[node name="Label" type="Label" parent="StoreLabel"]
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 176.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "press B to enter Store"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

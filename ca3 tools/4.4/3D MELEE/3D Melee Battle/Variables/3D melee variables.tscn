@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjrxe70mafaor"]
+
+[ext_resource type="Script" uid="uid://cyryepidu0s8w" path="res://3D Melee Battle/Variables/3d_melee_variables.gd" id="1_0dnp8"]
+
+[node name="Variables" type="Node"]
+script = ExtResource("1_0dnp8")

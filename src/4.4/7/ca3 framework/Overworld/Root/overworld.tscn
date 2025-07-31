@@ -1,0 +1,91 @@
+[gd_scene load_steps=11 format=3 uid="uid://db2mr1horp11b"]
+
+[ext_resource type="Texture2D" uid="uid://dpd8r0oqdgvcj" path="res://data/default/VN modes/2D B/old-vintage-paper-texture-book-pages-captivating-backgrounds_9924752.png" id="1_wx5qx"]
+[ext_resource type="Script" uid="uid://dje5n0phu7u0r" path="res://ca3 framework/Overworld/Root/map.gd" id="2_00gkq"]
+[ext_resource type="Texture2D" uid="uid://cxegiul5yb4oq" path="res://data/default/overworld world map/tiles/state 1 red.png" id="2_7q2tl"]
+[ext_resource type="Texture2D" uid="uid://bu3ufqjm1hr71" path="res://data/default/overworld world map/tiles/state 1.png" id="3_gmum5"]
+[ext_resource type="Texture2D" uid="uid://bw23k5llh0i0j" path="res://data/default/overworld world map/tiles/state 2 red.png" id="4_cgjdi"]
+[ext_resource type="Texture2D" uid="uid://jgc1gtp8hga2" path="res://data/default/overworld world map/tiles/state 2.png" id="5_bapo8"]
+[ext_resource type="Texture2D" uid="uid://bfg1w8wqon6pu" path="res://data/default/overworld world map/tiles/state 3 red.png" id="6_6atv6"]
+[ext_resource type="Texture2D" uid="uid://d0bgjkskbfyk0" path="res://data/default/overworld world map/tiles/state 3.png" id="7_bltsf"]
+[ext_resource type="Texture2D" uid="uid://ct34lila68f8y" path="res://data/default/overworld world map/tiles/state 4 red.png" id="8_3rr3l"]
+[ext_resource type="Texture2D" uid="uid://b57e1wnnf8dvj" path="res://data/default/overworld world map/tiles/state 4.png" id="9_muw8n"]
+
+[node name="Overworld" type="Node2D"]
+
+[node name="Old-vintage-paper-texture-book-pages-captivating-backgrounds9924752" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(1.4675, 1.51786)
+texture = ExtResource("1_wx5qx")
+metadata/_edit_lock_ = true
+
+[node name="Map" type="Node2D" parent="."]
+position = Vector2(542, 306)
+scale = Vector2(0.75, 0.75)
+script = ExtResource("2_00gkq")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="State1Red" type="Sprite2D" parent="Map"]
+visible = false
+position = Vector2(13, -38)
+texture = ExtResource("2_7q2tl")
+
+[node name="State1" type="Sprite2D" parent="Map"]
+position = Vector2(13, -38)
+texture = ExtResource("3_gmum5")
+
+[node name="State2Red" type="Sprite2D" parent="Map"]
+visible = false
+position = Vector2(13, -38)
+texture = ExtResource("4_cgjdi")
+
+[node name="State2" type="Sprite2D" parent="Map"]
+position = Vector2(13, -38)
+texture = ExtResource("5_bapo8")
+
+[node name="State3Red" type="Sprite2D" parent="Map"]
+visible = false
+position = Vector2(13, -38)
+texture = ExtResource("6_6atv6")
+
+[node name="State3" type="Sprite2D" parent="Map"]
+position = Vector2(13, -38)
+texture = ExtResource("7_bltsf")
+
+[node name="State4Red" type="Sprite2D" parent="Map"]
+visible = false
+position = Vector2(13, -38)
+texture = ExtResource("8_3rr3l")
+
+[node name="State4" type="Sprite2D" parent="Map"]
+position = Vector2(13, -38)
+texture = ExtResource("9_muw8n")
+
+[node name="GameOver" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 675.0
+offset_top = 130.0
+offset_right = 945.0
+offset_bottom = 217.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "PRESS B
+To view the gallery"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 703.0
+offset_top = 370.0
+offset_right = 973.0
+offset_bottom = 457.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "PRESS C 
+in gallery
+To return"
+
+[connection signal="timeout" from="GameOver" to="Map" method="_on_game_over_timeout"]

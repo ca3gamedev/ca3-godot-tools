@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://co1b6alp6klhg"]
+
+[sub_resource type="Resource" id="Resource_c14du"]
+metadata/__load_path__ = "res://InputCode/Special movement/2626.gd"
+
+[node name="2626" type="Node"]
+script = SubResource("Resource_c14du")

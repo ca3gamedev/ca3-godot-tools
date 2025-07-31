@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc8n4bno51bjk"]
+
+[ext_resource type="VideoStream" uid="uid://bsgqs83jtwnpx" path="res://data/default/Video/cutscene.ogv" id="1_akfve"]
+[ext_resource type="Script" uid="uid://chuuo3unihbem" path="res://ca3 framework/Cutscenes/intro_movie.gd" id="1_twy3m"]
+
+[node name="Intro_Movie" type="Node2D"]
+script = ExtResource("1_twy3m")
+Next = "Overworld"
+
+[node name="Video" type="VideoStreamPlayer" parent="."]
+offset_left = 262.0
+offset_top = 19.0
+offset_right = 566.0
+offset_bottom = 323.0
+scale = Vector2(2, 2)
+stream = ExtResource("1_akfve")
+
+[node name="Start" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="finished" from="Video" to="." method="_on_video_finished"]
+[connection signal="timeout" from="Start" to="." method="_on_start_timeout"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://biqch23kd1ft"]
+
+[ext_resource type="Script" uid="uid://fru0bp7pfvus" path="res://ca3 framework/2D JRPG combat/Player/player.gd" id="1_4t4s1"]
+[ext_resource type="PackedScene" uid="uid://dk6rkhn06xqcd" path="res://data/default/objects/characters/Heroe/AnimationPlayerSprite.tscn" id="2_u4h5r"]
+
+[node name="Player" type="Node2D"]
+position = Vector2(229, 465)
+script = ExtResource("1_4t4s1")
+
+[node name="Sprites" parent="." instance=ExtResource("2_u4h5r")]
+scale = Vector2(2, 2)
+
+[node name="Animations" parent="Sprites" index="1"]
+autoplay = "sprites/IDLE_FRONT_"
+
+[connection signal="animation_finished" from="Sprites/Animations" to="." method="_on_animations_animation_finished"]
+
+[editable path="Sprites"]

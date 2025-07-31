@@ -1,0 +1,164 @@
+[gd_scene load_steps=17 format=3 uid="uid://klqp10fjouip"]
+
+[ext_resource type="Script" uid="uid://bjxbua1vsvsvy" path="res://ca3 framework/2D Battle/Battle/Scenes/root.gd" id="1_4lh6b"]
+[ext_resource type="Texture2D" uid="uid://dig6iqxsgycpo" path="res://data/default/tiles/background/grass.png" id="2_7lxga"]
+[ext_resource type="PackedScene" uid="uid://bquf765e0ayvd" path="res://ca3 framework/2D Battle/Framework Items/Coins/coin_spawner.tscn" id="2_ms7e3"]
+[ext_resource type="PackedScene" uid="uid://dnuiprw05pmqq" path="res://ca3 framework/2D Battle/framework/Camera2D/camera_2d.tscn" id="3_5q7r2"]
+[ext_resource type="PackedScene" uid="uid://y8jp24a1mwac" path="res://ca3 framework/2D Battle/AI enemies/Director/ai_director.tscn" id="4_00cis"]
+[ext_resource type="PackedScene" uid="uid://bea65aguajeno" path="res://ca3 framework/2.5 Beatemup/Enemies/AI player 25.tscn" id="5_2c1w0"]
+[ext_resource type="PackedScene" uid="uid://dy6cwkj0mer5v" path="res://ca3 framework/2D Battle/AI enemies/Player/AI player hadouken.tscn" id="5_jx8fd"]
+[ext_resource type="PackedScene" uid="uid://d1ub2rpxh7kr1" path="res://ca3 framework/2D Battle/AI enemies/Player/AI player healing hadouken.tscn" id="6_73yam"]
+[ext_resource type="PackedScene" uid="uid://d0eoegw8j4hgh" path="res://ca3 framework/2D Battle/AI enemies/Player/AI Necromancer.tscn" id="7_ly1la"]
+[ext_resource type="PackedScene" uid="uid://750k42y2kg35" path="res://ca3 framework/2D Battle/AI enemies/EnemyManager/enemy_bullets.tscn" id="8_mmogr"]
+[ext_resource type="PackedScene" uid="uid://2m4xu20agwgo" path="res://ca3 framework/2.5 Beatemup/Player/player. 2.5tscn.tscn" id="9_5se7r"]
+[ext_resource type="PackedScene" uid="uid://po7sh3353sqr" path="res://ca3 framework/2D Battle/fireballs/Manager/player_bullet_manager.tscn" id="10_tsdh1"]
+[ext_resource type="PackedScene" uid="uid://bl4dqnsdbfw54" path="res://ca3 framework/2D Battle/GUI/Battle/gui.tscn" id="11_e2hxw"]
+[ext_resource type="PackedScene" uid="uid://b23t60mfoxnac" path="res://ca3 framework/2D Battle/GameOver Conditions/game_over_conditions.tscn" id="12_050tb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbms4"]
+size = Vector2(119, 1032)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwbpf"]
+size = Vector2(2039, 121)
+
+[node name="Root" type="Node2D"]
+process_mode = 3
+y_sort_enabled = true
+script = ExtResource("1_4lh6b")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -4096
+offset_left = -853.0
+offset_top = -661.0
+offset_right = 2115.0
+offset_bottom = 1347.0
+color = Color(0.0608823, 0.0668101, 0.345769, 1)
+metadata/_edit_lock_ = true
+
+[node name="Grass" type="Sprite2D" parent="."]
+z_index = -4096
+position = Vector2(607.5, 327)
+scale = Vector2(2.33125, 1.4025)
+texture = ExtResource("2_7lxga")
+
+[node name="WALLS" type="Node2D" parent="."]
+
+[node name="LEFT" type="StaticBody2D" parent="WALLS" groups=["WALL"]]
+position = Vector2(-297, 316)
+collision_layer = 64
+collision_mask = 54
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WALLS/LEFT"]
+position = Vector2(-4, 4)
+shape = SubResource("RectangleShape2D_sbms4")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="WALLS/LEFT/CollisionShape2D"]
+z_index = -4096
+z_as_relative = false
+offset_left = -57.0
+offset_top = -518.0
+offset_right = 67.0
+offset_bottom = 516.0
+color = Color(0.242764, 0.0843635, 0.0511434, 1)
+metadata/_edit_lock_ = true
+
+[node name="LEFT2" type="StaticBody2D" parent="WALLS" groups=["WALL"]]
+position = Vector2(1492, 319)
+collision_layer = 64
+collision_mask = 54
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WALLS/LEFT2"]
+position = Vector2(-4, 4)
+shape = SubResource("RectangleShape2D_sbms4")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="WALLS/LEFT2/CollisionShape2D"]
+z_index = -4096
+z_as_relative = false
+offset_left = -57.0
+offset_top = -518.0
+offset_right = 67.0
+offset_bottom = 516.0
+color = Color(0.242764, 0.0843635, 0.0511434, 1)
+metadata/_edit_lock_ = true
+
+[node name="TOP" type="StaticBody2D" parent="WALLS" groups=["WALL"]]
+position = Vector2(571, -189)
+collision_layer = 64
+collision_mask = 54
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WALLS/TOP"]
+position = Vector2(42.5, -42.5)
+shape = SubResource("RectangleShape2D_dwbpf")
+
+[node name="ColorRect" type="ColorRect" parent="WALLS/TOP/CollisionShape2D"]
+z_index = -4096
+z_as_relative = false
+offset_left = -1019.0
+offset_top = -64.0
+offset_right = 1025.0
+offset_bottom = 63.0
+color = Color(0.243137, 0.0862745, 0.0509804, 1)
+
+[node name="DOWN" type="StaticBody2D" parent="WALLS" groups=["WALL"]]
+position = Vector2(585, 934)
+collision_layer = 64
+collision_mask = 54
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WALLS/DOWN"]
+position = Vector2(42.5, -42.5)
+shape = SubResource("RectangleShape2D_dwbpf")
+
+[node name="ColorRect" type="ColorRect" parent="WALLS/DOWN/CollisionShape2D"]
+z_index = -4096
+z_as_relative = false
+offset_left = -1019.0
+offset_top = -64.0
+offset_right = 1025.0
+offset_bottom = 63.0
+color = Color(0.243137, 0.0862745, 0.0509804, 1)
+
+[node name="CoinSpawner" parent="." instance=ExtResource("2_ms7e3")]
+
+[node name="Camera2D" parent="." instance=ExtResource("3_5q7r2")]
+
+[node name="origin" type="Node2D" parent="Camera2D"]
+position = Vector2(-581, -322)
+
+[node name="AIDirector" parent="." instance=ExtResource("4_00cis")]
+spawn_number_enemy = 1
+enemy01 = ExtResource("5_2c1w0")
+hadouken_spammer = ExtResource("5_jx8fd")
+healer = ExtResource("6_73yam")
+necromancer = ExtResource("7_ly1la")
+
+[node name="ClosestUpdate" parent="AIDirector" index="2"]
+wait_time = 1.0
+
+[node name="AIDirectorCode" parent="AIDirector" index="3"]
+radius_close = 50
+radius_medium = 100
+radius_far = 150
+
+[node name="EnemyBullets" parent="." instance=ExtResource("8_mmogr")]
+
+[node name="Players" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player 2_5" parent="Players" instance=ExtResource("9_5se7r")]
+position = Vector2(577, 331)
+
+[node name="PlayerBulletManager" parent="." instance=ExtResource("10_tsdh1")]
+
+[node name="GUI" parent="." instance=ExtResource("11_e2hxw")]
+
+[node name="GameOverConditions" parent="." instance=ExtResource("12_050tb")]
+
+[editable path="AIDirector"]

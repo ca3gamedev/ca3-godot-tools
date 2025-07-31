@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkeyjevi7u66u"]
+
+[ext_resource type="Script" uid="uid://dbjxmbrktdgnb" path="res://data/default/objects/npcs/Dialogs/npc_dialog.gd" id="1_y064t"]
+
+[node name="NPC Dialog" type="Node"]
+script = ExtResource("1_y064t")

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhiw8sy7vncqj"]
+
+[sub_resource type="Resource" id="Resource_uhclk"]
+metadata/__load_path__ = "res://InputCode/Special movement/dragon_punch.gd"
+
+[node name="DragonPunch" type="Node"]
+script = SubResource("Resource_uhclk")

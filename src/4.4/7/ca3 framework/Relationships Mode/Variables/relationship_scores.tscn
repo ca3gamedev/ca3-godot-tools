@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbourv5qub0wr"]
+
+[ext_resource type="Script" uid="uid://wymtpo8vrx2j" path="res://ca3 framework/Relationships Mode/Variables/relationship_scores.gd" id="1_cnow0"]
+
+[node name="RelationshipScores" type="Node"]
+script = ExtResource("1_cnow0")

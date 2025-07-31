@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmq6u5yfokw5t"]
+
+[ext_resource type="Script" uid="uid://tlo0vxludror" path="res://ca3 framework/2D Battle/framework/InputCode/FSM Movement/4_directions.gd" id="1_anfqo"]
+
+[node name="4 Directions" type="Node"]
+script = ExtResource("1_anfqo")

@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://nre02mwef5bh"]
+
+[ext_resource type="Script" uid="uid://dq1nibix6fgfh" path="res://ca3 framework/3D framework/Save/save.gd" id="1_71k7m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5fbqd"]
+albedo_color = Color(0.790493, 0.370898, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_k0ty0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2qcbl"]
+size = Vector3(1.44135, 1.97589, 1.45337)
+
+[node name="Save" type="Area3D"]
+process_mode = 3
+script = ExtResource("1_71k7m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.149486, 0, 0, 0, 1, 0, 0.183846, 0)
+material_override = SubResource("StandardMaterial3D_5fbqd")
+mesh = SubResource("BoxMesh_k0ty0")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.149486, 0, 0, 0, 1, 0, 0.760827, 0)
+material_override = SubResource("StandardMaterial3D_5fbqd")
+mesh = SubResource("BoxMesh_k0ty0")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.149486, 0, 0, 0, 1, 0, 1.36474, 0)
+material_override = SubResource("StandardMaterial3D_5fbqd")
+mesh = SubResource("BoxMesh_k0ty0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00497437, 0.548001, -0.0162354)
+shape = SubResource("BoxShape3D_2qcbl")
+
+[node name="SaveLabel" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(510, 508)
+
+[node name="ColorRect3" type="ColorRect" parent="SaveLabel"]
+offset_left = -6.0
+offset_top = -2.0
+offset_right = 252.0
+offset_bottom = 34.0
+
+[node name="Label" type="Label" parent="SaveLabel"]
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 176.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "press D to enter SAVE SCREEN"
+
+[node name="ScreenActive" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="ScreenActive" to="." method="_on_screen_active_timeout"]

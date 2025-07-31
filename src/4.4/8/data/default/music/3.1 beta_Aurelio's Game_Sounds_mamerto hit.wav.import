@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d362wvay8sjrj"
+path="res://.godot/imported/3.1 beta_Aurelio's Game_Sounds_mamerto hit.wav-ae6684dc2b8513fb2b51e086a82ee7f8.sample"
+
+[deps]
+
+source_file="res://data/default/music/3.1 beta_Aurelio's Game_Sounds_mamerto hit.wav"
+dest_files=["res://.godot/imported/3.1 beta_Aurelio's Game_Sounds_mamerto hit.wav-ae6684dc2b8513fb2b51e086a82ee7f8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

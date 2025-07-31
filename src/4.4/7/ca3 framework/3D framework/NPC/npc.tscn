@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://rnwfhnw8s7dq"]
+
+[ext_resource type="Script" uid="uid://hdjjnthwm2o8" path="res://ca3 framework/3D framework/NPC/Code/npc.gd" id="1_cng6g"]
+[ext_resource type="Script" uid="uid://dlsmxwu2uccdf" path="res://ca3 framework/3D framework/NPC/Code/fsm.gd" id="1_eqoxd"]
+[ext_resource type="Script" uid="uid://b6oku7p2vgs86" path="res://ca3 framework/3D framework/NPC/Code/talk_close.gd" id="2_khigf"]
+[ext_resource type="Script" uid="uid://o341xk6l5rtn" path="res://ca3 framework/3D framework/NPC/Code/idle.gd" id="2_t4n6l"]
+[ext_resource type="Script" uid="uid://bd4myjbsm4oox" path="res://ca3 framework/3D framework/NPC/Code/walk.gd" id="3_uakwn"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_glm5g"]
+height = 2.37926
+radius = 1.18997
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bdve4"]
+height = 0.60775
+radius = 0.21841
+
+[node name="NPC" type="CharacterBody3D"]
+script = ExtResource("1_cng6g")
+
+[node name="TalkClose" type="Area3D" parent="."]
+script = ExtResource("2_khigf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TalkClose"]
+shape = SubResource("CylinderShape3D_glm5g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.294379, 0)
+shape = SubResource("CylinderShape3D_bdve4")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+
+[node name="Walk" type="Timer" parent="."]
+
+[node name="FSM" type="Node" parent="." node_paths=PackedStringArray("current")]
+script = ExtResource("1_eqoxd")
+current = NodePath("IDLE")
+
+[node name="IDLE" type="Node" parent="FSM"]
+script = ExtResource("2_t4n6l")
+
+[node name="WALK" type="Node" parent="FSM"]
+script = ExtResource("3_uakwn")
+walk_speed = 1.0
+
+[node name="Dialog" type="Node2D" parent="."]
+visible = false
+position = Vector2(13, 612)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Dialog"]
+offset_right = 126.0
+offset_bottom = 27.0
+
+[node name="Label" type="Label" parent="Dialog"]
+offset_left = 7.0
+offset_top = 2.0
+offset_right = 117.0
+offset_bottom = 25.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "press X to talk"
+
+[connection signal="body_entered" from="TalkClose" to="TalkClose" method="_on_body_entered"]
+[connection signal="body_exited" from="TalkClose" to="TalkClose" method="_on_body_exited"]
+[connection signal="timeout" from="Walk" to="FSM" method="_on_walk_timeout"]

@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://b1nitumryo33c"]
+
+[ext_resource type="Script" uid="uid://ctfe30c7mnqtw" path="res://ca3 framework/Music/music.gd" id="1_6jic4"]
+[ext_resource type="AudioStream" uid="uid://bc1c55ki713fs" path="res://data/default/music/3.1 beta_Aurelio's Game_Sounds_selection sound.wav" id="2_i21kt"]
+[ext_resource type="AudioStream" uid="uid://bqwqw36813u4i" path="res://data/default/music/3.1 beta_Aurelio's Game_Music_Song aurelio.ogg" id="3_5vsw1"]
+[ext_resource type="AudioStream" uid="uid://du1eidw8tmr77" path="res://data/default/music/Raul mision_Music_Mysong.ogg" id="4_uf3c1"]
+[ext_resource type="AudioStream" uid="uid://d362wvay8sjrj" path="res://data/default/music/3.1 beta_Aurelio's Game_Sounds_mamerto hit.wav" id="5_jjof3"]
+[ext_resource type="AudioStream" uid="uid://b07gr3qai6koh" path="res://data/default/music/3.1 beta_Aurelio's Game_Sounds_sword.wav" id="6_nm3fb"]
+
+[node name="Music" type="Node"]
+script = ExtResource("1_6jic4")
+
+[node name="Select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_i21kt")
+volume_db = -25.0
+
+[node name="AurelioSong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_5vsw1")
+volume_db = -5.0
+
+[node name="RaulSong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_uf3c1")
+volume_db = -10.0
+
+[node name="HIT" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_jjof3")
+volume_db = -5.0
+
+[node name="Slash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_nm3fb")
+volume_db = -7.0
+
+[connection signal="finished" from="AurelioSong" to="." method="_on_aurelio_song_finished"]
+[connection signal="finished" from="RaulSong" to="." method="_on_raul_song_finished"]

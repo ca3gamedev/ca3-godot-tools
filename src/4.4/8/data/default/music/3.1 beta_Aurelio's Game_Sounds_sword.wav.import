@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b07gr3qai6koh"
+path="res://.godot/imported/3.1 beta_Aurelio's Game_Sounds_sword.wav-8a0cb88e928fa032de93f59491b3c3ba.sample"
+
+[deps]
+
+source_file="res://data/default/music/3.1 beta_Aurelio's Game_Sounds_sword.wav"
+dest_files=["res://.godot/imported/3.1 beta_Aurelio's Game_Sounds_sword.wav-8a0cb88e928fa032de93f59491b3c3ba.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

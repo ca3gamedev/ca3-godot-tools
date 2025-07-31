@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxdxfheftupcb"]
+
+[ext_resource type="Script" uid="uid://v3e382a12soh" path="res://ca3 framework/2D Battle/framework/InputCode/FSM Movement/horizontal_movement.gd" id="1_x2n67"]
+
+[node name="Horizontal Movement" type="Node"]
+script = ExtResource("1_x2n67")

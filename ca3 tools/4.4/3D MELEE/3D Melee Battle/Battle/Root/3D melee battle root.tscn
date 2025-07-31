@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://hqbs6h47vwl2"]
+
+[ext_resource type="PackedScene" uid="uid://bi2fsmrteecja" path="res://3D Melee Battle/Battle/Player/3d_player.tscn" id="1_6gy62"]
+[ext_resource type="PackedScene" uid="uid://brorxjyaxf8kx" path="res://3D Melee Battle/Battle/AI Enemies/3d_Enemies.tscn" id="2_81gf8"]
+[ext_resource type="Script" uid="uid://cqw81rxcn67x8" path="res://3D Melee Battle/Battle/Camera/camera_3d melee.gd" id="2_awa1y"]
+[ext_resource type="Script" uid="uid://cfrdggp61hd02" path="res://3D Melee Battle/Battle/AI Managers/ai_manager.gd" id="3_qlo0a"]
+[ext_resource type="Script" uid="uid://nlhte1ej4x8t" path="res://3D Melee Battle/Battle/AI Managers/enemies.gd" id="4_qlo0a"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6gy62"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_81gf8"]
+sky_material = SubResource("ProceduralSkyMaterial_6gy62")
+
+[sub_resource type="Environment" id="Environment_awa1y"]
+background_mode = 2
+sky = SubResource("Sky_81gf8")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6gy62"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_81gf8"]
+noise = SubResource("FastNoiseLite_6gy62")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awa1y"]
+albedo_color = Color(0.154498, 0.267949, 0.204492, 1)
+roughness_texture = SubResource("NoiseTexture2D_81gf8")
+uv1_scale = Vector3(30, 30, 30)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qlo0a"]
+
+[node name="Root" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.9035, 0.371168, -0.214294, 2.78059e-08, 0.5, 0.866025, 0.428588, -0.782454, 0.45175, 0, 12.5807, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_awa1y")
+
+[node name="Player" type="Node3D" parent="."]
+
+[node name="3D Player" parent="Player" instance=ExtResource("1_6gy62")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.002, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, -0.085, 0)
+material_override = SubResource("StandardMaterial3D_awa1y")
+mesh = SubResource("PlaneMesh_qlo0a")
+metadata/_edit_lock_ = true
+
+[node name="Camera" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Camera"]
+transform = Transform3D(1, 0, 0, 0, 0.832303, 0.554322, 0, -0.554322, 0.832303, 0, 4.27126, 4.76685)
+script = ExtResource("2_awa1y")
+
+[node name="Camera3D2" type="Camera3D" parent="Camera"]
+transform = Transform3D(1, 0, 0, 0, 0.832303, 0.554322, 0, -0.554322, 0.832303, 0, 4.27126, 4.76685)
+script = ExtResource("2_awa1y")
+
+[node name="AIDirector" type="Node3D" parent="."]
+
+[node name="TOPLEFT" type="Marker3D" parent="AIDirector"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.667, 0, -8.91413)
+
+[node name="BOTTOMRIGHT" type="Marker3D" parent="AIDirector"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.115, 0, 8.75832)
+
+[node name="AIManager" type="Node" parent="AIDirector"]
+script = ExtResource("3_qlo0a")
+radius = 2.0
+
+[node name="SortTimer" type="Timer" parent="AIDirector/AIManager"]
+wait_time = 0.25
+autostart = true
+
+[node name="Enemies" type="Node3D" parent="AIDirector"]
+script = ExtResource("4_qlo0a")
+level = 30
+enemy01 = ExtResource("2_81gf8")
+
+[connection signal="timeout" from="AIDirector/AIManager/SortTimer" to="AIDirector/AIManager" method="_on_sort_timer_timeout"]

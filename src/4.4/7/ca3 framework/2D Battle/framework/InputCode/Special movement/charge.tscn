@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxsyyqavvqtc"]
+
+[sub_resource type="Resource" id="Resource_rxyk6"]
+metadata/__load_path__ = "res://InputCode/Special movement/charge.gd"
+
+[node name="Charge" type="Node"]
+script = SubResource("Resource_rxyk6")

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b178yx5ghcg0u"]
+
+[sub_resource type="Resource" id="Resource_oitvo"]
+metadata/__load_path__ = "res://InputCode/Special movement/just_tap.gd"
+
+[node name="JustTap" type="Node"]
+script = SubResource("Resource_oitvo")

@@ -1,0 +1,116 @@
+[gd_scene load_steps=6 format=3 uid="uid://h4s4tagtoelf"]
+
+[ext_resource type="Script" uid="uid://c5p3vkiqdh74r" path="res://ca3 framework/2D Battle/Framework Items/Explosions/explosion.gd" id="1_yssa0"]
+
+[sub_resource type="Animation" id="Animation_yv8q1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(18, 21)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-8, -14)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Explosion/CollisionShape2D:shape:radius")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [10.0]
+}
+
+[sub_resource type="Animation" id="Animation_226xr"]
+resource_name = "Start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(18, 21), Vector2(154, 157), Vector2(21, 26)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-8, -14), Vector2(-75, -81), Vector2(-8, -13)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Explosion/CollisionShape2D:shape:radius")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [10.0, 112.4, 10.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3gq1s"]
+_data = {
+&"RESET": SubResource("Animation_yv8q1"),
+&"Start": SubResource("Animation_226xr")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k8udv"]
+
+[node name="Explosion" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -8.0
+offset_top = -14.0
+offset_right = 10.0
+offset_bottom = 7.0
+color = Color(0.801913, 0.358252, 0.0613483, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3gq1s")
+}
+autoplay = "Start"
+
+[node name="Explosion" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 24
+script = ExtResource("1_yssa0")
+damage = 200
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosion"]
+shape = SubResource("CircleShape2D_k8udv")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="Explosion" method="_on_animation_player_animation_finished"]
+[connection signal="area_entered" from="Explosion" to="Explosion" method="_on_area_entered"]

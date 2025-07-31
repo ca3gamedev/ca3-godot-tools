@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://53g6fefnxbu8"]
+
+[sub_resource type="Resource" id="Resource_jchwa"]
+metadata/__load_path__ = "res://InputCode/Special movement/half_circle.gd"
+
+[node name="Half Circle" type="Node"]
+script = SubResource("Resource_jchwa")

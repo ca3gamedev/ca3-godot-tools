@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfra83ddty8p0"]
+
+[ext_resource type="PackedScene" uid="uid://bex1uhlmstbdy" path="res://data/default/Dialogs/VN/test/dialog.tscn" id="1_6ls2l"]
+[ext_resource type="Texture2D" uid="uid://dpd8r0oqdgvcj" path="res://data/default/VN modes/2D B/old-vintage-paper-texture-book-pages-captivating-backgrounds_9924752.png" id="1_66tlk"]
+[ext_resource type="PackedScene" uid="uid://dsasjtldon702" path="res://ca3 framework/VN modes/VN dialog/dialogs_balloons.tscn" id="2_ffk75"]
+[ext_resource type="Script" uid="uid://tutkmyey2jxd" path="res://ca3 framework/VN modes/VN dialog/gen_dialogs.gd" id="2_wxtvm"]
+[ext_resource type="PackedScene" uid="uid://cy5yfdsl6qf5h" path="res://ca3 framework/VN modes/VN dialog/dialog_balloon.tscn" id="3_mhqvo"]
+[ext_resource type="PackedScene" uid="uid://hgfon77oqtti" path="res://ca3 framework/VN modes/VN dialog/ani.tscn" id="5_7g5id"]
+
+[node name="VN dialog" type="Node2D"]
+
+[node name="Old-vintage-paper-texture-book-pages-captivating-backgrounds9924752" type="Sprite2D" parent="."]
+position = Vector2(578, 319)
+scale = Vector2(1.485, 1.5625)
+texture = ExtResource("1_66tlk")
+
+[node name="Dialog" parent="." instance=ExtResource("1_6ls2l")]
+unique_name_in_owner = true
+
+[node name="GenDialogs" type="Node" parent="."]
+script = ExtResource("2_wxtvm")
+dialog_scene = ExtResource("3_mhqvo")
+y_off = 150
+ani_frames = 4
+
+[node name="Ani" parent="." instance=ExtResource("5_7g5id")]
+unique_name_in_owner = true
+position = Vector2(568, 236)
+scale = Vector2(0.5, 0.5)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_left = 317.0
+offset_top = 493.0
+offset_right = 1023.0
+offset_bottom = 614.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(552, 121)
+render_target_update_mode = 4
+
+[node name="DialogsBalloons" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_ffk75")]

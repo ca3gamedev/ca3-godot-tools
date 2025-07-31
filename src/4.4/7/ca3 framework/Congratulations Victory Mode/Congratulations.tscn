@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://bufjiotb346ct"]
+
+[ext_resource type="Script" uid="uid://dukw72pq57kbx" path="res://ca3 framework/Congratulations Victory Mode/congratulations.gd" id="1_wva5r"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_wva5r")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -7.0
+offset_top = -9.0
+offset_right = 1162.0
+offset_bottom = 653.0
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 384.0
+offset_top = 48.0
+offset_right = 817.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "CONGRATULATIONS!!!!"
+
+[node name="LOG" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 287.0
+offset_top = 180.0
+offset_right = 909.0
+offset_bottom = 550.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "You earn
+waifu pics"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

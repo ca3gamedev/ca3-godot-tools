@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjp23f5n4rqv1"]
+
+[sub_resource type="Resource" id="Resource_foetc"]
+metadata/__load_path__ = "res://InputCode/Special movement/mash.gd"
+
+[node name="Mash" type="Node"]
+script = SubResource("Resource_foetc")
