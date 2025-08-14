@@ -4,7 +4,10 @@ extends Node
 @export var current : Node
 @export var close_dir : Vector2
 
+@onready var state_machine = %Anim["parameters/playback"]
+
 func _ready():
+	current = %FSM.get_node("IDLE")
 	%Anim.active = true
 	
 	var dir3 = (Variables.Player3D.global_position - $"..".global_position).normalized()
@@ -12,13 +15,21 @@ func _ready():
 
 func _process(delta):
 	
-	current.Update(delta)
+	if current.has_method("Update"):
+		current.Update(delta)
 
 	var angle = (Variables.Player3D.global_position - $"..".global_position).normalized()
 	var dir2 = Vector2(angle.x, angle.z)
-	
-	$"..".global_rotation.y = lerp_angle($"..".global_rotation.y, atan2(dir2.x, dir2.y), delta * 2)
+
 
 func _physics_process(delta):
 	
-	current.Physics(delta)
+	if current.has_method("Physics"):
+		current.Physics(delta)
+
+
+
+
+func _on_anim_animation_finished(anim_name):
+	
+	current = $IDLE

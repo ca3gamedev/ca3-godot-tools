@@ -22,6 +22,8 @@ Variables="*res://3D Melee Battle/Variables/3D melee variables.tscn"
 [global_group]
 
 ENEMIES=""
+"PLAYER MELEE"=""
+"ENEMY MELEE"=""
 
 [input]
 

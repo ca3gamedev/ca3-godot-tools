@@ -15,3 +15,7 @@ func GetPos(radius, angle):
 
 func GetTarget(radius, angle):
 	return GetPos(radius + randf_range(1.0, 3.0), angle)
+
+
+func _on_hitstop_timeout():
+	self.process_mode = Node.PROCESS_MODE_INHERIT

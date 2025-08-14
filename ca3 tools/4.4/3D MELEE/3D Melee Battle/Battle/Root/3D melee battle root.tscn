@@ -65,11 +65,11 @@ script = ExtResource("2_awa1y")
 
 [node name="TOPLEFT" type="Marker3D" parent="AIDirector"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.667, 0, -8.91413)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9872, 0, -23.9126)
 
 [node name="BOTTOMRIGHT" type="Marker3D" parent="AIDirector"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.115, 0, 8.75832)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.4527, 0, 23.3551)
 
 [node name="AIManager" type="Node" parent="AIDirector"]
 script = ExtResource("3_qlo0a")

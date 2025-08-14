@@ -7,6 +7,11 @@ extends Node
 
 
 func Update(delta):
+	
+	if Variables.Player3D.global_position.distance_to(Root.global_position) > Root.idle_distance:
+		%FSM.current = %FSM.get_node("IDLE")
+	
+	
 	wavy_angle += delta * 3
 	
 	var angle = %Anim.get("parameters/MOVE/blend_position")
@@ -18,6 +23,25 @@ func Update(delta):
 		%FSM.current = %FSM.get_node("IDLE")
 
 func Physics(delta):
+
+	if Root.global_position.distance_to(Variables.Player3D.global_position) < 5:
+		
+		if Root.global_position.distance_to(Variables.Player3D.global_position) < 1:
+			%FSM.current = %FSM.get_node("IDLE")
+			return
+		
+		var dir = (Variables.Player3D.global_position - Root.global_position).normalized()
+		Root.global_rotation.y = lerp_angle(Root.global_rotation.y, atan2(dir.x, dir.y), delta * 2)
+		
+		var angle = (Variables.Player3D.global_position - Root.global_position).normalized()
+		var speed = angle * walk_speed * delta
+		
+		Root.velocity = Vector3(speed.x, 0, speed.y)
+		Root.move_and_slide()
+		
+		return
+	
+	Root.global_rotation.y = lerp_angle(Root.global_rotation.y, atan2(%FSM.dir.x, %FSM.dir.y), delta * 2)
 	
 	if %NearEnemies.final_distance < 3:
 		var avoid = %FSM.close_dir * delta * walk_speed
