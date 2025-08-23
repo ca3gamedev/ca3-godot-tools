@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5b2gli81j3dx"]
+
+[ext_resource type="Script" uid="uid://c5lkyvg37x8s7" path="res://Scenes/GUI/gui.gd" id="1_psa72"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_psa72"]
+bg_color = Color(0.690215, 1.05527e-05, 5.39064e-06, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gm40n"]
+bg_color = Color(0.293751, 0.773117, 0.502754, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.127239, 0.364682, 0.144632, 1)
+
+[node name="GUI" type="Node2D"]
+script = ExtResource("1_psa72")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ComboP1" type="Node2D" parent="CanvasLayer"]
+position = Vector2(26, 59)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/ComboP1"]
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 136.0
+offset_bottom = 69.0
+color = Color(0, 0, 0, 1)
+
+[node name="ComboLog" type="Label" parent="CanvasLayer/ComboP1"]
+unique_name_in_owner = true
+offset_left = 13.0
+offset_top = 20.0
+offset_right = 53.0
+offset_bottom = 43.0
+text = "HITS"
+
+[node name="LifebarP1" type="Node2D" parent="CanvasLayer"]
+
+[node name="LifebarP1" type="ProgressBar" parent="CanvasLayer/LifebarP1"]
+unique_name_in_owner = true
+offset_left = 25.0
+offset_top = 19.0
+offset_right = 417.0
+offset_bottom = 50.0
+theme_override_styles/background = SubResource("StyleBoxFlat_psa72")
+theme_override_styles/fill = SubResource("StyleBoxFlat_gm40n")
+
+[node name="P1Win" type="Label" parent="CanvasLayer/LifebarP1"]
+unique_name_in_owner = true
+offset_left = 343.0
+offset_top = 62.0
+offset_right = 408.0
+offset_bottom = 85.0
+text = "WINNER"
+
+[node name="LifebarP2" type="Node2D" parent="CanvasLayer"]
+position = Vector2(705, 9)
+
+[node name="P2Win" type="Label" parent="CanvasLayer/LifebarP2"]
+unique_name_in_owner = true
+offset_left = 31.0
+offset_top = 60.0
+offset_right = 96.0
+offset_bottom = 83.0
+text = "WINNER"
+
+[node name="LifebarP2" type="ProgressBar" parent="CanvasLayer/LifebarP2"]
+unique_name_in_owner = true
+offset_left = 25.0
+offset_top = 19.0
+offset_right = 417.0
+offset_bottom = 50.0
+theme_override_styles/background = SubResource("StyleBoxFlat_psa72")
+theme_override_styles/fill = SubResource("StyleBoxFlat_gm40n")
+fill_mode = 1
