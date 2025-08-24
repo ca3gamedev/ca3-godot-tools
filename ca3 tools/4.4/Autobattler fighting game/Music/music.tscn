@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://nnm7uebak5un"]
+
+[ext_resource type="AudioStream" uid="uid://bgnt6tgl8ojv6" path="res://Music/The King of Fighters - Tears (KOF 99 Remix Arranged).mp3" id="1_d7ysw"]
+
+[node name="Music" type="Node"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_d7ysw")
+autoplay = true

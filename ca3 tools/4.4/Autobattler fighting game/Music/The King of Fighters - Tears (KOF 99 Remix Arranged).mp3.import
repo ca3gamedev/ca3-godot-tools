@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bgnt6tgl8ojv6"
+path="res://.godot/imported/The King of Fighters - Tears (KOF 99 Remix Arranged).mp3-1d62d5042a0545365d86bdc2d1036f1c.mp3str"
+
+[deps]
+
+source_file="res://Music/The King of Fighters - Tears (KOF 99 Remix Arranged).mp3"
+dest_files=["res://.godot/imported/The King of Fighters - Tears (KOF 99 Remix Arranged).mp3-1d62d5042a0545365d86bdc2d1036f1c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
