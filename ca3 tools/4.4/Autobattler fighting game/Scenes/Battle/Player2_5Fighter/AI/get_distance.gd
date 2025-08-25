@@ -25,17 +25,6 @@ func GetDistance():
 		current_distance = distance_type.long
 
 
-func GetClosest():
-	var minimal = 99999999999
-	var closest = %FSM.Root.Oponent[0]
-	for i in %FSM.Root.Oponent:
-		var dist = i.global_position.distance_to(%FSM.Root.Player.global_position)
-		if dist < minimal:
-			closest = i
-			minimal = dist
-	%FSM.Root.Closest = closest
-
-
 func GetClosestAI():
 	var minimal = 99999999999
 	var closest = %FSM.Root.Oponent[0]
@@ -48,7 +37,4 @@ func GetClosestAI():
 
 
 func _on_get_closest_timeout() -> void:
-	if %FSM.Root.IsAI:
-		GetClosestAI()
-	else:
-		GetClosest()
+	GetClosestAI()

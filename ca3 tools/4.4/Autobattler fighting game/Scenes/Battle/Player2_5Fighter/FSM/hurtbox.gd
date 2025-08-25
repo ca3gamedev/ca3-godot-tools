@@ -4,12 +4,7 @@ extends Node
 func _on_hurtbox_area_entered(area: Area3D) -> void:
 	
 	if area.is_in_group("Hitbox"):
-		if %FSM.Root.IsP1:
-			if area.get_node("../../").IsAI:
-				GUI.HitP1(%FSM.Root.damage)
-		else:
-			if not area.get_node("../../").IsAI:
-				GUI.HitP2(%FSM.Root.damage)
+		Variables.GUI.Hit(%FSM.Root.damage, get_node("../../").ID)
 		
 		if %FSM.OnGround:
 			%FSM.current = %FSM.get_node("ATTACK")

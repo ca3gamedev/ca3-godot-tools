@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://da2br7b8qgjsy"]
+[gd_scene load_steps=9 format=3 uid="uid://da2br7b8qgjsy"]
 
 [ext_resource type="PackedScene" uid="uid://busxrykftqnlp" path="res://Scenes/Battle/Player2_5Fighter/25 fighter.tscn" id="1_3n2v4"]
 [ext_resource type="Script" uid="uid://cer1t6xcgrysu" path="res://Scenes/Battle/Camera/camera_3d.gd" id="1_ne8kt"]
 [ext_resource type="PackedScene" uid="uid://bfh5yp7tm5beg" path="res://Scenes/Battle/Platform/platform.tscn" id="2_a2wl5"]
+[ext_resource type="PackedScene" uid="uid://c5b2gli81j3dx" path="res://Scenes/GUI/gui.tscn" id="4_h83k7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3n2v4"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -29,11 +30,11 @@ environment = SubResource("Environment_ne8kt")
 transform = Transform3D(0.841096, -0.468421, 0.270443, -0.0082787, 0.488792, 0.872361, -0.540823, -0.735978, 0.407243, 0, 13.1536, 15.694)
 shadow_enabled = true
 
-[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("Player")]
+[node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.0151, 15.5502)
 fov = 60.0
 script = ExtResource("1_ne8kt")
-Player = NodePath("../Player3D")
+speed = 50.0
 
 [node name="LEFT" type="Node3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.084, -4.603, -15.282)
@@ -57,9 +58,9 @@ collision_mask = 10
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.28085, -0.0206299)
 shape = SubResource("BoxShape3D_ne8kt")
 
-[node name="Player3D" parent="." node_paths=PackedStringArray("Oponent") groups=["PLAYER"] instance=ExtResource("1_3n2v4")]
+[node name="Player3D" parent="." node_paths=PackedStringArray("Oponent") groups=["ENEMY"] instance=ExtResource("1_3n2v4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1305, 0.562982, 0)
-IsP1 = true
+IsAI = true
 Oponent = [NodePath("../Player3D2"), NodePath("../Player3D3"), NodePath("../Player3D4")]
 
 [node name="Player3D2" parent="." node_paths=PackedStringArray("Player") groups=["ENEMY"] instance=ExtResource("1_3n2v4")]
@@ -85,5 +86,7 @@ collision_mask = 14
 
 [node name="CollisionShape3D" parent="Platform/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0668335, -0.939144, 0.0572739)
+
+[node name="GUI" parent="." instance=ExtResource("4_h83k7")]
 
 [editable path="Platform"]

@@ -3,31 +3,35 @@ extends CharacterBody3D
 @export var IsP1 : bool
 @export var IsAI : bool
 
+@export var ID : int
+
 @export var Player : CharacterBody3D
+@export var Player_id : int
 @export var Oponent : Array[Node]
 @export var damage : int
 @export var Closest : Node
 
 func _ready() -> void:
 	Oponent = get_tree().get_nodes_in_group("ENEMY")
-	var player = get_tree().get_nodes_in_group("PLAYER")
-	Player = player[0]
+	Player_id = randi_range(0, Oponent.size()-1)
+	Player = Oponent[Player_id]
 	
-	Player.collision_layer = 2
-	Player.collision_mask = 2 | 4 | 8 | 16
-	var material = Player.get_node("Shadow").material_override
-	material.albedo_color = Color.BLUE
+	var material = get_node("Shadow").material_override
+	match(Player_id):
+		0 : material.albedo_color = Color.WHITE
+		1 : material.albedo_color = Color.BLUE
+		2 : material.albedo_color = Color.RED
+		3 : material.albedo_color = Color.WEB_GREEN
+	
+	
 	for i in Oponent:
 		i.collision_layer = 4
 		i.collision_mask = 2 | 8 | 16
-		material = i.get_node("Shadow").material_override
-		material.albedo_color = Color.RED
 		
 	
 
 
 func HITSTOP():
-	GUI.AddHit()
 	$HitStop.start(0.05)
 	PAUSE.call_deferred()
 	

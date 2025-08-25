@@ -1,58 +1,57 @@
 extends Node2D
 
 var Combo : int = 0
-var P1HP = 100
-var P2HP = 100
+var HP = []
 
 var Winner = 0
 
 func _ready() -> void:
-	ResetCombo()
+	
+	Variables.GUI = self
+	
+	var Oponent = get_tree().get_nodes_in_group("ENEMY")
+	for i in Oponent.size():
+		HP.append(100)
+		Oponent[i].ID = i
+		Oponent[i].get_node("IDLabel").text = "ID : " + str(i)
+		match(i):
+			0 : Oponent[i].get_node("IDLabel").modulate = Color.WHITE
+			1 : Oponent[i].get_node("IDLabel").modulate = Color.BLUE
+			2 : Oponent[i].get_node("IDLabel").modulate = Color.RED
+			3 : Oponent[i].get_node("IDLabel").modulate = Color.WEB_GREEN
+	%LifebarP1.get("theme_override_styles/fill").bg_color = Color.WHITE
+	%LifebarP2.get("theme_override_styles/fill").bg_color = Color.BLUE
+	%LifebarP3.get("theme_override_styles/fill").bg_color = Color.RED
+	%LifebarP4.get("theme_override_styles/fill").bg_color = Color.WEB_GREEN
 	ResetHP()
-	WinnerLabel()
+	
+	%Gamble.text = "GAMBLE " + str(Variables.LoserPick)
+	match(Variables.LoserPick):
+		0: %Gamble.modulate = Color.WHITE
+		1: %Gamble.modulate = Color.BLUE
+		2: %Gamble.modulate = Color.RED
+		3: %Gamble.modulate = Color.WEB_GREEN
 
 func ResetHP():
-	P1HP = 100
-	P2HP = 100
-	%LifebarP1.value = P1HP
-	%LifebarP2.value = P2HP
+	
+	for i in HP.size():
+		HP[i] = 100
+	%LifebarP1.value = HP[0]
+	%LifebarP2.value = HP[1]
+	%LifebarP3.value = HP[2]
+	%LifebarP4.value = HP[3]
 
-func WinnerLabel():
-	%P1Win.hide()
-	%P2Win.hide()
-	if Winner == 1:
-		%P1Win.show()
-	if Winner == 2:
-		%P2Win.show()
 
-func ResetCombo():
-	Combo = 0
-	$%ComboLog.text = "HIT " + str(Combo)
-
-func AddHit():
-	Combo += 1
-	$%ComboLog.text = "HIT " + str(floor(Combo / 2))
-
-func HitP1(damage):
-	P1HP -= damage
-	%LifebarP1.value = P1HP
-	if P1HP <= 0:
-		Winner = 2
-		WinnerLabel()
-		ResetHP()
-		ResetCombo()
+func Hit(damage, target):
+	HP[target] -= damage
+	match(target):
+		0 : %LifebarP1.value = HP[0]
+		1 : %LifebarP2.value = HP[1]
+		2 : %LifebarP3.value = HP[2]
+		3 : %LifebarP4.value = HP[3]
+	if HP[target] <= 0:
+		Variables.LastLoser = target
 		ResetScene.call_deferred()
 
 func ResetScene():
-	get_tree().change_scene_to_file("res://Scenes/Battle/Root 25 fighter/root.tscn")
-		
-
-func HitP2(damage):
-	P2HP -= damage
-	%LifebarP2.value = P2HP
-	if P2HP <= 0:
-		Winner = 1
-		WinnerLabel()
-		ResetHP()
-		ResetCombo()
-		ResetScene.call_deferred()
+	get_tree().change_scene_to_file("res://Scenes/Menues/BattleEnd/battle_end.tscn")

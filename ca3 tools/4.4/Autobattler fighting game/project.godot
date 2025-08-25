@@ -10,16 +10,16 @@ config_version=5
 
 [application]
 
-config/name="2_5 Fighter"
-run/main_scene="uid://da2br7b8qgjsy"
+config/name="2_5 Autobattler"
+run/main_scene="uid://tdn17tby7327"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GUI="*res://Scenes/GUI/gui.tscn"
 Music="*res://Music/music.tscn"
 Log="*res://Scenes/LOG/log.tscn"
+Variables="*res://Scenes/Variables/variables.tscn"
 
 [global_group]
 

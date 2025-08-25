@@ -2430,6 +2430,13 @@ one_shot = true
 material_override = SubResource("StandardMaterial3D_lbg5v")
 mesh = SubResource("PlaneMesh_lbg5v")
 
+[node name="IDLabel" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.297414, -0.207648)
+billboard = 1
+text = "Enemy"
+font_size = 100
+outline_size = 50
+
 [connection signal="area_entered" from="Parent/Hurtbox" to="FSM/HURTBOX" method="_on_hurtbox_area_entered"]
 [connection signal="area_exited" from="Parent/Hurtbox" to="FSM/HURTBOX" method="_on_hurtbox_area_exited"]
 [connection signal="area_entered" from="Parent/Hitbox" to="FSM/HURTBOX" method="_on_hitbox_area_entered"]

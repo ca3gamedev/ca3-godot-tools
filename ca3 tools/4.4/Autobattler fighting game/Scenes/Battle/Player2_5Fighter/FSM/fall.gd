@@ -15,7 +15,7 @@ func Update(delta):
 	y = clampf(y, max_fall, 0)
 
 func Physics(delta):
-	var speed = delta * Vector2(dir_x * speed_x, -y)
+	var speed = delta * Vector2(dir_x * speed_x, -y) * 0.5
 	
 	var colision = %FSM.Root.move_and_collide(Vector3(speed.x, speed.y, 0))
 	
@@ -25,6 +25,6 @@ func Physics(delta):
 			%FSM.current.Start()
 		if colision.get_collider().is_in_group("WALL"):
 			%FSM.Root.move_and_collide(Vector3(0, speed.y, 0))
-		if colision.get_collider().is_in_group("PLAYER"):
-			%FSM.Root.velocity = Vector3(speed.x, speed.y, 0)
-			%FSM.Root.move_and_slide()
+	
+	%FSM.Root.velocity = Vector3(speed.x, speed.y, 0)
+	%FSM.Root.move_and_slide()

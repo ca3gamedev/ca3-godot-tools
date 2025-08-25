@@ -7,9 +7,7 @@ func _on_ani_animation_finished(anim_name: StringName) -> void:
 		return
 	if anim_name == "CROUCHED" or anim_name == "RUN":
 		return
-		
-	if anim_name == "JUMP_HURT" or anim_name == "JumpFHurt":
-		GUI.ResetCombo()
+
 	
 	%FSM.current = %FSM.get_node("IDLE")
 	%FSM.current.Start()
